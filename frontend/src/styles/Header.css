@@ -13,17 +13,15 @@
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
     font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-
-/* Navbar */
 .navbar {
     background: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1rem 0;
+    padding: 0.7rem 0 !important;
     transition: all 0.3s ease;
 }
 
@@ -39,6 +37,8 @@ html {
     color: var(--text-light) !important;
     transition: color 0.2s;
     overflow: hidden;
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
 }
 
 .navbar .nav-link::after {
@@ -69,4 +69,58 @@ html {
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius-sm);
     font-weight: 500;
+}
+
+.logo-gradient {
+  font-weight: 900;
+  font-size: 2.6rem;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #1e88e5 0%, #00acc1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 12px rgba(30,136,229,0.18);
+  padding: 0.4em 1.2em;
+  border-radius: 1.5em;
+  display: inline-block;
+  position: relative;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 32px rgba(30,136,229,0.12);
+  border: 2px solid rgba(30,136,229,0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.logo-gradient:hover {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 16px 48px rgba(30,136,229,0.22);
+  border-color: #00acc1;
+}
+
+.navbar-nav {
+    gap: 1.5rem !important;
+}
+
+.navbar .btn-primary {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.navbar .btn-outline-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+    min-width: 44px;
+    min-height: 44px;
 }

@@ -147,8 +147,8 @@ const projects = [
       {/* Header estilo moderno */}
       <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 fixed-top">
         <div className="container">
-          <a className="navbar-brand fw-bold text-primary" href="#home" style={{ fontWeight: 800, fontSize: 28 }}>
-            EW
+          <a className="navbar-brand logo-gradient" href="#home">
+            🚀 EW
           </a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span className="navbar-toggler-icon"></span>
@@ -246,16 +246,19 @@ const projects = [
                 </div>
                 <div className="hero-stats">
                   <div className="stat-item">
-                    <span className="stat-number">4+</span>
-                    <span className="stat-label">Anos</span>
+                    <FaCogs className="stat-icon" />
+                    <span className="stat-label">Projetos de alto impacto</span>
+                    <span className="stat-desc">Soluções completas para empresas e instituições</span>
                   </div>
                   <div className="stat-item">
-                    <span className="stat-number">3+</span>
-                    <span className="stat-label">Projetos</span>
+                    <FaTools className="stat-icon" />
+                    <span className="stat-label">Especialidade</span>
+                    <span className="stat-desc">Full Stack & Integrações avançadas</span>
                   </div>
                   <div className="stat-item">
-                    <span className="stat-number">2</span>
-                    <span className="stat-label">Sistemas Comerciais</span>
+                    <FaCloud className="stat-icon" />
+                    <span className="stat-label">Resultados</span>
+                    <span className="stat-desc">Automação, performance e inovação</span>
                   </div>
                 </div>
               </div>
@@ -275,6 +278,15 @@ const projects = [
                     </div>
                     <div className="floating-icon floating-icon-3">
                       <FaCloud />
+                    </div>
+                    <div className="floating-icon floating-icon-4">
+                      <FaTools />
+                    </div>
+                    <div className="floating-icon floating-icon-5">
+                      <FaDesktop />
+                    </div>
+                    <div className="floating-icon floating-icon-6">
+                      <FaGithub />
                     </div>
                   </div>
                 </div>
