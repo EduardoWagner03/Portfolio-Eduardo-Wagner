@@ -18,6 +18,7 @@ import {
   FaCloud,
   FaDesktop,
   FaCogs,
+  FaRocket,
 } from "react-icons/fa"
 import {
   Dialog,
@@ -223,19 +224,25 @@ const projects = [
           <div className="row align-items-center min-vh-100">
             <div className="col-lg-6">
               <div className="hero-content">
-                <div className="hero-badge">
-                  <span>👋 Olá, eu sou</span>
-                </div>
-                <h1 className="hero-name">
-                  Eduardo Gregório
-                  <br />
-                  <span className="hero-surname">Wagner</span>
-                </h1>
-                <h2 className="hero-subtitle">Desenvolvedor Full Stack Júnior</h2>
-                <p className="hero-description">
-                  Transformando ideias em código há 4 anos. Especialista em Frontend com experiência em sistemas
-                  comerciais para clínicas e instituições de ensino.
-                </p>
+              <div className="hero-badge">
+                <span style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+                  <FaRocket style={{ fontSize: "1.3em", color: "#fff", opacity: 0.95 }} />
+                  Olá, eu sou
+                </span>
+              </div>
+                  <h1 className="hero-name">
+                    Eduardo Gregório
+                    <br />
+                    <span className="hero-surname">Wagner</span>
+                  </h1>
+                  <h2 className="hero-subtitle hero-subtitle-highlight">
+                    Desenvolvedor Full Stack Júnior focado em Front-end
+                  </h2>
+                  <p className="hero-description">
+                  Desenvolvedor Full Stack Júnior, com foco em Frontend e experiência em desenvolvimento web e desktop.
+                  Atuação com React, Node.js, PostgreSQL, JavaScript, entre outras tecnologias. Comprometido em entregar soluções de qualidade,
+                  alinhando desempenho, usabilidade e boas práticas de desenvolvimento.
+                  </p>
                 <div className="hero-buttons">
                   <a href="#projects" className="btn btn-hero-primary btn-lg me-3">
                     <i className="fas fa-rocket me-2"></i>Ver Projetos
@@ -272,21 +279,27 @@ const projects = [
                   <div className="floating-elements">
                     <div className="floating-icon floating-icon-1">
                       <FaCode />
+                      <span className="custom-tooltip">Código</span>
                     </div>
                     <div className="floating-icon floating-icon-2">
                       <FaDatabase />
+                      <span className="custom-tooltip">Banco de Dados</span>
                     </div>
                     <div className="floating-icon floating-icon-3">
                       <FaCloud />
+                      <span className="custom-tooltip">Nuvem</span>
                     </div>
                     <div className="floating-icon floating-icon-4">
                       <FaTools />
+                      <span className="custom-tooltip">Ferramenta</span>
                     </div>
                     <div className="floating-icon floating-icon-5">
                       <FaDesktop />
+                      <span className="custom-tooltip">Computador</span>
                     </div>
                     <div className="floating-icon floating-icon-6">
                       <FaGithub />
+                      <span className="custom-tooltip">GitHub</span>
                     </div>
                   </div>
                 </div>
