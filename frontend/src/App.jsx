@@ -291,11 +291,11 @@ const projects = [
                     </div>
                     <div className="floating-icon floating-icon-4">
                       <FaTools />
-                      <span className="custom-tooltip">Ferramenta</span>
+                      <span className="custom-tooltip">Recursos Técnicos</span>
                     </div>
                     <div className="floating-icon floating-icon-5">
                       <FaDesktop />
-                      <span className="custom-tooltip">Computador</span>
+                      <span className="custom-tooltip">Aplicações Desktop</span>
                     </div>
                     <div className="floating-icon floating-icon-6">
                       <FaGithub />
@@ -322,7 +322,12 @@ const projects = [
             <div className="col-lg-10">
               <div className="about-content-modern">
                 <div className="about-intro">
-                  <h3>Olá! Eu sou Eduardo 👋</h3>
+                  <h3 style={{ display: "inline-flex", alignItems: "center", gap: "1rem" }}>
+                    Olá! Eu sou Eduardo
+                    <span className="icon-gradient">
+                      <FaCode className="icon-gradient-code" />
+                    </span>
+                  </h3>
                   <p className="intro-text">
                     Desenvolvedor de 21 anos, natural do Paraná, cursando o último ano de Engenharia de Software. Minha
                     jornada na programação começou pela curiosidade de entender como as tecnologias funcionam e como
@@ -338,9 +343,9 @@ const projects = [
                     <div className="journey-content">
                       <h4>Formação Acadêmica</h4>
                       <p>
-                        Durante minha formação acadêmica, desenvolvi experiência prática criando sistemas completos do
-                        zero, aplicando conceitos teóricos em projetos reais que atendem necessidades de clínicas e
-                        instituições de ensino.
+                        Sou estudante do último período do curso de Engenharia de Software pela UGV – Centro Universitário, com formação prevista para dezembro de 2025.
+                        Durante a graduação, desenvolvi projetos completos aplicando metodologias ágeis, versionamento com Git/GitHub e integração entre frontend e backend.
+                        Atuei em projetos acadêmicos e pessoais, focando na criação de soluções reais para empresas e instituições.
                       </p>
                     </div>
                   </div>
@@ -352,9 +357,9 @@ const projects = [
                     <div className="journey-content">
                       <h4>Trabalho em Equipe</h4>
                       <p>
-                        Tenho experiência tanto em desenvolvimento individual quanto em trabalho colaborativo,
-                        utilizando Git para controle de versão, metodologias ágeis para organização de sprints e
-                        ferramentas como Jira para gestão eficiente de tarefas em equipe.
+                        Possuo facilidade para trabalhar em equipe, mantendo boa comunicação e colaboração no dia a dia.
+                        Tenho experiência prática em times organizados por metodologias ágeis, sempre contribuindo de forma proativa no desenvolvimento das tarefas.
+                        Utilizo Git, GitHub e Jira para manter o fluxo de trabalho organizado e eficiente.
                       </p>
                     </div>
                   </div>
@@ -366,9 +371,9 @@ const projects = [
                     <div className="journey-content">
                       <h4>Filosofia de Trabalho</h4>
                       <p>
-                        Cada projeto é uma oportunidade de transformar conhecimento em soluções funcionais que realmente
-                        impactam a vida dos usuários. Acredito que a tecnologia deve ser uma ferramenta para melhorar a
-                        vida das pessoas.
+                        Adoto uma filosofia de trabalho focada em comprometimento, organização e entrega de soluções funcionais.
+                        Busco sempre alinhar qualidade técnica com prazos definidos, mantendo atenção aos detalhes e buscando melhorias contínuas.
+                        Valorizo a clareza na comunicação e a colaboração para alcançar resultados consistentes em equipe.
                       </p>
                     </div>
                   </div>
@@ -378,8 +383,8 @@ const projects = [
                   <div className="cta-content">
                     <h4>Pronto para o próximo desafio</h4>
                     <p>
-                      Busco minha primeira oportunidade como desenvolvedor júnior ou estágio, onde possa contribuir com
-                      projetos que gerem impacto positivo na sociedade.
+                      Estou em busca da minha primeira oportunidade como desenvolvedor júnior ou estágio, com foco em atuar de forma colaborativa em projetos reais,
+                      contribuindo para o crescimento da equipe e para a entrega de soluções eficientes e bem estruturadas.
                     </p>
                     <div className="cta-buttons">
                       <a href="#contact" className="btn btn-primary">
