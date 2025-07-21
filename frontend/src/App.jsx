@@ -90,7 +90,7 @@ const projects = [
     frontend: ["HTML5", "CSS3", "JavaScript ES6+", "Bootstrap", "EJS", "Chart.js", "jQuery"],
     backend: ["Node.js", "Express.js", "Python"],
     database: ["PostgreSQL", "Firebase", "Firestore", "Firebase Storage", "Firebase Auth"],
-    cloud: ["Google Cloud Platform", "Firebase Admin SDK"],
+    cloud: ["Google Cloud Platform", "Firebase"],
     desktop: ["Electron.js", "PWA"],
     tools: ["Git", "GitHub", "SweetAlert2", "Multer", "WebSockets", "MQTT"],
     methodologies: ["Scrum", "Jira", "Metodologias Ágeis", "Arquitetura MVC", "Trabalho em Equipe"],
@@ -406,15 +406,18 @@ const projects = [
       <section id="skills" className="skills-section section-gradient">
         <div className="container">
           <div className="section-header text-center mb-5">
-            <span className="section-badge">🚀 Stack Técnica</span>
+            <span className="section-badge">
+              <FaCogs style={{ marginRight: "0.5rem", verticalAlign: "middle", fontSize: "1.5em" }} />
+              Stack Técnica
+            </span>
             <h2 className="section-title">Habilidades</h2>
             <p className="section-subtitle">Tecnologias e ferramentas que domino</p>
           </div>
-
+      
           <div className="skills-grid">
             <div className="row g-4">
               <div className="col-lg-4 col-md-6">
-                <div className="skill-category skill-category-default">
+                <div className="skill-category skill-category-frontend">
                   <div className="skill-header">
                     <div className="skill-icon">
                       <FaCode />
@@ -430,9 +433,9 @@ const projects = [
                   </div>
                 </div>
               </div>
-
+      
               <div className="col-lg-4 col-md-6">
-                <div className="skill-category skill-category-default">
+                <div className="skill-category skill-category-backend">
                   <div className="skill-header">
                     <div className="skill-icon">
                       <FaDatabase />
@@ -448,9 +451,9 @@ const projects = [
                   </div>
                 </div>
               </div>
-
+      
               <div className="col-lg-4 col-md-6">
-                <div className="skill-category skill-category-default">
+                <div className="skill-category skill-category-database">
                   <div className="skill-header">
                     <div className="skill-icon">
                       <FaDatabase />
@@ -466,14 +469,14 @@ const projects = [
                   </div>
                 </div>
               </div>
-
+      
               <div className="col-lg-4 col-md-6">
-                <div className="skill-category skill-category-default">
+                <div className="skill-category skill-category-cloud">
                   <div className="skill-header">
                     <div className="skill-icon">
                       <FaCloud />
                     </div>
-                    <h4>Cloud & Deploy</h4>
+                      <h4>Serviços em Nuvem</h4>
                   </div>
                   <div className="skill-list">
                     {skills.cloud.map((skill, index) => (
@@ -484,9 +487,9 @@ const projects = [
                   </div>
                 </div>
               </div>
-
+      
               <div className="col-lg-4 col-md-6">
-                <div className="skill-category skill-category-default">
+                <div className="skill-category skill-category-desktop">
                   <div className="skill-header">
                     <div className="skill-icon">
                       <FaDesktop />
@@ -502,9 +505,9 @@ const projects = [
                   </div>
                 </div>
               </div>
-
+      
               <div className="col-lg-4 col-md-6">
-                <div className="skill-category skill-category-default">
+                <div className="skill-category skill-category-tools">
                   <div className="skill-header">
                     <div className="skill-icon">
                       <FaTools />
@@ -520,7 +523,7 @@ const projects = [
                   </div>
                 </div>
               </div>
-
+      
               <div className="col-lg-6 col-md-6">
                 <div className="skill-category methodology-category">
                   <div className="skill-header">
@@ -538,7 +541,7 @@ const projects = [
                   </div>
                 </div>
               </div>
-
+      
               <div className="col-lg-6 col-md-6">
                 <div className="skill-category learning-category">
                   <div className="skill-header">
@@ -566,8 +569,8 @@ const projects = [
         <div className="container">
           <div className="section-header text-center mb-5">
             <span className="section-badge">💼 Portfólio</span>
-            <h2 className="section-title">Projetos</h2>
-            <p className="section-subtitle">Alguns dos projetos que desenvolvi</p>
+            <h2 className="section-title">Principais Projetos</h2>
+            <p className="section-subtitle">Alguns dos principais projetos que desenvolvi</p>
           </div>
 
           <div className="projects-grid">

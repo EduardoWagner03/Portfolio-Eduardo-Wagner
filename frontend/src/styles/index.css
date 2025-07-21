@@ -580,17 +580,23 @@
 .icon-gradient {
   background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
   border-radius: 50%;
-  width: 56px; 
-  height: 56px;
+  width: 65px; 
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: center;
   vertical-align: middle;
 }
 
+.cta-buttons .btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .icon-gradient-code {
   color: #fff;
-  font-size: 1.5em;
+  font-size: 2rem;
 }
 
 .cta-content h4 {
@@ -635,9 +641,42 @@
   box-shadow: var(--shadow);
 }
 
-.skill-category-default {
-  background: var(--white);
-  border: 1px solid var(--medium-gray);
+.skill-category-frontend {
+  background: linear-gradient(135deg, #ffffff 60%, #90caf9 100%) !important;
+  border: 1px solid #b6dbfa;
+}
+
+.skill-category-backend {
+  background: linear-gradient(225deg, #ffffff 60%, #90caf9 100%) !important;
+  border: 1px solid #b6dbfa;
+}
+
+.skill-category-database {
+  background: linear-gradient(45deg, #ffffff 60%, #90caf9 100%) !important;
+  border: 1px solid #b6dbfa;
+}
+
+.skill-category-cloud {
+  background: linear-gradient(315deg, #ffffff 60%, #90caf9 100%) !important;
+  border: 1px solid #b6dbfa;
+}
+
+.skill-category-desktop {
+  background: linear-gradient(90deg, #ffffff 60%, #90caf9 100%) !important;
+  border: 1px solid #b6dbfa;
+}
+
+.skill-category-tools {
+  background: linear-gradient(270deg, #ffffff 60%, #90caf9 100%) !important;
+  border: 1px solid #b6dbfa;
+}
+
+.methodology-category {
+  background: linear-gradient(135deg, #ffffff 60%, #a18cd1 100%) !important;
+}
+
+.learning-category {
+  background: linear-gradient(315deg, #ffffff 60%, #ffd180 100%) !important;
 }
 
 .skill-category-default .skill-icon {
@@ -708,48 +747,6 @@
 .methodology-category {
   background: var(--gradient-primary);
   color: var(--white);
-}
-
-.methodology-category .skill-icon {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.methodology-category h4 {
-  color: var(--white);
-}
-
-.methodology-tag {
-  background: rgba(255, 255, 255, 0.2);
-  color: var(--white);
-}
-
-.methodology-tag:hover {
-  background: var(--white);
-  color: var(--primary-blue);
-}
-
-.learning-category {
-  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
-  color: var(--white);
-}
-
-.learning-category .skill-icon {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.learning-category h4 {
-  color: var(--white);
-}
-
-.learning-tag {
-  background: rgba(255, 255, 255, 0.2);
-  color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.learning-tag:hover {
-  background: var(--white);
-  color: #ff9800;
 }
 
 .projects-section {
