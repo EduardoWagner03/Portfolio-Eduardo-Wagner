@@ -46,42 +46,297 @@ const projects = [
   {
     title: "FlowTime",
     description:
-      "Sistema completo de gestão de tempo e produtividade com dashboard interativo, relatórios em PDF e assinatura digital.",
+      "Sistema web desenvolvido para gestão de clínicas de podologia, otimizando agendamentos, atendimento ao cliente e organização administrativa.",
     fullDescription:
-      "Desenvolvi o FlowTime, uma plataforma robusta para otimizar a gestão de tempo e produtividade. O sistema inclui um dashboard interativo com gráficos em tempo real, funcionalidade de geração de relatórios em PDF e um módulo de assinatura digital para documentos. Utilizei HTML5, CSS3 e JavaScript (ES6+) no frontend, com EJS para renderização de templates. No backend, Node.js e Express.js garantem a performance, enquanto Firebase Firestore e Storage gerenciam os dados. Bibliotecas como Chart.js, SweetAlert2, html2pdf.js e SignaturePad.js foram integradas para funcionalidades avançadas.",
-    frontend: ["HTML5", "CSS3", "JavaScript ES6+", "EJS"],
-    backend: ["Node.js", "Express.js"],
-    database: ["Firebase Firestore", "Firebase Storage"],
-    libraries: ["Chart.js", "SweetAlert2", "html2pdf.js", "SignaturePad.js"],
+      `O FlowTime é uma solução completa criada para clínicas de podologia, focada em facilitar o controle de agendamentos, o atendimento ao paciente e a gestão administrativa. O sistema oferece dashboard interativo, relatórios em PDF, assinatura digital e recursos para melhorar a eficiência operacional da clínica.'
+    
+    Principais tecnologias utilizadas:
+  
+    **Front-End**
+    - HTML5
+    - CSS3 (com media queries para responsividade)
+    - EJS (renderização de views server-side)
+    - JavaScript (ES6+)
+    - EJS (Embedded JavaScript Templates)
+    - Electron.js (aplicação desktop multiplataforma)
+    - SweetAlert2 (alertas e modais)
+  
+    **Back-End**
+    - Node.js (v20.x)
+    - Express.js (framework web)
+    - Multer (upload de arquivos)
+    - Node-cron (agendamento de tarefas)
+    - dotenv (variáveis de ambiente)
+    - memory-cache e node-cache (cache em memória)
+    - web-push (notificações push)
+    - path (manipulação de caminhos)
+    - cross-env (ambiente multiplataforma)
+  
+    **Database**
+    - Firebase Firestore (NoSQL)
+    - Firebase Database
+    - Firebase Storage (armazenamento de arquivos)
+    - Firebase Authentication (autenticação de usuários)
+    - Firebase Admin SDK
+  
+    **Bibliotecas**
+    - browser-image-compression (compressão de imagens)
+    - moment-timezone (manipulação de datas e fusos)
+    - node-fetch (requisições HTTP)
+    - Chart.js (gráficos e dashboards)
+    - SweetAlert2 (alertas e modais)
+    - Choices.js (selects avançados)
+    - html2pdf.js (geração de PDF)
+    - SignaturePad.js (captura de assinatura eletrônica)
+  
+    **APIs e Integrações**
+    - API IBGE (consulta de estados e cidades)
+    - WhatsApp API (envio de mensagens)
+    - Web Push API (notificações push)
+    - Firebase Auth API (autenticação)
+    - Service Workers (PWA/offline)
+    - Local Storage (armazenamento local no navegador)
+    `,
+    frontend: [
+      "HTML5",
+      "CSS3",
+      "EJS",
+      "JavaScript",
+      "EJS",
+      "Electron.js",
+      "SweetAlert2"
+    ],
+    backend: [
+      "Node.js",
+      "Express.js",
+      "Multer",
+      "Node-cron",
+      "dotenv",
+      "memory-cache",
+      "node-cache",
+      "web-push",
+      "path",
+      "cross-env"
+    ],
+    database: [
+      "Firebase Firestore",
+      "Firebase Database",
+      "Firebase Storage",
+      "Firebase Authentication",
+      "Firebase Admin SDK"
+    ],
+    libraries: [
+      "browser-image-compression",
+      "moment-timezone",
+      "node-fetch",
+      "Chart.js",
+      "SweetAlert2",
+      "Choices.js",
+      "html2pdf.js",
+      "SignaturePad.js"
+    ],
+    integrations: [
+      "API IBGE",
+      "WhatsApp API",
+      "Web Push API",
+      "Firebase Auth API",
+      "Service Workers",
+      "Local Storage"
+    ],
     status: "Comercializado",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "https://via.placeholder.com/300x200?text=Projeto", // <-- Coloque aqui
     link: "#", // Placeholder link
   },
+{
+  title: "ThermalTech",
+  description:
+    "Projeto acadêmico em dupla que criou um sistema CMMS integrado com IoT para monitoramento e controle de ambientes climatizados. Permite gerenciar equipamentos de ar-condicionado, registrar chamados, gerar ordens de serviço e monitorar condições ambientais em tempo real via sensores MQTT. Conta ainda com chat em tempo real para equipes.",
+  fullDescription: `O ThermalTech é um sistema desktop desenvolvido para monitoramento térmico em ambientes industriais. Oferece dashboard em tempo real, autenticação de usuários, relatórios e integrações IoT. Utiliza tecnologias modernas para garantir performance, segurança e escalabilidade.
+Principais tecnologias utilizadas:
+
+  Principais tecnologias utilizadas:
+
+**Frontend**
+- HTML5
+- CSS3
+- Bootstrap 5 (interface responsiva)
+- Bootstrap Icons (iconografia)
+- Chart.js (gráficos e dashboards)
+- SweetAlert2 (alertas e popups)
+- EJS (template engine para views)
+- HTML2Canvas (geração de relatórios)
+- JavaScript (scripts customizados)
+- Socket.IO (atualizações em tempo real)
+- WebSocket (comunicação em tempo real)
+
+**Backend**
+- Node.js (runtime)
+- Express.js (framework web)
+- Multer (upload de arquivos)
+- Socket.IO (comunicação em tempo real)
+- EJS (renderização de views)
+- MQTT (comunicação IoT)
+- Firebase Admin SDK (integração backend com Firebase)
+
+**Banco de Dados**
+- PostgreSQL (banco de dados relacional)
+- Firebase Auth (autenticação)
+- Firebase Storage (upload de arquivos)
+- Firebase Database (dados em tempo real)
+
+**Bibliotecas e Utilitários**
+- SweetAlert2 (alertas)
+- Chart.js (gráficos)
+- Bootstrap (CSS e componentes)
+- HTML2Canvas (relatórios)
+- Multer (upload)
+- Socket.IO (tempo real)
+- Firebase (Auth, Storage, Database)
+- MQTT (IoT)
+- EJS (views)
+
+**APIs e Integrações**
+- Firebase Auth (login/autenticação)
+- Firebase Storage (upload/download de arquivos)
+- Firebase Database (dados em tempo real)
+- Socket.IO (API WebSocket)
+- MQTT (mensageria IoT)
+- APIs REST próprias para equipamentos, técnicos, salas, chamados, ordens, anexos etc.
+`,
+  frontend: [
+    "HTML5",
+    "CSS3",
+    "Bootstrap 5",
+    "Bootstrap Icons",
+    "Chart.js",
+    "SweetAlert2",
+    "EJS",
+    "HTML2Canvas",
+    "JavaScript",
+    "Socket.IO",
+    "WebSocket"
+  ],
+  backend: [
+    "Node.js",
+    "Express.js",
+    "Multer",
+    "Socket.IO",
+    "EJS",
+    "MQTT",
+    "Firebase Admin SDK"
+  ],
+  database: [
+    "PostgreSQL",
+    "Firebase Authentication",
+    "Firebase Storage",
+    "Firebase Database"
+  ],
+  libraries: [
+    "SweetAlert2",
+    "Chart.js",
+    "Bootstrap",
+    "HTML2Canvas",
+    "Multer",
+    "Socket.IO",
+    "Firebase",
+    "MQTT",
+    "EJS"
+  ],
+  integrations: [
+    "Firebase Authentication",
+    "Firebase Storage",
+    "Firebase Database",
+    "Socket.IO",
+    "MQTT",
+    "APIs REST próprias"
+  ],
+  status: "Em Desenvolvimento",
+  image: "https://via.placeholder.com/300x200?text=Projeto",
+  link: "#", // Placeholder link
+},
   {
-    title: "ThermalTech",
-    description: "Sistema desktop para monitoramento térmico industrial com autenticação e dashboard em tempo real.",
-    fullDescription:
-      "O ThermalTech é um sistema desktop desenvolvido para monitoramento térmico em ambientes industriais. Ele oferece um dashboard em tempo real para visualização de dados, autenticação de usuários via Firebase Authentication e integração com bancos de dados PostgreSQL. A aplicação foi construída com JavaScript, Node.js e Express.js, utilizando Electron.js para a interface desktop. O design é responsivo com Bootstrap, e a visualização de dados é feita com Chart.js. O projeto seguiu metodologias ágeis e utilizou Git para controle de versão.",
-    frontend: ["HTML5", "CSS3", "Bootstrap", "Chart.js"],
-    backend: ["Node.js", "Express.js"],
-    database: ["PostgreSQL", "Firebase Auth"],
-    libraries: ["Chart.js", "SweetAlert2", "Electron.js"],
+     title: "TonnerTrack",
+  description:
+    "O TonerTrack nasceu de uma necessidade real observada em uma escola pública durante um projeto de extensão universitária. Desenvolvi a solução para automatizar o controle de suprimentos de impressão, reduzir desperdícios e fornecer relatórios completos para instituições de ensino.",
+  fullDescription:
+    `Este TonnerTrack é uma plataforma web completa para gerenciar instituições de ensino. Ele permite a gestão de alunos, registro de notas e frequência, e a geração de relatórios acadêmicos detalhados.
+  
+  Principais tecnologias utilizadas:
+  
+  **FrontEnd**
+  - HTML5
+  - CSS3
+  - JavaScript (ES6+)
+  - EJS (Template Engine)
+  - Bootstrap (Framework CSS)
+  - Bootstrap Icons (Ícones)
+  - Chart.js (Gráficos)
+  - SweetAlert2 (Alertas e modais)
+  - Electron.js (Aplicação desktop multiplataforma)
+  
+  **BackEnd**
+  - Node.js
+  - Express.js (Framework web)
+  - Express-Session (Sessão)
+  - Express-Handlebars (Template engine adicional)
+  - Multer (Upload de arquivos)
+  - Socket.io (Comunicação em tempo real)
+  - dotenv (Variáveis de ambiente)
+  - cookie-parser (Manipulação de cookies)
+  
+  **Database**
+  - PostgreSQL (Banco de dados relacional)
+  - pg (Driver PostgreSQL para Node.js)
+  
+  **Bibliotecas e Utilitários**
+  - firebase (SDK do Firebase para autenticação e storage)
+  - firebase-admin (Administração do Firebase no backend)
+  - path (Manipulação de caminhos de arquivos)
+  - electron-updater (Atualizações automáticas do app desktop)
+  
+  **APIs e Serviços**
+  - Firebase Authenticationentication (Autenticação de usuários)
+  - Firebase Cloud Storage (Armazenamento de arquivos/fotos de perfil)
+  - API RESTful própria (CRUD de toners, impressoras, relatórios, etc.)
+  `,
+    frontend: [
+      "HTML5",
+      "CSS3",
+      "JavaScript (ES6+)",
+      "EJS",
+      "Bootstrap",
+      "Bootstrap Icons",
+      "Chart.js",
+      "SweetAlert2",
+      "Electron.js"
+    ],
+    backend: [
+      "Node.js",
+      "Express.js",
+      "Express-Session",
+      "Express-Handlebars",
+      "Multer",
+      "Socket.io",
+      "dotenv",
+      "cookie-parser"
+    ],
+    database: [
+      "PostgreSQL",
+      "pg"
+    ],
+    libraries: [
+      "firebase",
+      "firebase-admin",
+      "path",
+      "electron-updater"
+    ],
+    integrations: [
+      "Firebase Authentication",
+      "Firebase Cloud Storage",
+      "API RESTful própria"
+    ],
     status: "Concluído",
-    image: "/placeholder.svg?height=200&width=300",
-    link: "#", // Placeholder link
-  },
-  {
-    title: "Sistema Educacional",
-    description:
-      "Plataforma para instituições de ensino com gestão de alunos, notas, frequência e relatórios acadêmicos.",
-    fullDescription:
-      "Este sistema educacional é uma plataforma web completa para gerenciar instituições de ensino. Ele permite a gestão de alunos, registro de notas e frequência, e a geração de relatórios acadêmicos detalhados. Desenvolvido com Node.js e Express.js no backend, utiliza Firebase para armazenamento de dados e EJS para a renderização das páginas. O frontend é estilizado com Bootstrap e inclui gráficos interativos com Chart.js para visualização de desempenho.",
-    frontend: ["HTML5", "CSS3", "Bootstrap", "EJS", "Chart.js"],
-    backend: ["Node.js", "Express.js"],
-    database: ["Firebase"],
-    libraries: ["Chart.js"],
-    status: "Em desenvolvimento",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "https://via.placeholder.com/300x200?text=Projeto",
     link: "#", // Placeholder link
   },
 ]
@@ -650,11 +905,11 @@ const projects = [
                         </div>
                       )}
 
-                      {project.technologies && (
+                      {project.integrations && (
                         <div className="tech-section">
-                          <h6 className="tech-category-title">Tecnologias</h6>
+                          <h6 className="tech-category-title">APIs e Integrações</h6>
                           <div className="tech-tags">
-                            {project.technologies.map((tech, techIndex) => (
+                            {project.integrations.map((tech, techIndex) => (
                               <span key={techIndex} className="tech-tag general-tag">
                                 {tech}
                               </span>
@@ -755,6 +1010,18 @@ const projects = [
                         </div>
                       </div>
                     )}
+                    {selectedProject.integrations && (
+                      <div>
+                        <h6 className="tech-category-title text-text-dark">APIs e Integrações</h6>
+                        <div className="tech-tags">
+                          {selectedProject.integrations.map((tech, techIndex) => (
+                            <span key={techIndex} className="tech-tag general-tag">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
 
@@ -834,7 +1101,7 @@ const projects = [
                           <i className="fas fa-school"></i>
                         </div>
                         <div className="achievement-content">
-                          <h5>Sistema Educacional</h5>
+                          <h5>TonnerTrack</h5>
                           <p>Plataforma para instituições de ensino com gestão completa de alunos</p>
                         </div>
                       </div>
