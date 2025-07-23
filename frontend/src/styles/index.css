@@ -458,7 +458,7 @@
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: #007fff;
   margin-bottom: 1rem;
   letter-spacing: -0.5px;
 }
@@ -758,7 +758,7 @@
 }
 
 .project-card-modern {
-  background: var(--white);
+  background: #e3f2fd;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
@@ -791,7 +791,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(30, 136, 229, 0.9);
+  background: rgb(165 208 245 / 66%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -809,6 +809,7 @@
 
 .project-content {
   padding: 2rem;
+  background-color: #e3f2fd;
 }
 
 .project-header {
@@ -820,7 +821,7 @@
 
 .project-title {
   color: var(--text-dark);
-  font-weight: 600;
+  font-weight: bold;
   margin: 0;
   flex: 1;
 }
@@ -829,7 +830,7 @@
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: bold;
   margin-left: 1rem;
 }
 
@@ -851,6 +852,7 @@
 .project-description {
   color: var(--text-light);
   line-height: 1.6;
+  font-weight: 300;
   margin-bottom: 1.5rem;
 }
 
@@ -878,6 +880,116 @@
   border-radius: 1rem;
   font-size: 0.7rem;
   font-weight: 500;
+  transition: transform 0.5s cubic-bezier(.4, 1.5, .5, 1), box-shadow 0.5s cubic-bezier(.4, 1.5, .5, 1);
+}
+
+.tech-tag:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(30, 136, 229, 0.13);
+  z-index: 2;
+  position: relative;
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: var(--primary-blue);
+  border-radius: 3px;
+  transform: translateX(-50%);
+  z-index: 0;
+  box-shadow: 0 0 16px rgba(30, 136, 229, 0.12);
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 4rem 0;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: 4rem;
+  z-index: 1;
+}
+
+.timeline-item.timeline-left {
+  flex-direction: row;
+}
+
+.timeline-item.timeline-right {
+  flex-direction: row-reverse;
+}
+
+.timeline-content {
+  background: var(--white);
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(30, 136, 229, 0.10);
+  padding: 3rem 2.5rem 2.5rem 2.5rem;
+  width: 45%;
+  position: relative;
+  font-size: 1.15rem;
+  transition: box-shadow 0.3s;
+  min-height: 180px;
+}
+
+.timeline-item.timeline-left .timeline-content {
+  margin-right: 0;
+  margin-left: 7rem;
+}
+
+.timeline-item.timeline-right .timeline-content {
+  margin-left: 0;
+  margin-right: 7.5rem;
+}
+
+.timeline-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.8rem;
+  box-shadow: 0 2px 8px rgba(30, 136, 229, 0.15);
+}
+
+.timeline-item.timeline-left .timeline-icon {
+  margin-left: 17.5rem;
+  margin-right: 0;
+  position: static;
+}
+
+.timeline-item.timeline-left .timeline-header {
+  justify-content: flex-start;
+}
+
+/* Badge do ano alinhado na lateral e na altura do ícone */
+.period-badge {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 2rem;
+  display: inline-block;
+}
+
+/* Cards da esquerda: badge no canto esquerdo */
+.timeline-item.timeline-left .period-badge {
+  left: 23.5rem;
 }
 
 .frontend-tag {
@@ -939,15 +1051,6 @@
 .company-type {
   color: var(--text-light);
   font-size: 1rem;
-  font-weight: 500;
-}
-
-.period-badge {
-  background: var(--gradient-primary);
-  color: var(--white);
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  font-size: 0.9rem;
   font-weight: 500;
 }
 
@@ -1525,6 +1628,32 @@
   .cta-buttons {
     flex-direction: column;
     align-items: center;
+  }
+
+  .timeline {
+    padding-left: 0;
+  }
+    
+  .timeline:before {
+    left: 20px;
+  }
+    
+  .timeline-content {
+    padding: 2rem 1rem 1.5rem 3.5rem;
+  }
+
+  .timeline-left .timeline-content,
+  .timeline-right .timeline-content {
+    margin: 0 0 0 2.5rem;
+  }
+    
+  .timeline-right {
+    flex-direction: row;
+  }
+    
+  .timeline-right .timeline-icon {
+    left: -6px;
+    right: auto;
   }
 }
 

@@ -3,6 +3,7 @@
 import { useState, useRef } from "react"
 import './styles/index.css';
 import './styles/Header.css';
+import { FaBriefcase } from "react-icons/fa";
 import {
   FaMoon,
   FaSun,
@@ -144,7 +145,7 @@ const projects = [
       "Local Storage"
     ],
     status: "Comercializado",
-    image: "https://via.placeholder.com/300x200?text=Projeto", // <-- Coloque aqui
+    image: "/images/FlowTime.png", // <-- Coloque aqui
     link: "#", // Placeholder link
   },
 {
@@ -251,7 +252,7 @@ Principais tecnologias utilizadas:
     "APIs REST próprias"
   ],
   status: "Em Desenvolvimento",
-  image: "https://via.placeholder.com/300x200?text=Projeto",
+  image: "/images/ThermalTech.png",
   link: "#", // Placeholder link
 },
   {
@@ -336,7 +337,7 @@ Principais tecnologias utilizadas:
       "API RESTful própria"
     ],
     status: "Concluído",
-    image: "https://via.placeholder.com/300x200?text=Projeto",
+    image: "/images/TonnerTrack.png",
     link: "#", // Placeholder link
   },
 ]
@@ -661,8 +662,8 @@ Principais tecnologias utilizadas:
       <section id="skills" className="skills-section section-gradient">
         <div className="container">
           <div className="section-header text-center mb-5">
-            <span className="section-badge">
-              <FaCogs style={{ marginRight: "0.5rem", verticalAlign: "middle", fontSize: "1.5em" }} />
+            <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "#fff" }} >
+            <FaCogs style={{ fontSize: "1.5em" }} />
               Stack Técnica
             </span>
             <h2 className="section-title">Habilidades</h2>
@@ -823,7 +824,10 @@ Principais tecnologias utilizadas:
       <section id="projects" className="projects-section section-gradient">
         <div className="container">
           <div className="section-header text-center mb-5">
-            <span className="section-badge">💼 Portfólio</span>
+            <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+              <FaCode style={{ color: "#fff", verticalAlign: "middle", fontSize: "1.1em" }} />
+              Portfólio
+            </span>
             <h2 className="section-title">Principais Projetos</h2>
             <p className="section-subtitle">Alguns dos principais projetos que desenvolvi</p>
           </div>
@@ -1045,95 +1049,149 @@ Principais tecnologias utilizadas:
       <section id="experience" className="experience-section section-gradient">
         <div className="container">
           <div className="section-header text-center mb-5">
-            <span className="section-badge">💼 Trajetória</span>
+            <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "#fff" }}>
+              <FaBriefcase style={{ color: "#fff", fontSize: "1.1em", verticalAlign: "middle" }} />
+              Trajetória Profissional
+            </span>
             <h2 className="section-title">Experiência Profissional</h2>
-            <p className="section-subtitle">Minha jornada no desenvolvimento de software</p>
+            <p className="section-subtitle">Minha evolução prática no desenvolvimento de software</p>
           </div>
-
-          <div className="experience-grid">
-            <div className="row justify-content-center">
-              <div className="col-lg-10">
-                <div className="experience-card-modern">
-                  <div className="experience-header">
-                    <div className="experience-company">
-                      <h3>Desenvolvedor Full Stack</h3>
-                      <span className="company-type">Projetos Freelance & Acadêmicos</span>
-                    </div>
-                    <div className="experience-period">
-                      <span className="period-badge">2021 - Presente</span>
-                    </div>
-                  </div>
-
-                  <div className="experience-description">
-                    <p>
-                      Desenvolvimento de sistemas completos para diferentes segmentos, com foco em soluções que atendem
-                      necessidades reais de clínicas e instituições de ensino.
-                    </p>
-                  </div>
-
-                  <div className="experience-achievements">
-                    <h4>Principais Realizações</h4>
-                    <div className="achievements-grid">
-                      <div className="achievement-item">
-                        <div className="achievement-icon">
-                          <i className="fas fa-clock"></i>
-                        </div>
-                        <div className="achievement-content">
-                          <h5>FlowTime</h5>
-                          <p>
-                            Sistema de gestão de tempo com dashboard interativo, relatórios em PDF e assinatura digital
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="achievement-item">
-                        <div className="achievement-icon">
-                          <i className="fas fa-thermometer-half"></i>
-                        </div>
-                        <div className="achievement-content">
-                          <h5>ThermalTech</h5>
-                          <p>Sistema desktop para monitoramento térmico industrial com Electron.js</p>
-                        </div>
-                      </div>
-
-                      <div className="achievement-item">
-                        <div className="achievement-icon">
-                          <i className="fas fa-school"></i>
-                        </div>
-                        <div className="achievement-content">
-                          <h5>TonnerTrack</h5>
-                          <p>Plataforma para instituições de ensino com gestão completa de alunos</p>
-                        </div>
-                      </div>
-
-                      <div className="achievement-item">
-                        <div className="achievement-icon">
-                          <i className="fas fa-users-cog"></i>
-                        </div>
-                        <div className="achievement-content">
-                          <h5>Liderança de Projetos</h5>
-                          <p>Coordenação de equipes usando metodologias ágeis e ferramentas como Jira</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="experience-skills">
-                    <h4>Competências Desenvolvidas</h4>
-                    <div className="skills-used">
-                      <span className="skill-used">Desenvolvimento Full Stack</span>
-                      <span className="skill-used">Metodologias Ágeis</span>
-                      <span className="skill-used">Git & GitHub</span>
-                      <span className="skill-used">Trabalho em Equipe</span>
-                      <span className="skill-used">Gestão de Projetos</span>
-                      <span className="skill-used">APIs REST</span>
-                      <span className="skill-used">WebSockets</span>
-                      <span className="skill-used">Banco de Dados</span>
-                    </div>
-                  </div>
+      
+          <div className="timeline">
+      
+            {/* 2021 - Início nos estudos */}
+            <div className="timeline-item timeline-left">
+              <div className="timeline-content">
+                <div className="timeline-header">
+                  <span className="period-badge" style={{ background: "#673ab7" }}>2021</span>
+                  <span className="timeline-icon" style={{ background: "#673ab7" }}>
+                    <i className="fas fa-book-open"></i>
+                  </span>
                 </div>
+                <h4 className="mb-1" style={{ color: "#673ab7", fontWeight: 700 }}>Início nos Estudos de Programação</h4>
+                <span className="company-type mb-2" style={{ fontWeight: 600 }}>Cursos Livres</span>
+                <ul className="mb-2">
+                  <li>HTML5, CSS3, JavaScript</li>
+                  <li>Páginas estáticas e fundamentos de lógica</li>
+                  <li>Versionamento com Git</li>
+                </ul>
               </div>
             </div>
+      
+            {/* 2022 - Faculdade */}
+            <div className="timeline-item timeline-right">
+              <div className="timeline-content">
+                <div className="timeline-header">
+                  <span className="timeline-icon" style={{ background: "#3f51b5" }}>
+                    <i className="fas fa-graduation-cap"></i>
+                  </span>
+                  <span className="period-badge" style={{ background: "#3f51b5" }}>Fev/2022 - Dez/2025</span>
+                </div>
+                <h4 className="mb-1" style={{ color: "#3f51b5", fontWeight: 700 }}>Engenharia de Software</h4>
+                <span className="company-type mb-2" style={{ fontWeight: 600 }}>Centro Universitário UGV</span>
+                <ul className="mb-2">
+                  <li>Foco em desenvolvimento web e desktop</li>
+                  <li>Projetos com React, Node.js, PostgreSQL, Firebase</li>
+                  <li>Participação em projetos reais e acadêmicos</li>
+                </ul>
+              </div>
+            </div>
+      
+            {/* 2024 - Projeto Garra Robótica */}
+            <div className="timeline-item timeline-left">
+              <div className="timeline-content">
+                <div className="timeline-header">
+                  <span className="period-badge" style={{ background: "#9c27b0" }}>2024</span>
+                  <span className="timeline-icon" style={{ background: "#9c27b0" }}>
+                    <i className="fas fa-robot"></i>
+                  </span>
+                </div>
+                <h4 className="mb-1" style={{ color: "#9c27b0", fontWeight: 700 }}>Projeto Garra Robótica</h4>
+                <span className="company-type mb-2" style={{ fontWeight: 600 }}>Disciplina de Robótica</span>
+                <ul className="mb-2">
+                  <li>Construção de garra robótica controlada por microcontrolador</li>
+                  <li>Desenvolvimento de comandos automatizados e controle de movimento</li>
+                  <li>Integração entre hardware e software com programação embarcada</li>
+                </ul>
+              </div>
+            </div>
+      
+            {/* 2024 - Batalha de Robôs */}
+            <div className="timeline-item timeline-right">
+              <div className="timeline-content">
+                <div className="timeline-header">
+                  <span className="timeline-icon" style={{ background: "#e91e63" }}>
+                    <i className="fas fa-gamepad"></i>
+                  </span>
+                  <span className="period-badge" style={{ background: "#e91e63" }}>2024</span>
+                </div>
+                <h4 className="mb-1" style={{ color: "#e91e63", fontWeight: 700 }}>Projeto Batalha de Robôs</h4>
+                <span className="company-type mb-2" style={{ fontWeight: 600 }}>Competição Interna</span>
+                <ul className="mb-2">
+                  <li>Construção de robô de combate com sensores de colisão</li>
+                  <li>Prototipação, testes e combate em arena com outras equipes</li>
+                  <li>Trabalho em equipe e otimização de desempenho físico e lógico</li>
+                </ul>
+              </div>
+            </div>
+      
+            {/* 2024 - Projeto TonerTrack */}
+            <div className="timeline-item timeline-left">
+              <div className="timeline-content">
+                <div className="timeline-header">
+                  <span className="period-badge" style={{ background: "#ff9800" }}>2024</span>
+                  <span className="timeline-icon" style={{ background: "#ff9800" }}>
+                    <i className="fas fa-laptop-code"></i>
+                  </span>
+                </div>
+                <h4 className="mb-1" style={{ color: "#ff9800", fontWeight: 700 }}>Desenvolvedor Full Stack</h4>
+                <span className="company-type mb-2" style={{ fontWeight: 600 }}>Projeto TonerTrack</span>
+                <ul className="mb-2">
+                  <li>Sistema de gestão de impressoras escolares</li>
+                  <li>PostgreSQL, autenticação e painéis administrativos</li>
+                  <li>Desenvolvimento individual com foco em escalabilidade</li>
+                </ul>
+              </div>
+            </div>
+      
+            {/* 2024 - Projeto Thermal Tech */}
+            <div className="timeline-item timeline-right">
+              <div className="timeline-content">
+                <div className="timeline-header">
+                  <span className="timeline-icon" style={{ background: "#4caf50" }}>
+                    <i className="fas fa-thermometer-half"></i>
+                  </span>
+                  <span className="period-badge" style={{ background: "#4caf50" }}>2024</span>
+                </div>
+                <h4 className="mb-1" style={{ color: "#4caf50", fontWeight: 700 }}>Desenvolvedor IoT</h4>
+                <span className="company-type mb-2" style={{ fontWeight: 600 }}>Projeto Thermal Tech</span>
+                <ul className="mb-2">
+                  <li>Monitoramento térmico com Electron.js e sensores</li>
+                  <li>Backend com Node.js e dashboard interativo</li>
+                  <li>Projeto em equipe de 2 pessoas</li>
+                </ul>
+              </div>
+            </div>
+      
+            {/* 2024 - FlowTime */}
+            <div className="timeline-item timeline-left">
+              <div className="timeline-content">
+                <div className="timeline-header">
+                  <span className="period-badge">2024</span>
+                  <span className="timeline-icon" style={{ background: "var(--primary-blue)" }}>
+                    <FaBriefcase color="#fff" />
+                  </span>
+                </div>
+                <h4 className="mb-1" style={{ color: "var(--primary-blue)", fontWeight: 700 }}>Desenvolvedor Full Stack</h4>
+                <span className="company-type mb-2" style={{ fontWeight: 600 }}>Projeto FlowTime</span>
+                <ul className="mb-2">
+                  <li>Sistema para clínica de podologia com dashboard e relatórios</li>
+                  <li>Frontend (HTML, CSS, JS), backend com Node.js/Firebase</li>
+                  <li>Desktop com Electron.js, entregue em ambiente real</li>
+                </ul>
+              </div>
+            </div>
+      
           </div>
         </div>
       </section>
