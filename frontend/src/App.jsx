@@ -21,6 +21,7 @@ import {
   FaCogs,
   FaRocket,
   FaUserAstronaut,
+  FaPhone, 
 } from "react-icons/fa"
 import {
   Dialog,
@@ -1267,7 +1268,10 @@ Principais tecnologias utilizadas:
       <section id="contact" className="contact-section section-gradient">
         <div className="container">
           <div className="section-header text-center mb-5">
-            <span className="section-badge">📞 Vamos conversar</span>
+            <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "#fff" }}>
+              <FaPhone style={{ color: "#fff", fontSize: "1.1em", verticalAlign: "middle" }} />
+              Vamos conversar
+            </span>
             <h2 className="section-title">Entre em Contato</h2>
             <p className="section-subtitle">Estou sempre aberto a novas oportunidades e projetos interessantes</p>
           </div>
@@ -1279,8 +1283,7 @@ Principais tecnologias utilizadas:
                   <div className="contact-intro">
                     <h3>Vamos trabalhar juntos! 🚀</h3>
                     <p>
-                      Estou em busca da minha primeira oportunidade como desenvolvedor júnior ou estágio. Se você tem um
-                      projeto interessante ou uma vaga disponível, adoraria conversar!
+                      Estou sempre aberto a novas oportunidades, parcerias e projetos inovadores. Se você tem uma ideia interessante ou precisa de um desenvolvedor dedicado para o seu time, vamos conversar!
                     </p>
                   </div>
 
