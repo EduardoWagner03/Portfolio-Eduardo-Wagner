@@ -20,6 +20,7 @@ import {
   FaDesktop,
   FaCogs,
   FaRocket,
+  FaUserAstronaut,
 } from "react-icons/fa"
 import {
   Dialog,
@@ -569,7 +570,10 @@ Principais tecnologias utilizadas:
       <section id="about" className="about-section section-gradient">
         <div className="container">
           <div className="section-header text-center mb-5">
-            <span className="section-badge">👨‍💻 Conheça mais</span>
+            <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+              <FaUserAstronaut style={{ color: "#fff", verticalAlign: "middle", fontSize: "1.1em" }} />
+              Conheça mais
+            </span>
             <h2 className="section-title">Sobre Mim</h2>
             <p className="section-subtitle">Desenvolvedor apaixonado por criar soluções que fazem a diferença</p>
           </div>
@@ -1062,18 +1066,27 @@ Principais tecnologias utilizadas:
             {/* 2021 - Início nos estudos */}
             <div className="timeline-item timeline-left">
               <div className="timeline-content">
-                <div className="timeline-header">
-                  <span className="period-badge" style={{ background: "#673ab7" }}>2021</span>
-                  <span className="timeline-icon" style={{ background: "#673ab7" }}>
-                    <i className="fas fa-book-open"></i>
-                  </span>
-                </div>
+               <div className="timeline-header" style={{ display: "flex", alignItems: "center", gap: "18.7rem" }}>
+                <span className="period-badge teste" style={{ background: "#673ab7" }}>2021</span>
+                <span className="timeline-icon" style={{ background: "#673ab7" }}>
+                  <i className="fas fa-book-open"></i>
+                </span>
+              </div>
                 <h4 className="mb-1" style={{ color: "#673ab7", fontWeight: 700 }}>Início nos Estudos de Programação</h4>
-                <span className="company-type mb-2" style={{ fontWeight: 600 }}>Cursos Livres</span>
-                <ul className="mb-2">
-                  <li>HTML5, CSS3, JavaScript</li>
-                  <li>Páginas estáticas e fundamentos de lógica</li>
-                  <li>Versionamento com Git</li>
+                <span className="company-type" style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block" }}>Cursos Livres</span>
+                <ul style={{ paddingLeft: 0, listStyle: "none" }}>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    HTML5, CSS3, JavaScript
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Páginas estáticas e fundamentos de lógica
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Versionamento com Git
+                  </li>
                 </ul>
               </div>
             </div>
@@ -1088,11 +1101,20 @@ Principais tecnologias utilizadas:
                   <span className="period-badge" style={{ background: "#3f51b5" }}>Fev/2022 - Dez/2025</span>
                 </div>
                 <h4 className="mb-1" style={{ color: "#3f51b5", fontWeight: 700 }}>Engenharia de Software</h4>
-                <span className="company-type mb-2" style={{ fontWeight: 600 }}>Centro Universitário UGV</span>
-                <ul className="mb-2">
-                  <li>Foco em desenvolvimento web e desktop</li>
-                  <li>Projetos com React, Node.js, PostgreSQL, Firebase</li>
-                  <li>Participação em projetos reais e acadêmicos</li>
+                <span className="company-type" style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block" }}>Centro Universitário UGV</span>
+                <ul style={{ paddingLeft: 0, listStyle: "none" }}>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Foco em desenvolvimento web e desktop
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Projetos com JavaScript, Node.js, PostgreSQL, Firebase, Google Cloud
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Participação em projetos reais e acadêmicos
+                  </li>
                 </ul>
               </div>
             </div>
@@ -1101,17 +1123,26 @@ Principais tecnologias utilizadas:
             <div className="timeline-item timeline-left">
               <div className="timeline-content">
                 <div className="timeline-header">
-                  <span className="period-badge" style={{ background: "#9c27b0" }}>2024</span>
+                  <span className="period-badge" style={{ background: "#9c27b0" }}>Fev/2024 - Jun/2024</span>
                   <span className="timeline-icon" style={{ background: "#9c27b0" }}>
                     <i className="fas fa-robot"></i>
                   </span>
                 </div>
                 <h4 className="mb-1" style={{ color: "#9c27b0", fontWeight: 700 }}>Projeto Garra Robótica</h4>
-                <span className="company-type mb-2" style={{ fontWeight: 600 }}>Disciplina de Robótica</span>
-                <ul className="mb-2">
-                  <li>Construção de garra robótica controlada por microcontrolador</li>
-                  <li>Desenvolvimento de comandos automatizados e controle de movimento</li>
-                  <li>Integração entre hardware e software com programação embarcada</li>
+                <span className="company-type" style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block" }}>Disciplina de Robótica</span>
+                <ul style={{ paddingLeft: 0, listStyle: "none" }}>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Construção de garra robótica controlada por microcontrolador
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Desenvolvimento de comandos automatizados e controle de movimento
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Integração entre hardware e software com programação embarcada
+                  </li>
                 </ul>
               </div>
             </div>
@@ -1126,11 +1157,20 @@ Principais tecnologias utilizadas:
                   <span className="period-badge" style={{ background: "#e91e63" }}>2024</span>
                 </div>
                 <h4 className="mb-1" style={{ color: "#e91e63", fontWeight: 700 }}>Projeto Batalha de Robôs</h4>
-                <span className="company-type mb-2" style={{ fontWeight: 600 }}>Competição Interna</span>
-                <ul className="mb-2">
-                  <li>Construção de robô de combate com sensores de colisão</li>
-                  <li>Prototipação, testes e combate em arena com outras equipes</li>
-                  <li>Trabalho em equipe e otimização de desempenho físico e lógico</li>
+                <span className="company-type" style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block" }}>Competição Interna</span>
+                <ul style={{ paddingLeft: 0, listStyle: "none" }}>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Construção de robô de combate com sensores de colisão
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Prototipação, testes e combate em arena com outras equipes
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Trabalho em equipe e otimização de desempenho físico e lógico
+                  </li>
                 </ul>
               </div>
             </div>
@@ -1139,17 +1179,26 @@ Principais tecnologias utilizadas:
             <div className="timeline-item timeline-left">
               <div className="timeline-content">
                 <div className="timeline-header">
-                  <span className="period-badge" style={{ background: "#ff9800" }}>2024</span>
+                  <span className="period-badge" style={{ background: "#ff9800" }}>Mar/2025 - Jun/2025</span>
                   <span className="timeline-icon" style={{ background: "#ff9800" }}>
                     <i className="fas fa-laptop-code"></i>
                   </span>
                 </div>
                 <h4 className="mb-1" style={{ color: "#ff9800", fontWeight: 700 }}>Desenvolvedor Full Stack</h4>
-                <span className="company-type mb-2" style={{ fontWeight: 600 }}>Projeto TonerTrack</span>
-                <ul className="mb-2">
-                  <li>Sistema de gestão de impressoras escolares</li>
-                  <li>PostgreSQL, autenticação e painéis administrativos</li>
-                  <li>Desenvolvimento individual com foco em escalabilidade</li>
+                <span className="company-type" style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block" }}>Projeto TonerTrack</span>
+                <ul style={{ paddingLeft: 0, listStyle: "none" }}>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Sistema de gestão de impressoras escolares
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    PostgreSQL, autenticação e painéis administrativos
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Desenvolvimento individual com foco em escalabilidade
+                  </li>
                 </ul>
               </div>
             </div>
@@ -1164,11 +1213,20 @@ Principais tecnologias utilizadas:
                   <span className="period-badge" style={{ background: "#4caf50" }}>2024</span>
                 </div>
                 <h4 className="mb-1" style={{ color: "#4caf50", fontWeight: 700 }}>Desenvolvedor IoT</h4>
-                <span className="company-type mb-2" style={{ fontWeight: 600 }}>Projeto Thermal Tech</span>
-                <ul className="mb-2">
-                  <li>Monitoramento térmico com Electron.js e sensores</li>
-                  <li>Backend com Node.js e dashboard interativo</li>
-                  <li>Projeto em equipe de 2 pessoas</li>
+                <span className="company-type" style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block" }}>Projeto Thermal Tech</span>
+                <ul style={{ paddingLeft: 0, listStyle: "none" }}>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Monitoramento térmico com Electron.js e sensores
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Backend com Node.js e dashboard interativo
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Projeto em equipe de 2 pessoas
+                  </li>
                 </ul>
               </div>
             </div>
@@ -1177,17 +1235,26 @@ Principais tecnologias utilizadas:
             <div className="timeline-item timeline-left">
               <div className="timeline-content">
                 <div className="timeline-header">
-                  <span className="period-badge">2024</span>
+                  <span className="period-badge period-full-stack">Out/2024 - Jan/2025</span>
                   <span className="timeline-icon" style={{ background: "var(--primary-blue)" }}>
                     <FaBriefcase color="#fff" />
                   </span>
                 </div>
                 <h4 className="mb-1" style={{ color: "var(--primary-blue)", fontWeight: 700 }}>Desenvolvedor Full Stack</h4>
-                <span className="company-type mb-2" style={{ fontWeight: 600 }}>Projeto FlowTime</span>
-                <ul className="mb-2">
-                  <li>Sistema para clínica de podologia com dashboard e relatórios</li>
-                  <li>Frontend (HTML, CSS, JS), backend com Node.js/Firebase</li>
-                  <li>Desktop com Electron.js, entregue em ambiente real</li>
+                <span className="company-type" style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block" }}>Projeto FlowTime</span>
+                <ul style={{ paddingLeft: 0, listStyle: "none" }}>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Sistema para clínica de podologia com dashboard e relatórios
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Frontend (HTML, CSS, JS), backend com Node.js/Firebase
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Desktop com Electron.js, entregue em ambiente real
+                  </li>
                 </ul>
               </div>
             </div>
