@@ -5,6 +5,7 @@ import './styles/Header.css';
 import './styles/index.css';
 import './styles/dark-mode.css';
 import './styles/media-queries.css';
+import './styles/animations.css';
 import { FaBriefcase } from "react-icons/fa";
 import {
   FaMoon,
@@ -34,6 +35,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./components/ui/dialog"
+
+import { SiJira } from "react-icons/si";
 
 function App() {
   const [lang, setLang] = useState("pt-br")
@@ -537,32 +540,32 @@ Principais tecnologias utilizadas:
                   <div className="profile-circle">
                     <img src="/images/img.jpeg" alt="Eduardo Wagner" className="profile-img" />
                   </div>
-                  <div className="floating-elements">
-                    <div className="floating-icon floating-icon-1">
-                      <FaCode />
-                      <span className="custom-tooltip">Código</span>
+                    <div className="floating-elements">
+                      <div className="floating-icon floating-icon-1">
+                        <FaCogs />
+                        <span className="custom-tooltip">Engenharia de Software</span>
+                      </div>
+                      <div className="floating-icon floating-icon-2">
+                        <FaDatabase />
+                        <span className="custom-tooltip">Banco de Dados</span>
+                      </div>
+                      <div className="floating-icon floating-icon-3">
+                        <FaCloud />
+                        <span className="custom-tooltip">Nuvem</span>
+                      </div>
+                      <div className="floating-icon floating-icon-4">
+                        <SiJira />
+                        <span className="custom-tooltip">Jira</span>
+                      </div>
+                      <div className="floating-icon floating-icon-5">
+                        <FaDesktop />
+                        <span className="custom-tooltip">Aplicações Desktop</span>
+                      </div>
+                      <div className="floating-icon floating-icon-6">
+                        <FaGithub />
+                        <span className="custom-tooltip">GitHub</span>
+                      </div>
                     </div>
-                    <div className="floating-icon floating-icon-2">
-                      <FaDatabase />
-                      <span className="custom-tooltip">Banco de Dados</span>
-                    </div>
-                    <div className="floating-icon floating-icon-3">
-                      <FaCloud />
-                      <span className="custom-tooltip">Nuvem</span>
-                    </div>
-                    <div className="floating-icon floating-icon-4">
-                      <FaTools />
-                      <span className="custom-tooltip">Recursos Técnicos</span>
-                    </div>
-                    <div className="floating-icon floating-icon-5">
-                      <FaDesktop />
-                      <span className="custom-tooltip">Aplicações Desktop</span>
-                    </div>
-                    <div className="floating-icon floating-icon-6">
-                      <FaGithub />
-                      <span className="custom-tooltip">GitHub</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
