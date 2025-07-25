@@ -1,8 +1,10 @@
 "use client"
 
 import { useState, useRef } from "react"
-import './styles/index.css';
 import './styles/Header.css';
+import './styles/index.css';
+import './styles/dark-mode.css';
+import './styles/media-queries.css';
 import { FaBriefcase } from "react-icons/fa";
 import {
   FaMoon,
