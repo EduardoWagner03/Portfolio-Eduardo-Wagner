@@ -1288,7 +1288,10 @@ Principais tecnologias utilizadas:
                   </div>
 
                   <div className="contact-methods-modern">
-                    <a href="mailto:eduardogwagner2003@gmail.com" className="contact-method-modern">
+                    <a
+                      href="mailto:eduardogwagner2003@gmail.com"
+                      className="contact-method-modern"
+                    >
                       <div className="method-icon">
                         <FaEnvelope />
                       </div>
@@ -1302,7 +1305,7 @@ Principais tecnologias utilizadas:
                     </a>
 
                     <a
-                      href="https://www.linkedin.com/in/eduardogwagner"
+                      href="https://www.linkedin.com/in/eduardowagner03/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="contact-method-modern"
@@ -1320,7 +1323,7 @@ Principais tecnologias utilizadas:
                     </a>
 
                     <a
-                      href="https://github.com/eduardogwagner"
+                      href="https://github.com/EduardoWagner03/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="contact-method-modern"
@@ -1353,29 +1356,39 @@ Principais tecnologias utilizadas:
                   <form className="modern-form">
                     <div className="form-row">
                       <div className="form-group">
-                        <label>Nome</label>
-                        <input type="text" className="form-control" placeholder="Seu nome completo" required />
+                        <label>Nome:</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Eduardo"
+                          required
+                        />
                       </div>
                       <div className="form-group">
-                        <label>Email</label>
-                        <input type="email" className="form-control" placeholder="seu@email.com" required />
+                        <label>Email:</label>
+                        <input
+                          type="email"
+                          className="form-control"
+                          placeholder="exemplo@email.com"
+                          required
+                        />
                       </div>
                     </div>
                     <div className="form-group">
-                      <label>Assunto</label>
+                      <label>Assunto:</label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Sobre o que você gostaria de falar?"
+                        placeholder="Sobre o que deseja falar?"
                         required
                       />
                     </div>
                     <div className="form-group">
-                      <label>Mensagem</label>
+                      <label>Mensagem:</label>
                       <textarea
                         className="form-control"
                         rows="5"
-                        placeholder="Conte-me mais sobre sua ideia ou oportunidade..."
+                        placeholder="Digite sua mensagem..."
                         required
                       ></textarea>
                     </div>

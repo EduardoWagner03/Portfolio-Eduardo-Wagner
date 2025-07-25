@@ -1285,7 +1285,7 @@
 }
 
 .contact-info-modern {
-  background: var(--white);
+  background: linear-gradient(135deg, #ffffff 40%, #5f9ccd 100%);
   padding: 3rem;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
@@ -1293,7 +1293,7 @@
 }
 
 .contact-intro h3 {
-  color: var(--text-dark);
+  color: var(--primary-blue);
   font-weight: 700;
   margin-bottom: 1rem;
 }
@@ -1315,7 +1315,7 @@
   display: flex;
   align-items: center;
   padding: 1.5rem;
-  background: var(--light-gray);
+  background: #e3f2fd;
   border-radius: var(--border-radius-sm);
   text-decoration: none;
   transition: all 0.3s ease;
@@ -1391,6 +1391,18 @@
   border-left: 4px solid var(--success-green);
 }
 
+.email-link span {
+  cursor: pointer;
+  color: var(--primary-blue);
+  text-decoration: underline dotted;
+  transition: color 0.2s;
+}
+
+.email-link:hover span {
+  color: #1565c0;
+  text-decoration: underline;
+}
+
 .availability-indicator {
   display: flex;
   align-items: center;
@@ -1408,7 +1420,7 @@
 }
 
 .contact-form-modern {
-  background: var(--white);
+  background: linear-gradient(135deg, #ffffff 40%, #5f9ccd 100%);
   padding: 3rem;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
@@ -1416,9 +1428,33 @@
 }
 
 .contact-form-modern h3 {
-  color: var(--text-dark);
+  color: var(--primary-blue);
   font-weight: 700;
   margin-bottom: 2rem;
+}
+
+.contact-form-modern .form-control {
+  resize: none;
+}
+
+.contact-form-modern .form-control::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+.contact-form-modern .form-control::-webkit-scrollbar-thumb {
+  background: #b3d8f7;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.contact-form-modern .form-control::-webkit-scrollbar-thumb:hover {
+  background: #90caf9;
+}
+
+.contact-form-modern .form-control {
+  scrollbar-width: thin;
+  scrollbar-color: #b3d8f7 transparent;
 }
 
 .modern-form .form-row {
@@ -1440,7 +1476,7 @@
 }
 
 .form-control {
-  border: 2px solid var(--medium-gray);
+  border: 2px solid #90caf9;
   border-radius: var(--border-radius-sm);
   padding: 1rem;
   font-size: 1rem;
@@ -1448,8 +1484,47 @@
   background: var(--white);
 }
 
+.contact-form-modern {
+  background: linear-gradient(135deg, #fafdff 60%, #b3d8f7 100%);
+  padding: 3rem 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(30, 136, 229, 0.13), 0 1.5px 8px rgba(30, 136, 229, 0.08);
+  border: 1.5px solid #e3f2fd;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+.contact-form-modern:hover {
+  box-shadow: 0 16px 48px rgba(30, 136, 229, 0.18);
+  border-color: #90caf9;
+}
+
+/* Botão do formulário de contato */
+.contact-form-modern .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem 0;
+}
+
+.contact-form-modern .btn .me-2 {
+  margin-right: 0.6rem !important;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+}
+
+.contact-form-modern .form-control::placeholder {
+  color: #313335;    /* cinza claro, mais discreto e elegante */
+  opacity: 0.55;     /* ainda mais suave */
+  font-size: 1rem;
+  font-weight: 400;
+}
+
 .form-control:focus {
-  border-color: var(--primary-blue);
+  border-color: #1e88e5;
   box-shadow: 0 0 0 0.2rem rgba(30, 136, 229, 0.15);
   background: var(--white);
 }
