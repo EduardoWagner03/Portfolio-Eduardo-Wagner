@@ -1506,6 +1506,33 @@
   align-items: center;
 }
 
+.btn .custom-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  min-width: 120px;
+  height: 2rem;
+  /* Adiciona largura mínima */
+  box-shadow: 0 4px 16px rgba(30, 136, 229, 0.18);
+  transition: opacity 0.2s, visibility 0.2s;
+  z-index: 99;
+  /* Garante que fique acima */
+}
+
+.btn.show-tooltip .custom-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
 .contact-form-modern .form-control::placeholder {
   color: #313335;    
   opacity: 0.55;   

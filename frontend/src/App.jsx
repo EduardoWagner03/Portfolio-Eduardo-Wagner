@@ -453,22 +453,33 @@ Principais tecnologias utilizadas:
             </ul>
             <div className="d-flex align-items-center gap-2">
               <button
-                className="btn btn-outline-primary"
+                className="btn btn-outline-primary position-relative"
                 onClick={toggleDarkMode}
-                title={darkMode ? "Modo claro" : "Modo escuro"}
+                onMouseEnter={e => e.currentTarget.classList.add("show-tooltip")}
+                onMouseLeave={e => e.currentTarget.classList.remove("show-tooltip")}
               >
                 {darkMode ? <FaSun /> : <FaMoon />}
+                <span className="custom-tooltip">{darkMode ? "Modo claro" : "Modo escuro"}</span>
               </button>
               <a
-                className="btn btn-primary d-flex align-items-center gap-2"
+                className="btn btn-primary d-flex align-items-center gap-2 position-relative"
                 href="/cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                onMouseEnter={e => e.currentTarget.classList.add("show-tooltip")}
+                onMouseLeave={e => e.currentTarget.classList.remove("show-tooltip")}
               >
                 <FaDownload /> Download CV
+                <span className="custom-tooltip">Baixar currículo</span>
               </a>
-              <button className="btn btn-outline-primary" onClick={handleLang} title="Mudar idioma">
+              <button
+                className="btn btn-outline-primary position-relative"
+                onClick={handleLang}
+                onMouseEnter={e => e.currentTarget.classList.add("show-tooltip")}
+                onMouseLeave={e => e.currentTarget.classList.remove("show-tooltip")}
+              >
                 <FaGlobe /> {lang === "pt-br" ? "EN" : "PT"}
+                <span className="custom-tooltip">Mudar idioma</span>
               </button>
             </div>
           </div>
