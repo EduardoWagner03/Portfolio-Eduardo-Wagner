@@ -310,6 +310,7 @@
 .hero-stats .stat-item:nth-child(2) .stat-label {
   color: #6a11cb; 
 }
+
 .hero-stats .stat-item:nth-child(3) .stat-label {
   color: #00acc1; 
 }
@@ -401,37 +402,37 @@
   animation: float 5s ease-in-out infinite;
 }
 
-.floating-icon-1 { /* Código */
+.floating-icon-1 { 
   top: 60px;
   left: 220px;
   animation-delay: 0s;
 }
 
-.floating-icon-2 {  /* Banco de Dados */
+.floating-icon-2 {
   top: 120px;
   right: 120px;
   animation-delay: 1s;
 }
 
-.floating-icon-3 {  /* Nuvem */
+.floating-icon-3 { 
   bottom: 200px;
   right: 80px;
   animation-delay: 2s;
 }
 
-.floating-icon-4 { /* Ferramenta */
+.floating-icon-4 {
   bottom: 220px;
   left: 120px;
   animation-delay: 3s;
 }
 
-.floating-icon-5 { /* Computador */
+.floating-icon-5 { 
   top: 210px;
   left: 80px;
   animation-delay: 4s;
 }
 
-.floating-icon-6 { /* GitHub */
+.floating-icon-6 { 
   bottom: 60px;
   left: 320px;
   animation-delay: 5s;
@@ -1042,7 +1043,7 @@
   box-shadow: 0 2px 8px rgba(30, 136, 229, 0.07);
   z-index: 1;
 }
-/* Cores específicas para cada card */
+
 .timeline-item.timeline-left .timeline-content .timeline-topico { color: #673ab7; }
 .timeline-item.timeline-right .timeline-content .timeline-topico { color: #3f51b5; }
 .timeline-item.timeline-left .timeline-content .timeline-topico:nth-child(n+4) { color: #9c27b0; }
@@ -1521,11 +1522,9 @@
   white-space: nowrap;
   min-width: 120px;
   height: 2rem;
-  /* Adiciona largura mínima */
   box-shadow: 0 4px 16px rgba(30, 136, 229, 0.18);
   transition: opacity 0.2s, visibility 0.2s;
   z-index: 99;
-  /* Garante que fique acima */
 }
 
 .btn.show-tooltip .custom-tooltip {
