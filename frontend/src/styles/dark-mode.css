@@ -232,3 +232,69 @@
 .dark-mode .timeline-topico-dot {
     box-shadow: 0 0 0 4px #e3f2fd;
 }
+
+/* =========================
+   MODAL POPUP - DARK MODE
+   ========================= */
+.dark-mode .project-modal-content {
+    background: linear-gradient(135deg, #162447 40%, #263799 100%);
+    color: #e6edf3;
+    border: none;
+    scrollbar-color: #263799 #162447;
+}
+
+.dark-mode .project-modal-content::-webkit-scrollbar-thumb {
+    background: #263799;
+}
+
+.dark-mode .project-modal-content::-webkit-scrollbar-thumb:hover {
+    background: #1e88e5;
+}
+
+.dark-mode .feature-row {
+    background: #1a2448;
+    border-color: #263799;
+}
+
+.dark-mode .feature-row:hover {
+    background: #263799;
+    border-color: #1e88e5;
+}
+
+.dark-mode .tech-details-card {
+    background: #162447;
+    border-color: #263799;
+    color: #e6edf3;
+}
+
+.dark-mode .tech-details-card:hover {
+    background: #263799;
+    border-color: #1e88e5;
+}
+
+.dark-mode .tech-tag {
+    background: #162447;
+    color: #90caf9;
+    border-color: #263799;
+}
+
+.dark-mode .tech-tag:hover {
+    background: #1e88e5;
+    color: #fff;
+    border-color: #1e88e5;
+}
+
+.dark-mode .tech-category-title {
+    color: #90caf9;
+}
+
+.dark-mode .project-modal-summary {
+    background: #162447;
+    color: #e6edf3;
+    box-shadow: 0 2px 12px rgba(30, 136, 229, 0.10);
+}
+
+.dark-mode .project-modal-header .project-modal-title {
+    color: #90caf9;
+    text-shadow: 0 2px 12px #162447;
+}

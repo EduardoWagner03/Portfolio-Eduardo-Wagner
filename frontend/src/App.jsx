@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import React, { useState, useRef, useEffect } from "react";
 import './styles/Header.css';
 import './styles/index.css';
 import './styles/dark-mode.css';
@@ -31,8 +31,6 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "./components/ui/dialog"
 
@@ -51,304 +49,228 @@ function App() {
     document.body.classList.toggle("dark-mode")
   }
 
-const projects = [
-  {
-    title: "FlowTime",
-    description:
-      "Sistema web desenvolvido para gestão de clínicas de podologia, otimizando agendamentos, atendimento ao cliente e organização administrativa.",
-    fullDescription:
-      `O FlowTime é uma solução completa criada para clínicas de podologia, focada em facilitar o controle de agendamentos, o atendimento ao paciente e a gestão administrativa. O sistema oferece dashboard interativo, relatórios em PDF, assinatura digital e recursos para melhorar a eficiência operacional da clínica.'
-    
-    Principais tecnologias utilizadas:
-  
-    **Front-End**
-    - HTML5
-    - CSS3 (com media queries para responsividade)
-    - EJS (renderização de views server-side)
-    - JavaScript (ES6+)
-    - EJS (Embedded JavaScript Templates)
-    - Electron.js (aplicação desktop multiplataforma)
-    - SweetAlert2 (alertas e modais)
-  
-    **Back-End**
-    - Node.js (v20.x)
-    - Express.js (framework web)
-    - Multer (upload de arquivos)
-    - Node-cron (agendamento de tarefas)
-    - dotenv (variáveis de ambiente)
-    - memory-cache e node-cache (cache em memória)
-    - web-push (notificações push)
-    - path (manipulação de caminhos)
-    - cross-env (ambiente multiplataforma)
-  
-    **Database**
-    - Firebase Firestore (NoSQL)
-    - Firebase Database
-    - Firebase Storage (armazenamento de arquivos)
-    - Firebase Authentication (autenticação de usuários)
-    - Firebase Admin SDK
-  
-    **Bibliotecas**
-    - browser-image-compression (compressão de imagens)
-    - moment-timezone (manipulação de datas e fusos)
-    - node-fetch (requisições HTTP)
-    - Chart.js (gráficos e dashboards)
-    - SweetAlert2 (alertas e modais)
-    - Choices.js (selects avançados)
-    - html2pdf.js (geração de PDF)
-    - SignaturePad.js (captura de assinatura eletrônica)
-  
-    **APIs e Integrações**
-    - API IBGE (consulta de estados e cidades)
-    - WhatsApp API (envio de mensagens)
-    - Web Push API (notificações push)
-    - Firebase Auth API (autenticação)
-    - Service Workers (PWA/offline)
-    - Local Storage (armazenamento local no navegador)
-    `,
-    frontend: [
-      "HTML5",
-      "CSS3",
-      "EJS",
-      "JavaScript",
-      "EJS",
-      "Electron.js",
-      "SweetAlert2"
-    ],
-    backend: [
-      "Node.js",
-      "Express.js",
-      "Multer",
-      "Node-cron",
-      "dotenv",
-      "memory-cache",
-      "node-cache",
-      "web-push",
-      "path",
-      "cross-env"
-    ],
-    database: [
-      "Firebase Firestore",
-      "Firebase Database",
-      "Firebase Storage",
-      "Firebase Authentication",
-      "Firebase Admin SDK"
-    ],
-    libraries: [
-      "browser-image-compression",
-      "moment-timezone",
-      "node-fetch",
-      "Chart.js",
-      "SweetAlert2",
-      "Choices.js",
-      "html2pdf.js",
-      "SignaturePad.js"
-    ],
-    integrations: [
-      "API IBGE",
-      "WhatsApp API",
-      "Web Push API",
-      "Firebase Auth API",
-      "Service Workers",
-      "Local Storage"
-    ],
-    status: "Comercializado",
-    image: "/images/FlowTime.png", // <-- Coloque aqui
-    link: "#", // Placeholder link
-  },
-{
-  title: "ThermalTech",
-  description:
-    "Projeto acadêmico em dupla que criou um sistema CMMS integrado com IoT para monitoramento e controle de ambientes climatizados. Permite gerenciar equipamentos de ar-condicionado, registrar chamados, gerar ordens de serviço e monitorar condições ambientais em tempo real via sensores MQTT. Conta ainda com chat em tempo real para equipes.",
-  fullDescription: `O ThermalTech é um sistema desktop desenvolvido para monitoramento térmico em ambientes industriais. Oferece dashboard em tempo real, autenticação de usuários, relatórios e integrações IoT. Utiliza tecnologias modernas para garantir performance, segurança e escalabilidade.
-Principais tecnologias utilizadas:
+    useEffect(() => {
+    if (isModalOpen) {
+      document.body.classList.add("body-modal-open");
+    } else {
+      document.body.classList.remove("body-modal-open");
+    }
+  }, [isModalOpen]);
 
-  Principais tecnologias utilizadas:
-
-**Frontend**
-- HTML5
-- CSS3
-- Bootstrap 5 (interface responsiva)
-- Bootstrap Icons (iconografia)
-- Chart.js (gráficos e dashboards)
-- SweetAlert2 (alertas e popups)
-- EJS (template engine para views)
-- HTML2Canvas (geração de relatórios)
-- JavaScript (scripts customizados)
-- Socket.IO (atualizações em tempo real)
-- WebSocket (comunicação em tempo real)
-
-**Backend**
-- Node.js (runtime)
-- Express.js (framework web)
-- Multer (upload de arquivos)
-- Socket.IO (comunicação em tempo real)
-- EJS (renderização de views)
-- MQTT (comunicação IoT)
-- Firebase Admin SDK (integração backend com Firebase)
-
-**Banco de Dados**
-- PostgreSQL (banco de dados relacional)
-- Firebase Auth (autenticação)
-- Firebase Storage (upload de arquivos)
-- Firebase Database (dados em tempo real)
-
-**Bibliotecas e Utilitários**
-- SweetAlert2 (alertas)
-- Chart.js (gráficos)
-- Bootstrap (CSS e componentes)
-- HTML2Canvas (relatórios)
-- Multer (upload)
-- Socket.IO (tempo real)
-- Firebase (Auth, Storage, Database)
-- MQTT (IoT)
-- EJS (views)
-
-**APIs e Integrações**
-- Firebase Auth (login/autenticação)
-- Firebase Storage (upload/download de arquivos)
-- Firebase Database (dados em tempo real)
-- Socket.IO (API WebSocket)
-- MQTT (mensageria IoT)
-- APIs REST próprias para equipamentos, técnicos, salas, chamados, ordens, anexos etc.
-`,
-  frontend: [
-    "HTML5",
-    "CSS3",
-    "Bootstrap 5",
-    "Bootstrap Icons",
-    "Chart.js",
-    "SweetAlert2",
-    "EJS",
-    "HTML2Canvas",
-    "JavaScript",
-    "Socket.IO",
-    "WebSocket"
-  ],
-  backend: [
-    "Node.js",
-    "Express.js",
-    "Multer",
-    "Socket.IO",
-    "EJS",
-    "MQTT",
-    "Firebase Admin SDK"
-  ],
-  database: [
-    "PostgreSQL",
-    "Firebase Authentication",
-    "Firebase Storage",
-    "Firebase Database"
-  ],
-  libraries: [
-    "SweetAlert2",
-    "Chart.js",
-    "Bootstrap",
-    "HTML2Canvas",
-    "Multer",
-    "Socket.IO",
-    "Firebase",
-    "MQTT",
-    "EJS"
-  ],
-  integrations: [
-    "Firebase Authentication",
-    "Firebase Storage",
-    "Firebase Database",
-    "Socket.IO",
-    "MQTT",
-    "APIs REST próprias"
-  ],
-  status: "Em Desenvolvimento",
-  image: "/images/ThermalTech.png",
-  link: "#", // Placeholder link
-},
-  {
-     title: "TonnerTrack",
-  description:
-    "O TonerTrack nasceu de uma necessidade real observada em uma escola pública durante um projeto de extensão universitária. Desenvolvi a solução para automatizar o controle de suprimentos de impressão, reduzir desperdícios e fornecer relatórios completos para instituições de ensino.",
-  fullDescription:
-    `Este TonnerTrack é uma plataforma web completa para gerenciar instituições de ensino. Ele permite a gestão de alunos, registro de notas e frequência, e a geração de relatórios acadêmicos detalhados.
-  
-  Principais tecnologias utilizadas:
-  
-  **FrontEnd**
-  - HTML5
-  - CSS3
-  - JavaScript (ES6+)
-  - EJS (Template Engine)
-  - Bootstrap (Framework CSS)
-  - Bootstrap Icons (Ícones)
-  - Chart.js (Gráficos)
-  - SweetAlert2 (Alertas e modais)
-  - Electron.js (Aplicação desktop multiplataforma)
-  
-  **BackEnd**
-  - Node.js
-  - Express.js (Framework web)
-  - Express-Session (Sessão)
-  - Express-Handlebars (Template engine adicional)
-  - Multer (Upload de arquivos)
-  - Socket.io (Comunicação em tempo real)
-  - dotenv (Variáveis de ambiente)
-  - cookie-parser (Manipulação de cookies)
-  
-  **Database**
-  - PostgreSQL (Banco de dados relacional)
-  - pg (Driver PostgreSQL para Node.js)
-  
-  **Bibliotecas e Utilitários**
-  - firebase (SDK do Firebase para autenticação e storage)
-  - firebase-admin (Administração do Firebase no backend)
-  - path (Manipulação de caminhos de arquivos)
-  - electron-updater (Atualizações automáticas do app desktop)
-  
-  **APIs e Serviços**
-  - Firebase Authenticationentication (Autenticação de usuários)
-  - Firebase Cloud Storage (Armazenamento de arquivos/fotos de perfil)
-  - API RESTful própria (CRUD de toners, impressoras, relatórios, etc.)
-  `,
-    frontend: [
-      "HTML5",
-      "CSS3",
-      "JavaScript (ES6+)",
-      "EJS",
-      "Bootstrap",
-      "Bootstrap Icons",
-      "Chart.js",
-      "SweetAlert2",
-      "Electron.js"
-    ],
-    backend: [
-      "Node.js",
-      "Express.js",
-      "Express-Session",
-      "Express-Handlebars",
-      "Multer",
-      "Socket.io",
-      "dotenv",
-      "cookie-parser"
-    ],
-    database: [
-      "PostgreSQL",
-      "pg"
-    ],
-    libraries: [
-      "firebase",
-      "firebase-admin",
-      "path",
-      "electron-updater"
-    ],
-    integrations: [
-      "Firebase Authentication",
-      "Firebase Cloud Storage",
-      "API RESTful própria"
-    ],
-    status: "Concluído",
-    image: "/images/TonnerTrack.png",
-    link: "#", // Placeholder link
-  },
-]
+  const projects = [
+    {
+      title: "FlowTime",
+      subtitulo: "Sistema Finalizado",
+      description:
+        "Sistema web completo para gestão de clínicas de podologia, trazendo eficiência, organização e praticidade para o dia a dia das clínicas. O FlowTime permite otimizar agendamentos, atendimento ao cliente e processos administrativos, tudo em uma plataforma intuitiva.",
+      historia:
+        "O FlowTime foi iniciado em outubro de 2024 e finalizado em janeiro de 2025, surgindo da necessidade de digitalizar e automatizar o fluxo de trabalho em clínicas de podologia. O sistema oferece dashboard interativo, relatórios em PDF, assinatura digital e recursos avançados para facilitar o controle de agendamentos, pacientes e receitas. Com uma interface moderna e funcionalidades robustas, o FlowTime proporciona mais agilidade, segurança e qualidade no atendimento, sendo implementado com sucesso em ambiente real.",
+      funcionalidades: [
+        {
+          imagem: "/images/flowtime-dashboard.png",
+          titulo: "Dashboard Interativo",
+          descricao: "Visualize rapidamente os principais indicadores da clínica, como agendamentos, atendimentos e receitas."
+        },
+        {
+          imagem: "/images/flowtime-agenda.png",
+          titulo: "Gestão de Agendas",
+          descricao: "Permite marcar, editar e visualizar consultas de forma simples e rápida."
+        },
+        {
+          imagem: "/images/flowtime-relatorios.png",
+          titulo: "Relatórios em PDF",
+          descricao: "Gere relatórios detalhados de atendimentos, receitas e pacientes em poucos cliques."
+        }
+      ],
+      frontend: [
+        "HTML5",
+        "CSS3",
+        "EJS",
+        "JavaScript",
+        "Electron.js",
+        "SweetAlert2"
+      ],
+      backend: [
+        "Node.js",
+        "Express.js",
+        "Multer",
+        "Node-cron",
+        "dotenv",
+        "memory-cache",
+        "node-cache",
+        "web-push",
+        "path",
+        "cross-env"
+      ],
+      database: [
+        "Firebase Firestore",
+        "Firebase Database",
+        "Firebase Storage",
+        "Firebase Authentication",
+        "Firebase Admin SDK"
+      ],
+      libraries: [
+        "browser-image-compression",
+        "moment-timezone",
+        "node-fetch",
+        "Chart.js",
+        "SweetAlert2",
+        "Choices.js",
+        "html2pdf.js",
+        "SignaturePad.js"
+      ],
+      integrations: [
+        "API IBGE",
+        "WhatsApp API",
+        "Web Push API",
+        "Firebase Auth API",
+        "Service Workers",
+        "Local Storage"
+      ],
+      status: "Finalizado",
+      image: "/images/FlowTime.png",
+      link: "#"
+    },
+    {
+      title: "ThermalTech",
+      subtitulo: "Sistema em Andamento",
+      description:
+        "Projeto acadêmico em dupla que criou um sistema CMMS integrado com IoT para monitoramento e controle de ambientes climatizados. Permite gerenciar equipamentos de ar-condicionado, registrar chamados, gerar ordens de serviço e monitorar condições ambientais em tempo real via sensores MQTT. Conta ainda com chat em tempo real para equipes.",
+      historia:
+        "O ThermalTech está sendo desenvolvido como parte de um projeto acadêmico na faculdade, com início em 2025. O objetivo é criar um sistema robusto para monitoramento e automação de ambientes industriais, integrando sensores IoT, dashboards, relatórios e comunicação entre equipes. O sistema está em constante evolução, recebendo melhorias e novas funcionalidades conforme o desenvolvimento avança.",
+      funcionalidades: [
+        {
+          imagem: "/images/thermaltech-dashboard.png",
+          titulo: "Monitoramento em Tempo Real",
+          descricao: "Acompanhe a temperatura e o status dos equipamentos em tempo real através de sensores IoT."
+        },
+        {
+          imagem: "/images/thermaltech-chamados.png",
+          titulo: "Gestão de Chamados",
+          descricao: "Registre, acompanhe e resolva chamados técnicos de forma centralizada e eficiente."
+        },
+        {
+          imagem: "/images/thermaltech-chat.png",
+          titulo: "Chat Integrado",
+          descricao: "Comunique-se com a equipe diretamente pelo sistema, agilizando o suporte e a manutenção."
+        }
+      ],
+      frontend: [
+        "HTML5",
+        "CSS3",
+        "Bootstrap 5",
+        "Bootstrap Icons",
+        "Chart.js",
+        "SweetAlert2",
+        "EJS",
+        "HTML2Canvas",
+        "JavaScript",
+        "Socket.IO",
+        "WebSocket"
+      ],
+      backend: [
+        "Node.js",
+        "Express.js",
+        "Multer",
+        "Socket.IO",
+        "EJS",
+        "MQTT",
+        "Firebase Admin SDK"
+      ],
+      database: [
+        "PostgreSQL",
+        "Firebase Authentication",
+        "Firebase Storage",
+        "Firebase Database"
+      ],
+      libraries: [
+        "SweetAlert2",
+        "Chart.js",
+        "Bootstrap",
+        "HTML2Canvas",
+        "Multer",
+        "Socket.IO",
+        "Firebase",
+        "MQTT",
+        "EJS"
+      ],
+      integrations: [
+        "Firebase Authentication",
+        "Firebase Storage",
+        "Firebase Database",
+        "Socket.IO",
+        "MQTT",
+        "APIs REST próprias"
+      ],
+      status: "Em Desenvolvimento",
+      image: "/images/ThermalTech.png",
+      link: "#"
+    },
+    {
+      title: "TonnerTrack",
+      subtitulo: "Sistema Finalizado",
+      description:
+        "Sistema desenvolvido para automatizar o controle de suprimentos de impressão em instituições de ensino, reduzindo desperdícios e fornecendo relatórios completos. O TonnerTrack facilita a gestão de impressoras e toners, trazendo mais eficiência e organização para o ambiente escolar.",
+      historia:
+        "O TonnerTrack foi um projeto de Extensão Acadêmica iniciado em fevereiro de 2025 e finalizado em junho de 2025, realizado em uma escola pública. O sistema surgiu da necessidade real de controlar o uso de impressoras e toners, automatizando registros, gerando relatórios detalhados e reduzindo desperdícios. Com uma interface intuitiva e recursos inteligentes, o TonnerTrack contribuiu para a melhoria da gestão de suprimentos e foi implementado com sucesso na instituição.",
+      funcionalidades: [
+        {
+          imagem: "/images/tonnertrack-dashboard.png",
+          titulo: "Controle de Suprimentos",
+          descricao: "Gerencie o estoque de toners e impressoras, evitando desperdícios e falta de material."
+        },
+        {
+          imagem: "/images/tonnertrack-relatorio.png",
+          titulo: "Relatórios Detalhados",
+          descricao: "Gere relatórios completos sobre o uso de impressoras, facilitando a tomada de decisão."
+        },
+        {
+          imagem: "/images/tonnertrack-alerta.png",
+          titulo: "Alertas Inteligentes",
+          descricao: "Receba notificações quando o estoque estiver baixo ou houver necessidade de manutenção."
+        }
+      ],
+      frontend: [
+        "HTML5",
+        "CSS3",
+        "JavaScript (ES6+)",
+        "EJS",
+        "Bootstrap",
+        "Bootstrap Icons",
+        "Chart.js",
+        "SweetAlert2",
+        "Electron.js"
+      ],
+      backend: [
+        "Node.js",
+        "Express.js",
+        "Express-Session",
+        "Express-Handlebars",
+        "Multer",
+        "Socket.io",
+        "dotenv",
+        "cookie-parser"
+      ],
+      database: [
+        "PostgreSQL",
+        "pg"
+      ],
+      libraries: [
+        "firebase",
+        "firebase-admin",
+        "path",
+        "electron-updater"
+      ],
+      integrations: [
+        "Firebase Authentication",
+        "Firebase Cloud Storage",
+        "API RESTful própria"
+      ],
+      status: "Finalizado",
+      image: "/images/TonnerTrack.png",
+      link: "#"
+    }
+  ]
 
   const skills = {
     frontend: ["HTML5", "CSS3", "JavaScript ES6+", "Bootstrap", "EJS", "Chart.js", "jQuery"],
@@ -363,10 +285,7 @@ Principais tecnologias utilizadas:
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
-    if (modalRef.current) {
-      const modal = new window.bootstrap.Modal(modalRef.current);
-      modal.show();
-    }
+    setIsModalOpen(true); // <-- Adicione esta linha
   };
 
   <div
@@ -954,113 +873,91 @@ Principais tecnologias utilizadas:
 
       {/* Project Details Modal */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="sm:max-w-[800px] p-6">
+        <DialogContent className="project-modal-content">
+          <button
+            type="button"
+            className="modal-close-btn"
+            aria-label="Fechar"
+            onClick={() => setIsModalOpen(false)}
+          >
+            &times;
+          </button>
           {selectedProject && (
             <>
-              <DialogHeader>
-                <DialogTitle className="text-3xl font-bold text-primary-blue mb-2">{selectedProject.title}</DialogTitle>
-                <DialogDescription className="text-lg text-text-light">{selectedProject.description}</DialogDescription>
-              </DialogHeader>
-              <div className="mt-4">
-                <img
-                  src={selectedProject.image || "/placeholder.svg"}
-                  alt={selectedProject.title}
-                  className="w-full h-auto rounded-lg mb-4 object-cover"
-                  style={{ maxHeight: "300px" }}
-                />
-                <p className="text-text-dark leading-relaxed mb-4">{selectedProject.fullDescription}</p>
-
-                {(selectedProject.frontend ||
-                  selectedProject.backend ||
-                  selectedProject.database ||
-                  selectedProject.libraries ||
-                  selectedProject.technologies) && (
-                  <div className="tech-details-grid grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    {selectedProject.frontend && (
-                      <div>
-                        <h6 className="tech-category-title text-text-dark">Frontend</h6>
-                        <div className="tech-tags">
-                          {selectedProject.frontend.map((tech, techIndex) => (
-                            <span key={techIndex} className="tech-tag frontend-tag">
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    {selectedProject.backend && (
-                      <div>
-                        <h6 className="tech-category-title text-text-dark">Backend</h6>
-                        <div className="tech-tags">
-                          {selectedProject.backend.map((tech, techIndex) => (
-                            <span key={techIndex} className="tech-tag backend-tag">
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    {selectedProject.database && (
-                      <div>
-                        <h6 className="tech-category-title text-text-dark">Database</h6>
-                        <div className="tech-tags">
-                          {selectedProject.database.map((tech, techIndex) => (
-                            <span key={techIndex} className="tech-tag database-tag">
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    {selectedProject.libraries && (
-                      <div>
-                        <h6 className="tech-category-title text-text-dark">Bibliotecas</h6>
-                        <div className="tech-tags">
-                          {selectedProject.libraries.map((tech, techIndex) => (
-                            <span key={techIndex} className="tech-tag library-tag">
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    {selectedProject.technologies && (
-                      <div>
-                        <h6 className="tech-category-title text-text-dark">Tecnologias Gerais</h6>
-                        <div className="tech-tags">
-                          {selectedProject.technologies.map((tech, techIndex) => (
-                            <span key={techIndex} className="tech-tag general-tag">
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    {selectedProject.integrations && (
-                      <div>
-                        <h6 className="tech-category-title text-text-dark">APIs e Integrações</h6>
-                        <div className="tech-tags">
-                          {selectedProject.integrations.map((tech, techIndex) => (
-                            <span key={techIndex} className="tech-tag general-tag">
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+              <div className="project-modal-header">
+                <h2 className="project-modal-title">{selectedProject.title}</h2>
+                {selectedProject.subtitulo && (
+                  <div
+                    className="project-status-badge"
+                    style={{
+                      color: selectedProject.status === "Em Desenvolvimento" || selectedProject.subtitulo === "Sistema em Andamento" ? "#795548" : "#fff",
+                      background: selectedProject.status === "Em Desenvolvimento" || selectedProject.subtitulo === "Sistema em Andamento" ? "#ffc107" : "#4caf50",
+                      borderRadius: "1rem",
+                      padding: "0.4rem 1.2rem",
+                      fontWeight: 700,
+                      margin: "1rem auto",
+                      display: "inline-block",
+                    }}
+                  >
+                    {selectedProject.subtitulo}
                   </div>
                 )}
+              </div>
+              <DialogDescription>
+                <div className="project-modal-main-row">
+                  <img
+                    src={selectedProject.image || "/placeholder.svg"}
+                    alt={selectedProject.title}
+                    className="project-modal-image"
+                  />
+                  <div className="project-modal-summary">
+                    {selectedProject.historia}
+                  </div>
+                </div>
+              </DialogDescription>
 
-                {selectedProject.link && (
-                  <a
-                    href={selectedProject.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary d-flex align-items-center justify-content-center gap-2 mt-4"
-                  >
-                    <FaExternalLinkAlt /> Ver Projeto Online
-                  </a>
-                )}
+              <div className="project-features">
+                {selectedProject.funcionalidades &&
+                  selectedProject.funcionalidades.map((func, idx) => (
+                    <div key={idx} className="feature-row">
+                      <img
+                        src={func.imagem}
+                        alt={func.titulo}
+                        className="feature-img"
+                      />
+                      <div>
+                        <h6 className="feature-title">{func.titulo}</h6>
+                        <p className="feature-desc">{func.descricao}</p>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+
+              {/* Cards de tecnologias */}
+              <div className="tech-details-grid">
+                {(() => {
+                  const categories = [
+                    { key: "frontend", label: "Frontend", tag: "frontend-tag" },
+                    { key: "backend", label: "Backend", tag: "backend-tag" },
+                    { key: "database", label: "Database", tag: "database-tag" },
+                    { key: "libraries", label: "Bibliotecas", tag: "library-tag" },
+                    { key: "integrations", label: "APIs e Integrações", tag: "general-tag" },
+                  ];
+                  return categories.map(({ key, label, tag }) =>
+                    selectedProject[key] && selectedProject[key].length > 0 ? (
+                      <div className="tech-details-card" key={key}>
+                        <h6 className="tech-category-title">{label}</h6>
+                        <div className="tech-tags">
+                          {selectedProject[key].map((tech, idx) => (
+                            <span key={idx} className={`tech-tag ${tag}`}>{tech}</span>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="tech-details-card empty-card" key={key} />
+                    )
+                  );
+                })()}
               </div>
             </>
           )}
