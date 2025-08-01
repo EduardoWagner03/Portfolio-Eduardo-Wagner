@@ -132,6 +132,70 @@ function App() {
       link: "#"
     },
     {
+      title: "TonnerTrack",
+      subtitulo: "Sistema Finalizado",
+      description:
+        "Sistema desenvolvido para automatizar o controle de suprimentos de impressão em instituições de ensino, reduzindo desperdícios e fornecendo relatórios completos. O TonnerTrack facilita a gestão de impressoras e toners, trazendo mais eficiência e organização para o ambiente escolar.",
+      historia:
+        "O TonnerTrack foi um projeto de Extensão Acadêmica iniciado em fevereiro de 2025 e finalizado em junho de 2025, realizado em uma escola pública. O sistema surgiu da necessidade real de controlar o uso de impressoras e toners, automatizando registros, gerando relatórios detalhados e reduzindo desperdícios. Com uma interface intuitiva e recursos inteligentes, o TonnerTrack contribuiu para a melhoria da gestão de suprimentos e foi implementado com sucesso na instituição.",
+      funcionalidades: [
+        {
+          imagem: "/images/tonnertrack-dashboard.png",
+          titulo: "Controle de Suprimentos",
+          descricao: "Gerencie o estoque de toners e impressoras, evitando desperdícios e falta de material."
+        },
+        {
+          imagem: "/images/tonnertrack-relatorio.png",
+          titulo: "Relatórios Detalhados",
+          descricao: "Gere relatórios completos sobre o uso de impressoras, facilitando a tomada de decisão."
+        },
+        {
+          imagem: "/images/tonnertrack-alerta.png",
+          titulo: "Alertas Inteligentes",
+          descricao: "Receba notificações quando o estoque estiver baixo ou houver necessidade de manutenção."
+        }
+      ],
+      frontend: [
+        "HTML5",
+        "CSS3",
+        "JavaScript (ES6+)",
+        "EJS",
+        "Bootstrap",
+        "Bootstrap Icons",
+        "Chart.js",
+        "SweetAlert2",
+        "Electron.js"
+      ],
+      backend: [
+        "Node.js",
+        "Express.js",
+        "Express-Session",
+        "Express-Handlebars",
+        "Multer",
+        "Socket.io",
+        "dotenv",
+        "cookie-parser"
+      ],
+      database: [
+        "PostgreSQL",
+        "pg"
+      ],
+      libraries: [
+        "firebase",
+        "firebase-admin",
+        "path",
+        "electron-updater"
+      ],
+      integrations: [
+        "Firebase Authentication",
+        "Firebase Cloud Storage",
+        "API RESTful própria"
+      ],
+      status: "Finalizado",
+      image: "/images/TonnerTrack.png",
+      link: "#"
+    },
+    {
       title: "ThermalTech",
       subtitulo: "Sistema em Andamento",
       description:
@@ -206,70 +270,6 @@ function App() {
       image: "/images/ThermalTech.png",
       link: "#"
     },
-    {
-      title: "TonnerTrack",
-      subtitulo: "Sistema Finalizado",
-      description:
-        "Sistema desenvolvido para automatizar o controle de suprimentos de impressão em instituições de ensino, reduzindo desperdícios e fornecendo relatórios completos. O TonnerTrack facilita a gestão de impressoras e toners, trazendo mais eficiência e organização para o ambiente escolar.",
-      historia:
-        "O TonnerTrack foi um projeto de Extensão Acadêmica iniciado em fevereiro de 2025 e finalizado em junho de 2025, realizado em uma escola pública. O sistema surgiu da necessidade real de controlar o uso de impressoras e toners, automatizando registros, gerando relatórios detalhados e reduzindo desperdícios. Com uma interface intuitiva e recursos inteligentes, o TonnerTrack contribuiu para a melhoria da gestão de suprimentos e foi implementado com sucesso na instituição.",
-      funcionalidades: [
-        {
-          imagem: "/images/tonnertrack-dashboard.png",
-          titulo: "Controle de Suprimentos",
-          descricao: "Gerencie o estoque de toners e impressoras, evitando desperdícios e falta de material."
-        },
-        {
-          imagem: "/images/tonnertrack-relatorio.png",
-          titulo: "Relatórios Detalhados",
-          descricao: "Gere relatórios completos sobre o uso de impressoras, facilitando a tomada de decisão."
-        },
-        {
-          imagem: "/images/tonnertrack-alerta.png",
-          titulo: "Alertas Inteligentes",
-          descricao: "Receba notificações quando o estoque estiver baixo ou houver necessidade de manutenção."
-        }
-      ],
-      frontend: [
-        "HTML5",
-        "CSS3",
-        "JavaScript (ES6+)",
-        "EJS",
-        "Bootstrap",
-        "Bootstrap Icons",
-        "Chart.js",
-        "SweetAlert2",
-        "Electron.js"
-      ],
-      backend: [
-        "Node.js",
-        "Express.js",
-        "Express-Session",
-        "Express-Handlebars",
-        "Multer",
-        "Socket.io",
-        "dotenv",
-        "cookie-parser"
-      ],
-      database: [
-        "PostgreSQL",
-        "pg"
-      ],
-      libraries: [
-        "firebase",
-        "firebase-admin",
-        "path",
-        "electron-updater"
-      ],
-      integrations: [
-        "Firebase Authentication",
-        "Firebase Cloud Storage",
-        "API RESTful própria"
-      ],
-      status: "Finalizado",
-      image: "/images/TonnerTrack.png",
-      link: "#"
-    }
   ]
 
   const skills = {
@@ -772,7 +772,6 @@ function App() {
             <h2 className="section-title">Principais Projetos</h2>
             <p className="section-subtitle">Alguns dos principais projetos que desenvolvi</p>
           </div>
-
           <div className="projects-grid">
             <div className="row g-4">
               {projects.map((project, index) => (
@@ -797,71 +796,7 @@ function App() {
                         </span>
                       </div>
                       <p className="project-description">{project.description}</p>
-
-                      {project.frontend && (
-                        <div className="tech-section">
-                          <h6 className="tech-category-title">Frontend</h6>
-                          <div className="tech-tags">
-                            {project.frontend.map((tech, techIndex) => (
-                              <span key={techIndex} className="tech-tag frontend-tag">
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {project.backend && (
-                        <div className="tech-section">
-                          <h6 className="tech-category-title">Backend</h6>
-                          <div className="tech-tags">
-                            {project.backend.map((tech, techIndex) => (
-                              <span key={techIndex} className="tech-tag backend-tag">
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {project.database && (
-                        <div className="tech-section">
-                          <h6 className="tech-category-title">Database</h6>
-                          <div className="tech-tags">
-                            {project.database.map((tech, techIndex) => (
-                              <span key={techIndex} className="tech-tag database-tag">
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {project.libraries && (
-                        <div className="tech-section">
-                          <h6 className="tech-category-title">Bibliotecas</h6>
-                          <div className="tech-tags">
-                            {project.libraries.map((tech, techIndex) => (
-                              <span key={techIndex} className="tech-tag library-tag">
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {project.integrations && (
-                        <div className="tech-section">
-                          <h6 className="tech-category-title">APIs e Integrações</h6>
-                          <div className="tech-tags">
-                            {project.integrations.map((tech, techIndex) => (
-                              <span key={techIndex} className="tech-tag general-tag">
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
+                      {/* Removido: Blocos de tecnologias */}
                     </div>
                   </div>
                 </div>
@@ -890,8 +825,8 @@ function App() {
                   <div
                     className="project-status-badge"
                     style={{
-                      color: selectedProject.status === "Em Desenvolvimento" || selectedProject.subtitulo === "Sistema em Andamento" ? "#795548" : "#fff",
-                      background: selectedProject.status === "Em Desenvolvimento" || selectedProject.subtitulo === "Sistema em Andamento" ? "#ffc107" : "#4caf50",
+                      color: selectedProject.status === "Em Desenvolvimento" ? "#795548" : "#fff",
+                      background: selectedProject.status === "Em Desenvolvimento" ? "#ffc107" : "#4caf50",
                       borderRadius: "1rem",
                       padding: "0.4rem 1.2rem",
                       fontWeight: 700,

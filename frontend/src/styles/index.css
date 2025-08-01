@@ -813,7 +813,7 @@
 .project-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
@@ -832,7 +832,7 @@
   margin-left: 1rem;
 }
 
-.status-comercializado {
+.status-finalizado {
   background: var(--success-green);
   color: var(--white);
 }
@@ -848,9 +848,10 @@
 }
 
 .project-description {
-  color: var(--text-light);
+  color: var(--text-dark);
   line-height: 1.6;
-  font-weight: 300;
+  font-weight: 500;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 
@@ -1512,7 +1513,7 @@
   font-size: 0.95rem;
   white-space: nowrap;
   min-width: 120px;
-  height: 2rem;
+  height: 2.5rem;
   box-shadow: 0 4px 16px rgba(30, 136, 229, 0.18);
   transition: opacity 0.2s, visibility 0.2s;
   z-index: 99;
@@ -1671,7 +1672,6 @@
   display: none;
 }
 
-/* Centraliza o modal na tela */
 .custom-modal-viewport {
   position: fixed;
   inset: 0;
@@ -1683,7 +1683,6 @@
   background: none;
 }
 
-/* Efeito fosco no fundo do modal */
 .custom-modal-overlay {
   position: fixed;
   inset: 0;
@@ -1695,7 +1694,6 @@
   transition: background 0.3s;
 }
 
-/* Container do conteúdo do modal */
 .modal-content {
   pointer-events: all;
   background: transparent !important;
@@ -1712,7 +1710,6 @@
   max-height: 100vh;
 }
 
-/* Botão de fechar */
 .modal-close-btn {
   position: absolute;
   top: 10px;
@@ -1740,11 +1737,11 @@
   color: #fff;
 }
 
-/* Header do modal */
 .project-modal-header {
   text-align: center;
   margin-bottom: 2rem;
 }
+
 .project-modal-title {
   font-size: 2.3rem;
   font-weight: 900;
@@ -1754,7 +1751,6 @@
   text-shadow: 0 2px 12px #e3f2fd;
 }
 
-/* Imagem + resumo lado a lado */
 .project-modal-main-row {
   display: flex;
   align-items: center;
@@ -1775,7 +1771,6 @@
   margin: 0 auto;
 }
 
-/* Aumenta o tamanho da imagem do projeto no modal */
 .project-modal-image {
   max-width: 380px;
   width: 100%;
@@ -1788,6 +1783,7 @@
   margin: 0 auto;
   transition: transform 0.25s, box-shadow 0.25s;
 }
+
 .project-modal-image:hover {
   transform: scale(1.06) rotate(-2deg);
   box-shadow: 0 16px 48px rgba(30, 136, 229, 0.22);
@@ -1809,6 +1805,7 @@
   border: 2.5px solid #bbdefb;
   transition: box-shadow 0.2s, border 0.2s, background 0.2s, transform 0.2s;
 }
+
 .project-modal-summary:hover {
   background: linear-gradient(135deg, #e3f2fd 60%, #bbdefb 100%);
   box-shadow: 0 8px 32px rgba(30, 136, 229, 0.18);
@@ -1816,57 +1813,63 @@
   transform: translateY(-4px) scale(1.03);
 }
 
-/* Funcionalidades */
 .project-features {
   margin-bottom: 2.2rem;
 }
 
-/* Melhore o destaque das funcionalidades no modal */
 .feature-row {
-  background: #fafdff;
-  border-radius: 1.3rem;
-  padding: 1.5rem 2rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 24px rgba(30, 136, 229, 0.10);
+  background: linear-gradient(120deg, #fafdff 60%, #e3f2fd 100%);
+  border-radius: 1.5rem;
+  padding: 2rem 2.2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(30, 136, 229, 0.10);
   display: flex;
   align-items: center;
-  gap: 2rem;
-  border: 2px solid #e3f2fd;
-  transition: box-shadow 0.2s, border 0.2s, background 0.2s, transform 0.2s;
+  gap: 2.2rem;
+  border: 2.5px solid #bbdefb;
+  transition: box-shadow 0.25s, border 0.25s, background 0.25s, transform 0.25s;
 }
 
 .feature-row:hover {
-  box-shadow: 0 12px 32px rgba(30, 136, 229, 0.13);
-  border-color: #90caf9;
-  background: #e3f2fd;
-  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(120deg, #e3f2fd 60%, #bbdefb 100%);
+  box-shadow: 0 16px 48px rgba(30, 136, 229, 0.15);
+  border-color: #42a5f5;
+  transform: translateY(-4px) scale(1.025);
 }
 
 .feature-img {
-  width: 90px;
-  height: 90px;
-  border-radius: 18px;
+  width: 110px;
+  height: 110px;
+  border-radius: 1.2rem;
   object-fit: cover;
-  box-shadow: 0 4px 16px rgba(30, 136, 229, 0.13);
-  border: 2px solid #bbdefb;
+  box-shadow: 0 6px 24px rgba(30, 136, 229, 0.13);
+  border: 2.5px solid #90caf9;
   background: #fff;
   display: block;
+  margin-right: 1.5rem;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.feature-row:hover .feature-img {
+  transform: scale(1.07) rotate(-2deg);
+  box-shadow: 0 12px 32px rgba(30, 136, 229, 0.18);
+  border-color: #42a5f5;
 }
 
 .feature-title {
-  font-size: 1.22rem;
-  font-weight: 800;
-  margin-bottom: 0.3rem;
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin-bottom: 0.4rem;
   color: #1e88e5;
   letter-spacing: -0.5px;
 }
 
 .feature-desc {
-  font-size: 1.07rem;
+  font-size: 1.08rem;
   color: #263799;
   margin: 0;
   font-weight: 500;
-  opacity: 0.93;
+  opacity: 0.97;
 }
 
 .tech-details-grid {
@@ -1879,13 +1882,12 @@
   min-width: 700px;
 }
 
-/* Cards de tecnologias no modal */
 .tech-details-card {
-  background: linear-gradient(120deg, #e3f2fd 0%, #b3d8f7 60%, #90caf9 100%);
+  background: linear-gradient(135deg, #ffffff 40%, #5f9ccd 100%) !important;
   border-radius: 1.3rem;
-  box-shadow: 0 6px 32px rgba(30, 136, 229, 0.13);
+  box-shadow: 0 4px 24px rgba(30, 136, 229, 0.10);
   padding: 1.7rem 1.5rem 1.3rem 1.5rem;
-  border: 2.5px solid #bbdefb;
+  border: 2.5px solid #90caf9;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1895,12 +1897,13 @@
   transition: box-shadow 0.35s, border 0.25s, background 0.35s, transform 0.25s;
   position: relative;
   overflow: hidden;
+  color: #fff;
 }
 
 .tech-details-card:hover {
-  background: linear-gradient(120deg, #bbdefb 0%, #90caf9 80%, #e3f2fd 100%);
-  box-shadow: 0 16px 48px rgba(30, 136, 229, 0.18), 0 0 0 4px #bbdefb;
-  border-color: #42a5f5;
+  background: linear-gradient(120deg, #2575fc 0%, #6a11cb 100%);
+  box-shadow: 0 16px 48px rgba(76, 17, 203, 0.18), 0 0 0 4px #90caf9;
+  border-color: #6a11cb;
   transform: translateY(-4px) scale(1.035);
 }
 
@@ -1911,9 +1914,9 @@
   letter-spacing: 0.5px;
   text-transform: uppercase;
   background: linear-gradient(90deg, #1e88e5 0%, #00acc1 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .tech-tags {
@@ -1942,7 +1945,6 @@
   box-shadow: 0 6px 24px rgba(30, 136, 229, 0.18);
 }
 
-/* Tags por tipo */
 .frontend-tag {
   background: #e8f5e9;
   color: #388e3c;
