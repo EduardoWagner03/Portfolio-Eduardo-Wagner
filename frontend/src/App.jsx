@@ -916,7 +916,7 @@ function App() {
       
           <div className="timeline">
       
-            {/* 2021 - Início nos estudos */}
+            {/* 2021 - Início nos estudos - ESQUERDA */}
             <div className="timeline-item timeline-left">
               <div className="timeline-content">
                <div className="timeline-header" style={{ display: "flex", alignItems: "center", gap: "18.7rem" }}>
@@ -944,7 +944,7 @@ function App() {
               </div>
             </div>
       
-            {/* 2022 - Faculdade */}
+            {/* 2022 - Faculdade - DIREITA */}
             <div className="timeline-item timeline-right">
               <div className="timeline-content">
                 <div className="timeline-header">
@@ -971,15 +971,51 @@ function App() {
                 </ul>
               </div>
             </div>
-      
-            {/* 2024 - Projeto Garra Robótica */}
+            
+            {/* 2022-2024 - Eventos Acadêmicos - ESQUERDA */}
             <div className="timeline-item timeline-left">
               <div className="timeline-content">
+                <div className="timeline-header" style={{ display: "flex", alignItems: "center", gap: "15.5rem" }}>
+                  <span className="period-badge" style={{ background: "#5e35b1" }}>2022 - 2024</span>
+                  <span className="timeline-icon" style={{ background: "#5e35b1" }}>
+                    <i className="fas fa-certificate"></i>
+                  </span>
+                </div>
+                <h4 className="mb-1" style={{ color: "#5e35b1", fontWeight: 700 }}>Participação em Eventos Acadêmicos</h4>
+                <span className="company-type" style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block" }}>Centro Universitário UGV</span>
+                <ul style={{ paddingLeft: 0, listStyle: "none" }}>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    XVII Encontro de Iniciação Científica 2022 - Ouvinte
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    XVIII Encontro de Iniciação Científica 2023 - Apresentação
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    XIX Encontro de Iniciação Científica 2024 - Ouvinte
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    SEMTEC - Semana de Tecnologia da UGV 2022
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    SEMTEC - Semana de Tecnologia da UGV 2024
+                  </li>
+                </ul>
+              </div>
+            </div>
+      
+            {/* 2024 - Projeto Garra Robótica - DIREITA */}
+            <div className="timeline-item timeline-right">
+              <div className="timeline-content">
                 <div className="timeline-header">
-                  <span className="period-badge" style={{ background: "#9c27b0" }}>Fev/2024 - Jun/2024</span>
                   <span className="timeline-icon" style={{ background: "#9c27b0" }}>
                     <i className="fas fa-robot"></i>
                   </span>
+                  <span className="period-badge" style={{ background: "#9c27b0" }}>Fev/2024 - Jun/2024</span>
                 </div>
                 <h4 className="mb-1" style={{ color: "#9c27b0", fontWeight: 700 }}>Projeto Garra Robótica</h4>
                 <span className="company-type" style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block" }}>Disciplina de Robótica</span>
@@ -1000,14 +1036,14 @@ function App() {
               </div>
             </div>
       
-            {/* 2024 - Batalha de Robôs */}
-            <div className="timeline-item timeline-right">
+            {/* 2024 - Batalha de Robôs - ESQUERDA */}
+            <div className="timeline-item timeline-left">
               <div className="timeline-content">
-                <div className="timeline-header">
+                <div className="timeline-header" style={{ display: "flex", alignItems: "center", gap: "18.7rem" }}>
+                  <span className="period-badge" style={{ background: "#e91e63" }}>2024</span>
                   <span className="timeline-icon" style={{ background: "#e91e63" }}>
                     <i className="fas fa-gamepad"></i>
                   </span>
-                  <span className="period-badge" style={{ background: "#e91e63" }}>2024</span>
                 </div>
                 <h4 className="mb-1" style={{ color: "#e91e63", fontWeight: 700 }}>Projeto Batalha de Robôs</h4>
                 <span className="company-type" style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block" }}>Competição Interna</span>
@@ -1028,35 +1064,7 @@ function App() {
               </div>
             </div>
       
-            {/* 2024 - Projeto TonerTrack */}
-            <div className="timeline-item timeline-left">
-              <div className="timeline-content">
-                <div className="timeline-header">
-                  <span className="period-badge" style={{ background: "#ff9800" }}>Mar/2025 - Jun/2025</span>
-                  <span className="timeline-icon" style={{ background: "#ff9800" }}>
-                    <i className="fas fa-laptop-code"></i>
-                  </span>
-                </div>
-                <h4 className="mb-1" style={{ color: "#ff9800", fontWeight: 700 }}>Desenvolvedor Full Stack</h4>
-                <span className="company-type" style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block" }}>Projeto TonerTrack</span>
-                <ul style={{ paddingLeft: 0, listStyle: "none" }}>
-                  <li className="timeline-topico">
-                    <span className="timeline-topico-dot"></span>
-                    Sistema de gestão de impressoras escolares
-                  </li>
-                  <li className="timeline-topico">
-                    <span className="timeline-topico-dot"></span>
-                    PostgreSQL, autenticação e painéis administrativos
-                  </li>
-                  <li className="timeline-topico">
-                    <span className="timeline-topico-dot"></span>
-                    Desenvolvimento individual com foco em escalabilidade
-                  </li>
-                </ul>
-              </div>
-            </div>
-      
-            {/* 2024 - Projeto Thermal Tech */}
+            {/* 2024 - Projeto Thermal Tech - DIREITA */}
             <div className="timeline-item timeline-right">
               <div className="timeline-content">
                 <div className="timeline-header">
@@ -1084,11 +1092,11 @@ function App() {
               </div>
             </div>
       
-            {/* 2024 - FlowTime */}
+            {/* 2024 - FlowTime - ESQUERDA */}
             <div className="timeline-item timeline-left">
               <div className="timeline-content">
-                <div className="timeline-header">
-                  <span className="period-badge period-full-stack">Out/2024 - Jan/2025</span>
+                <div className="timeline-header" style={{ display: "flex", alignItems: "center", gap: "18.7rem" }}>
+                  <span className="period-badge period-full-stack" style={{ background: "var(--primary-blue)" }}>Out/2024 - Jan/2025</span>
                   <span className="timeline-icon" style={{ background: "var(--primary-blue)" }}>
                     <FaBriefcase color="#fff" />
                   </span>
@@ -1107,6 +1115,34 @@ function App() {
                   <li className="timeline-topico">
                     <span className="timeline-topico-dot"></span>
                     Desktop com Electron.js, entregue em ambiente real
+                  </li>
+                </ul>
+              </div>
+            </div>
+      
+            {/* 2025 - Projeto TonerTrack - DIREITA */}
+            <div className="timeline-item timeline-right">
+              <div className="timeline-content">
+                <div className="timeline-header">
+                  <span className="timeline-icon" style={{ background: "#ff9800" }}>
+                    <i className="fas fa-laptop-code"></i>
+                  </span>
+                  <span className="period-badge" style={{ background: "#ff9800" }}>Mar/2025 - Jun/2025</span>
+                </div>
+                <h4 className="mb-1" style={{ color: "#ff9800", fontWeight: 700 }}>Desenvolvedor Full Stack</h4>
+                <span className="company-type" style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block" }}>Projeto TonerTrack</span>
+                <ul style={{ paddingLeft: 0, listStyle: "none" }}>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Sistema de gestão de impressoras escolares
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    PostgreSQL, autenticação e painéis administrativos
+                  </li>
+                  <li className="timeline-topico">
+                    <span className="timeline-topico-dot"></span>
+                    Desenvolvimento individual com foco em escalabilidade
                   </li>
                 </ul>
               </div>

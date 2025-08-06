@@ -233,68 +233,73 @@
     box-shadow: 0 0 0 4px #e3f2fd;
 }
 
-/* =========================
-   MODAL POPUP - DARK MODE
-   ========================= */
 .dark-mode .project-modal-content {
-    background: linear-gradient(135deg, #162447 40%, #263799 100%);
+    background: linear-gradient(135deg, #162447 0%, #007987 100%) !important;
     color: #e6edf3;
-    border: none;
+    border: 2px solid rgba(144, 202, 249, 0.3) !important;
+    box-shadow: 0 30px 80px rgba(38, 55, 153, 0.25), 0 15px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     scrollbar-color: #263799 #162447;
 }
 
-.dark-mode .project-modal-content::-webkit-scrollbar-thumb {
-    background: #263799;
+.dark-mode .project-modal-header {
+    background: linear-gradient(135deg, #1a2448 0%, #263799 70%, #1565c0 100%) !important;
+    border: 3px solid rgba(144, 202, 249, 0.4) !important;
+    box-shadow: 0 25px 60px rgba(38, 55, 153, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.dark-mode .project-modal-content::-webkit-scrollbar-thumb:hover {
-    background: #1e88e5;
-}
-
-.dark-mode .feature-row {
-    background: #1a2448;
-    border-color: #263799;
-}
-
-.dark-mode .feature-row:hover {
-    background: #263799;
-    border-color: #1e88e5;
-}
-
-.dark-mode .tech-details-card {
-    background: #162447;
-    border-color: #263799;
-    color: #e6edf3;
-}
-
-.dark-mode .tech-details-card:hover {
-    background: #263799;
-    border-color: #1e88e5;
-}
-
-.dark-mode .tech-tag {
-    background: #162447;
-    color: #90caf9;
-    border-color: #263799;
-}
-
-.dark-mode .tech-tag:hover {
-    background: #1e88e5;
-    color: #fff;
-    border-color: #1e88e5;
-}
-
-.dark-mode .tech-category-title {
-    color: #90caf9;
+.dark-mode .project-modal-main-row {
+    background: linear-gradient(135deg, #1a2448 0%, #162447 100%) !important;
+    border: 2px solid rgba(144, 202, 249, 0.2) !important;
+    box-shadow: 0 12px 40px rgba(38, 55, 153, 0.2);
 }
 
 .dark-mode .project-modal-summary {
-    background: #162447;
+    background: linear-gradient(135deg, #263799 0%, #1565c0 50%, #007987 100%) !important;
+    border: 3px solid rgba(144, 202, 249, 0.5) !important;
     color: #e6edf3;
-    box-shadow: 0 2px 12px rgba(30, 136, 229, 0.10);
+    box-shadow: 0 25px 70px rgba(38, 55, 153, 0.35), 0 10px 30px rgba(38, 55, 153, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.dark-mode .project-modal-header .project-modal-title {
+.dark-mode .project-modal-summary:hover {
+    background: linear-gradient(135deg, #1565c0 0%, #007987 100%) !important;
+    border-color: rgba(144, 202, 249, 0.8) !important;
+    box-shadow: 0 35px 90px rgba(38, 55, 153, 0.45);
+}
+
+.dark-mode .feature-row {
+    background: linear-gradient(135deg, #1a2448 40%, #263799 100%) !important;
+    border: 1px solid rgba(144, 202, 249, 0.2) !important;
+    box-shadow: 0 8px 25px rgba(38, 55, 153, 0.12), 0 3px 12px rgba(38, 55, 153, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .feature-row:hover {
+    background: linear-gradient(135deg, #263799 0%, #1565c0 50%, #007987 100%) !important;
+    border-color: rgba(144, 202, 249, 0.4) !important;
+    box-shadow: 0 12px 30px rgba(38, 55, 153, 0.15), 0 5px 15px rgba(38, 55, 153, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .tech-details-card {
+    background: linear-gradient(135deg, #1a2448 40%, #263799 100%) !important;
+    border: 2px solid rgba(144, 202, 249, 0.3) !important;
+    box-shadow: 0 15px 40px rgba(38, 55, 153, 0.15), 0 6px 20px rgba(38, 55, 153, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .tech-details-card:hover {
+    background: linear-gradient(145deg, #263799 0%, #1565c0 40%, #007987 100%) !important;
+    border-color: rgba(144, 202, 249, 0.6) !important;
+    box-shadow: 0 20px 50px rgba(38, 55, 153, 0.18), 0 8px 25px rgba(38, 55, 153, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .tech-tag {
+    background: linear-gradient(135deg, #1a2448 0%, #263799 100%);
     color: #90caf9;
-    text-shadow: 0 2px 12px #162447;
+    border: 2px solid rgba(144, 202, 249, 0.3) !important;
+    box-shadow: 0 4px 15px rgba(38, 55, 153, 0.10), 0 2px 6px rgba(38, 55, 153, 0.06);
+}
+
+.dark-mode .tech-tag:hover {
+    background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%) !important;
+    color: #1a2448 !important;
+    border-color: #90caf9 !important;
+    box-shadow: 0 8px 20px rgba(144, 202, 249, 0.20), 0 3px 10px rgba(144, 202, 249, 0.15);
 }
