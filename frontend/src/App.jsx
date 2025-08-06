@@ -6,6 +6,7 @@ import './styles/index.css';
 import './styles/dark-mode.css';
 import './styles/media-queries.css';
 import './styles/animations.css';
+import './styles/Popup.css';
 import { FaBriefcase } from "react-icons/fa";
 import {
   FaMoon,
@@ -306,10 +307,12 @@ function App() {
               </h5>
               <button
                 type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+                className="modal-close-btn"
+                aria-label="Fechar"
+                onClick={() => setIsModalOpen(false)}
+              >
+                ×
+              </button>
             </div>
             <div className="modal-body">
               <img
