@@ -256,7 +256,7 @@
 .dark-mode .project-modal-summary {
     background: linear-gradient(135deg, #263799 0%, #1565c0 50%, #007987 100%) !important;
     border: 3px solid rgba(144, 202, 249, 0.5) !important;
-    color: #e6edf3;
+    color: #fff;
     box-shadow: 0 25px 70px rgba(38, 55, 153, 0.35), 0 10px 30px rgba(38, 55, 153, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -302,4 +302,36 @@
     color: #1a2448 !important;
     border-color: #90caf9 !important;
     box-shadow: 0 8px 20px rgba(144, 202, 249, 0.20), 0 3px 10px rgba(144, 202, 249, 0.15);
+}
+
+.dark-mode .image-modal-content {
+  background: linear-gradient(135deg, #162447 0%, #007987 100%) !important;
+  color: #e6edf3;
+  border: 2px solid rgba(144, 202, 249, 0.3) !important;
+  box-shadow: 0 30px 80px rgba(38, 55, 153, 0.25), 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .image-modal-header {
+  border-bottom-color: rgba(144, 202, 249, 0.2);
+}
+
+.dark-mode .image-modal-title {
+  color: #90caf9;
+}
+
+.dark-mode .image-modal-img {
+  border-color: rgba(144, 202, 249, 0.4);
+  box-shadow: 0 15px 50px rgba(38, 55, 153, 0.25);
+}
+
+.dark-mode .image-modal-img:hover {
+  box-shadow: 0 20px 60px rgba(38, 55, 153, 0.35);
+}
+
+.dark-mode .project-modal-summary::before, .dark-mode .project-modal-summary::after {
+    color: #000;
+}
+
+.dark-mode .feature-desc {
+    color: #e6edf3;
 }
