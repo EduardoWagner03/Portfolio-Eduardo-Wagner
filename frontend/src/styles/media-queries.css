@@ -1,25 +1,46 @@
-@media (max-width: 576px) {
-    .hero-name {
-        font-size: 1.8rem;
-    }
-
-    .section-title {
-        font-size: 1.75rem;
-    }
-
-    .about-content-modern .about-intro, .about-content-modern .about-journey, .about-content-modern .about-cta,
-    .contact-info-modern, .contact-form-modern, .experience-card-modern {
-        padding: 1.5rem;
-    }
-}
-
 @media (max-width: 768px) {
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+    }
+
     .hero-name {
-        font-size: 2.2rem;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .hero-stats {
+        justify-content: center;
+        gap: 1rem;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+
+    .hero-description,
+    .cta-content p,
+    .intro-text,
+    .project-description,
+    .contact-intro p {
+        text-align: justify;
+        font-size: 1.1rem;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+
+        .skill-header h4  {
+            font-size: 1.3rem;
+        }
+
+    .floating-elements {
+        display: none;
+        flex-direction: column;
     }
 
     .profile-circle {
@@ -32,18 +53,51 @@
         height: 180px;
     }
 
+    .hero-buttons {
+        margin-bottom: 0rem;
+    }
+
     .hero-buttons .btn {
         display: block;
         width: 100%;
         margin: 0.5rem 0;
     }
 
-    .hero-stats {
-        justify-content: center;
-        gap: 1rem;
+    .about-intro h3 {
+        font-size: 1.9rem;
+        flex-direction: column;
     }
 
-    .contact-info-modern, .contact-form-modern {
+    .about-intro,
+    .project-content {
+        padding: 2rem;
+    }
+
+    .about-journey {
+        padding: 1rem;
+    }
+
+    .cta-buttons .btn {
+        width: 70%;
+    }
+
+    .hero-image,
+    .section-header {
+        margin-bottom: 2rem !important;
+    }
+
+    .section-header {
+        margin: 1rem;
+    }
+
+    .projects-section,
+    .about-section {
+        padding: 0rem;
+    }
+
+    .contact-info-modern,
+    .contact-form-modern,
+    .about-cta {
         padding: 2rem;
     }
 
@@ -60,6 +114,97 @@
         align-items: flex-start;
     }
 
+    .journey-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 2.5rem;
+        padding: 1.5rem;
+        background: var(--light-gray);
+        border-radius: var(--border-radius-sm);
+        transition: all 0.3s ease;
+        gap: 1rem;
+    }
+
+    .journey-content {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .skill-tag {
+            padding: 0.8rem 1rem;
+            font-size: 0.9rem;
+            min-height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            white-space: nowrap;
+            line-height: 1.2;
+            width: 100%;
+            max-width: 140px;
+            margin: 0.25rem auto;
+            flex: 1 1 140px;
+        }
+    
+        .skill-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.5rem;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+    .journey-content h4 {
+        color: var(--text-dark);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+        margin-top: 0;
+        line-height: 50px;
+        display: flex;
+        align-items: center;
+    }
+
+    .journey-content p {
+        margin-left: -87px;
+        text-align: justify;
+
+    }
+
+    .journey-item .journey-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--primary-blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        font-size: 1.3rem;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+        margin-top: 0;
+    }
+
+    .journey-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--primary-blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        font-size: 1.5rem;
+        margin-right: 1.5rem;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+    }
+
     .period-badge {
         margin-top: 1rem;
     }
@@ -74,15 +219,21 @@
     }
 
     .timeline:before {
-        left: 20px;
+        display: none;
     }
 
-    .timeline-content {
-        padding: 2rem 1rem 1.5rem 3.5rem;
+    .timeline-item.timeline-left .timeline-content {
+        margin-left: 0rem;
+        width: 100%;
     }
 
-    .timeline-left .timeline-content, .timeline-right .timeline-content {
-        margin: 0 0 0 2.5rem;
+    .timeline-item.timeline-right .timeline-content {
+        width: 100%;
+        margin-right: 0rem;
+    }
+
+    .timeline-header {
+        gap: 5rem;
     }
 
     .timeline-right {
@@ -93,256 +244,48 @@
         left: -6px;
         right: auto;
     }
-}
 
-@media (max-width: 700px) {
-    .project-modal-content {
-        padding: 1rem 0.2rem;
-        max-width: 99vw;
-        border-radius: 1.1rem;
+    .navbar-toggler {
+        border: 2px solid #1e88e5;
     }
 
-    .project-modal-title {
-        font-size: 1.25rem;
+    .navbar-toggler-icon {
+        background-image: none !important;
+        width: 1.8em;
+        height: 1.8em;
+        display: inline-block;
+        position: relative;
     }
 
-    .project-modal-main-row {
-        flex-direction: column;
-        gap: 1.2rem;
-        align-items: center;
+    .icon-gradient {
+        display: none;
     }
 
-    .project-modal-image {
-        max-width: 90vw;
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after,
+    .navbar-toggler-icon span {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: #1e88e5;
+        border-radius: 2px;
+        margin: 6px 0;
+        transition: all 0.3s;
     }
 
-    .feature-img {
-        width: 54px;
-        height: 54px;
+    .navbar-toggler-icon span {
+        margin: 0;
     }
 
-    .project-modal-summary {
-        padding: 1rem 0.5rem;
+    .navbar-toggler-icon::before {
+        position: absolute;
+        top: 6px;
     }
 
-    .tech-details-card {
-        max-width: 98vw;
-    }
-
-    .project-modal-content {
-        padding: 1rem 0.2rem;
-        max-width: 99vw;
-        border-radius: 1.1rem;
-    }
-
-    .project-modal-title {
-        font-size: 1.25rem;
-    }
-
-    .project-modal-main-row {
-        flex-direction: column;
-        gap: 1.2rem;
-        align-items: center;
-    }
-
-    .project-modal-image {
-        max-width: 90vw;
-    }
-
-    .feature-img {
-        width: 54px;
-        height: 54px;
-    }
-
-    .project-modal-summary {
-        padding: 1rem 0.5rem;
-    }
-}
-
-@media (max-width: 900px) {
-    .project-modal-content {
-        width: 99vw;
-        max-width: 99vw;
-        padding: 1.2rem 0.5rem;
-    }
-
-    .project-modal-content {
-        width: 99vw;
-        max-width: 99vw;
-        padding: 1.2rem 0.5rem;
-    }
-
-    .tech-details-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        min-width: auto;
-    }
-
-    .tech-details-grid .tech-details-card:nth-child(4),
-    .tech-details-grid .tech-details-card:nth-child(5) {
-        grid-column: auto;
-        transform: none;
-        justify-self: center;
-    }
-
-    .tech-details-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 1.5rem;
-    }
-
-    .tech-details-grid .tech-details-card:nth-child(4),
-    .tech-details-grid .tech-details-card:nth-child(5) {
-        grid-column: auto;
-        transform: none;
-        justify-self: center;
-    }
-
-    .project-modal-content {
-        padding: 2rem 1.5rem;
-        margin: 1rem;
-        width: calc(100% - 2rem);
-    }
-
-    .project-modal-main-row {
-        flex-direction: column;
-        gap: 2rem;
-        align-items: center;
-    }
-
-    .project-modal-image {
-        max-width: 100%;
-    }
-
-    .feature-row {
-        flex-direction: column;
-        text-align: center;
-        gap: 1.5rem;
-        padding: 2rem;
-        border-radius: 1.5rem;
-    }
-
-    .feature-img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .project-modal-title {
-        font-size: 2.2rem;
-    }
-
-    .tech-details-card {
-        border-radius: 1.5rem;
-        padding: 1.8rem 1.5rem;
-        min-height: 160px;
-    }
-}
-
-@media (min-width: 900px) {
-    .tech-details-grid .tech-details-card:nth-child(4) {
-        grid-column: 2;
-    }
-
-    .tech-details-grid .tech-details-card:nth-child(5) {
-        grid-column: 3;
-    }
-
-    .tech-details-grid .tech-details-card:nth-child(4) {
-        grid-column: 1;
-        justify-self: center;
-        transform: translateX(50%);
-    }
-
-    .tech-details-grid .tech-details-card:nth-child(5) {
-        grid-column: 3;
-        justify-self: center;
-        transform: translateX(-50%);
-    }
-}
-
-@media (max-width: 991px) {
-    .hero-content {
-        text-align: center;
-        margin-bottom: 3rem;
-    }
-
-    .hero-name {
-        font-size: 2.8rem;
-    }
-
-    .profile-circle {
-        width: 250px;
-        height: 250px;
-    }
-
-    .profile-img {
-        width: 230px;
-        height: 230px;
-    }
-
-    .social-links-minimal {
-        justify-content: center;
-        margin-top: 1rem;
-    }
-}
-
-@media (max-width: 1100px) {
-    .project-modal-content {
-        width: 99vw;
-        max-width: 99vw;
-        padding: 1.2rem 0.5rem;
-    }
-
-    .project-modal-content {
-        width: 99vw;
-        max-width: 99vw;
-        padding: 1.2rem 0.5rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .project-modal-content {
-        padding: 1.5rem 1rem;
-        border-radius: 1.5rem;
-    }
-
-    .tech-details-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.2rem;
-    }
-
-    .project-modal-title {
-        font-size: 1.8rem;
-    }
-
-    .feature-img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .project-modal-summary {
-        padding: 2rem;
-    }
-
-    .tech-tags {
-        grid-template-columns: 1fr;
-        gap: 0.6rem;
-    }
-
-    .feature-row {
-        padding: 1.5rem;
-        gap: 1.2rem;
-        border-radius: 1.2rem;
-    }
-
-    .tech-details-card {
-        border-radius: 1.2rem;
-        padding: 1.5rem 1.2rem;
-        min-height: 140px;
-    }
-
-    .tech-tag {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.8rem;
-        min-height: 32px;
+    .navbar-toggler-icon::after {
+        position: absolute;
+        bottom: 6px;
     }
 }
 

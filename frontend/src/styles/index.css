@@ -729,11 +729,19 @@
 .skill-tag {
   background: rgba(30, 136, 229, 0.1);
   color: var(--primary-blue);
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1rem;
   border-radius: 2rem;
   font-size: 0.85rem;
   font-weight: 500;
   transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  min-width: fit-content;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.2;
 }
 
 .skill-tag:hover {
@@ -741,7 +749,6 @@
   color: var(--white);
   transform: translateY(-2px);
 }
-
 .methodology-category {
   background: var(--gradient-primary);
   color: var(--white);
