@@ -889,7 +889,7 @@
 
 .timeline-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 11.2rem;
   margin-bottom: 1.2rem;
   min-height: 48px;
@@ -1087,6 +1087,7 @@
   padding: 0.5rem 1.2rem;
   border-radius: 2rem;
   display: inline-block;
+  transform: translateY(-8px);
 }
 
 .timeline-item.timeline-left .period-badge {

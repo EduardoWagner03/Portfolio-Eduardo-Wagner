@@ -348,22 +348,46 @@ function App() {
       description:
         "Sistema web completo para gestão de clínicas de podologia, trazendo eficiência, organização e praticidade para o dia a dia das clínicas. O FlowTime permite otimizar agendamentos, atendimento ao cliente e processos administrativos, tudo em uma plataforma intuitiva.",
       historia:
-        "O FlowTime foi iniciado em outubro de 2024 e finalizado em janeiro de 2025, surgindo da necessidade de digitalizar e automatizar o fluxo de trabalho em clínicas de podologia. O sistema oferece dashboard interativo, relatórios em PDF, assinatura digital e recursos avançados para facilitar o controle de agendamentos, pacientes e receitas. Com uma interface moderna e funcionalidades robustas, o FlowTime proporciona mais agilidade, segurança e qualidade no atendimento, sendo implementado com sucesso em ambiente real.",
+        "O FlowTime foi iniciado em outubro de 2024 e finalizado em janeiro de 2025, desenvolvido em equipe de 3 pessoas. O sistema surgiu da necessidade de digitalizar e automatizar o fluxo de trabalho em clínicas de podologia. O projeto oferece dashboard interativo, relatórios em PDF, assinatura digital e recursos avançados para facilitar o controle de agendamentos, pacientes e receitas. Com uma interface moderna e funcionalidades robustas, o FlowTime proporciona mais agilidade, segurança e qualidade no atendimento, sendo implementado com sucesso em ambiente real.",
       funcionalidades: [
         {
           imagem: "/images/homeFlowtime.png",
           titulo: "Dashboard Interativo",
-          descricao: "Visualize rapidamente os principais indicadores da clínica, como agendamentos, atendimentos e receitas."
+          descricao: "Visualize rapidamente os principais indicadores da clínica, como agendamentos, atendimentos e receitas. Desenvolvimento completo do frontend e implementação dos gráficos interativos."
         },
         {
           imagem: "/images/AppointmentsFlowTime.png",
           titulo: "Gestão de Agendas",
-          descricao: "Permite marcar, editar e visualizar consultas de forma simples e rápida."
+          descricao: "Permite marcar, editar e visualizar consultas de forma simples e rápida. Interface responsiva e intuitiva desenvolvida integralmente."
         },
         {
           imagem: "/images/FichaAnamnese.png",
           titulo: "Relatórios em PDF",
-          descricao: "Gere relatórios detalhados de atendimentos, receitas e pacientes em poucos cliques."
+          descricao: "Gere relatórios detalhados de atendimentos, receitas e pacientes em poucos cliques. Frontend da funcionalidade e sistema de tokens de segurança para acesso."
+        }
+      ],
+      minhasResponsabilidades: [
+        "🎨 Frontend Completo - Desenvolvimento de toda interface do usuário",
+        "📊 Gráficos Interativos - Implementação de dashboards e visualizações",
+        "🔐 Sistema de Tokens - Desenvolvimento de autenticação e segurança",
+        "📱 Responsividade - Adaptação para dispositivos móveis e desktop",
+        "✨ UX/UI - Implementação do design e experiência do usuário"
+      ],
+      equipe: [
+        {
+          nome: "Eduardo Wagner",
+          papel: "Frontend Developer",
+          responsabilidades: "Frontend completo, gráficos interativos, sistema de tokens de segurança"
+        },
+        {
+          nome: "Victor Bueno", 
+          papel: "Backend Developer",
+          responsabilidades: "Toda arquitetura do backend, APIs, banco de dados"
+        },
+        {
+          nome: "Lucas Ulbrich",
+          papel: "UI/UX Designer",
+          responsabilidades: "Prototipagem das páginas no Figma, design system"
         }
       ],
       frontend: [
@@ -372,7 +396,8 @@ function App() {
         "EJS",
         "JavaScript",
         "Electron.js",
-        "SweetAlert2"
+        "SweetAlert2",
+        "Chart.js"
       ],
       backend: [
         "Node.js",
@@ -421,22 +446,37 @@ function App() {
       description:
         "Sistema desenvolvido para automatizar o controle de suprimentos de impressão em instituições de ensino, reduzindo desperdícios e fornecendo relatórios completos. O TonnerTrack facilita a gestão de impressoras e toners, trazendo mais eficiência e organização para o ambiente escolar.",
       historia:
-        "O TonnerTrack foi um projeto de Extensão Acadêmica iniciado em fevereiro de 2025 e finalizado em junho de 2025, realizado em uma escola pública. O sistema surgiu da necessidade real de controlar o uso de impressoras e toners, automatizando registros, gerando relatórios detalhados e reduzindo desperdícios. Com uma interface intuitiva e recursos inteligentes, o TonnerTrack contribuiu para a melhoria da gestão de suprimentos e foi implementado com sucesso na instituição.",
+        "O TonnerTrack foi um projeto de Extensão Acadêmica iniciado em fevereiro de 2025 e finalizado em junho de 2025, realizado em uma escola pública. O sistema surgiu da necessidade real de controlar o uso de impressoras e toners, automatizando registros, gerando relatórios detalhados e reduzindo desperdícios. O projeto conta com interface intuitiva e recursos inteligentes, contribuindo para a melhoria da gestão de suprimentos e sendo implementado com sucesso na instituição.",
       funcionalidades: [
         {
           imagem: "/images/GerenciamentoTonnerTrack.png",
           titulo: "Controle de Suprimentos",
-          descricao: "Gerencie o estoque de toners e impressoras, evitando desperdícios e falta de material."
+          descricao: "Gerencie o estoque de toners e impressoras, evitando desperdícios e falta de material. Sistema completo desenvolvido do zero."
         },
         {
           imagem: "/images/Relatórios.png",
           titulo: "Relatórios Detalhados",
-          descricao: "Gere relatórios completos sobre o uso de impressoras, facilitando a tomada de decisão."
+          descricao: "Gere relatórios completos sobre o uso de impressoras, facilitando a tomada de decisão. Interface e backend desenvolvidos integralmente."
         },
         {
           imagem: "/images/NotificacaoTonnerTrac.png",
           titulo: "Alertas Inteligentes",
-          descricao: "Receba notificações quando o estoque estiver baixo ou houver necessidade de manutenção."
+          descricao: "Receba notificações quando o estoque estiver baixo ou houver necessidade de manutenção. Sistema de notificações desenvolvido por completo."
+        }
+      ],
+      minhasResponsabilidades: [
+        "🎨 Desenvolvimento Completo - Frontend e Backend do zero",
+        "🗄️ Banco de Dados - Modelagem e implementação PostgreSQL",
+        "🔐 Autenticação - Sistema de login e controle de acesso",
+        "📊 Relatórios - Geração de relatórios e dashboards",
+        "📱 Interface Responsiva - Design adaptável para todos dispositivos",
+        "🔧 Deploy e Manutenção - Implementação em ambiente de produção"
+      ],
+      equipe: [
+        {
+          nome: "Eduardo Wagner",
+          papel: "Desenvolvedor Full Stack Solo",
+          responsabilidades: "Desenvolvimento completo do sistema, desde planejamento até implementação final"
         }
       ],
       frontend: [
@@ -485,23 +525,51 @@ function App() {
       description:
         "Projeto acadêmico em dupla que criou um sistema CMMS integrado com IoT para monitoramento e controle de ambientes climatizados. Permite gerenciar equipamentos de ar-condicionado, registrar chamados, gerar ordens de serviço e monitorar condições ambientais em tempo real via sensores MQTT. Conta ainda com chat em tempo real para equipes.",
       historia:
-        "O ThermalTech está sendo desenvolvido como parte de um projeto acadêmico na faculdade, com início em 2025. O objetivo é criar um sistema robusto para monitoramento e automação de ambientes industriais, integrando sensores IoT, dashboards, relatórios e comunicação entre equipes. O sistema está em constante evolução, recebendo melhorias e novas funcionalidades conforme o desenvolvimento avança.",
+        "O ThermalTech está sendo desenvolvido como parte de um projeto acadêmico na faculdade, com início em 2025, desenvolvido em dupla. O objetivo é criar um sistema robusto para monitoramento e automação de ambientes industriais, integrando sensores IoT, dashboards, relatórios e comunicação entre equipes. O sistema está em constante evolução, recebendo melhorias e novas funcionalidades conforme o desenvolvimento avança.",
       funcionalidades: [
         {
           imagem: "/images/Monitoriamento.png",
           titulo: "Monitoramento em Tempo Real",
-          descricao: "Acompanhe a temperatura e o status dos equipamentos em tempo real através de sensores IoT."
+          descricao: "Acompanhe a temperatura e o status dos equipamentos em tempo real através de sensores IoT. Frontend completo e sistema de segurança implementado."
         },
         {
           imagem: "/images/ConsultarChamados.png",
           titulo: "Gestão de Chamados",
-          descricao: "Registre, acompanhe e resolva chamados técnicos de forma centralizada e eficiente."
+          descricao: "Registre, acompanhe e resolva chamados técnicos de forma centralizada e eficiente. Interface desenvolvida com sistema de auditoria avançado."
         },
         {
           imagem: "/images/ChatTT.png",
           titulo: "Chat Integrado",
-          descricao: "Comunique-se com a equipe diretamente pelo sistema, agilizando o suporte e a manutenção."
+          descricao: "Comunique-se com a equipe diretamente pelo sistema, agilizando o suporte e a manutenção. Frontend e middleware de segurança implementados."
         }
+      ],
+      minhasResponsabilidades: [
+        "🎨 Frontend Completo - Desenvolvimento de toda interface do sistema",
+        "🛡️ Middleware de Auditoria - Sistema avançado de detecção de ameaças",
+        "🔍 Detecção de Ameaças - SQL injection, XSS, bots maliciosos",
+        "📊 Threat Scoring - Sistema inteligente de pontuação de ameaças", 
+        "🚫 Bloqueio Inteligente - IPs suspeitos e rate limiting",
+        "📧 Alertas em Tempo Real - Notificações por email automáticas",
+        "📋 Relatórios de Segurança - Monitoramento contínuo automatizado"
+      ],
+      equipe: [
+        {
+          nome: "Eduardo Wagner",
+          papel: "Frontend & Security Developer", 
+          responsabilidades: "Frontend completo, sistema de segurança avançado, middleware de auditoria, detecção de ameaças"
+        },
+        {
+          nome: "Victor Bueno",
+          papel: "Backend & IoT Developer",
+          responsabilidades: "Backend, integração IoT, sensores ESP, Firebase Realtime Database, comunicação WebSocket/SSE"
+        }
+      ],
+      integracaoIoT: [
+        "🌡️ Captura de Temperatura - Sensores via HTTP POST no endpoint /api/sensor-data",
+        "📡 Comunicação Bidirecional - ESP via Firebase Realtime Database", 
+        "⚡ Tempo Real - Server-Sent Events (SSE) e WebSocket",
+        "🎯 Controle Remoto - Comandos de temperatura, velocidade e modo",
+        "⚠️ Alertas Automáticos - Verificação de limites por sala"
       ],
       frontend: [
         "HTML5",
@@ -553,7 +621,7 @@ function App() {
       status: "Em Desenvolvimento",
       image: "/images/ThermalTech.png",
       link: "#"
-    },
+    }
   ]
 
   const skills = {
@@ -1238,28 +1306,12 @@ function App() {
               <div className="project-modal-header">
                 <h2 className="project-modal-title">{selectedProject.title}</h2>
                 {selectedProject.subtitulo && (
-                  <div
-                    className="project-status-badge"
-                    style={{
-                      color:
-                        selectedProject.status === "Em Desenvolvimento"
-                          ? "#795548"
-                          : "#fff",
-                      background:
-                        selectedProject.status === "Em Desenvolvimento"
-                          ? "#ffc107"
-                          : "#4caf50",
-                      borderRadius: "1rem",
-                      padding: "0.4rem 1.2rem",
-                      fontWeight: 700,
-                      margin: "1rem auto",
-                      display: "inline-block",
-                    }}
-                  >
+                  <div className="project-status-badge">
                     {selectedProject.subtitulo}
                   </div>
                 )}
               </div>
+              
               <DialogDescription>
                 <div className="project-modal-main-row">
                   <img
@@ -1273,6 +1325,119 @@ function App() {
                 </div>
               </DialogDescription>
       
+              {/* Minhas Responsabilidades */}
+              {selectedProject.minhasResponsabilidades && (
+                <div className="project-responsibilities">
+                  <h4 className="project-responsibilities-title">
+                    🎯 Minhas Responsabilidades no Projeto
+                  </h4>
+                  <div className="project-responsibilities-container">
+                    <div className="project-responsibilities-bg-decoration"></div>
+                    <div className="project-responsibilities-content">
+                      {selectedProject.minhasResponsabilidades.map((resp, idx) => (
+                        <div key={idx} className="project-responsibility-item">
+                          <span className="project-responsibility-emoji">✨</span>
+                          {resp}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+              
+              {/* Equipe do Projeto */}
+              {selectedProject.equipe && (
+                <div className="project-team">
+                  <h4 className="project-team-title">
+                    👨‍� Equipe do Projeto
+                  </h4>
+                  <div className="project-team-grid">
+                    {selectedProject.equipe.map((membro, idx) => {
+                      // Definir redes sociais para cada membro
+                      const redesSociais = {
+                        "Eduardo Wagner": {
+                          github: "https://github.com/EduardoWagner03",
+                          linkedin: "https://www.linkedin.com/in/eduardowagner03/"
+                        },
+                        "Victor Bueno": {
+                          github: "https://github.com/victorbueno920",
+                          linkedin: "https://www.linkedin.com/in/victor-bueno-365461288/"
+                        },
+                        "Lucas Ulbrich": {
+                          github: "https://github.com/lucasulbrich",
+                          linkedin: "https://www.linkedin.com/in/lucas-ulbrich/"
+                        }
+                      };
+              
+                      const redes = redesSociais[membro.nome] || { github: "#", linkedin: "#" };
+              
+                      return (
+                        <div key={idx} className="project-team-member">
+                          {/* Avatar placeholder */}
+                          <div className="project-team-avatar">
+                            {membro.nome.split(' ').map(n => n[0]).join('')}
+                          </div>
+              
+                          <h6 className="project-team-member-name">
+                            {membro.nome}
+                          </h6>
+              
+                          <div className="project-team-member-role">
+                            {membro.papel}
+                          </div>
+              
+                          <div className="project-team-member-responsibilities">
+                            {membro.responsabilidades}
+                          </div>
+              
+                          {/* Redes Sociais */}
+                          <div className="project-team-social-links">
+                            <a
+                              href={redes.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="project-team-social-link project-team-github"
+                            >
+                              <FaGithub />
+                            </a>
+              
+                            <a
+                              href={redes.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="project-team-social-link project-team-linkedin"
+                            >
+                              <FaLinkedin />
+                            </a>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+      
+              {/* Integração IoT (só para ThermalTech) */}
+              {selectedProject.integracaoIoT && (
+                <div className="iot-integration">
+                  <h4 className="iot-integration-title">
+                    🌐 Integração IoT Desenvolvida pelo Victor
+                  </h4>
+                  <div className="iot-integration-container">
+                    <div className="iot-integration-bg-decoration"></div>
+                    <div className="iot-integration-content">
+                      {selectedProject.integracaoIoT.map((feature, idx) => (
+                        <div key={idx} className="iot-integration-item">
+                          <span className="iot-integration-emoji">🔧</span>
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+      
+              {/* Funcionalidades do Projeto */}
               <div className="project-features">
                 {selectedProject.funcionalidades &&
                   selectedProject.funcionalidades.map((func, idx) => (
@@ -1285,7 +1450,7 @@ function App() {
                           handleImageClick(func.imagem, func.titulo)
                         }
                       />
-                      <div>
+                      <div className="feature-content">
                         <h6 className="feature-title">{func.titulo}</h6>
                         <p className="feature-desc">{func.descricao}</p>
                       </div>

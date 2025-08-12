@@ -335,3 +335,156 @@
 .dark-mode .feature-desc {
     color: #e6edf3;
 }
+
+/* Minhas Responsabilidades no Projeto - Dark Mode */
+.dark-mode .project-responsibilities-title {
+  color: #90caf9 !important;
+  text-shadow: 0 2px 8px rgba(144, 202, 249, 0.3) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  line-height: 1.2 !important;
+}
+
+.dark-mode .project-responsibilities-container {
+  background: linear-gradient(135deg, #1a2448 0%, #263799 30%, #1565c0 70%, #007987 100%) !important;
+  border: 3px solid rgba(144, 202, 249, 0.4) !important;
+  box-shadow: 0 20px 60px rgba(38, 55, 153, 0.25), 0 8px 25px rgba(38, 55, 153, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode .project-responsibilities-bg-decoration {
+  background: radial-gradient(circle, rgba(144, 202, 249, 0.15) 0%, transparent 70%) !important;
+}
+
+.dark-mode .project-responsibility-item {
+  background: linear-gradient(135deg, #162447 0%, #1a2448 100%) !important;
+  color: #e6edf3 !important;
+  border: 2px solid rgba(144, 202, 249, 0.3) !important;
+  box-shadow: 0 8px 25px rgba(38, 55, 153, 0.15), 0 3px 10px rgba(38, 55, 153, 0.08) !important;
+}
+
+.dark-mode .project-responsibility-item:hover {
+  background: linear-gradient(135deg, #263799 0%, #1565c0 100%) !important;
+  color: #fff !important;
+  border-color: #90caf9 !important;
+  box-shadow: 0 15px 40px rgba(38, 55, 153, 0.25), 0 6px 20px rgba(38, 55, 153, 0.15) !important;
+}
+
+.dark-mode .project-responsibility-emoji {
+  background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 2px 4px rgba(144, 202, 249, 0.4)) !important;
+}
+
+/* Equipe do Projeto - Dark Mode */
+.dark-mode .project-team-title {
+  color: #90caf9 !important;
+  text-shadow: 0 2px 8px rgba(144, 202, 249, 0.3) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  line-height: 1.2 !important;
+}
+
+.dark-mode .project-team-member {
+  background: linear-gradient(135deg, #162447 0%, #1a2448 30%, #263799 100%) !important;
+  border: 3px solid rgba(144, 202, 249, 0.3) !important;
+  color: #e6edf3 !important;
+  box-shadow: 0 15px 40px rgba(38, 55, 153, 0.15), 0 6px 20px rgba(38, 55, 153, 0.08) !important;
+}
+
+.dark-mode .project-team-member:hover {
+  background: linear-gradient(135deg, #1565c0 0%, #263799 30%, #1a2448 100%) !important;
+  border-color: #90caf9 !important;
+  box-shadow: 0 25px 60px rgba(38, 55, 153, 0.25), 0 10px 30px rgba(38, 55, 153, 0.15) !important;
+}
+
+.dark-mode .project-team-avatar {
+  background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%) !important;
+  border: 4px solid #162447 !important;
+  box-shadow: 0 8px 25px rgba(144, 202, 249, 0.4) !important;
+  color: #1a2448 !important;
+}
+
+.dark-mode .project-team-member-name {
+  color: #90caf9 !important;
+}
+
+.dark-mode .project-team-member-role {
+  background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%) !important;
+  color: #1a2448 !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 15px rgba(144, 202, 249, 0.4) !important;
+}
+
+.dark-mode .project-team-member-responsibilities {
+  color: #b3d8f7 !important;
+}
+
+.dark-mode .project-team-github {
+  background: linear-gradient(135deg, #161b22 0%, #0d1117 100%) !important;
+  border: 2px solid rgba(144, 202, 249, 0.3) !important;
+  box-shadow: 0 6px 20px rgba(22, 27, 34, 0.4) !important;
+}
+
+.dark-mode .project-team-github:hover {
+  background: linear-gradient(135deg, #21262d 0%, #161b22 100%) !important;
+  border-color: #90caf9 !important;
+  box-shadow: 0 10px 30px rgba(22, 27, 34, 0.5) !important;
+}
+
+.dark-mode .project-team-linkedin {
+  background: linear-gradient(135deg, #004182 0%, #0073b1 100%) !important;
+  border: 2px solid rgba(144, 202, 249, 0.3) !important;
+  box-shadow: 0 6px 20px rgba(0, 65, 130, 0.4) !important;
+}
+
+.dark-mode .project-team-linkedin:hover {
+  background: linear-gradient(135deg, #005a8b 0%, #0084c7 100%) !important;
+  border-color: #90caf9 !important;
+  box-shadow: 0 10px 30px rgba(0, 65, 130, 0.5) !important;
+}
+
+/* Integração IoT - Dark Mode */
+.dark-mode .iot-integration-title {
+  color: #90caf9 !important;
+  text-shadow: 0 2px 8px rgba(144, 202, 249, 0.3) !important;
+}
+
+.dark-mode .iot-integration-container {
+  background: linear-gradient(135deg, #1a2448 0%, #0d2818 30%, #1b5e20 70%, #2e7d32 100%) !important;
+  border: 3px solid rgba(102, 187, 106, 0.4) !important;
+  box-shadow: 0 20px 60px rgba(27, 94, 32, 0.25), 0 8px 25px rgba(27, 94, 32, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode .iot-integration-bg-decoration {
+  background: radial-gradient(circle, rgba(102, 187, 106, 0.15) 0%, transparent 70%) !important;
+}
+
+.dark-mode .iot-integration-item {
+  background: linear-gradient(135deg, #162447 0%, #0d2818 100%) !important;
+  color: #e6edf3 !important;
+  border: 2px solid rgba(102, 187, 106, 0.3) !important;
+  box-shadow: 0 8px 25px rgba(27, 94, 32, 0.15), 0 3px 10px rgba(27, 94, 32, 0.08) !important;
+}
+
+.dark-mode .iot-integration-item:hover {
+  background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%) !important;
+  color: #fff !important;
+  border-color: #66bb6a !important;
+  box-shadow: 0 15px 40px rgba(27, 94, 32, 0.25), 0 6px 20px rgba(27, 94, 32, 0.15) !important;
+}
+
+.dark-mode .iot-integration-emoji {
+  background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 2px 4px rgba(102, 187, 106, 0.4)) !important;
+}
