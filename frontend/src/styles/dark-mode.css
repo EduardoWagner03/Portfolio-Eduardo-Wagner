@@ -29,11 +29,11 @@
 }
 
 .dark-mode .hero-stats .stat-icon {
-    color: #00bcd4; 
+    color: #00bcd4;
 }
 
 .dark-mode .hero-stats .stat-label {
-    color: #6cfff7; 
+    color: #6cfff7;
 }
 
 .dark-mode .hero-stats .stat-desc {
@@ -140,7 +140,7 @@
     color: #b0bec5;
 }
 
-.dark-mode .about-journey, .dark-mode .project-content, .dark-mode .project-card-modern {
+.dark-mode .about-journey, .dark-mode .project-content,.dark-mode .project-card-modern {
     background: #173347;
 }
 
@@ -156,8 +156,7 @@
     background: linear-gradient(135deg, #3f60b6 0%, #007987 100%) !important;
 }
 
-.dark-mode .journey-content h4, .dark-mode .cta-content h4, .dark-mode .skill-header h4, .dark-mode .project-title,
-.dark-mode .modern-form label, .dark-mode .method-info h5, .dark-mode .form-control::placeholder {
+.dark-mode .journey-content h4, .dark-mode .cta-content h4, .dark-mode .skill-header h4, .dark-mode .project-title,.dark-mode .modern-form label, .dark-mode .method-info h5, .dark-mode .form-control::placeholder {
     color: #fff;
 }
 
@@ -305,27 +304,27 @@
 }
 
 .dark-mode .image-modal-content {
-  background: linear-gradient(135deg, #162447 0%, #007987 100%) !important;
-  color: #e6edf3;
-  border: 2px solid rgba(144, 202, 249, 0.3) !important;
-  box-shadow: 0 30px 80px rgba(38, 55, 153, 0.25), 0 15px 40px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #162447 0%, #007987 100%) !important;
+    color: #e6edf3;
+    border: 2px solid rgba(144, 202, 249, 0.3) !important;
+    box-shadow: 0 30px 80px rgba(38, 55, 153, 0.25), 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 .dark-mode .image-modal-header {
-  border-bottom-color: rgba(144, 202, 249, 0.2);
+    border-bottom-color: rgba(144, 202, 249, 0.2);
 }
 
 .dark-mode .image-modal-title {
-  color: #90caf9;
+    color: #90caf9;
 }
 
 .dark-mode .image-modal-img {
-  border-color: rgba(144, 202, 249, 0.4);
-  box-shadow: 0 15px 50px rgba(38, 55, 153, 0.25);
+    border-color: rgba(144, 202, 249, 0.4);
+    box-shadow: 0 15px 50px rgba(38, 55, 153, 0.25);
 }
 
 .dark-mode .image-modal-img:hover {
-  box-shadow: 0 20px 60px rgba(38, 55, 153, 0.35);
+    box-shadow: 0 20px 60px rgba(38, 55, 153, 0.35);
 }
 
 .dark-mode .project-modal-summary::before, .dark-mode .project-modal-summary::after {
@@ -336,191 +335,186 @@
     color: #e6edf3;
 }
 
-/* Minhas Responsabilidades no Projeto - Dark Mode */
 .dark-mode .project-responsibilities-title {
-  color: #90caf9 !important;
-  text-shadow: 0 2px 8px rgba(144, 202, 249, 0.3) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 0.5rem !important;
-  line-height: 1.2 !important;
+    color: #90caf9 !important;
+    text-shadow: 0 2px 8px rgba(144, 202, 249, 0.3) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    line-height: 1.2 !important;
 }
 
 .dark-mode .project-responsibilities-container {
-  background: linear-gradient(135deg, #1a2448 0%, #263799 30%, #1565c0 70%, #007987 100%) !important;
-  border: 3px solid rgba(144, 202, 249, 0.4) !important;
-  box-shadow: 0 20px 60px rgba(38, 55, 153, 0.25), 0 8px 25px rgba(38, 55, 153, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    background: linear-gradient(135deg, #1a2448 0%, #263799 30%, #1565c0 70%, #007987 100%) !important;
+    border: 3px solid rgba(144, 202, 249, 0.4) !important;
+    box-shadow: 0 20px 60px rgba(38, 55, 153, 0.25), 0 8px 25px rgba(38, 55, 153, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
 .dark-mode .project-responsibilities-bg-decoration {
-  background: radial-gradient(circle, rgba(144, 202, 249, 0.15) 0%, transparent 70%) !important;
+    background: radial-gradient(circle, rgba(144, 202, 249, 0.15) 0%, transparent 70%) !important;
 }
 
 .dark-mode .project-responsibility-item {
-  background: linear-gradient(135deg, #162447 0%, #1a2448 100%) !important;
-  color: #e6edf3 !important;
-  border: 2px solid rgba(144, 202, 249, 0.3) !important;
-  box-shadow: 0 8px 25px rgba(38, 55, 153, 0.15), 0 3px 10px rgba(38, 55, 153, 0.08) !important;
+    background: linear-gradient(135deg, #162447 0%, #1a2448 100%) !important;
+    color: #e6edf3 !important;
+    border: 2px solid rgba(144, 202, 249, 0.3) !important;
+    box-shadow: 0 8px 25px rgba(38, 55, 153, 0.15), 0 3px 10px rgba(38, 55, 153, 0.08) !important;
 }
 
 .dark-mode .project-responsibility-item:hover {
-  background: linear-gradient(135deg, #263799 0%, #1565c0 100%) !important;
-  color: #fff !important;
-  border-color: #90caf9 !important;
-  box-shadow: 0 15px 40px rgba(38, 55, 153, 0.25), 0 6px 20px rgba(38, 55, 153, 0.15) !important;
+    background: linear-gradient(135deg, #263799 0%, #1565c0 100%) !important;
+    color: #fff !important;
+    border-color: #90caf9 !important;
+    box-shadow: 0 15px 40px rgba(38, 55, 153, 0.25), 0 6px 20px rgba(38, 55, 153, 0.15) !important;
 }
 
 .dark-mode .project-responsibility-emoji {
-  background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%) !important;
-  background-clip: text !important;
-  -webkit-background-clip: text !important;
-  color: transparent !important;
-  -webkit-text-fill-color: transparent !important;
-  filter: drop-shadow(0 2px 4px rgba(144, 202, 249, 0.4)) !important;
+    background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    filter: drop-shadow(0 2px 4px rgba(144, 202, 249, 0.4)) !important;
 }
 
-/* Equipe do Projeto - Dark Mode */
 .dark-mode .project-team-title {
-  color: #90caf9 !important;
-  text-shadow: 0 2px 8px rgba(144, 202, 249, 0.3) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 0.5rem !important;
-  line-height: 1.2 !important;
+    color: #90caf9 !important;
+    text-shadow: 0 2px 8px rgba(144, 202, 249, 0.3) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    line-height: 1.2 !important;
 }
 
 .dark-mode .project-team-member {
-  background: linear-gradient(135deg, #162447 0%, #1a2448 30%, #263799 100%) !important;
-  border: 3px solid rgba(144, 202, 249, 0.3) !important;
-  color: #e6edf3 !important;
-  box-shadow: 0 15px 40px rgba(38, 55, 153, 0.15), 0 6px 20px rgba(38, 55, 153, 0.08) !important;
+    background: linear-gradient(135deg, #162447 0%, #1a2448 30%, #263799 100%) !important;
+    border: 3px solid rgba(144, 202, 249, 0.3) !important;
+    color: #e6edf3 !important;
+    box-shadow: 0 15px 40px rgba(38, 55, 153, 0.15), 0 6px 20px rgba(38, 55, 153, 0.08) !important;
 }
 
 .dark-mode .project-team-member:hover {
-  background: linear-gradient(135deg, #1565c0 0%, #263799 30%, #1a2448 100%) !important;
-  border-color: #90caf9 !important;
-  box-shadow: 0 25px 60px rgba(38, 55, 153, 0.25), 0 10px 30px rgba(38, 55, 153, 0.15) !important;
+    background: linear-gradient(135deg, #1565c0 0%, #263799 30%, #1a2448 100%) !important;
+    border-color: #90caf9 !important;
+    box-shadow: 0 25px 60px rgba(38, 55, 153, 0.25), 0 10px 30px rgba(38, 55, 153, 0.15) !important;
 }
 
 .dark-mode .project-team-avatar {
-  background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%) !important;
-  border: 4px solid #162447 !important;
-  box-shadow: 0 8px 25px rgba(144, 202, 249, 0.4) !important;
-  color: #1a2448 !important;
+    background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%) !important;
+    border: 4px solid #162447 !important;
+    box-shadow: 0 8px 25px rgba(144, 202, 249, 0.4) !important;
+    color: #1a2448 !important;
 }
 
 .dark-mode .project-team-member-name {
-  color: #90caf9 !important;
+    color: #90caf9 !important;
 }
 
 .dark-mode .project-team-member-role {
-  background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%) !important;
-  color: #1a2448 !important;
-  border: 2px solid rgba(255, 255, 255, 0.2) !important;
-  box-shadow: 0 4px 15px rgba(144, 202, 249, 0.4) !important;
+    background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%) !important;
+    color: #1a2448 !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 4px 15px rgba(144, 202, 249, 0.4) !important;
 }
 
 .dark-mode .project-team-member-responsibilities {
-  color: #b3d8f7 !important;
+    color: #b3d8f7 !important;
 }
 
 .dark-mode .project-team-github {
-  background: linear-gradient(135deg, #161b22 0%, #0d1117 100%) !important;
-  border: 2px solid rgba(144, 202, 249, 0.3) !important;
-  box-shadow: 0 6px 20px rgba(22, 27, 34, 0.4) !important;
+    background: linear-gradient(135deg, #161b22 0%, #0d1117 100%) !important;
+    border: 2px solid rgba(144, 202, 249, 0.3) !important;
+    box-shadow: 0 6px 20px rgba(22, 27, 34, 0.4) !important;
 }
 
 .dark-mode .project-team-github:hover {
-  background: linear-gradient(135deg, #21262d 0%, #161b22 100%) !important;
-  border-color: #90caf9 !important;
-  box-shadow: 0 10px 30px rgba(22, 27, 34, 0.5) !important;
+    background: linear-gradient(135deg, #21262d 0%, #161b22 100%) !important;
+    border-color: #90caf9 !important;
+    box-shadow: 0 10px 30px rgba(22, 27, 34, 0.5) !important;
 }
 
 .dark-mode .project-team-linkedin {
-  background: linear-gradient(135deg, #004182 0%, #0073b1 100%) !important;
-  border: 2px solid rgba(144, 202, 249, 0.3) !important;
-  box-shadow: 0 6px 20px rgba(0, 65, 130, 0.4) !important;
+    background: linear-gradient(135deg, #004182 0%, #0073b1 100%) !important;
+    border: 2px solid rgba(144, 202, 249, 0.3) !important;
+    box-shadow: 0 6px 20px rgba(0, 65, 130, 0.4) !important;
 }
 
 .dark-mode .project-team-linkedin:hover {
-  background: linear-gradient(135deg, #005a8b 0%, #0084c7 100%) !important;
-  border-color: #90caf9 !important;
-  box-shadow: 0 10px 30px rgba(0, 65, 130, 0.5) !important;
+    background: linear-gradient(135deg, #005a8b 0%, #0084c7 100%) !important;
+    border-color: #90caf9 !important;
+    box-shadow: 0 10px 30px rgba(0, 65, 130, 0.5) !important;
 }
 
-/* Integração IoT - Dark Mode */
 .dark-mode .iot-integration-title {
-  color: #90caf9 !important;
-  text-shadow: 0 2px 8px rgba(144, 202, 249, 0.3) !important;
+    color: #90caf9 !important;
+    text-shadow: 0 2px 8px rgba(144, 202, 249, 0.3) !important;
 }
 
 .dark-mode .iot-integration-container {
-  background: linear-gradient(135deg, #1a2448 0%, #0d2818 30%, #1b5e20 70%, #2e7d32 100%) !important;
-  border: 3px solid rgba(102, 187, 106, 0.4) !important;
-  box-shadow: 0 20px 60px rgba(27, 94, 32, 0.25), 0 8px 25px rgba(27, 94, 32, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    background: linear-gradient(135deg, #1a2448 0%, #0d2818 30%, #1b5e20 70%, #2e7d32 100%) !important;
+    border: 3px solid rgba(102, 187, 106, 0.4) !important;
+    box-shadow: 0 20px 60px rgba(27, 94, 32, 0.25), 0 8px 25px rgba(27, 94, 32, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
 .dark-mode .iot-integration-bg-decoration {
-  background: radial-gradient(circle, rgba(102, 187, 106, 0.15) 0%, transparent 70%) !important;
+    background: radial-gradient(circle, rgba(102, 187, 106, 0.15) 0%, transparent 70%) !important;
 }
 
 .dark-mode .iot-integration-item {
-  background: linear-gradient(135deg, #162447 0%, #0d2818 100%) !important;
-  color: #e6edf3 !important;
-  border: 2px solid rgba(102, 187, 106, 0.3) !important;
-  box-shadow: 0 8px 25px rgba(27, 94, 32, 0.15), 0 3px 10px rgba(27, 94, 32, 0.08) !important;
+    background: linear-gradient(135deg, #162447 0%, #0d2818 100%) !important;
+    color: #e6edf3 !important;
+    border: 2px solid rgba(102, 187, 106, 0.3) !important;
+    box-shadow: 0 8px 25px rgba(27, 94, 32, 0.15), 0 3px 10px rgba(27, 94, 32, 0.08) !important;
 }
 
 .dark-mode .iot-integration-item:hover {
-  background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%) !important;
-  color: #fff !important;
-  border-color: #66bb6a !important;
-  box-shadow: 0 15px 40px rgba(27, 94, 32, 0.25), 0 6px 20px rgba(27, 94, 32, 0.15) !important;
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%) !important;
+    color: #fff !important;
+    border-color: #66bb6a !important;
+    box-shadow: 0 15px 40px rgba(27, 94, 32, 0.25), 0 6px 20px rgba(27, 94, 32, 0.15) !important;
 }
 
 .dark-mode .iot-integration-emoji {
-  background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%) !important;
-  background-clip: text !important;
-  -webkit-background-clip: text !important;
-  color: transparent !important;
-  -webkit-text-fill-color: transparent !important;
-  filter: drop-shadow(0 2px 4px rgba(102, 187, 106, 0.4)) !important;
+    background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    filter: drop-shadow(0 2px 4px rgba(102, 187, 106, 0.4)) !important;
 }
 
-/* Dark mode para navbar mobile - UMA ÚNICA SEÇÃO */
 @media (max-width: 768px) {
     .dark-mode .mobile-close-btn {
-            background: rgba(144, 202, 249, 0.9);
-            border: 2px solid rgba(255, 255, 255, 0.4);
-            color: #161b22;
-            box-shadow: 0 4px 20px rgba(144, 202, 249, 0.4);
-            font-weight: 600;
-            font-size: 1.4rem;
-            line-height: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            vertical-align: middle;
-            padding: 0;
-            margin: 0;
-            outline: none;
-        }
-    
-        .dark-mode .mobile-close-btn:hover {
-            background: rgba(144, 202, 249, 0.95);
-            border-color: rgba(255, 255, 255, 0.6);
-            box-shadow: 0 6px 25px rgba(144, 202, 249, 0.5);
-        }
-    
-        .dark-mode .mobile-close-btn:focus {
-            outline: none;
-            border-color: rgba(255, 255, 255, 0.7);
-        }
+        background: rgba(144, 202, 249, 0.9);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        color: #161b22;
+        box-shadow: 0 4px 20px rgba(144, 202, 249, 0.4);
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        vertical-align: middle;
+        padding: 0;
+        margin: 0;
+        outline: none;
+    }
 
-    /* Botão hambúrguer - CORRIGIDO para dark mode */
+    .dark-mode .mobile-close-btn:hover {
+        background: rgba(144, 202, 249, 0.95);
+        border-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 6px 25px rgba(144, 202, 249, 0.5);
+    }
+
+    .dark-mode .mobile-close-btn:focus {
+        outline: none;
+        border-color: rgba(255, 255, 255, 0.7);
+    }
+
     .dark-mode .navbar-toggler {
         background: rgba(22, 27, 34, 0.95);
         border: 2px solid #42a5f5;
@@ -533,43 +527,21 @@
         border-color: #90caf9;
     }
 
-    /* Tracinhos do hambúrguer - cores corrigidas - SELETOR CORRETO */
-    .dark-mode .navbar-toggler-icon::before,
-    .dark-mode .navbar-toggler-icon::after,
-    .dark-mode .navbar-toggler-icon span {
+    .dark-mode .navbar-toggler-icon::before, .dark-mode .navbar-toggler-icon::after, .dark-mode .navbar-toggler-icon span {
         background: #42a5f5 !important;
     }
 
-    .dark-mode .navbar-toggler:hover .navbar-toggler-icon::before,
-    .dark-mode .navbar-toggler:hover .navbar-toggler-icon::after,
-    .dark-mode .navbar-toggler:hover .navbar-toggler-icon span {
+    .dark-mode .navbar-toggler:hover .navbar-toggler-icon::before, .dark-mode .navbar-toggler:hover .navbar-toggler-icon::after, .dark-mode .navbar-toggler:hover .navbar-toggler-icon span {
         background: #90caf9 !important;
     }
 
-    /* Background melhorado para dark mode */
     .dark-mode .navbar-collapse {
-        background: linear-gradient(135deg, 
-            rgba(22, 27, 34, 0.96) 0%,
-            rgba(18, 25, 35, 0.96) 15%,
-            rgba(15, 23, 32, 0.96) 35%,
-            rgba(13, 20, 29, 0.96) 55%,
-            rgba(16, 24, 32, 0.96) 75%,
-            rgba(21, 32, 43, 0.96) 90%,
-            rgba(30, 41, 59, 0.96) 100%);
-        box-shadow: 
-            0 0 0 1px rgba(144, 202, 249, 0.15),
-            0 15px 50px rgba(0, 0, 0, 0.5),
-            0 8px 25px rgba(30, 136, 229, 0.20),
-            inset 0 1px 0 rgba(144, 202, 249, 0.12),
-            inset 0 -1px 0 rgba(66, 165, 245, 0.08);
+        background: linear-gradient(135deg, rgba(22, 27, 34, 0.96) 0%, rgba(18, 25, 35, 0.96) 15%, rgba(15, 23, 32, 0.96) 35%, rgba(13, 20, 29, 0.96) 55%, rgba(16, 24, 32, 0.96) 75%, rgba(21, 32, 43, 0.96) 90%, rgba(30, 41, 59, 0.96) 100%);
+        box-shadow: 0 0 0 1px rgba(144, 202, 249, 0.15), 0 15px 50px rgba(0, 0, 0, 0.5), 0 8px 25px rgba(30, 136, 229, 0.20), inset 0 1px 0 rgba(144, 202, 249, 0.12), inset 0 -1px 0 rgba(66, 165, 245, 0.08);
     }
 
     .dark-mode .navbar-collapse::before {
-        background: 
-            radial-gradient(circle at 20% 30%, rgba(144, 202, 249, 0.12) 0%, transparent 50%),
-            radial-gradient(circle at 80% 70%, rgba(66, 165, 245, 0.10) 0%, transparent 50%),
-            radial-gradient(circle at 40% 80%, rgba(144, 202, 249, 0.08) 0%, transparent 40%),
-            radial-gradient(circle at 60% 20%, rgba(30, 136, 229, 0.06) 0%, transparent 45%);
+        background: radial-gradient(circle at 20% 30%, rgba(144, 202, 249, 0.12) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(66, 165, 245, 0.10) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(144, 202, 249, 0.08) 0%, transparent 40%), radial-gradient(circle at 60% 20%, rgba(30, 136, 229, 0.06) 0%, transparent 45%);
     }
 
     .dark-mode .navbar-nav {
@@ -577,15 +549,9 @@
     }
 
     .dark-mode .navbar-nav::after {
-        background: linear-gradient(90deg, 
-            transparent 0%, 
-            rgba(144, 202, 249, 0.3) 20%, 
-            rgba(144, 202, 249, 0.6) 50%, 
-            rgba(144, 202, 249, 0.3) 80%, 
-            transparent 100%);
+        background: linear-gradient(90deg, transparent 0%, rgba(144, 202, 249, 0.3) 20%, rgba(144, 202, 249, 0.6) 50%, rgba(144, 202, 249, 0.3) 80%, transparent 100%);
     }
 
-    /* Links simplificados - igual ao modo claro mas com cores escuras */
     .dark-mode .navbar-nav .nav-link {
         color: #e6edf3 !important;
         padding: 1rem 2rem;
@@ -656,30 +622,47 @@
     }
 
     .dark-mode .d-flex.align-items-center.gap-2::before {
-        background: linear-gradient(90deg, 
-            transparent 0%, 
-            rgba(144, 202, 249, 0.3) 20%, 
-            rgba(144, 202, 249, 0.8) 50%, 
-            rgba(144, 202, 249, 0.3) 80%, 
-            transparent 100%);
+        background: linear-gradient(90deg, transparent 0%, rgba(144, 202, 249, 0.3) 20%, rgba(144, 202, 249, 0.8) 50%, rgba(144, 202, 249, 0.3) 80%, transparent 100%);
     }
 
-    /* Barra de rolagem dark mode */
     .dark-mode .navbar-collapse::-webkit-scrollbar-track {
         background: rgba(144, 202, 249, 0.05);
     }
 
     .dark-mode .navbar-collapse::-webkit-scrollbar-thumb {
-        background: linear-gradient(45deg, 
-            rgba(66, 165, 245, 0.6) 0%, 
-            rgba(144, 202, 249, 0.8) 50%, 
-            rgba(66, 165, 245, 0.6) 100%);
+        background: linear-gradient(45deg, rgba(66, 165, 245, 0.6) 0%, rgba(144, 202, 249, 0.8) 50%, rgba(66, 165, 245, 0.6) 100%);
     }
 
     .dark-mode .navbar-collapse::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(45deg, 
-            rgba(30, 136, 229, 0.8) 0%, 
-            rgba(66, 165, 245, 0.9) 50%, 
-            rgba(30, 136, 229, 0.8) 100%);
+        background: linear-gradient(45deg, rgba(30, 136, 229, 0.8) 0%, rgba(66, 165, 245, 0.9) 50%, rgba(30, 136, 229, 0.8) 100%);
+    }
+
+    .dark-mode .project-modal-content {
+        max-width: calc(100vw - 20px);
+        width: calc(100vw - 20px);
+    }
+
+    .dark-mode .project-modal-header {
+        padding: 1.5rem 1rem;
+    }
+
+    .dark-mode .project-modal-main-row {
+        padding: 1.5rem;
+    }
+
+    .dark-mode .project-modal-summary {
+        padding: 1.5rem;
+    }
+
+    .dark-mode .project-responsibilities-container, .dark-mode .iot-integration-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .dark-mode .project-team-member {
+        padding: 1.5rem 1rem;
+    }
+
+    .dark-mode .tech-details-card {
+        padding: 1.5rem 1rem;
     }
 }
