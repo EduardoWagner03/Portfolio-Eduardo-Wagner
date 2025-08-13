@@ -14,6 +14,10 @@
         font-size: 1.5rem;
     }
 
+    .journey-item:hover {
+        transform: translateY(-3px) scale(1.02);
+    }
+
     .hero-stats {
         justify-content: center;
         gap: 1rem;
@@ -172,7 +176,6 @@
     .journey-content p {
         margin-left: -87px;
         text-align: justify;
-
     }
 
     .journey-item .journey-icon {
@@ -210,7 +213,8 @@
         align-items: center;
     }
 
-    .timeline, .contact-section {
+    .timeline,
+    .contact-section {
         padding-left: 0;
         padding: 0rem;
     }
@@ -287,6 +291,378 @@
     .navbar-toggler-icon::after {
         position: absolute;
         bottom: 6px;
+    }
+
+    /* ===========================================
+       NAVBAR MOBILE REDESENHADO - COMPLETO
+       =========================================== */
+
+        .mobile-close-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(30, 136, 229, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: white;
+            cursor: pointer;
+            z-index: 100000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.4rem;
+            line-height: 1;
+            box-shadow: 0 4px 20px rgba(30, 136, 229, 0.4);
+            backdrop-filter: blur(10px);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Arial', sans-serif;
+            text-align: center;
+            vertical-align: middle;
+            padding: 0;
+            margin: 0;
+            border-style: solid;
+            outline: none;
+        }
+    
+        .mobile-close-btn:hover {
+            background: rgba(21, 101, 192, 0.95);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(30, 136, 229, 0.5);
+        }
+
+        .NoneEmail {
+            display: none;
+        }
+        
+        .navbar-collapse {
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.96) 0%,
+                    rgba(240, 249, 255, 0.96) 15%,
+                    rgba(227, 242, 253, 0.96) 35%,
+                    rgba(187, 222, 251, 0.96) 55%,
+                    rgba(144, 202, 249, 0.96) 75%,
+                    rgba(100, 181, 246, 0.96) 90%,
+                    rgba(66, 165, 245, 0.96) 100%);
+            border-radius: 0;
+            box-shadow:
+                0 0 0 1px rgba(30, 136, 229, 0.12),
+                0 15px 50px rgba(30, 136, 229, 0.25),
+                0 8px 25px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9),
+                inset 0 -1px 0 rgba(30, 136, 229, 0.15);
+            border: none;
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            padding-top: 80px;
+        }
+
+                        .mobile-close-btn:focus {
+                            outline: none;
+                            border-color: rgba(255, 255, 255, 0.6);
+                        }
+    
+        /* Overlay decorativo para o background - mais intenso */
+        .navbar-collapse::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(30, 136, 229, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(66, 165, 245, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(30, 136, 229, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 60% 20%, rgba(144, 202, 249, 0.10) 0%, transparent 45%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+    /* Links simplificados - apenas barra embaixo */
+    .navbar-nav {
+        text-align: center;
+        margin-bottom: 2rem !important;
+        padding: 2rem 0;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
+        border-bottom: 1px solid rgba(30, 136, 229, 0.15);
+        position: relative;
+    }
+
+    .navbar-nav::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 1px;
+        background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(30, 136, 229, 0.3) 20%,
+                rgba(30, 136, 229, 0.6) 50%,
+                rgba(30, 136, 229, 0.3) 80%,
+                transparent 100%);
+    }
+
+    .navbar-nav .nav-link {
+        padding: 1rem 2rem;
+        font-weight: 600;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        border-radius: 0;
+        margin: 0;
+        color: #2d3748 !important;
+        position: relative;
+        background: transparent;
+        border: none;
+        border-bottom: 3px solid transparent;
+        backdrop-filter: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 60px;
+        box-shadow: none;
+        letter-spacing: 0.3px;
+    }
+
+    .navbar-nav .nav-link::before {
+        display: none;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background: transparent;
+        border-bottom: 3px solid #1e88e5;
+        color: #1e88e5 !important;
+        transform: none;
+        box-shadow: none;
+    }
+
+    .navbar-nav .nav-link:active {
+        transform: none;
+    }
+
+    /* Container dos botões mobile reorganizado */
+    .d-flex.align-items-center.gap-2 {
+        flex-direction: column;
+        gap: 1.5rem !important;
+        width: 100%;
+        padding: 2rem 0 1rem 0;
+        border-top: 2px solid rgba(30, 136, 229, 0.2);
+        margin-top: auto;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    /* Linha decorativa no topo dos botões */
+    .d-flex.align-items-center.gap-2::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 2px;
+        background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(30, 136, 229, 0.3) 20%,
+                rgba(30, 136, 229, 0.8) 50%,
+                rgba(30, 136, 229, 0.3) 80%,
+                transparent 100%);
+    }
+
+    /* Botões pequenos lado a lado - apenas mobile */
+    .mobile-small-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .mobile-small-buttons .btn-outline-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem 1rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+        border-radius: 0.8rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        min-height: 50px;
+        min-width: 100px;
+        gap: 0.5rem;
+        box-shadow: 0 4px 15px rgba(30, 136, 229, 0.15);
+        background: rgba(255, 255, 255, 0.95);
+        border: 2px solid #1e88e5;
+        color: #1e88e5;
+        flex: 1;
+        max-width: 120px;
+    }
+
+    .mobile-small-buttons .btn-outline-primary:hover {
+        background: #1e88e5;
+        color: white;
+        border-color: #1e88e5;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(30, 136, 229, 0.3);
+    }
+
+ .mobile-download-btn {
+     width: 100%;
+     max-width: 240px;
+     /* Reduzido de 280px para 240px */
+     justify-content: center;
+     padding: 0.7rem 1.5rem;
+     /* Reduzido de 0.85rem 2rem para 0.7rem 1.5rem */
+     font-weight: 600;
+     font-size: 0.9rem;
+     /* Reduzido de 1rem para 0.9rem */
+     border-radius: 0.8rem;
+     /* Reduzido de 0.9rem para 0.8rem */
+     transition: all 0.3s ease;
+     position: relative;
+     overflow: hidden;
+     min-height: 45px;
+     /* Reduzido de 50px para 45px */
+     display: flex;
+     align-items: center;
+     gap: 0.6rem;
+     /* Reduzido de 0.7rem para 0.6rem */
+     box-shadow: 0 4px 20px rgba(30, 136, 229, 0.2);
+     background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%);
+     border: 1px solid rgba(255, 255, 255, 0.2);
+     color: white;
+     margin-top: 1rem;
+     letter-spacing: 0.2px;
+     /* Reduzido de 0.3px para 0.2px */
+ }
+
+ .mobile-download-btn:hover {
+     background: linear-gradient(135deg, #1565c0 0%, #1e88e5 100%);
+     transform: translateY(-2px);
+     box-shadow: 0 8px 30px rgba(21, 101, 192, 0.35);
+     color: white;
+     text-decoration: none;
+     border-color: rgba(255, 255, 255, 0.4);
+ }
+
+ /* Efeito sutil no botão Download */
+ .mobile-download-btn::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: -100%;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(90deg,
+             transparent,
+             rgba(255, 255, 255, 0.2),
+             transparent);
+     transition: left 0.6s ease;
+ }
+
+ .mobile-download-btn:hover::before {
+     left: 100%;
+ }
+
+ /* Ícone do download menor */
+ .mobile-download-btn .fa-download {
+     font-size: 0.85em;
+     /* Ícone menor */
+ }
+
+    /* Efeito de abertura suave */
+    .navbar-collapse.show {
+        animation: slideInFull 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .navbar-collapse.collapsing {
+        animation: slideOutFull 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes slideInFull {
+        0% {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideOutFull {
+        0% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+    }
+
+    /* Garantir que o menu não interfira no resto da página */
+    .navbar-collapse:not(.show) {
+        display: none !important;
+    }
+
+    /* Barra de rolagem customizada melhorada */
+    .navbar-collapse::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .navbar-collapse::-webkit-scrollbar-track {
+        background: rgba(30, 136, 229, 0.05);
+        border-radius: 3px;
+    }
+
+    .navbar-collapse::-webkit-scrollbar-thumb {
+        background: linear-gradient(45deg,
+                rgba(30, 136, 229, 0.6) 0%,
+                rgba(66, 165, 245, 0.8) 50%,
+                rgba(30, 136, 229, 0.6) 100%);
+        border-radius: 3px;
+        transition: background 0.3s ease;
+    }
+
+    .navbar-collapse::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(45deg,
+                rgba(21, 101, 192, 0.8) 0%,
+                rgba(30, 136, 229, 0.9) 50%,
+                rgba(21, 101, 192, 0.8) 100%);
+    }
+
+    /* Para Firefox */
+    .navbar-collapse {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(30, 136, 229, 0.6) rgba(30, 136, 229, 0.05);
     }
 }
 
@@ -377,7 +753,6 @@
         justify-content: center;
         height: 36px;
         margin-top: 1rem;
-
     }
 
     .timeline-header[style*="gap"] {
@@ -442,5 +817,19 @@
     .footer-avatar {
         width: 35px !important;
         height: 35px !important;
+    }
+}
+
+/* Desktop - manter layout original */
+@media (min-width: 769px) {
+
+    .mobile-close-btn,
+    .mobile-small-buttons,
+    .mobile-download-btn {
+        display: none !important;
+    }
+
+    .desktop-buttons {
+        display: flex !important;
     }
 }

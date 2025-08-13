@@ -38,10 +38,11 @@ import {
 import { SiJira } from "react-icons/si";
 
 function App() {
-  const [lang, setLang] = useState("pt-br")
-  const [darkMode, setDarkMode] = useState(false)
-  const [selectedProject, setSelectedProject] = useState(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [lang, setLang] = useState("pt-br");
+  const [darkMode, setDarkMode] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false); // Adicionar este estado
   const modalRef = useRef(null);
 
   const handleLang = () => setLang(lang === "pt-br" ? "en" : "pt-br")
@@ -49,6 +50,14 @@ function App() {
     setDarkMode(!darkMode)
     document.body.classList.toggle("dark-mode")
   }
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
+  const closeNav = () => {
+    setIsNavOpen(false);
+  };
   
   const handleImageClick = (imageSrc, imageTitle) => {
     // Calcular as dimensões da tela
@@ -333,7 +342,18 @@ function App() {
     }
   };
 
-    useEffect(() => {
+  useEffect(() => {
+    // Adicionar Bootstrap JS se não estiver carregado
+    if (!document.querySelector('script[src*="bootstrap"]')) {
+      const script = document.createElement("script");
+      script.src =
+        "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js";
+      script.integrity =
+        "sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz";
+      script.crossOrigin = "anonymous";
+      document.head.appendChild(script);
+    }
+
     if (isModalOpen) {
       document.body.classList.add("body-modal-open");
     } else {
@@ -685,68 +705,155 @@ function App() {
       {/* Header estilo moderno */}
       <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 fixed-top">
         <div className="container">
-          <a className="navbar-brand logo-gradient" href="#home">
+          <a
+            className="navbar-brand logo-gradient"
+            href="#home"
+            onClick={closeNav}
+          >
             🚀 EW
           </a>
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
+            onClick={toggleNav}
+            aria-controls="navbarNav"
+            aria-expanded={isNavOpen}
+            aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div
+            className={`collapse navbar-collapse ${isNavOpen ? "show" : ""}`}
+            id="navbarNav"
+          >
+            {/* Botão X - apenas mobile */}
+            <button
+              className="mobile-close-btn d-md-none"
+              onClick={closeNav}
+              aria-label="Fechar menu"
+            >
+              ×
+            </button>
+
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0 gap-2">
               <li className="nav-item">
-                <a className="nav-link" href="#home">
+                <a className="nav-link" href="#home" onClick={closeNav}>
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#about">
+                <a className="nav-link" href="#about" onClick={closeNav}>
                   Sobre
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#skills">
+                <a className="nav-link" href="#skills" onClick={closeNav}>
                   Habilidades
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#projects">
+                <a className="nav-link" href="#projects" onClick={closeNav}>
                   Projetos
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#experience">
+                <a className="nav-link" href="#experience" onClick={closeNav}>
                   Experiência
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#contact">
+                <a className="nav-link" href="#contact" onClick={closeNav}>
                   Contato
                 </a>
               </li>
             </ul>
+
             <div className="d-flex align-items-center gap-2">
-              <button
-                className="btn btn-outline-primary position-relative"
-                onClick={toggleDarkMode}
-                onMouseEnter={(e) =>
-                  e.currentTarget.classList.add("show-tooltip")
-                }
-                onMouseLeave={(e) =>
-                  e.currentTarget.classList.remove("show-tooltip")
-                }
-              >
-                {darkMode ? <FaSun /> : <FaMoon />}
-                <span className="custom-tooltip">
-                  {darkMode ? "Modo claro" : "Modo escuro"}
-                </span>
-              </button>
+              {/* Container para botões pequenos - lado a lado apenas no mobile */}
+              <div className="mobile-small-buttons d-md-none">
+                <button
+                  className="btn btn-outline-primary position-relative"
+                  onClick={toggleDarkMode}
+                  onMouseEnter={(e) =>
+                    e.currentTarget.classList.add("show-tooltip")
+                  }
+                  onMouseLeave={(e) =>
+                    e.currentTarget.classList.remove("show-tooltip")
+                  }
+                >
+                  {darkMode ? <FaSun /> : <FaMoon />}
+                  <span className="custom-tooltip">
+                    {darkMode ? "Modo claro" : "Modo escuro"}
+                  </span>
+                </button>
+
+                <button
+                  className="btn btn-outline-primary position-relative"
+                  onClick={handleLang}
+                  onMouseEnter={(e) =>
+                    e.currentTarget.classList.add("show-tooltip")
+                  }
+                  onMouseLeave={(e) =>
+                    e.currentTarget.classList.remove("show-tooltip")
+                  }
+                >
+                  <FaGlobe /> {lang === "pt-br" ? "EN" : "PT"}
+                  <span className="custom-tooltip">Mudar idioma</span>
+                </button>
+              </div>
+
+              {/* Versão desktop - todos os botões na mesma linha */}
+              <div className="desktop-buttons d-none d-md-flex align-items-center gap-2">
+                <button
+                  className="btn btn-outline-primary position-relative"
+                  onClick={toggleDarkMode}
+                  onMouseEnter={(e) =>
+                    e.currentTarget.classList.add("show-tooltip")
+                  }
+                  onMouseLeave={(e) =>
+                    e.currentTarget.classList.remove("show-tooltip")
+                  }
+                >
+                  {darkMode ? <FaSun /> : <FaMoon />}
+                  <span className="custom-tooltip">
+                    {darkMode ? "Modo claro" : "Modo escuro"}
+                  </span>
+                </button>
+
+                <a
+                  className="btn btn-primary d-flex align-items-center gap-2 position-relative"
+                  href="/cv.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onMouseEnter={(e) =>
+                    e.currentTarget.classList.add("show-tooltip")
+                  }
+                  onMouseLeave={(e) =>
+                    e.currentTarget.classList.remove("show-tooltip")
+                  }
+                >
+                  <FaDownload /> Download CV
+                  <span className="custom-tooltip">Baixar currículo</span>
+                </a>
+
+                <button
+                  className="btn btn-outline-primary position-relative"
+                  onClick={handleLang}
+                  onMouseEnter={(e) =>
+                    e.currentTarget.classList.add("show-tooltip")
+                  }
+                  onMouseLeave={(e) =>
+                    e.currentTarget.classList.remove("show-tooltip")
+                  }
+                >
+                  <FaGlobe /> {lang === "pt-br" ? "EN" : "PT"}
+                  <span className="custom-tooltip">Mudar idioma</span>
+                </button>
+              </div>
+
+              {/* Botão Download CV - embaixo no mobile */}
               <a
-                className="btn btn-primary d-flex align-items-center gap-2 position-relative"
+                className="btn btn-primary d-flex d-md-none align-items-center gap-2 position-relative mobile-download-btn"
                 href="/cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -760,19 +867,6 @@ function App() {
                 <FaDownload /> Download CV
                 <span className="custom-tooltip">Baixar currículo</span>
               </a>
-              <button
-                className="btn btn-outline-primary position-relative"
-                onClick={handleLang}
-                onMouseEnter={(e) =>
-                  e.currentTarget.classList.add("show-tooltip")
-                }
-                onMouseLeave={(e) =>
-                  e.currentTarget.classList.remove("show-tooltip")
-                }
-              >
-                <FaGlobe /> {lang === "pt-br" ? "EN" : "PT"}
-                <span className="custom-tooltip">Mudar idioma</span>
-              </button>
             </div>
           </div>
         </div>
@@ -1311,7 +1405,7 @@ function App() {
                   </div>
                 )}
               </div>
-              
+
               <DialogDescription>
                 <div className="project-modal-main-row">
                   <img
@@ -1324,7 +1418,7 @@ function App() {
                   </div>
                 </div>
               </DialogDescription>
-      
+
               {/* Minhas Responsabilidades */}
               {selectedProject.minhasResponsabilidades && (
                 <div className="project-responsibilities">
@@ -1334,62 +1428,76 @@ function App() {
                   <div className="project-responsibilities-container">
                     <div className="project-responsibilities-bg-decoration"></div>
                     <div className="project-responsibilities-content">
-                      {selectedProject.minhasResponsabilidades.map((resp, idx) => (
-                        <div key={idx} className="project-responsibility-item">
-                          <span className="project-responsibility-emoji">✨</span>
-                          {resp}
-                        </div>
-                      ))}
+                      {selectedProject.minhasResponsabilidades.map(
+                        (resp, idx) => (
+                          <div
+                            key={idx}
+                            className="project-responsibility-item"
+                          >
+                            <span className="project-responsibility-emoji">
+                              ✨
+                            </span>
+                            {resp}
+                          </div>
+                        )
+                      )}
                     </div>
                   </div>
                 </div>
               )}
-              
+
               {/* Equipe do Projeto */}
               {selectedProject.equipe && (
                 <div className="project-team">
-                  <h4 className="project-team-title">
-                    👨‍� Equipe do Projeto
-                  </h4>
+                  <h4 className="project-team-title">👨‍� Equipe do Projeto</h4>
                   <div className="project-team-grid">
                     {selectedProject.equipe.map((membro, idx) => {
                       // Definir redes sociais para cada membro
                       const redesSociais = {
                         "Eduardo Wagner": {
                           github: "https://github.com/EduardoWagner03",
-                          linkedin: "https://www.linkedin.com/in/eduardowagner03/"
+                          linkedin:
+                            "https://www.linkedin.com/in/eduardowagner03/",
                         },
                         "Victor Bueno": {
                           github: "https://github.com/victorbueno920",
-                          linkedin: "https://www.linkedin.com/in/victor-bueno-365461288/"
+                          linkedin:
+                            "https://www.linkedin.com/in/victor-bueno-365461288/",
                         },
                         "Lucas Ulbrich": {
                           github: "https://github.com/lucasulbrich",
-                          linkedin: "https://www.linkedin.com/in/lucas-ulbrich/"
-                        }
+                          linkedin:
+                            "https://www.linkedin.com/in/lucas-ulbrich/",
+                        },
                       };
-              
-                      const redes = redesSociais[membro.nome] || { github: "#", linkedin: "#" };
-              
+
+                      const redes = redesSociais[membro.nome] || {
+                        github: "#",
+                        linkedin: "#",
+                      };
+
                       return (
                         <div key={idx} className="project-team-member">
                           {/* Avatar placeholder */}
                           <div className="project-team-avatar">
-                            {membro.nome.split(' ').map(n => n[0]).join('')}
+                            {membro.nome
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")}
                           </div>
-              
+
                           <h6 className="project-team-member-name">
                             {membro.nome}
                           </h6>
-              
+
                           <div className="project-team-member-role">
                             {membro.papel}
                           </div>
-              
+
                           <div className="project-team-member-responsibilities">
                             {membro.responsabilidades}
                           </div>
-              
+
                           {/* Redes Sociais */}
                           <div className="project-team-social-links">
                             <a
@@ -1400,7 +1508,7 @@ function App() {
                             >
                               <FaGithub />
                             </a>
-              
+
                             <a
                               href={redes.linkedin}
                               target="_blank"
@@ -1416,7 +1524,7 @@ function App() {
                   </div>
                 </div>
               )}
-      
+
               {/* Integração IoT (só para ThermalTech) */}
               {selectedProject.integracaoIoT && (
                 <div className="iot-integration">
@@ -1436,7 +1544,7 @@ function App() {
                   </div>
                 </div>
               )}
-      
+
               {/* Funcionalidades do Projeto */}
               <div className="project-features">
                 {selectedProject.funcionalidades &&
@@ -1457,7 +1565,7 @@ function App() {
                     </div>
                   ))}
               </div>
-      
+
               {/* Cards de tecnologias */}
               <div className="tech-details-grid">
                 {(() => {
@@ -2018,7 +2126,7 @@ function App() {
                       href="mailto:eduardogwagner2003@gmail.com"
                       className="contact-method-modern"
                     >
-                      <div className="method-icon">
+                      <div className="method-icon NoneEmail">
                         <FaEnvelope />
                       </div>
                       <div className="method-info">
