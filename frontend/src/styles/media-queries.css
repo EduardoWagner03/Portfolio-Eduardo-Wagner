@@ -1272,7 +1272,7 @@
 
 @media (min-width: 768px) and (max-width: 1000px) {
 
-    .hero-section, .skills-section {
+    .about-section, .hero-section, .skills-section, .contact-section, .experience-section, .projects-section {
         padding: 4rem 0rem;
     }
     
@@ -1308,7 +1308,122 @@
         flex-direction: column;
     }
 
-        /* AJUSTES DO FOOTER PARA TABLETS */
+    /* TIMELINE - MESMO COMPORTAMENTO DO MOBILE PARA TABLETS */
+    .timeline:before {
+        display: none;
+    }
+
+    .timeline-item.timeline-left .timeline-content {
+        margin-left: 0rem;
+        width: 100%;
+    }
+
+    .timeline-item.timeline-right .timeline-content {
+        width: 100%;
+        margin-right: 0rem;
+    }
+
+    .timeline-item.timeline-left, .timeline-item.timeline-right {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+    }
+
+    .timeline-header {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important; 
+        justify-content: flex-start !important;
+        gap: 1rem !important;
+        margin-bottom: 1.2rem !important;
+        width: 100% !important;
+        min-height: 48px !important;
+    }
+
+    .timeline-item .timeline-icon {
+        order: 1 !important;
+        margin-right: 1rem !important;
+        margin-left: 0 !important;
+        position: static !important;
+        flex-shrink: 0 !important;
+        width: 48px !important;
+        height: 48px !important;
+        min-width: 48px !important;
+        min-height: 48px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .timeline-item .period-badge {
+        order: 2 !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        flex-shrink: 0 !important;
+        display: flex !important;
+        align-items: center !important; 
+        justify-content: center !important;
+        height: 48px !important; 
+        min-height: 48px !important;
+        padding: 0.5rem 1.2rem !important;
+        border-radius: 2rem !important;
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+        line-height: 1.2 !important; 
+        margin-top: 0 !important;
+        transform: none !important;
+    }
+
+    .timeline-item.timeline-left .timeline-header, .timeline-item.timeline-right .timeline-header {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        align-items: center !important; 
+    }
+
+    .timeline-item.timeline-left .timeline-icon, .timeline-item.timeline-right .timeline-icon {
+        order: 1 !important;
+        margin-right: 1rem !important;
+        margin-left: 0 !important;
+        left: auto !important;
+        right: auto !important;
+        position: static !important;
+        width: 48px !important;
+        height: 48px !important;
+        min-width: 48px !important;
+        min-height: 48px !important;
+    }
+
+    .timeline-item.timeline-left .period-badge, .timeline-item.timeline-right .period-badge {
+        order: 2 !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        height: 48px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-top: 0 !important; 
+        transform: none !important; 
+    }
+
+    /* Sobrescrever styles inline específicos */
+    .timeline-header[style*="gap"] {
+        gap: 1rem !important;
+    }
+
+    .timeline-header[style*="margin-top"] {
+        margin-top: 0 !important;
+    }
+
+    .period-badge[style*="transform"] {
+        transform: none !important;
+    }
+
+    .timeline-item.timeline-left .timeline-content, .timeline-item.timeline-right .timeline-content {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+    }
+
+    /* AJUSTES DO FOOTER PARA TABLETS */
     .custom-footer .row {
         flex-direction: column !important;
         align-items: center !important;
