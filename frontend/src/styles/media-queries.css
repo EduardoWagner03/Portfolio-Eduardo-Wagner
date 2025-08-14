@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .hero-content {
         display: flex;
         flex-direction: column;
@@ -930,7 +930,7 @@
 }
 
 /* Media Queries Popup - VERSÃO ÚNICA E CORRIGIDA */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .project-modal-content {
         max-width: calc(100vw - 20px) !important;
         min-width: calc(100vw - 20px) !important;
@@ -1267,5 +1267,87 @@
 
     .custom-modal-viewport {
         padding: 1.2rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+
+    .hero-section, .skills-section {
+        padding: 4rem 0rem;
+    }
+    
+    .hero-description, .hero-subtitle, .section-subtitle, .intro-text, .journey-content h4, .skill-header h4, .project-title, .contact-intro h3, .contact-form-modern h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .intro-text, .cta-content p {
+        text-align: justify;
+    }
+
+    .journey-content p, .cta-content p, .skill-tag, .project-status, .contact-intro p, .modern-form label {
+        font-size: 1.25rem;
+    }
+
+    .form-privacy {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons .btn, .cta-buttons .btn {
+        padding: 0.95rem 4rem;
+    }
+
+    .floating-icon {
+        display: none;
+    }
+
+    .hero-stats {
+        margin-bottom: 2rem;
+    }
+    
+    .project-header {
+        flex-direction: column;
+    }
+
+        /* AJUSTES DO FOOTER PARA TABLETS */
+    .custom-footer .row {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        gap: 1.5rem !important;
+    }
+
+    .custom-footer .col-auto,
+    .custom-footer .col {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        margin-bottom: 0.8rem !important;
+    }
+
+    .custom-footer .col-auto:first-child {
+        justify-content: center !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .custom-footer .col-auto:last-child {
+        text-align: center !important;
+        margin-top: 0.5rem !important;
+    }
+
+    .custom-footer .d-none.d-md-block {
+        display: block !important;
+        margin: 0.8rem 0 !important;
+    }
+
+    /* Ajustar tamanhos de fonte para tablets */
+    .custom-footer span,
+    .custom-footer div {
+        font-size: 0.9rem !important;
+    }
+
+    .footer-avatar {
+        width: 38px !important;
+        height: 38px !important;
     }
 }
