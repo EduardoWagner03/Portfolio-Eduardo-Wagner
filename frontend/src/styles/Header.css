@@ -134,6 +134,26 @@ html {
         position: relative;
     }
 
+    .navbar-collapse.show {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 9999;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    body:has(.navbar-collapse.show) {
+        overflow: hidden !important;
+        position: fixed !important;
+        width: 100% !important;
+        height: 100vh !important;
+    }
+
     .navbar-toggler-icon::before, .navbar-toggler-icon::after, .navbar-toggler-icon span {
         content: '';
         display: block;
@@ -164,19 +184,39 @@ html {
     }
 
     .navbar-collapse {
-        background: linear-gradient(rgb(134, 191, 238));
+        background: linear-gradient(135deg, rgb(211, 224, 235) 0%, rgba(66, 165, 245, 0.95) 100%);
         border-radius: 0;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
+        width: 100vw;
         height: 100vh;
         overflow-y: auto;
         overflow-x: hidden;
         display: flex;
         flex-direction: column;
         padding-top: 30px;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+    }
+
+    .navbar-collapse::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .navbar-collapse::-webkit-scrollbar-track {
+        background: rgba(30, 136, 229, 0.1);
+    }
+
+    .navbar-collapse::-webkit-scrollbar-thumb {
+        background: rgba(30, 136, 229, 0.5);
+        border-radius: 2px;
+    }
+
+    .navbar-collapse::-webkit-scrollbar-thumb:hover {
+        background: rgba(30, 136, 229, 0.7);
     }
 
     .navbar-nav {
@@ -190,12 +230,14 @@ html {
         gap: 0.2rem;
         border-bottom: 1px solid rgba(30, 136, 229, 0.15);
         position: relative;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(30, 136, 229, 0.6) rgba(30, 136, 229, 0.05);
+        min-height: calc(100vh - 200px);
     }
 
     .navbar-nav .nav-link {
-        padding: 0.7rem 2rem;
         font-weight: 600;
-        font-size: 1.2rem;
+        font-size: 1rem;
         transition: all 0.3s ease;
         border-radius: 0;
         margin: 0;
@@ -208,7 +250,7 @@ html {
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 50px;
+        min-height: 10px;
         box-shadow: none;
         letter-spacing: 0.3px;
     }
@@ -314,24 +356,29 @@ html {
     .mobile-download-btn {
         width: 100%;
         max-width: 240px;
-        justify-content: center;
-        padding: 0.7rem 1.5rem;
+        justify-content: center !important;
+        padding: 0.4rem 1rem !important;
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: 1rem !important;
         border-radius: 0.8rem;
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
-        min-height: 45px;
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
+        height: 52px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 0.4rem !important;
         box-shadow: 0 4px 20px rgba(30, 136, 229, 0.2);
         background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%);
         border: 1px solid rgba(255, 255, 255, 0.2);
         color: white;
         margin-top: 1rem;
-        letter-spacing: 0.2px;
+        letter-spacing: 0.1px;
+        text-decoration: none;
+        white-space: nowrap;
+        text-align: center !important;
+        line-height: 1 !important;
     }
 
     .mobile-download-btn:hover {
@@ -358,8 +405,39 @@ html {
         left: 100%;
     }
 
+    .mobile-download-btn svg {
+        font-size: 1.7em !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 0.8em !important;
+        height: 0.8em !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
+        line-height: 1 !important;
+    }
+
+     .mobile-download-btn span, .mobile-download-btn .text {
+        display: inline-block !important;
+        vertical-align: middle !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .mobile-download-btn.d-flex {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .mobile-download-btn * {
+        flex-direction: row !important;
+        line-height: 1 !important;
+    }
+
     .mobile-download-btn .fa-download {
-        font-size: 0.85em;
+        display: none;
     }
 
     .contact-method-modern .method-arrow {
@@ -413,7 +491,7 @@ html {
 
     /* Navbar collapse com visual melhorado para tablets */
     .navbar-collapse {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.97) 0%, rgba(227, 242, 253, 0.97) 20%, rgba(187, 222, 251, 0.97) 40%, rgba(144, 202, 249, 0.97) 60%, rgba(100, 181, 246, 0.97) 80%, rgba(66, 165, 245, 0.97) 100%);
+        background: linear-gradient( rgba(100, 181, 246, 0.97));
         border-radius: 0;
         box-shadow: 0 0 0 1px rgba(30, 136, 229, 0.15), 0 20px 60px rgba(30, 136, 229, 0.3), 0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 0 rgba(30, 136, 229, 0.2);
         border: none;
