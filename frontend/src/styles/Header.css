@@ -462,9 +462,7 @@ html {
         position: relative;
     }
 
-    .navbar-toggler-icon::before,
-    .navbar-toggler-icon::after,
-    .navbar-toggler-icon span {
+    .navbar-toggler-icon::before, .navbar-toggler-icon::after,.navbar-toggler-icon span {
         content: '';
         display: block;
         height: 3px;
@@ -489,14 +487,8 @@ html {
         bottom: 6px;
     }
 
-    /* Navbar collapse com visual melhorado para tablets */
     .navbar-collapse {
-        background: linear-gradient( rgba(100, 181, 246, 0.97));
-        border-radius: 0;
-        box-shadow: 0 0 0 1px rgba(30, 136, 229, 0.15), 0 20px 60px rgba(30, 136, 229, 0.3), 0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 0 rgba(30, 136, 229, 0.2);
-        border: none;
-        backdrop-filter: blur(30px);
-        -webkit-backdrop-filter: blur(30px);
+        background: linear-gradient(135deg, rgb(211, 224, 235) 0%, rgba(66, 165, 245, 0.95) 100%);
         position: fixed;
         top: 0;
         right: 0;
@@ -509,9 +501,7 @@ html {
         display: flex;
         flex-direction: column;
         padding: 0;
-        padding-top: 80px;
-        transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        padding-top: 40px;
     }
 
     .navbar-collapse.show {
@@ -565,54 +555,62 @@ html {
     }
 
     .navbar-collapse::-webkit-scrollbar {
-        width: 6px;
+        width: 4px;
     }
 
     .navbar-collapse::-webkit-scrollbar-track {
-        background: rgba(30, 136, 229, 0.08);
-        border-radius: 3px;
+        background: rgba(30, 136, 229, 0.1);
     }
 
     .navbar-collapse::-webkit-scrollbar-thumb {
-        background: linear-gradient(45deg, rgba(30, 136, 229, 0.7) 0%, rgba(66, 165, 245, 0.9) 50%, rgba(30, 136, 229, 0.7) 100%);
-        border-radius: 3px;
-        transition: background 0.3s ease;
+        background: rgba(30, 136, 229, 0.5);
+        border-radius: 2px;
     }
 
     .navbar-collapse::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(45deg, rgba(21, 101, 192, 0.9) 0%, rgba(30, 136, 229, 1) 50%, rgba(21, 101, 192, 0.9) 100%);
+        background: rgba(30, 136, 229, 0.7);
     }
 
-    .navbar-nav::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80%;
-        height: 1px;
-        background: linear-gradient(90deg, transparent 0%, rgba(30, 136, 229, 0.4) 20%, rgba(30, 136, 229, 0.7) 50%, rgba(30, 136, 229, 0.4) 80%, transparent 100%);
+    .navbar-nav {
+        text-align: center;
+        margin-bottom: 1rem !important; 
+        padding: 1rem 0;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0.2rem;
+        border-bottom: 1px solid rgba(30, 136, 229, 0.15);
+        position: relative;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(30, 136, 229, 0.6) rgba(30, 136, 229, 0.05);
+        min-height: calc(30vh - 80px);
+        padding-top: 1rem; 
     }
 
     .navbar-nav .nav-link {
-        padding: 0.8rem 1.5rem !important; /* Reduzido padding vertical */
         font-weight: 600;
-        font-size: 1.2rem;
+        font-size: 1.5rem !important;
         transition: all 0.3s ease;
-        border-radius: 0.8rem; /* Adicionado border-radius */
-        margin: 0.2rem 0 !important; /* Adicionado margin menor */
+        border-radius: 0;
+        margin: 0;
         color: #2d3748 !important;
         position: relative;
         background: transparent;
         border: none;
-        border-bottom: 2px solid transparent;
+        border-bottom: 3px solid transparent;
         backdrop-filter: none;
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 50px; /* Reduzido de 60px */
+        min-height: 10px;
         box-shadow: none;
         letter-spacing: 0.3px;
+        padding: 0.6rem 1rem !important;
+    }
+
+    .navbar-nav .nav-link::after {
+        display: none !important;
     }
 
     .navbar-nav .nav-link::before {
@@ -620,166 +618,194 @@ html {
     }
 
     .navbar-nav .nav-link:hover {
-        background: rgba(30, 136, 229, 0.1);
-        border-bottom: 2px solid #1e88e5;
+        background: transparent;
+        border-bottom: 3px solid #1e88e5;
         color: #1e88e5 !important;
-        transform: scale(1.02);
-        box-shadow: 0 4px 15px rgba(30, 136, 229, 0.15);
+        transform: none;
+        box-shadow: none;
     }
 
     .navbar-nav .nav-link:active {
-        transform: scale(0.98);
+        transform: none;
     }
 
-    /* Botão de fechar melhorado */
     .mobile-close-btn {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
-        border: 2px solid rgba(255, 255, 255, 0.4);
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        color: white;
-        cursor: pointer;
-        z-index: 100000;
-        transition: all 0.3s ease;
+        position: fixed !important;
+        top: 20px !important;
+        right: 20px !important;
+        background: rgba(229, 43, 30, 0.9) !important;
+        border: 2px solid rgba(255, 255, 255, 0.3) !important;
+        border-radius: 50% !important;
+        width: 50px !important;
+        height: 50px !important;
+        color: white !important;
+        cursor: pointer !important;
+        z-index: 100000 !important;
+        transition: all 0.3s ease !important;
         display: flex !important;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        font-size: 1.4rem;
-        line-height: 1;
-        box-shadow: 0 6px 25px rgba(229, 62, 62, 0.4);
-        backdrop-filter: blur(10px);
-        text-align: center;
-        vertical-align: middle;
-        padding: 0;
-        margin: 0;
-        border-style: solid;
-        outline: none;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 600 !important;
+        font-size: 1.4rem !important;
+        line-height: 1 !important;
+        box-shadow: 0 4px 20px rgba(30, 136, 229, 0.4) !important;
+        backdrop-filter: blur(10px) !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-style: solid !important;
+        outline: none !important;
     }
 
     .mobile-close-btn:hover {
-        background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
-        border-color: rgba(255, 255, 255, 0.6);
-        transform: scale(1.1) rotate(90deg);
-        box-shadow: 0 8px 30px rgba(229, 62, 62, 0.5);
+        background: rgba(21, 101, 192, 0.95) !important;
+        border-color: rgba(255, 255, 255, 0.5) !important;
+        transform: scale(1.1) !important;
+        box-shadow: 0 6px 25px rgba(30, 136, 229, 0.5) !important;
     }
 
-    /* Container de botões reorganizado */
+    .mobile-close-btn:focus {
+        outline: none !important;
+        border-color: rgba(255, 255, 255, 0.6) !important;
+    }
+
     .mobile-small-buttons {
         display: flex !important;
-        gap: 0.8rem; /* Reduzido de 1rem */
+        gap: 1rem;
         justify-content: center;
         width: 100%;
         padding: 1rem;
+        margin-bottom: 0 !important;
     }
 
     .mobile-small-buttons .btn-outline-primary {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 0.7rem 0.9rem; /* Reduzido padding */
+        padding: 0.8rem 1rem;
         font-weight: 600;
-        font-size: 0.9rem; /* Reduzido font-size */
+        font-size: 0.95rem;
         border-radius: 0.8rem;
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
-        min-height: 45px; /* Reduzido de 50px */
-        min-width: 90px; /* Reduzido de 100px */
-        gap: 0.4rem; /* Reduzido gap */
+        min-height: 50px;
+        min-width: 100px;
+        gap: 0.5rem;
         box-shadow: 0 4px 15px rgba(30, 136, 229, 0.15);
-        background: rgba(255, 255, 255, 0.96);
+        background: rgba(255, 255, 255, 0.95);
         border: 2px solid #1e88e5;
         color: #1e88e5;
         flex: 1;
-        max-width: 110px; /* Reduzido de 120px */
+        max-width: 120px;
     }
 
     .mobile-small-buttons .btn-outline-primary:hover {
         background: #1e88e5;
         color: white;
         border-color: #1e88e5;
-        transform: translateY(-2px) scale(1.05);
-        box-shadow: 0 8px 25px rgba(30, 136, 229, 0.35);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(30, 136, 229, 0.3);
     }
 
-    /* Botão de download menor */
     .mobile-download-btn {
+        display: block !important; 
         width: 100% !important;
-        max-width: 220px !important; /* Reduzido de 280px */
-        justify-content: center;
-        padding: 0.7rem 1.2rem !important; /* Reduzido padding */
-        font-weight: 600;
-        font-size: 0.95rem !important; /* Reduzido font-size */
-        border-radius: 0.8rem;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        min-height: 45px !important; /* Reduzido de 50px */
-        display: flex !important;
-        align-items: center;
-        gap: 0.5rem; /* Reduzido gap */
-        box-shadow: 0 6px 25px rgba(30, 136, 229, 0.25);
-        background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: white;
-        margin-top: 1rem;
-        letter-spacing: 0.2px;
+        max-width: 220px !important;
+        height: 50px !important;
+        padding: 0 !important;
+        margin: 1rem auto 0 auto !important;
+        background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 0.8rem !important;
+        color: white !important;
+        font-weight: 600 !important;
+        font-size: 1rem !important;
+        text-decoration: none !important;
+        text-align: center !important;
+        line-height: 50px !important; 
+        position: relative !important;
+        overflow: hidden !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 20px rgba(30, 136, 229, 0.2) !important;
+        cursor: pointer !important;
+        white-space: nowrap !important;
     }
 
     .mobile-download-btn:hover {
-        background: linear-gradient(135deg, #1565c0 0%, #1e88e5 100%);
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 10px 35px rgba(21, 101, 192, 0.4);
-        color: white;
-        text-decoration: none;
-        border-color: rgba(255, 255, 255, 0.4);
+        background: linear-gradient(135deg, #1565c0 0%, #1e88e5 100%) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 30px rgba(21, 101, 192, 0.35) !important;
+        color: white !important;
+        text-decoration: none !important;
+        border-color: rgba(255, 255, 255, 0.4) !important;
     }
 
-    /* Overlay melhorado */
-    .navbar-collapse.show::after {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 50vw;
-        height: 100vh;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 249, 255, 0.96) 15%, rgba(227, 242, 253, 0.96) 35%, rgba(187, 222, 251, 0.96) 55%, rgba(144, 202, 249, 0.96) 75%, rgba(100, 181, 246, 0.96) 90%, rgba(66, 165, 245, 0.96) 100%);
-        z-index: -1;
-        animation: fadeInOverlay 0.4s ease;
+    .mobile-download-btn::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+        transition: left 0.6s ease !important;
     }
 
-    @keyframes fadeInOverlay {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
+    .mobile-download-btn:hover::before {
+        left: 100% !important;
     }
 
-    /* Esconder botões desktop para tablets */
+    .mobile-download-btn * {
+        display: inline !important;
+        vertical-align: middle !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .mobile-download-btn svg, .mobile-download-btn i {
+        display: inline !important;
+        font-size: 1.1em !important;
+        margin-right: 0.5rem !important;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        vertical-align: middle !important;
+        line-height: 1 !important;
+    }
+
+    .mobile-download-btn span, .mobile-download-btn .text {
+        display: inline !important;
+        vertical-align: middle !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .mobile-download-btn.d-flex, .mobile-download-btn[class*="d-flex"], .mobile-download-btn[class*="align-items"], .mobile-download-btn[class*="gap"] {
+        display: block !important;
+        align-items: unset !important;
+        gap: 0 !important;
+        flex-direction: unset !important;
+    }
+
     .desktop-buttons {
         display: none !important;
     }
 
-    /* Container de botões tablet melhorado */
     .d-flex.align-items-center.gap-2 {
         flex-direction: column !important;
-        gap: 1.2rem !important; /* Reduzido de 1.5rem */
+        gap: 1.5rem !important;
         width: 100%;
-        padding: 1.5rem 1rem 1rem 1rem; /* Reduzido padding top */
-        border-top: 2px solid rgba(30, 136, 229, 0.25);
+        padding: 1.5rem 0 2rem 0;
+        border-top: 2px solid rgba(30, 136, 229, 0.2);
         margin-top: auto;
         flex-shrink: 0;
         justify-content: center;
         align-items: center;
         position: relative;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(227, 242, 253, 0.15) 100%);
     }
 
     .d-flex.align-items-center.gap-2::before {
@@ -790,51 +816,6 @@ html {
         transform: translateX(-50%);
         width: 80%;
         height: 2px;
-        background: linear-gradient(90deg, transparent 0%, rgba(30, 136, 229, 0.4) 20%, rgba(30, 136, 229, 0.9) 50%, rgba(30, 136, 229, 0.4) 80%, transparent 100%);
+        background: linear-gradient(90deg,transparent 0%,rgba(30, 136, 229, 0.3) 20%,rgba(30, 136, 229, 0.8) 50%,rgba(30, 136, 229, 0.3) 80%,transparent 100%);
     }
-
-    /* Outros ajustes já existentes para tablets */
-    .about-section, .hero-section, .skills-section, .contact-section, .experience-section, .projects-section {
-        padding: 4rem 0rem;
-    }
-    
-    .hero-description, .hero-subtitle, .section-subtitle, .intro-text, .journey-content h4, .skill-header h4, .project-title, .contact-intro h3, .contact-form-modern h3 {
-        font-size: 1.5rem !important;
-    }
-
-    .intro-text, .cta-content p {
-        text-align: justify;
-    }
-
-    .journey-content p, .cta-content p, .skill-tag, .project-status, .contact-intro p, .modern-form label {
-        font-size: 1.25rem;
-    }
-
-    .form-privacy {
-        font-size: 1.1rem;
-    }
-
-    .hero-buttons .btn, .cta-buttons .btn {
-        padding: 0.95rem 4rem;
-    }
-
-    .floating-icon {
-        display: none;
-    }
-
-    .hero-stats {
-        margin-bottom: 2rem;
-    }
-    
-    .project-header {
-        flex-direction: column;
-    }
-
-    /* Scrollbar personalizada para tablets */
-    .navbar-collapse {
-        scrollbar-width: thin;
-        scrollbar-color: rgba(30, 136, 229, 0.7) rgba(30, 136, 229, 0.08);
-    }
-
-    /* ...existing code... */
 }
