@@ -589,49 +589,6 @@
 }
 
 /* Media Queries Popup */
-@media (max-width: 480px) {
-    .project-modal-content {
-        padding: 1.5rem 1rem;
-        border-radius: 1rem;
-    }
-
-    .project-modal-title {
-        font-size: 1.5rem;
-    }
-
-    .project-modal-summary {
-        font-size: 0.95rem;
-        padding: 1rem;
-    }
-
-    .project-responsibilities-title, .project-team-title, .iot-integration-title {
-        font-size: 1.2rem;
-    }
-
-    .project-responsibility-item, .iot-integration-item {
-        font-size: 0.9rem;
-        padding: 0.6rem 0.8rem;
-    }
-
-    .tech-category-title {
-        font-size: 0.9rem;
-    }
-
-    .tech-tag {
-        font-size: 0.75rem;
-        padding: 0.5rem 0.6rem;
-    }
-
-    .feature-title {
-        font-size: 1.1rem;
-    }
-
-    .feature-desc {
-        font-size: 0.9rem;
-    }
-}
-
-/* Media Queries Popup - VERSÃO ÚNICA E CORRIGIDA */
 @media (max-width: 767px) {
     .project-modal-content {
         max-width: calc(100vw - 20px) !important;
@@ -779,7 +736,6 @@
         font-size: 1.1rem !important;
     }
 
-    /* IoT Integration */
     .iot-integration-title {
         font-size: 1.4rem !important;
         margin-bottom: 1rem !important;
@@ -805,7 +761,6 @@
         margin-bottom: 0.3rem !important;
     }
 
-    /* Features */
     .feature-row {
         flex-direction: column !important;
         text-align: center !important;
@@ -835,22 +790,19 @@
         text-align: justify !important;
     }
 
-    /* Tech Grid - AJUSTE PARA DUAS COLUNAS */
     .tech-details-grid {
         grid-template-columns: 1fr !important;
         gap: 1rem !important;
         margin-bottom: 2rem !important;
     }
 
-    .tech-details-grid .tech-details-card:nth-child(4), 
-    .tech-details-grid .tech-details-card:nth-child(5) {
+    .tech-details-grid .tech-details-card:nth-child(4),  .tech-details-grid .tech-details-card:nth-child(5) {
         transform: none !important;
         grid-column: auto !important;
         justify-self: stretch !important;
     }
 
-    .tech-details-grid .tech-details-card:nth-child(4):hover, 
-    .tech-details-grid .tech-details-card:nth-child(5):hover {
+    .tech-details-grid .tech-details-card:nth-child(4):hover,  .tech-details-grid .tech-details-card:nth-child(5):hover {
         transform: translateY(-5px) scale(1.02) !important;
     }
 
@@ -866,7 +818,6 @@
         margin-bottom: 1rem !important;
     }
 
-    /* Ajuste para duas colunas com flexibilidade para tags longas */
     .tech-tags {
         display: grid !important;
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
@@ -888,22 +839,17 @@
         text-overflow: ellipsis !important;
     }
 
-    /* Para tags muito longas, elas ocuparão toda a largura */
     .tech-tag[data-long-text] {
         grid-column: 1 / -1 !important;
     }
 
-    /* Animations */
     .project-modal-content {
         animation: modalSlideUpMobile 0.4s ease-out !important;
         -webkit-overflow-scrolling: touch !important;
         scroll-behavior: smooth !important;
     }
 
-    .project-features, 
-    .project-responsibilities, 
-    .project-team, 
-    .iot-integration {
+    .project-features, .project-responsibilities,  .project-team, .iot-integration {
         margin-bottom: 2rem !important;
     }
 }
@@ -924,14 +870,11 @@
         padding: 1rem !important;
     }
 
-    .project-responsibilities-title, 
-    .project-team-title, 
-    .iot-integration-title {
+    .project-responsibilities-title, .project-team-title, .iot-integration-title {
         font-size: 1.2rem !important;
     }
 
-    .project-responsibility-item, 
-    .iot-integration-item {
+    .project-responsibility-item, .iot-integration-item {
         font-size: 0.9rem !important;
         padding: 0.6rem 0.8rem !important;
     }
@@ -940,7 +883,6 @@
         font-size: 0.9rem !important;
     }
 
-    /* Ajuste específico para mobile pequeno */
     .tech-tags {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important;
         gap: 0.5rem !important;
@@ -958,17 +900,6 @@
 
     .feature-desc {
         font-size: 0.9rem !important;
-    }
-}
-
-@media (max-width: 1200px) {
-    .project-modal-content {
-        max-width: calc(min(1100px, 96vw) - 4px);
-        padding: 3rem 2.5rem;
-    }
-
-    .custom-modal-viewport {
-        padding: 1.2rem;
     }
 }
 
@@ -1010,7 +941,6 @@
         flex-direction: column;
     }
 
-    /* TIMELINE - MESMO COMPORTAMENTO DO MOBILE PARA TABLETS */
     .timeline:before {
         display: none;
     }
@@ -1106,7 +1036,6 @@
         transform: none !important; 
     }
 
-    /* Sobrescrever styles inline específicos */
     .timeline-header[style*="gap"] {
         gap: 1rem !important;
     }
@@ -1125,7 +1054,6 @@
         width: 100% !important;
     }
 
-    /* AJUSTES DO FOOTER PARA TABLETS */
     .custom-footer .row {
         flex-direction: column !important;
         align-items: center !important;
@@ -1134,8 +1062,7 @@
         gap: 1.5rem !important;
     }
 
-    .custom-footer .col-auto,
-    .custom-footer .col {
+    .custom-footer .col-auto, .custom-footer .col {
         width: 100% !important;
         max-width: 100% !important;
         text-align: center !important;
@@ -1157,9 +1084,7 @@
         margin: 0.8rem 0 !important;
     }
 
-    /* Ajustar tamanhos de fonte para tablets */
-    .custom-footer span,
-    .custom-footer div {
+    .custom-footer span, .custom-footer div {
         font-size: 0.9rem !important;
     }
 
@@ -1169,7 +1094,7 @@
     }
 }
 
-/* Media Query específica para TABLETS (768px até 1000px) */
+/* Media Query específica para Popup (768px até 1000px) */
 @media (min-width: 768px) and (max-width: 1000px) {
 
     .project-modal-content {
@@ -1217,7 +1142,6 @@
         font-size: 1rem !important;
     }
 
-    /* AJUSTE PRINCIPAL - Layout em coluna com imagem centralizada */
     .project-modal-main-row {
         flex-direction: column !important;
         gap: 2rem !important;
@@ -1244,7 +1168,6 @@
         width: 100% !important;
     }
 
-    /* Responsabilidades */
     .project-responsibilities-title {
         font-size: 1.6rem !important;
         margin-bottom: 1.5rem !important;
@@ -1273,7 +1196,6 @@
         font-size: 1.3rem !important;
     }
 
-    /* Equipe */
     .project-team-title {
         font-size: 1.6rem !important;
         margin-bottom: 1.5rem !important;
@@ -1325,7 +1247,6 @@
         font-size: 1.2rem !important;
     }
 
-    /* IoT Integration */
     .iot-integration-title {
         font-size: 1.6rem !important;
         margin-bottom: 1.5rem !important;
@@ -1352,7 +1273,6 @@
         font-size: 1.3rem !important;
     }
 
-    /* Features */
     .feature-row {
         flex-direction: row !important;
         text-align: left !important;
@@ -1385,26 +1305,22 @@
         line-height: 1.6 !important;
     }
 
-    /* Tech Grid - SEMPRE DUAS COLUNAS PARA TABLETS */
     .tech-details-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 1.5rem !important;
         margin-bottom: 2.5rem !important;
     }
 
-    .tech-details-grid .tech-details-card:nth-child(4),
-    .tech-details-grid .tech-details-card:nth-child(5) {
+    .tech-details-grid .tech-details-card:nth-child(4), .tech-details-grid .tech-details-card:nth-child(5) {
         transform: none !important;
         grid-column: auto !important;
         justify-self: stretch !important;
     }
 
-    .tech-details-grid .tech-details-card:nth-child(4):hover,
-    .tech-details-grid .tech-details-card:nth-child(5):hover {
+    .tech-details-grid .tech-details-card:nth-child(4):hover, .tech-details-grid .tech-details-card:nth-child(5):hover {
         transform: translateY(-5px) scale(1.02) !important;
     }
 
-    /* Cards vazios para manter layout 2x3 */
     .tech-details-card.empty-card {
         visibility: hidden !important;
         pointer-events: none !important;
@@ -1422,11 +1338,9 @@
         margin-bottom: 1.2rem !important;
     }
 
-    /* Tech Tags - SEMPRE DUAS COLUNAS COM EXPANSÃO AUTOMÁTICA */
     .tech-tags {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
-        /* SEMPRE duas colunas fixas */
         gap: 0.7rem !important;
         align-items: start !important;
     }
@@ -1445,26 +1359,21 @@
         text-overflow: ellipsis !important;
     }
 
-    /* Para tags muito longas - ocupa as duas colunas */
-    .tech-tag[data-long-text],
-    .tech-tag:nth-child(odd):last-child {
+    .tech-tag[data-long-text], .tech-tag:nth-child(odd):last-child {
         grid-column: 1 / -1 !important;
         max-width: 100% !important;
     }
 
-    /* Se a tag for muito longa, força para ocupar toda a largura */
     .tech-tag {
         word-break: break-word !important;
         white-space: normal !important;
         line-height: 1.2 !important;
     }
 
-    /* Para textos longos específicos */
     .tech-tags .tech-tag:nth-child(n) {
         max-width: 100% !important;
     }
 
-    /* Se o texto da tag for muito longo, quebra para ocupar as duas colunas */
     @supports (container-type: inline-size) {
         .tech-tag {
             container-type: inline-size;
@@ -1478,7 +1387,6 @@
         }
     }
 
-    /* Animações para tablets */
     .project-modal-content {
         animation: modalSlideUpTablet 0.4s ease-out !important;
         -webkit-overflow-scrolling: touch !important;
@@ -1497,25 +1405,18 @@
         }
     }
 
-    .project-features,
-    .project-responsibilities,
-    .project-team,
-    .iot-integration {
+    .project-features, .project-responsibilities, .project-team, .iot-integration {
         margin-bottom: 2.5rem !important;
     }
 
-    /* Melhor espaçamento para elementos de funcionalidades */
     .feature-row:not(:last-child) {
         margin-bottom: 1.5rem !important;
     }
 
-    /* Ajustes para melhor leitura em tablets */
-    .project-modal-summary::before,
-    .project-modal-summary::after {
+    .project-modal-summary::before, .project-modal-summary::after {
         font-size: 1.8rem !important;
     }
 
-    /* Hover effects específicos para tablets */
     .tech-details-card:hover {
         transform: translateY(-3px) scale(1.01) !important;
         box-shadow: 0 12px 35px rgba(30, 136, 229, 0.18) !important;
@@ -1524,5 +1425,13 @@
     .feature-row:hover {
         transform: translateY(-2px) !important;
         box-shadow: 0 10px 30px rgba(30, 136, 229, 0.12) !important;
+    }
+}
+
+
+@media (min-width: 1001px) and (max-width: 1280px) {
+
+    .hero-section, .about-section, .skills-section, .projects-section, .experience-section, .contact-section {
+        padding: 4rem 0rem;
     }
 }

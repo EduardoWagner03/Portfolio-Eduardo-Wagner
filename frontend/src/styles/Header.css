@@ -448,7 +448,6 @@ html {
 /* Media Query específica para TABLETS (768px até 1000px) */
 @media (min-width: 768px) and (max-width: 1000px) {
     
-    /* NAVBAR RESPONSIVO PARA TABLETS */
     .navbar-toggler {
         display: block !important;
         border: 2px solid #1e88e5;
@@ -519,7 +518,6 @@ html {
         transform: translateX(100%);
     }
 
-    /* Animações específicas para tablet */
     @keyframes slideInTablet {
         from {
             transform: translateX(100%);
@@ -817,5 +815,61 @@ html {
         width: 80%;
         height: 2px;
         background: linear-gradient(90deg,transparent 0%,rgba(30, 136, 229, 0.3) 20%,rgba(30, 136, 229, 0.8) 50%,rgba(30, 136, 229, 0.3) 80%,transparent 100%);
+    }
+}
+
+/* Media Query específica para TELAS entre 1001px e 1280px */
+@media (min-width: 1001px) and (max-width: 1280px) {
+
+    .desktop-buttons .btn-primary {
+        padding: 0.5rem 0.75rem !important;
+        min-width: auto !important;
+        font-size: 1rem !important;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    .desktop-buttons a[href="/cv.pdf"] {
+        font-size: 0 !important;
+    }
+
+    .desktop-buttons a[href="/cv.pdf"] svg, .desktop-buttons a[href="/cv.pdf"] i, .desktop-buttons a[href="/cv.pdf"] .fa-download {
+        font-size: 1.1rem !important;
+        display: inline-block !important;
+        color: white !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        vertical-align: middle !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1 !important;
+        width: auto !important;
+        height: auto !important;
+    }
+
+    .desktop-buttons a[href="/cv.pdf"]::after {
+        content: " CV";
+        font-size: 1rem !important;
+        display: inline !important;
+        margin-left: -0.5rem !important; 
+        vertical-align: middle !important;
+        color: white !important;
+        line-height: 1 !important;
+        font-weight: 500 !important;
+    }
+
+    .desktop-buttons a[href="/cv.pdf"] .fas, .desktop-buttons a[href="/cv.pdf"] .far, .desktop-buttons a[href="/cv.pdf"] .fab {
+        font-size: 1.1rem !important;
+        display: inline-block !important;
+        color: white !important;
+        margin-right: 0 !important;
+    }
+
+    .desktop-buttons a[href="/cv.pdf"] [class*="fa-"], .desktop-buttons a[href="/cv.pdf"] [class*="icon-"] {
+        font-size: 1.1rem !important;
+        display: inline-block !important;
+        color: white !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 }

@@ -9,30 +9,10 @@ import './styles/animations.css';
 import './styles/Popup.css';
 import { FaBriefcase } from "react-icons/fa";
 import {
-  FaMoon,
-  FaSun,
-  FaGlobe,
-  FaDownload,
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-  FaExternalLinkAlt,
-  FaCode,
-  FaDatabase,
-  FaTools,
-  FaCloud,
-  FaDesktop,
-  FaCogs,
-  FaRocket,
-  FaUserAstronaut,
-  FaPhone, 
-  FaShieldAlt,
-} from "react-icons/fa"
+  FaMoon, FaSun, FaGlobe, FaDownload, FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt, FaCode, FaDatabase, FaTools, FaCloud, FaDesktop, FaCogs, FaRocket, FaUserAstronaut, FaPhone, FaShieldAlt, FaUsers,
+} from "react-icons/fa";
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogTrigger,
+  Dialog, DialogContent, DialogDescription, DialogTrigger,
 } from "./components/ui/dialog"
 
 import { SiJira } from "react-icons/si";
@@ -42,7 +22,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isNavOpen, setIsNavOpen] = useState(false); // Adicionar este estado
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const modalRef = useRef(null);
 
   const handleLang = () => setLang(lang === "pt-br" ? "en" : "pt-br")
@@ -74,7 +54,6 @@ function App() {
     
     // CSS organizado do iframe.css
     const iframeCss = `
-      /* Reset básico */
       * {
         margin: 0;
         padding: 0;
@@ -86,10 +65,8 @@ function App() {
         height: 100%;
         overflow: hidden;
         background: linear-gradient(135deg, #f0f8ff 0%, #e3f2fd 100%);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       }
   
-      /* Container principal */
       .image-viewer-container {
         width: 100vw;
         height: 100vh;
@@ -98,7 +75,6 @@ function App() {
         position: relative;
       }
   
-      /* Header */
       .image-viewer-header {
         background: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%);
         color: white;
@@ -116,7 +92,6 @@ function App() {
         text-shadow: 0 2px 8px rgba(0,0,0,0.2);
       }
   
-      /* Container da imagem */
       .image-viewer-body {
         flex: 1;
         display: flex;
@@ -128,7 +103,6 @@ function App() {
         overflow: hidden;
       }
   
-      /* Wrapper da imagem */
       .image-viewer-wrapper {
         max-width: 90%;
         max-height: 100%;
@@ -141,7 +115,6 @@ function App() {
         padding: 15px;
       }
   
-      /* Imagem */
       .image-viewer-img {
         max-width: 100%;
         max-height: 45rem;
@@ -156,7 +129,6 @@ function App() {
         filter: brightness(1) contrast(1) saturate(1);
       }
 
-      /* Botão de fechar */
       .image-viewer-close-btn {
         position: fixed;
         top: 20px;
@@ -188,7 +160,6 @@ function App() {
         transform: scale(0.95);
       }
   
-      /* Loading */
       .image-viewer-loading {
         color: #1565c0;
         font-size: 18px;
@@ -197,7 +168,6 @@ function App() {
         font-weight: 500;
       }
   
-      /* Footer info */
       .image-viewer-footer-info {
         position: absolute;
         bottom: 15px;
@@ -213,7 +183,6 @@ function App() {
         box-shadow: 0 2px 10px rgba(30, 136, 229, 0.1);
       }
   
-      /* Responsivo para tela cheia */
       @media (min-width: 1200px) {
         .image-viewer-header h1 {
           font-size: 2.2rem;
@@ -243,10 +212,7 @@ function App() {
         }
       }
   
-      /* Garantir que funciona em tela cheia */
-      :fullscreen .image-viewer-container,
-      :-webkit-full-screen .image-viewer-container,
-      :-moz-full-screen .image-viewer-container {
+      :fullscreen .image-viewer-container, :-webkit-full-screen .image-viewer-container, :-moz-full-screen .image-viewer-container {
         width: 100vw;
         height: 100vh;
       }
@@ -657,7 +623,7 @@ function App() {
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
-    setIsModalOpen(true); // <-- Adicione esta linha
+    setIsModalOpen(true);
   };
 
   <div
@@ -1449,7 +1415,12 @@ function App() {
               {/* Equipe do Projeto */}
               {selectedProject.equipe && (
                 <div className="project-team">
-                  <h4 className="project-team-title">👨‍� Equipe do Projeto</h4>
+                  <h4 className="project-team-title">
+                    <FaUsers
+                      style={{ marginRight: "0.5rem", color: "#1e88e5" }}
+                    />
+                    Equipe do Projeto
+                  </h4>
                   <div className="project-team-grid">
                     {selectedProject.equipe.map((membro, idx) => {
                       // Definir redes sociais para cada membro

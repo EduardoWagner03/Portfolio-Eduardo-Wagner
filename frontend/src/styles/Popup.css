@@ -318,7 +318,6 @@
 
 .feature-row:hover .feature-img {
   border-color: #42a5f5;
-  /* Borda azul clara ao hover */
   box-shadow: 0 10px 25px rgba(30, 136, 229, 0.18), 0 4px 12px rgba(30, 136, 229, 0.10);
 }
 
@@ -607,8 +606,7 @@
   box-shadow: 0 8px 20px rgba(117, 117, 117, 0.15);
 }
 
-.tech-details-card,
-.feature-row {
+.tech-details-card, .feature-row {
   animation: fadeInUp 0.8s ease-out;
 }
 
@@ -644,7 +642,6 @@
   animation-delay: 0.3s;
 }
 
-/* Minhas Responsabilidades no Projeto */
 .project-responsibilities {
   margin-bottom: 3rem;
 }
@@ -726,7 +723,6 @@
   filter: drop-shadow(0 2px 4px rgba(30, 136, 229, 0.3));
 }
 
-/* Equipe do Projeto */
 .project-team {
   margin-bottom: 3rem;
 }
@@ -864,7 +860,6 @@
   border-color: #fff;
 }
 
-/* Integração IoT */
 .iot-integration {
   margin-bottom: 3rem;
 }
