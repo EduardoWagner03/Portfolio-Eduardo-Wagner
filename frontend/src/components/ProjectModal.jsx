@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FaGithub,
   FaLinkedin,
@@ -8,7 +8,7 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-} from "./ui/dialog";
+} from "./dialog";
 
 function ProjectModal({
   isModalOpen,
@@ -17,7 +17,21 @@ function ProjectModal({
   handleProjectClick,
 }) {
   
-  // ✅ MOVER A FUNÇÃO handleImageClick PARA DENTRO DO COMPONENTE
+  // ✅ CONTROLAR SCROLL DO BODY QUANDO MODAL ABRE/FECHA
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.classList.add("body-modal-open");
+    } else {
+      document.body.classList.remove("body-modal-open");
+    }
+
+    // ✅ Cleanup: remover classe quando componente desmonta
+    return () => {
+      document.body.classList.remove("body-modal-open");
+    };
+  }, [isModalOpen]);
+  
+  // ✅ FUNÇÃO handleImageClick DENTRO DO COMPONENTE
   const handleImageClick = (imageSrc, imageTitle) => {
     // Calcular as dimensões da tela
     const screenWidth = window.screen.availWidth;
@@ -326,7 +340,6 @@ function ProjectModal({
                 </div>
               </DialogDescription>
 
-              {/* Resto do código permanece igual... */}
               {/* Minhas Responsabilidades */}
               {selectedProject.minhasResponsabilidades && (
                 <div className="project-responsibilities">
