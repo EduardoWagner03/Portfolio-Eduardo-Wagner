@@ -20,7 +20,12 @@ import "./styles/scroll-animations.css";
 import "./styles/section-backgrounds.css";
 
 function App() {
-  const [lang, setLang] = useState("pt-br");
+ const getDefaultLang = () => {
+   const browserLang = navigator.language || navigator.userLanguage;
+   return browserLang.startsWith("pt") ? "pt-br" : "en";
+ };
+
+ const [lang, setLang] = useState(getDefaultLang());
   const [darkMode, setDarkMode] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);

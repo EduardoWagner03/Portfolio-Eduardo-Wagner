@@ -1,13 +1,7 @@
 import React, { useEffect } from "react";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaUsers,
+import { FaGithub, FaLinkedin, FaUsers,
 } from "react-icons/fa";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
+import { Dialog, DialogContent, DialogDescription,
 } from "./dialog";
 
 function ProjectModal({
@@ -17,7 +11,6 @@ function ProjectModal({
   handleProjectClick,
 }) {
   
-  // ✅ CONTROLAR SCROLL DO BODY QUANDO MODAL ABRE/FECHA
   useEffect(() => {
     if (isModalOpen) {
       document.body.classList.add("body-modal-open");
@@ -25,7 +18,6 @@ function ProjectModal({
       document.body.classList.remove("body-modal-open");
     }
 
-    // ✅ Cleanup: remover classe quando componente desmonta
     return () => {
       document.body.classList.remove("body-modal-open");
     };
