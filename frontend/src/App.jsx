@@ -22,6 +22,7 @@ import "./styles/scroll-animations.css";
 import "./styles/section-backgrounds.css";
 
 function App() {
+  const { t, i18n } = useTranslation();
   const getDefaultLang = () => {
     const browserLang = navigator.language || navigator.userLanguage;
     console.log("Idioma detectado:", browserLang);
@@ -160,7 +161,7 @@ function App() {
                           opacity: 0.95,
                         }}
                       />
-                      Olá, eu sou
+                      {t("hello")}
                     </span>
                   </div>
                   <h1 className="hero-name">
@@ -169,28 +170,23 @@ function App() {
                     <span className="hero-surname">Wagner</span>
                   </h1>
                   <h2 className="hero-subtitle hero-subtitle-highlight">
-                    Desenvolvedor Full Stack Júnior focado em Front-end
+                    {t("heroSubtitle")}
                   </h2>
-                  <p className="hero-description">
-                    Desenvolvedor Full Stack Júnior, com foco em Frontend e
-                    experiência em desenvolvimento web e desktop. Atuação com
-                    React, Node.js, PostgreSQL, JavaScript, entre outras
-                    tecnologias. Comprometido em entregar soluções de qualidade,
-                    alinhando desempenho, usabilidade e boas práticas de
-                    desenvolvimento.
-                  </p>
+                  <p className="hero-description">{t("heroDescription")}</p>
                   <div className="hero-buttons">
                     <a
                       href="#projects"
                       className="btn btn-hero-primary btn-lg me-3 smooth-transition"
                     >
-                      <i className="fas fa-rocket me-2"></i>Ver Projetos
+                      <i className="fas fa-rocket me-2"></i>
+                      {t("seeProjects")}
                     </a>
                     <a
                       href="#contact"
                       className="btn btn-hero-outline btn-lg smooth-transition"
                     >
-                      <i className="fas fa-envelope me-2"></i>Entre em Contato
+                      <i className="fas fa-envelope me-2"></i>
+                      {t("contactMe")}
                     </a>
                   </div>
                   <div
@@ -200,25 +196,19 @@ function App() {
                     <div className="stat-item smooth-transition">
                       <FaCogs className="stat-icon svg-icon-animated" />
                       <span className="stat-label">
-                        Projetos de alto impacto
+                        {t("highImpactProjects")}
                       </span>
-                      <span className="stat-desc">
-                        Soluções completas para empresas e instituições
-                      </span>
+                      <span className="stat-desc">{t("highImpactDesc")}</span>
                     </div>
                     <div className="stat-item smooth-transition">
                       <FaTools className="stat-icon svg-icon-animated" />
-                      <span className="stat-label">Especialidade</span>
-                      <span className="stat-desc">
-                        Full Stack & Integrações avançadas
-                      </span>
+                      <span className="stat-label">{t("specialty")}</span>
+                      <span className="stat-desc">{t("specialtyDesc")}</span>
                     </div>
                     <div className="stat-item smooth-transition">
                       <FaCloud className="stat-icon svg-icon-animated" />
-                      <span className="stat-label">Resultados</span>
-                      <span className="stat-desc">
-                        Automação, performance e inovação
-                      </span>
+                      <span className="stat-label">{t("results")}</span>
+                      <span className="stat-desc">{t("resultsDesc")}</span>
                     </div>
                   </div>
                 </div>
@@ -240,16 +230,16 @@ function App() {
                       <div className="floating-icon floating-icon-1 svg-icon-animated">
                         <FaCogs />
                         <span className="custom-tooltip">
-                          Engenharia de Software
+                          {t("engineering")}
                         </span>
                       </div>
                       <div className="floating-icon floating-icon-2 svg-icon-animated">
                         <FaDatabase />
-                        <span className="custom-tooltip">Banco de Dados</span>
+                        <span className="custom-tooltip">{t("database")}</span>
                       </div>
                       <div className="floating-icon floating-icon-3 svg-icon-animated">
                         <FaCloud />
-                        <span className="custom-tooltip">Nuvem</span>
+                        <span className="custom-tooltip">{t("cloud")}</span>
                       </div>
                       <div className="floating-icon floating-icon-4 svg-icon-animated">
                         <SiJira />
@@ -258,7 +248,7 @@ function App() {
                       <div className="floating-icon floating-icon-5 svg-icon-animated">
                         <FaDesktop />
                         <span className="custom-tooltip">
-                          Aplicações Desktop
+                          {t("desktopApps")}
                         </span>
                       </div>
                       <div className="floating-icon floating-icon-6 svg-icon-animated">
@@ -296,13 +286,10 @@ function App() {
                     fontSize: "1.1em",
                   }}
                 />
-                Conheça mais
+                {t("aboutBadge")}
               </span>
-              <h2 className="section-title">Sobre Mim</h2>
-              <p className="section-subtitle">
-                Desenvolvedor apaixonado por criar soluções que fazem a
-                diferença
-              </p>
+              <h2 className="section-title">{t("aboutTitle")}</h2>
+              <p className="section-subtitle">{t("aboutSubtitle")}</p>
             </div>
 
             <div className="row justify-content-center">
@@ -319,18 +306,12 @@ function App() {
                         gap: "1rem",
                       }}
                     >
-                      Olá! Eu sou Eduardo
+                      {t("aboutHello")}
                       <span className="icon-gradient">
                         <FaCode className="icon-gradient-code svg-icon-animated" />
                       </span>
                     </h3>
-                    <p className="intro-text">
-                      Desenvolvedor de 21 anos, natural do Paraná, cursando o
-                      último ano de Engenharia de Software. Minha jornada na
-                      programação começou pela curiosidade de entender como as
-                      tecnologias funcionam e como posso criar soluções que
-                      façam a diferença na vida das pessoas.
-                    </p>
+                    <p className="intro-text">{t("aboutIntroText")}</p>
                   </div>
 
                   <div className="about-journey">
@@ -339,17 +320,8 @@ function App() {
                         <i className="fas fa-graduation-cap svg-icon-animated"></i>
                       </div>
                       <div className="journey-content">
-                        <h4>Formação Acadêmica</h4>
-                        <p>
-                          Sou estudante do último período do curso de Engenharia
-                          de Software pela UGV – Centro Universitário, com
-                          formação prevista para dezembro de 2025. Durante a
-                          graduação, desenvolvi projetos completos aplicando
-                          metodologias ágeis, versionamento com Git/GitHub e
-                          integração entre frontend e backend. Atuei em projetos
-                          acadêmicos e pessoais, focando na criação de soluções
-                          reais para empresas e instituições.
-                        </p>
+                        <h4>{t("aboutAcademicTitle")}</h4>
+                        <p>{t("aboutAcademicText")}</p>
                       </div>
                     </div>
 
@@ -358,16 +330,8 @@ function App() {
                         <i className="fas fa-users svg-icon-animated"></i>
                       </div>
                       <div className="journey-content">
-                        <h4>Trabalho em Equipe</h4>
-                        <p>
-                          Possuo facilidade para trabalhar em equipe, mantendo
-                          boa comunicação e colaboração no dia a dia. Tenho
-                          experiência prática em times organizados por
-                          metodologias ágeis, sempre contribuindo de forma
-                          proativa no desenvolvimento das tarefas. Utilizo Git,
-                          GitHub e Jira para manter o fluxo de trabalho
-                          organizado e eficiente.
-                        </p>
+                        <h4>{t("aboutTeamTitle")}</h4>
+                        <p>{t("aboutTeamText")}</p>
                       </div>
                     </div>
 
@@ -376,37 +340,23 @@ function App() {
                         <i className="fas fa-lightbulb svg-icon-animated"></i>
                       </div>
                       <div className="journey-content">
-                        <h4>Filosofia de Trabalho</h4>
-                        <p>
-                          Adoto uma filosofia de trabalho focada em
-                          comprometimento, organização e entrega de soluções
-                          funcionais. Busco sempre alinhar qualidade técnica com
-                          prazos definidos, mantendo atenção aos detalhes e
-                          buscando melhorias contínuas. Valorizo a clareza na
-                          comunicação e a colaboração para alcançar resultados
-                          consistentes em equipe.
-                        </p>
+                        <h4>{t("aboutPhilosophyTitle")}</h4>
+                        <p>{t("aboutPhilosophyText")}</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="about-cta animate-on-scroll animate-fade-in">
                     <div className="cta-content">
-                      <h4>Pronto para o próximo desafio</h4>
-                      <p>
-                        Estou em busca da minha primeira oportunidade como
-                        desenvolvedor júnior ou estágio, com foco em atuar de
-                        forma colaborativa em projetos reais, contribuindo para
-                        o crescimento da equipe e para a entrega de soluções
-                        eficientes e bem estruturadas.
-                      </p>
+                      <h4>{t("aboutCtaTitle")}</h4>
+                      <p>{t("aboutCtaText")}</p>
                       <div className="cta-buttons">
                         <a
                           href="#contact"
                           className="btn btn-primary smooth-transition"
                         >
-                          <i className="fas fa-handshake me-2"></i>Vamos
-                          conversar
+                          <i className="fas fa-handshake me-2"></i>
+                          {t("aboutCtaContactBtn")}
                         </a>
                         <a
                           href="/cv.pdf"
@@ -414,7 +364,8 @@ function App() {
                           target="_blank"
                           rel="noreferrer"
                         >
-                          <i className="fas fa-download me-2"></i>Download CV
+                          <i className="fas fa-download me-2"></i>
+                          {t("aboutCtaDownloadBtn")}
                         </a>
                       </div>
                     </div>
@@ -445,12 +396,10 @@ function App() {
                   className="svg-icon-animated"
                   style={{ fontSize: "1.5em" }}
                 />
-                Stack Técnica
+                {t("skillsBadge")}
               </span>
-              <h2 className="section-title">Habilidades</h2>
-              <p className="section-subtitle">
-                Tecnologias e ferramentas que domino
-              </p>
+              <h2 className="section-title">{t("skillsTitle")}</h2>
+              <p className="section-subtitle">{t("skillsSubtitle")}</p>
             </div>
 
             <div className="skills-grid animate-on-scroll animate-scale-in">
@@ -461,7 +410,7 @@ function App() {
                       <div className="skill-icon">
                         <FaCode className="svg-icon-animated" />
                       </div>
-                      <h4>Frontend</h4>
+                      <h4>{t("skillsFrontend")}</h4>
                     </div>
                     <div className="skill-list">
                       {skills.frontend.map((skill, index) => (
@@ -482,7 +431,7 @@ function App() {
                       <div className="skill-icon">
                         <FaDatabase className="svg-icon-animated" />
                       </div>
-                      <h4>Backend</h4>
+                      <h4>{t("skillsBackend")}</h4>
                     </div>
                     <div className="skill-list">
                       {skills.backend.map((skill, index) => (
@@ -503,7 +452,7 @@ function App() {
                       <div className="skill-icon">
                         <FaDatabase className="svg-icon-animated" />
                       </div>
-                      <h4>Banco de Dados</h4>
+                      <h4>{t("skillsDatabase")}</h4>
                     </div>
                     <div className="skill-list">
                       {skills.database.map((skill, index) => (
@@ -524,7 +473,7 @@ function App() {
                       <div className="skill-icon">
                         <FaCloud className="svg-icon-animated" />
                       </div>
-                      <h4>Serviços em Nuvem</h4>
+                      <h4>{t("skillsCloud")}</h4>
                     </div>
                     <div className="skill-list">
                       {skills.cloud.map((skill, index) => (
@@ -545,7 +494,7 @@ function App() {
                       <div className="skill-icon">
                         <FaDesktop className="svg-icon-animated" />
                       </div>
-                      <h4>Desktop</h4>
+                      <h4>{t("skillsDesktop")}</h4>
                     </div>
                     <div className="skill-list">
                       {skills.desktop.map((skill, index) => (
@@ -566,7 +515,7 @@ function App() {
                       <div className="skill-icon">
                         <FaTools className="svg-icon-animated" />
                       </div>
-                      <h4>Ferramentas</h4>
+                      <h4>{t("skillsTools")}</h4>
                     </div>
                     <div className="skill-list">
                       {skills.tools.map((skill, index) => (
@@ -587,7 +536,7 @@ function App() {
                       <div className="skill-icon">
                         <FaCogs className="svg-icon-animated" />
                       </div>
-                      <h4>Metodologias</h4>
+                      <h4>{t("skillsMethodologies")}</h4>
                     </div>
                     <div className="skill-list">
                       {skills.methodologies.map((skill, index) => (
@@ -608,7 +557,7 @@ function App() {
                       <div className="skill-icon">
                         <FaCode className="svg-icon-animated" />
                       </div>
-                      <h4>Aprendendo Atualmente</h4>
+                      <h4>{t("skillsLearning")}</h4>
                     </div>
                     <div className="skill-list">
                       {skills.learning.map((skill, index) => (
@@ -650,12 +599,10 @@ function App() {
                     fontSize: "1.1em",
                   }}
                 />
-                Portfólio
+                {t("projectsBadge")}
               </span>
-              <h2 className="section-title">Principais Projetos</h2>
-              <p className="section-subtitle">
-                Alguns dos principais projetos que desenvolvi
-              </p>
+              <h2 className="section-title">{t("projectsTitle")}</h2>
+              <p className="section-subtitle">{t("projectsSubtitle")}</p>
             </div>
             <div className="projects-grid animate-on-scroll animate-scale-in">
               <div className="row g-4">
@@ -673,7 +620,7 @@ function App() {
                             onClick={() => handleProjectClick(project)}
                           >
                             <FaExternalLinkAlt className="me-1 svg-icon-animated" />
-                            Ver Detalhes
+                            {t("seeDetails")}
                           </button>
                         </div>
                       </div>
@@ -724,12 +671,10 @@ function App() {
                     verticalAlign: "middle",
                   }}
                 />
-                Trajetória Profissional
+                {t("experienceBadge")}
               </span>
-              <h2 className="section-title">Experiência Profissional</h2>
-              <p className="section-subtitle">
-                Minha evolução prática no desenvolvimento de software
-              </p>
+              <h2 className="section-title">{t("experienceTitle")}</h2>
+              <p className="section-subtitle">{t("experienceSubtitle")}</p>
             </div>
 
             <div className="timeline">
@@ -761,7 +706,7 @@ function App() {
                     className="mb-1"
                     style={{ color: "#673ab7", fontWeight: 700 }}
                   >
-                    Início nos Estudos de Programação
+                    {t("expStartTitle")}
                   </h4>
                   <span
                     className="company-type"
@@ -771,20 +716,20 @@ function App() {
                       display: "block",
                     }}
                   >
-                    Cursos Livres
+                    {t("expStartCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      HTML5, CSS3, JavaScript
+                      {t("expStartTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Páginas estáticas e fundamentos de lógica
+                      {t("expStartTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Versionamento com Git
+                      {t("expStartTopic3")}
                     </li>
                   </ul>
                 </div>
@@ -811,7 +756,7 @@ function App() {
                     className="mb-1"
                     style={{ color: "#3f51b5", fontWeight: 700 }}
                   >
-                    Engenharia de Software
+                    {t("expCollegeTitle")}
                   </h4>
                   <span
                     className="company-type"
@@ -821,21 +766,20 @@ function App() {
                       display: "block",
                     }}
                   >
-                    Centro Universitário UGV
+                    {t("expCollegeCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Foco em desenvolvimento web e desktop
+                      {t("expCollegeTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Projetos com JavaScript, Node.js, PostgreSQL, Firebase,
-                      Google Cloud
+                      {t("expCollegeTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Participação em projetos reais e acadêmicos
+                      {t("expCollegeTopic3")}
                     </li>
                   </ul>
                 </div>
@@ -869,7 +813,7 @@ function App() {
                     className="mb-1"
                     style={{ color: "#5e35b1", fontWeight: 700 }}
                   >
-                    Participação em Eventos Acadêmicos
+                    {t("expEventsTitle")}
                   </h4>
                   <span
                     className="company-type"
@@ -879,28 +823,28 @@ function App() {
                       display: "block",
                     }}
                   >
-                    Centro Universitário UGV
+                    {t("expEventsCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      XVII Encontro de Iniciação Científica 2022 - Ouvinte
+                      {t("expEventsTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      XVIII Encontro de Iniciação Científica 2023 - Apresentação
+                      {t("expEventsTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      XIX Encontro de Iniciação Científica 2024 - Ouvinte
+                      {t("expEventsTopic3")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      SEMTEC - Semana de Tecnologia da UGV 2022
+                      {t("expEventsTopic4")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      SEMTEC - Semana de Tecnologia da UGV 2024
+                      {t("expEventsTopic5")}
                     </li>
                   </ul>
                 </div>
@@ -927,7 +871,7 @@ function App() {
                     className="mb-1"
                     style={{ color: "#9c27b0", fontWeight: 700 }}
                   >
-                    Projeto Garra Robótica
+                    {t("expRoboticTitle")}
                   </h4>
                   <span
                     className="company-type"
@@ -937,23 +881,20 @@ function App() {
                       display: "block",
                     }}
                   >
-                    Disciplina de Robótica
+                    {t("expRoboticCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Construção de garra robótica controlada por
-                      microcontrolador
+                      {t("expRoboticTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Desenvolvimento de comandos automatizados e controle de
-                      movimento
+                      {t("expRoboticTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Integração entre hardware e software com programação
-                      embarcada
+                      {t("expRoboticTopic3")}
                     </li>
                   </ul>
                 </div>
@@ -987,7 +928,7 @@ function App() {
                     className="mb-1"
                     style={{ color: "#e91e63", fontWeight: 700 }}
                   >
-                    Projeto Batalha de Robôs
+                    {t("expBattleTitle")}
                   </h4>
                   <span
                     className="company-type"
@@ -997,21 +938,20 @@ function App() {
                       display: "block",
                     }}
                   >
-                    Competição Interna
+                    {t("expBattleCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Construção de robô de combate com sensores de colisão
+                      {t("expBattleTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Prototipação, testes e combate em arena com outras equipes
+                      {t("expBattleTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Trabalho em equipe e otimização de desempenho físico e
-                      lógico
+                      {t("expBattleTopic3")}
                     </li>
                   </ul>
                 </div>
@@ -1038,7 +978,7 @@ function App() {
                     className="mb-1"
                     style={{ color: "#4caf50", fontWeight: 700 }}
                   >
-                    Desenvolvedor IoT
+                    {t("expIotTitle")}
                   </h4>
                   <span
                     className="company-type"
@@ -1048,20 +988,20 @@ function App() {
                       display: "block",
                     }}
                   >
-                    Projeto Thermal Tech
+                    {t("expIotCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Monitoramento térmico com Electron.js e sensores
+                      {t("expIotTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Backend com Node.js e dashboard interativo
+                      {t("expIotTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Projeto em equipe de 2 pessoas
+                      {t("expIotTopic3")}
                     </li>
                   </ul>
                 </div>
@@ -1095,7 +1035,7 @@ function App() {
                     className="mb-1"
                     style={{ color: "var(--primary-blue)", fontWeight: 700 }}
                   >
-                    Desenvolvedor Full Stack
+                    {t("expFlowTitle")}
                   </h4>
                   <span
                     className="company-type"
@@ -1105,21 +1045,20 @@ function App() {
                       display: "block",
                     }}
                   >
-                    Projeto FlowTime
+                    {t("expFlowCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Sistema para clínica de podologia com dashboard e
-                      relatórios
+                      {t("expFlowTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Frontend (HTML, CSS, JS), backend com Node.js/Firebase
+                      {t("expFlowTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Desktop com Electron.js, entregue em ambiente real
+                      {t("expFlowTopic3")}
                     </li>
                   </ul>
                 </div>
@@ -1146,7 +1085,7 @@ function App() {
                     className="mb-1"
                     style={{ color: "#ff9800", fontWeight: 700 }}
                   >
-                    Desenvolvedor Full Stack
+                    {t("expTonerTitle")}
                   </h4>
                   <span
                     className="company-type"
@@ -1156,20 +1095,20 @@ function App() {
                       display: "block",
                     }}
                   >
-                    Projeto TonerTrack
+                    {t("expTonerCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Sistema de gestão de impressoras escolares
+                      {t("expTonerTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      PostgreSQL, autenticação e painéis administrativos
+                      {t("expTonerTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Desenvolvimento individual com foco em escalabilidade
+                      {t("expTonerTopic3")}
                     </li>
                   </ul>
                 </div>
@@ -1202,13 +1141,10 @@ function App() {
                     verticalAlign: "middle",
                   }}
                 />
-                Vamos conversar
+                {t("contactBadge")}
               </span>
-              <h2 className="section-title">Entre em Contato</h2>
-              <p className="section-subtitle">
-                Estou sempre aberto a novas oportunidades e projetos
-                interessantes
-              </p>
+              <h2 className="section-title">{t("contactTitle")}</h2>
+              <p className="section-subtitle">{t("contactSubtitle")}</p>
             </div>
 
             <div className="contact-wrapper">
@@ -1216,13 +1152,8 @@ function App() {
                 <div className="col-lg-5">
                   <div className="contact-info-modern animate-on-scroll animate-slide-left">
                     <div className="contact-intro">
-                      <h3>Vamos trabalhar juntos! 🚀</h3>
-                      <p>
-                        Estou sempre aberto a novas oportunidades, parcerias e
-                        projetos inovadores. Se você tem uma ideia interessante
-                        ou precisa de um desenvolvedor dedicado para o seu time,
-                        vamos conversar!
-                      </p>
+                      <h3>{t("contactIntroTitle")}</h3>
+                      <p>{t("contactIntroText")}</p>
                     </div>
 
                     <div className="contact-methods-modern">
@@ -1234,7 +1165,7 @@ function App() {
                           <FaEnvelope className="svg-icon-animated" />
                         </div>
                         <div className="method-info">
-                          <h5>Email</h5>
+                          <h5>{t("contactEmailTitle")}</h5>
                           <span>eduardogwagner2003@gmail.com</span>
                         </div>
                         <div className="method-arrow">
@@ -1285,7 +1216,7 @@ function App() {
                     >
                       <div className="availability-indicator">
                         <div className="status-dot"></div>
-                        <span>Disponível para oportunidades</span>
+                        <span>{t("contactAvailable")}</span>
                       </div>
                     </div>
                   </div>
@@ -1293,43 +1224,43 @@ function App() {
 
                 <div className="col-lg-7">
                   <div className="contact-form-modern animate-on-scroll animate-slide-right">
-                    <h3>Envie uma mensagem</h3>
+                    <h3>{t("contactFormTitle")}</h3>
                     <form className="modern-form">
                       <div className="form-row">
                         <div className="form-group">
-                          <label>Nome:</label>
+                          <label>{t("contactFormNameLabel")}</label>
                           <input
                             type="text"
                             className="form-control smooth-transition"
-                            placeholder="Eduardo"
+                            placeholder={t("contactFormNamePlaceholder")}
                             required
                           />
                         </div>
                         <div className="form-group">
-                          <label>Email:</label>
+                          <label>{t("contactFormEmailLabel")}</label>
                           <input
                             type="email"
                             className="form-control smooth-transition"
-                            placeholder="exemplo@email.com"
+                            placeholder={t("contactFormEmailPlaceholder")}
                             required
                           />
                         </div>
                       </div>
                       <div className="form-group">
-                        <label>Assunto:</label>
+                        <label>{t("contactFormSubjectLabel")}</label>
                         <input
                           type="text"
                           className="form-control smooth-transition"
-                          placeholder="Sobre o que deseja falar?"
+                          placeholder={t("contactFormSubjectPlaceholder")}
                           required
                         />
                       </div>
                       <div className="form-group">
-                        <label>Mensagem:</label>
+                        <label>{t("contactFormMessageLabel")}</label>
                         <textarea
                           className="form-control smooth-transition"
                           rows="5"
-                          placeholder="Digite sua mensagem..."
+                          placeholder={t("contactFormMessagePlaceholder")}
                           required
                         ></textarea>
                       </div>
@@ -1338,7 +1269,7 @@ function App() {
                         className="btn btn-primary btn-lg w-100 smooth-transition"
                       >
                         <FaEnvelope className="me-2 svg-icon-animated" />
-                        Enviar Mensagem
+                        {t("contactFormSendBtn")}
                       </button>
                     </form>
                     <p className="form-privacy">
@@ -1350,8 +1281,7 @@ function App() {
                           verticalAlign: "middle",
                         }}
                       />
-                      Suas informações estão seguras e não serão compartilhadas
-                      com terceiros.
+                      {t("contactFormPrivacy")}
                     </p>
                   </div>
                 </div>
