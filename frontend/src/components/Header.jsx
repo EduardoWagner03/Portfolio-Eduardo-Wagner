@@ -1,7 +1,22 @@
-import React from 'react';
-import { FaMoon, FaSun, FaGlobe, FaDownload } from 'react-icons/fa';
+import React from "react";
+import { FaMoon, FaSun, FaGlobe, FaDownload } from "react-icons/fa";
 
-function Header({ darkMode, toggleDarkMode, lang, handleLang, isNavOpen, toggleNav, closeNav }) {
+function Header({
+  darkMode,
+  toggleDarkMode,
+  lang,
+  handleLang,
+  isNavOpen,
+  toggleNav,
+  closeNav,
+}) {
+  // Função para mostrar o texto correto do botão de idioma
+  const getLangButtonText = () => {
+    if (lang === "pt-br") return "EN";
+    if (lang === "en") return "ES";
+    return "BR";
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 fixed-top">
       <div className="container">
@@ -12,7 +27,7 @@ function Header({ darkMode, toggleDarkMode, lang, handleLang, isNavOpen, toggleN
         >
           🚀 EW
         </a>
-        
+
         <button
           className="navbar-toggler"
           type="button"
@@ -23,7 +38,7 @@ function Header({ darkMode, toggleDarkMode, lang, handleLang, isNavOpen, toggleN
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        
+
         <div
           className={`collapse navbar-collapse ${isNavOpen ? "show" : ""}`}
           id="navbarNav"
@@ -71,7 +86,7 @@ function Header({ darkMode, toggleDarkMode, lang, handleLang, isNavOpen, toggleN
           </ul>
 
           <div className="d-flex align-items-center gap-2">
-            {/* Container para botões pequenos - lado a lado apenas no mobile */}
+            {/* Botões pequenos - mobile */}
             <div className="mobile-small-buttons d-md-none">
               <button
                 className="btn btn-outline-primary position-relative"
@@ -99,12 +114,12 @@ function Header({ darkMode, toggleDarkMode, lang, handleLang, isNavOpen, toggleN
                   e.currentTarget.classList.remove("show-tooltip")
                 }
               >
-                <FaGlobe /> {lang === "pt-br" ? "EN" : "PT"}
+                <FaGlobe /> {getLangButtonText()}
                 <span className="custom-tooltip">Mudar idioma</span>
               </button>
             </div>
 
-            {/* Versão desktop - todos os botões na mesma linha */}
+            {/* Desktop - todos os botões na mesma linha */}
             <div className="desktop-buttons d-none d-md-flex align-items-center gap-2">
               <button
                 className="btn btn-outline-primary position-relative"
@@ -148,7 +163,7 @@ function Header({ darkMode, toggleDarkMode, lang, handleLang, isNavOpen, toggleN
                   e.currentTarget.classList.remove("show-tooltip")
                 }
               >
-                <FaGlobe /> {lang === "pt-br" ? "EN" : "PT"}
+                <FaGlobe /> {getLangButtonText()}
                 <span className="custom-tooltip">Mudar idioma</span>
               </button>
             </div>
