@@ -10,8 +10,10 @@ i18n.use(initReactI18next).init({
     en: { translation: en },
     es: { translation: es },
   },
-  lng: "pt-br", // idioma padrão
+  lng: "pt-br",
   fallbackLng: "en",
+  supportedLngs: ["pt-br", "en", "es"],
+  lowerCaseLng: true, // <-- Adicione esta linha
   interpolation: {
     escapeValue: false,
   },

@@ -22,7 +22,6 @@ import "./styles/scroll-animations.css";
 import "./styles/section-backgrounds.css";
 
 function App() {
-  const { t, i18n } = useTranslation();
   const getDefaultLang = () => {
     const browserLang = navigator.language || navigator.userLanguage;
     console.log("Idioma detectado:", browserLang);
@@ -44,6 +43,12 @@ function App() {
     if (lang === "en") return setLang("es");
     return setLang("pt-br");
   };
+
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    i18n.changeLanguage(lang);
+  }, [lang, i18n]);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);

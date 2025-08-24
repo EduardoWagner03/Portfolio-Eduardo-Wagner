@@ -12,9 +12,9 @@ function Header({
 }) {
   // Função para mostrar o texto correto do botão de idioma
   const getLangButtonText = () => {
-    if (lang === "pt-br") return "EN";
-    if (lang === "en") return "ES";
-    return "BR";
+    if (lang === "pt-br") return "BR";
+    if (lang === "en") return "EN";
+    return "ES";
   };
 
   return (
