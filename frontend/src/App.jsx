@@ -146,19 +146,9 @@ function App() {
                 <div className="hero-content animate-on-scroll animate-slide-left">
                   <div className="hero-badge">
                     <span
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "0.6rem",
-                      }}
-                    >
+                      style={{ display: "flex", alignItems: "center", gap: "0.6rem", }} >
                       <FaRocket className="svg-icon-animated"
-                        style={{
-                          fontSize: "1.3em",
-                          color: "#fff",
-                          opacity: 0.95,
-                        }}
-                      />
+                        style={{ fontSize: "1.3em", color: "#fff", opacity: 0.95, }} />
                       {t("hello")}
                     </span>
                   </div>
@@ -250,19 +240,9 @@ function App() {
           <div className="container">
             <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
               <span className="section-badge"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                }}
-              >
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", }} >
                 <FaUserAstronaut className="svg-icon-animated"
-                  style={{
-                    color: "#fff",
-                    verticalAlign: "middle",
-                    fontSize: "1.1em",
-                  }}
-                />
+                  style={{ color: "#fff", verticalAlign: "middle", fontSize: "1.1em", }} />
                 {t("aboutBadge")}
               </span>
               <h2 className="section-title">{t("aboutTitle")}</h2>
@@ -273,12 +253,7 @@ function App() {
                 <div className="about-content-modern animate-on-scroll animate-scale-in parallax-element" data-speed="0.1" >
                   <div className="about-intro">
                     <h3
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "1rem",
-                      }}
-                    >
+                      style={{ display: "inline-flex", alignItems: "center", gap: "1rem", }} >
                       {t("aboutHello")}
                       <span className="icon-gradient">
                         <FaCode className="icon-gradient-code svg-icon-animated" />
@@ -342,13 +317,7 @@ function App() {
           <div className="container">
             <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
               <span className="section-badge"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  color: "#fff",
-                }}
-              >
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "#fff",}} >
                 <FaCogs className="svg-icon-animated" style={{ fontSize: "1.5em" }} />
                 {t("skillsBadge")}
               </span>
@@ -503,19 +472,9 @@ function App() {
           <div className="container">
             <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
               <span className="section-badge"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                }}
-              >
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", }} >
                 <FaCode className="svg-icon-animated"
-                  style={{
-                    color: "#fff",
-                    verticalAlign: "middle",
-                    fontSize: "1.1em",
-                  }}
-                />
+                  style={{ color: "#fff", verticalAlign: "middle", fontSize: "1.1em", }} />
                 {t("projectsBadge")}
               </span>
               <h2 className="section-title">{t("projectsTitle")}</h2>
@@ -561,20 +520,9 @@ function App() {
           <div className="container">
             <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
               <span className="section-badge"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  color: "#fff",
-                }}
-              >
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "#fff", }} >
                 <FaBriefcase className="svg-icon-animated"
-                  style={{
-                    color: "#fff",
-                    fontSize: "1.1em",
-                    verticalAlign: "middle",
-                  }}
-                />
+                  style={{ color: "#fff", fontSize: "1.1em", verticalAlign: "middle", }}/>
                 {t("experienceBadge")}
               </span>
               <h2 className="section-title">{t("experienceTitle")}</h2>
@@ -585,12 +533,7 @@ function App() {
               <div className="timeline-item timeline-left animate-on-scroll animate-slide-left">
                 <div className="timeline-content smooth-transition">
                   <div className="timeline-header"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "18.7rem",
-                    }}
-                  >
+                    style={{ display: "flex", alignItems: "center", gap: "18.7rem", }} >
                     <span className="period-badge teste" style={{ background: "#673ab7" }} >
                       2021
                     </span>
@@ -602,12 +545,7 @@ function App() {
                     {t("expStartTitle")}
                   </h4>
                   <span className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
                     {t("expStartCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
@@ -641,12 +579,7 @@ function App() {
                     {t("expCollegeTitle")}
                   </h4>
                   <span className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
                     {t("expCollegeCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
@@ -669,12 +602,7 @@ function App() {
               <div className="timeline-item timeline-left animate-on-scroll animate-slide-left">
                 <div className="timeline-content smooth-transition">
                   <div className="timeline-header"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "15.5rem",
-                    }}
-                  >
+                    style={{ display: "flex", alignItems: "center", gap: "15.5rem", }} >
                     <span className="period-badge" style={{ background: "#5e35b1" }} >
                       2022 - 2024
                     </span>
@@ -686,12 +614,7 @@ function App() {
                     {t("expEventsTitle")}
                   </h4>
                   <span className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
                     {t("expEventsCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
@@ -733,12 +656,7 @@ function App() {
                     {t("expRoboticTitle")}
                   </h4>
                   <span className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
                     {t("expRoboticCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
@@ -761,12 +679,7 @@ function App() {
               <div className="timeline-item timeline-left animate-on-scroll animate-slide-left">
                 <div className="timeline-content smooth-transition">
                   <div className="timeline-header"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "18.7rem",
-                    }}
-                  >
+                    style={{ display: "flex", alignItems: "center", gap: "18.7rem", }} >
                     <span className="period-badge" style={{ background: "#e91e63" }} >
                       2024
                     </span>
@@ -778,12 +691,7 @@ function App() {
                     {t("expBattleTitle")}
                   </h4>
                   <span className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
                     {t("expBattleCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
@@ -817,12 +725,7 @@ function App() {
                     {t("expIotTitle")}
                   </h4>
                   <span className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
                     {t("expIotCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
@@ -845,12 +748,7 @@ function App() {
               <div className="timeline-item timeline-left animate-on-scroll animate-slide-left">
                 <div className="timeline-content smooth-transition">
                   <div className="timeline-header"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "18.7rem",
-                    }}
-                  >
+                    style={{ display: "flex", alignItems: "center", gap: "18.7rem", }} >
                     <span className="period-badge period-full-stack" style={{ background: "var(--primary-blue)" }} >
                       Out/2024 - Jan/2025
                     </span>
@@ -862,12 +760,7 @@ function App() {
                     {t("expFlowTitle")}
                   </h4>
                   <span className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
                     {t("expFlowCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
@@ -901,12 +794,7 @@ function App() {
                     {t("expTonerTitle")}
                   </h4>
                   <span className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
                     {t("expTonerCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
@@ -934,20 +822,9 @@ function App() {
           <div className="container">
             <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
               <span className="section-badge"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  color: "#fff",
-                }}
-              >
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "#fff", }} >
                 <FaPhone className="svg-icon-animated"
-                  style={{
-                    color: "#fff",
-                    fontSize: "1.1em",
-                    verticalAlign: "middle",
-                  }}
-                />
+                  style={{ color: "#fff", fontSize: "1.1em", verticalAlign: "middle", }} />
                 {t("contactBadge")}
               </span>
               <h2 className="section-title">{t("contactTitle")}</h2>
@@ -986,7 +863,6 @@ function App() {
                           <i className="fas fa-arrow-right svg-icon-animated"></i>
                         </div>
                       </a>
-
                       <a href="https://github.com/EduardoWagner03/" target="_blank" rel="noopener noreferrer" className="contact-method-modern smooth-transition" >
                         <div className="method-icon">
                           <FaGithub className="svg-icon-animated" />
@@ -1036,13 +912,7 @@ function App() {
                       </button>
                     </form>
                     <p className="form-privacy">
-                      <FaShieldAlt className="svg-icon-animated"
-                        style={{
-                          marginRight: "0.6rem",
-                          fontSize: "1.1em",
-                          verticalAlign: "middle",
-                        }}
-                      />
+                      <FaShieldAlt className="svg-icon-animated" style={{ marginRight: "0.6rem", fontSize: "1.1em", verticalAlign: "middle", }} />
                       {t("contactFormPrivacy")}
                     </p>
                   </div>
