@@ -138,5 +138,100 @@
   "expTonerCompany": "Proyecto TonerTrack",
   "expTonerTopic1": "Sistema de gestión de impresoras escolares",
   "expTonerTopic2": "PostgreSQL, autenticación y paneles administrativos",
-  "expTonerTopic3": "Desarrollo individual enfocado en escalabilidad"
+  "expTonerTopic3": "Desarrollo individual enfocado en escalabilidad",
+  "projects": [
+    {
+      "title": "FlowTime",
+      "subtitle": "Sistema Finalizado",
+      "description": "Sistema web completo para la gestión de clínicas de podología, aportando eficiencia, organización y practicidad al día a día. FlowTime permite optimizar agendas, atención al cliente y procesos administrativos, todo en una plataforma intuitiva.",
+      "history": "FlowTime se inició en octubre de 2024 y se finalizó en enero de 2025, desarrollado por un equipo de 3 personas. El sistema surgió de la necesidad de digitalizar y automatizar el flujo de trabajo en clínicas de podología. El proyecto ofrece panel interactivo, informes en PDF, firma digital y funciones avanzadas para facilitar el control de citas, pacientes y recetas. Con una interfaz moderna y funcionalidades robustas, FlowTime proporciona más agilidad, seguridad y calidad en la atención, siendo implementado con éxito en un entorno real.",
+      "features": [
+        {
+          "image": "/images/homeFlowtime.png",
+          "title": "Panel Interactivo",
+          "description": "Visualiza rápidamente los principales indicadores de la clínica, como citas, atenciones y recetas. Desarrollo completo del frontend e implementación de gráficos interactivos."
+        },
+        {
+          "image": "/images/AppointmentsFlowTime.png",
+          "title": "Gestión de Agendas",
+          "description": "Permite marcar, editar y visualizar citas de forma sencilla y rápida. Interfaz responsiva e intuitiva desarrollada integralmente."
+        },
+        {
+          "image": "/images/FichaAnamnese.png",
+          "title": "Informes en PDF",
+          "description": "Genera informes detallados de atenciones, recetas y pacientes en pocos clics. Frontend de la funcionalidad y sistema de tokens de seguridad para acceso."
+        }
+      ],
+      "responsibilities": [
+        "🎨 Frontend Completo - Desarrollo de toda la interfaz de usuario",
+        "📊 Gráficos Interactivos - Implementación de paneles e informes",
+        "🔐 Sistema de Tokens - Desarrollo de autenticación y seguridad",
+        "📱 Responsividad - Adaptación para dispositivos móviles y escritorio",
+        "✨ UX/UI - Implementación de diseño y experiencia de usuario"
+      ]
+    },
+    {
+      "title": "TonnerTrack",
+      "subtitle": "Sistema Finalizado",
+      "description": "Sistema desarrollado para automatizar el control de suministros de impresión en instituciones educativas, reduciendo desperdicios y proporcionando informes completos. TonnerTrack facilita la gestión de impresoras y toners, aportando más eficiencia y organización al entorno escolar.",
+      "history": "TonnerTrack fue un proyecto de Extensión Académica iniciado en febrero de 2025 y finalizado en junio de 2025, realizado en una escuela pública. El sistema surgió de la necesidad real de controlar el uso de impresoras y toners, automatizando registros, generando informes detallados y reduciendo desperdicios. El proyecto cuenta con una interfaz intuitiva y recursos inteligentes, contribuyendo a la mejora de la gestión de suministros y siendo implementado con éxito en la institución.",
+      "features": [
+        {
+          "image": "/images/GerenciamentoTonnerTrack.png",
+          "title": "Gestión de Suministros",
+          "description": "Gestiona el stock de toners e impresoras, evitando desperdicios y falta de material. Sistema completo desarrollado desde cero."
+        },
+        {
+          "image": "/images/Relatórios.png",
+          "title": "Informes Detallados",
+          "description": "Genera informes completos sobre el uso de impresoras, facilitando la toma de decisiones. Interfaz y backend desarrollados integralmente."
+        },
+        {
+          "image": "/images/NotificacaoTonnerTrac.png",
+          "title": "Alertas Inteligentes",
+          "description": "Recibe notificaciones cuando el stock esté bajo o sea necesaria la manutención. Sistema de notificaciones desarrollado por completo."
+        }
+      ],
+      "responsibilities": [
+        "🎨 Desarrollo Completo - Frontend y Backend desde cero",
+        "🗄️ Base de Datos - Modelado e implementación en PostgreSQL",
+        "🔐 Autenticación - Sistema de login y control de acceso",
+        "📊 Informes - Generación de informes y paneles",
+        "📱 Interfaz Responsiva - Diseño adaptable para todos los dispositivos",
+        "🔧 Deploy y Mantenimiento - Implementación en ambiente de producción"
+      ]
+    },
+    {
+      "title": "ThermalTech",
+      "subtitle": "Sistema en desarrollo",
+      "description": "Proyecto académico en pareja que creó un sistema CMMS integrado con IoT para monitoreo y control de ambientes climatizados. Permite gestionar equipos de aire acondicionado, registrar tickets, generar órdenes de servicio y monitorear condiciones ambientales en tiempo real vía sensores MQTT. También cuenta con chat en tiempo real para equipos.",
+      "history": "ThermalTech está siendo desarrollado como parte de un proyecto académico universitario, iniciado en 2025, desarrollado en pareja. El objetivo es crear un sistema robusto para monitoreo y automatización de ambientes industriales, integrando sensores IoT, paneles, informes y comunicación entre equipos. El sistema está en constante evolución, recibiendo mejoras y nuevas funcionalidades conforme avanza el desarrollo.",
+      "features": [
+        {
+          "image": "/images/Monitoriamento.png",
+          "title": "Monitoreo en Tiempo Real",
+          "description": "Sigue la temperatura y el estado de los equipos en tiempo real a través de sensores IoT. Frontend completo y sistema de seguridad implementado."
+        },
+        {
+          "image": "/images/ConsultarChamados.png",
+          "title": "Gestión de Tickets",
+          "description": "Registra, acompaña y resuelve tickets técnicos de forma centralizada y eficiente. Interfaz desarrollada con sistema de auditoría avanzado."
+        },
+        {
+          "image": "/images/ChatTT.png",
+          "title": "Chat Integrado",
+          "description": "Comunícate con el equipo directamente por el sistema, agilizando el soporte y mantenimiento. Frontend y middleware de seguridad implementados."
+        }
+      ],
+      "responsibilities": [
+        "🎨 Frontend Completo - Desarrollo de toda la interfaz del sistema",
+        "🛡️ Middleware de Auditoría - Sistema avanzado de detección de amenazas",
+        "🔍 Detección de Amenazas - SQL injection, XSS, bots maliciosos",
+        "📊 Threat Scoring - Sistema inteligente de puntuación de amenazas",
+        "🚫 Bloqueo Inteligente - IPs sospechosas y rate limiting",
+        "📧 Alertas en Tiempo Real - Notificaciones automáticas por email",
+        "📋 Informes de Seguridad - Monitoreo continuo automatizado"
+      ]
+    }
+  ]
 }

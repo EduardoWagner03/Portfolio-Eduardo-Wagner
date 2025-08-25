@@ -138,5 +138,100 @@
   "expTonerCompany": "TonerTrack Project",
   "expTonerTopic1": "School printer management system",
   "expTonerTopic2": "PostgreSQL, authentication and admin panels",
-  "expTonerTopic3": "Individual development focused on scalability"
+  "expTonerTopic3": "Individual development focused on scalability",
+  "projects": [
+    {
+      "title": "FlowTime",
+      "subtitle": "Completed System",
+      "description": "Complete web system for managing podiatry clinics, bringing efficiency, organization, and practicality to daily routines. FlowTime optimizes scheduling, customer service, and administrative processes, all in an intuitive platform.",
+      "history": "FlowTime started in October 2024 and was completed in January 2025, developed by a team of 3 people. The system arose from the need to digitize and automate workflows in podiatry clinics. The project offers an interactive dashboard, PDF reports, digital signatures, and advanced features to facilitate the management of appointments, patients, and prescriptions. With a modern interface and robust functionalities, FlowTime provides more agility, security, and quality in service, being successfully implemented in a real environment.",
+      "features": [
+        {
+          "image": "/images/homeFlowtime.png",
+          "title": "Interactive Dashboard",
+          "description": "Quickly view the clinic's main indicators, such as appointments, services, and prescriptions. Complete frontend development and implementation of interactive charts."
+        },
+        {
+          "image": "/images/AppointmentsFlowTime.png",
+          "title": "Schedule Management",
+          "description": "Easily schedule, edit, and view appointments. Fully developed responsive and intuitive interface."
+        },
+        {
+          "image": "/images/FichaAnamnese.png",
+          "title": "PDF Reports",
+          "description": "Generate detailed reports of services, prescriptions, and patients in just a few clicks. Frontend for the feature and security token system for access."
+        }
+      ],
+      "responsibilities": [
+        "🎨 Complete Frontend - Development of the entire user interface",
+        "📊 Interactive Charts - Implementation of dashboards and visualizations",
+        "🔐 Token System - Authentication and security development",
+        "📱 Responsiveness - Adaptation for mobile and desktop devices",
+        "✨ UX/UI - Design and user experience implementation"
+      ]
+    },
+    {
+      "title": "TonnerTrack",
+      "subtitle": "Completed System",
+      "description": "System developed to automate the management of printing supplies in educational institutions, reducing waste and providing complete reports. TonnerTrack facilitates the management of printers and toners, bringing more efficiency and organization to the school environment.",
+      "history": "TonnerTrack was an Academic Extension project started in February 2025 and completed in June 2025, carried out in a public school. The system arose from the real need to control the use of printers and toners, automating records, generating detailed reports, and reducing waste. The project features an intuitive interface and intelligent resources, contributing to improved supply management and being successfully implemented in the institution.",
+      "features": [
+        {
+          "image": "/images/GerenciamentoTonnerTrack.png",
+          "title": "Supply Management",
+          "description": "Manage toner and printer stock, avoiding waste and shortages. Complete system developed from scratch."
+        },
+        {
+          "image": "/images/Relatórios.png",
+          "title": "Detailed Reports",
+          "description": "Generate complete reports on printer usage, facilitating decision-making. Fully developed interface and backend."
+        },
+        {
+          "image": "/images/NotificacaoTonnerTrac.png",
+          "title": "Smart Alerts",
+          "description": "Receive notifications when stock is low or maintenance is needed. Notification system fully developed."
+        }
+      ],
+      "responsibilities": [
+        "🎨 Complete Development - Frontend and Backend from scratch",
+        "🗄️ Database - PostgreSQL modeling and implementation",
+        "🔐 Authentication - Login and access control system",
+        "📊 Reports - Generation of reports and dashboards",
+        "📱 Responsive Interface - Design adaptable for all devices",
+        "🔧 Deployment and Maintenance - Implementation in production environment"
+      ]
+    },
+    {
+      "title": "ThermalTech",
+      "subtitle": "Ongoing System",
+      "description": "Academic project in pairs that created a CMMS system integrated with IoT for monitoring and controlling air-conditioned environments. Allows management of air conditioning equipment, registering tickets, generating work orders, and monitoring environmental conditions in real time via MQTT sensors. Also features real-time chat for teams.",
+      "history": "ThermalTech is being developed as part of a college academic project, started in 2025, developed in pairs. The goal is to create a robust system for monitoring and automating industrial environments, integrating IoT sensors, dashboards, reports, and team communication. The system is constantly evolving, receiving improvements and new features as development progresses.",
+      "features": [
+        {
+          "image": "/images/Monitoriamento.png",
+          "title": "Real-Time Monitoring",
+          "description": "Track temperature and equipment status in real time via IoT sensors. Complete frontend and security system implemented."
+        },
+        {
+          "image": "/images/ConsultarChamados.png",
+          "title": "Ticket Management",
+          "description": "Register, track, and resolve technical tickets in a centralized and efficient way. Interface developed with advanced auditing system."
+        },
+        {
+          "image": "/images/ChatTT.png",
+          "title": "Integrated Chat",
+          "description": "Communicate with the team directly through the system, speeding up support and maintenance. Frontend and security middleware implemented."
+        }
+      ],
+      "responsibilities": [
+        "🎨 Complete Frontend - Development of the entire system interface",
+        "🛡️ Auditing Middleware - Advanced threat detection system",
+        "🔍 Threat Detection - SQL injection, XSS, malicious bots",
+        "📊 Threat Scoring - Intelligent threat scoring system",
+        "🚫 Smart Blocking - Suspicious IPs and rate limiting",
+        "📧 Real-Time Alerts - Automatic email notifications",
+        "📋 Security Reports - Continuous automated monitoring"
+      ]
+    }
+  ]
 }

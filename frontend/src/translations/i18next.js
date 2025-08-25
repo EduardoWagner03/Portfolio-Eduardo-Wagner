@@ -13,7 +13,7 @@ i18n.use(initReactI18next).init({
   lng: "pt-br",
   fallbackLng: "en",
   supportedLngs: ["pt-br", "en", "es"],
-  lowerCaseLng: true, // <-- Adicione esta linha
+  lowerCaseLng: true,
   interpolation: {
     escapeValue: false,
   },

@@ -1,6 +1,9 @@
-import React from 'react';
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer-minimal enhanced-footer custom-footer">
       <div className="container">
@@ -9,7 +12,7 @@ function Footer() {
             <div className="col-auto d-flex align-items-center gap-3">
               <img
                 src="/images/img.jpeg"
-                alt="Eduardo Wagner"
+                alt={t("footerName")}
                 className="footer-avatar"
                 style={{
                   width: "40px",
@@ -27,7 +30,8 @@ function Footer() {
                   fontSize: "0.95rem",
                 }}
               >
-                Eduardo Wagner &middot; Portfólio {new Date().getFullYear()}
+                {t("footerName")} &middot; {t("footerPortfolio")}{" "}
+                {new Date().getFullYear()}
               </span>
             </div>
             <div className="col text-center d-none d-md-block">
@@ -39,15 +43,15 @@ function Footer() {
                   fontWeight: 500,
                 }}
               >
-                Desenvolvedor Full Stack Júnior &nbsp;|&nbsp; Paraná, Brasil
+                {t("footerRole")}
               </span>
               <div style={{ color: "#b3d8f7", fontSize: "0.90rem" }}>
-                "Transformando ideias em código, código em soluções, soluções em impacto"
+                {t("footerPhrase")}
               </div>
             </div>
             <div className="col-auto text-end">
               <div style={{ color: "#b3d8f7", fontSize: "0.80rem" }}>
-                &copy; {new Date().getFullYear()} Todos os direitos reservados.
+                &copy; {new Date().getFullYear()} {t("footerRights")}
               </div>
             </div>
           </div>
