@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
-import { FaGithub, FaLinkedin, FaUsers,
-} from "react-icons/fa";
-import { Dialog, DialogContent, DialogDescription,
-} from "./dialog";
+import { FaGithub, FaLinkedin, FaUsers } from "react-icons/fa";
+import { Dialog, DialogContent, DialogDescription } from "./dialog";
+import { useTranslation } from "react-i18next";
 
 function ProjectModal({
   isModalOpen,
@@ -10,7 +9,8 @@ function ProjectModal({
   selectedProject,
   handleProjectClick,
 }) {
-  
+  const { t } = useTranslation();
+
   useEffect(() => {
     if (isModalOpen) {
       document.body.classList.add("body-modal-open");
@@ -22,7 +22,7 @@ function ProjectModal({
       document.body.classList.remove("body-modal-open");
     };
   }, [isModalOpen]);
-  
+
   // ✅ FUNÇÃO handleImageClick DENTRO DO COMPONENTE
   const handleImageClick = (imageSrc, imageTitle) => {
     // Calcular as dimensões da tela
@@ -44,14 +44,14 @@ function ProjectModal({
         padding: 0;
         box-sizing: border-box;
       }
-  
+
       html, body {
         width: 100%;
         height: 100%;
         overflow: hidden;
         background: linear-gradient(135deg, #f0f8ff 0%, #e3f2fd 100%);
       }
-  
+
       .image-viewer-container {
         width: 100vw;
         height: 100vh;
@@ -59,7 +59,7 @@ function ProjectModal({
         flex-direction: column;
         position: relative;
       }
-  
+
       .image-viewer-header {
         background: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%);
         color: white;
@@ -69,14 +69,14 @@ function ProjectModal({
         z-index: 10;
         position: relative;
       }
-  
+
       .image-viewer-header h1 {
         margin: 0;
         font-size: 1.8rem;
         font-weight: 700;
         text-shadow: 0 2px 8px rgba(0,0,0,0.2);
       }
-  
+
       .image-viewer-body {
         flex: 1;
         display: flex;
@@ -87,7 +87,7 @@ function ProjectModal({
         position: relative;
         overflow: hidden;
       }
-  
+
       .image-viewer-wrapper {
         max-width: 90%;
         max-height: 100%;
@@ -99,7 +99,7 @@ function ProjectModal({
         background: linear-gradient(135deg, #607fa9 0%, #395e7a 50%, #000102 100%);
         padding: 15px;
       }
-  
+
       .image-viewer-img {
         max-width: 100%;
         max-height: 45rem;
@@ -134,17 +134,17 @@ function ProjectModal({
         justify-content: center;
         font-weight: 700;
       }
-  
+
       .image-viewer-close-btn:hover {
         background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
         transform: scale(1.1);
         box-shadow: 0 12px 35px rgba(229, 62, 62, 0.5);
       }
-  
+
       .image-viewer-close-btn:active {
         transform: scale(0.95);
       }
-  
+
       .image-viewer-loading {
         color: #1565c0;
         font-size: 18px;
@@ -152,7 +152,7 @@ function ProjectModal({
         padding: 3rem;
         font-weight: 500;
       }
-  
+
       .image-viewer-footer-info {
         position: absolute;
         bottom: 15px;
@@ -167,7 +167,7 @@ function ProjectModal({
         border-radius: 20px;
         box-shadow: 0 2px 10px rgba(30, 136, 229, 0.1);
       }
-  
+
       @media (min-width: 1200px) {
         .image-viewer-header h1 {
           font-size: 2.2rem;
@@ -179,7 +179,7 @@ function ProjectModal({
           padding: 25px;
         }
       }
-  
+
       @media (max-width: 768px) {
         .image-viewer-header {
           padding: 0.8rem 1.5rem;
@@ -196,7 +196,7 @@ function ProjectModal({
           font-size: 1.4rem;
         }
       }
-  
+
       :fullscreen .image-viewer-container, :-webkit-full-screen .image-viewer-container, :-moz-full-screen .image-viewer-container {
         width: 100vw;
         height: 100vh;
@@ -228,27 +228,27 @@ function ProjectModal({
         <body>
           <div class="image-viewer-container">
             <button class="image-viewer-close-btn" onclick="window.close()" title="Fechar janela">&times;</button>
-            
+
             <div class="image-viewer-header">
               <h1>${imageTitle}</h1>
             </div>
-            
+
             <div class="image-viewer-body">
               <div class="image-viewer-wrapper">
                 <img src="${imageSrc}" alt="${imageTitle}" class="image-viewer-img"
                      onerror="this.parentElement.innerHTML='<div class=image-viewer-loading>❌ Erro ao carregar imagem</div>'"
                      onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.5s">
               </div>
-              
+
               <div class="image-viewer-footer-info">
                 ESC para fechar • F11 para tela cheia
               </div>
             </div>
           </div>
-          
+
           <script>
             window.focus();
-            
+
             document.addEventListener('keydown', function(e) {
               if (e.key === 'Escape') {
                 window.close();
@@ -262,7 +262,7 @@ function ProjectModal({
                 }
               }
             });
-            
+
             window.addEventListener('resize', function() {
               if (!document.fullscreenElement) {
                 const screenWidth = window.screen.availWidth;
@@ -274,7 +274,7 @@ function ProjectModal({
                 window.moveTo(left, top);
               }
             });
-            
+
             document.addEventListener('fullscreenchange', function() {
               const container = document.querySelector('.image-viewer-container');
               if (document.fullscreenElement) {
@@ -303,7 +303,7 @@ function ProjectModal({
           <button
             type="button"
             className="modal-close-btn"
-            aria-label="Fechar"
+            aria-label={t("modalClose")}
             onClick={() => setIsModalOpen(false)}
           >
             &times;
@@ -312,9 +312,9 @@ function ProjectModal({
             <>
               <div className="project-modal-header">
                 <h2 className="project-modal-title">{selectedProject.title}</h2>
-                {selectedProject.subtitulo && (
+                {selectedProject.subtitle && (
                   <div className="project-status-badge">
-                    {selectedProject.subtitulo}
+                    {selectedProject.subtitle}
                   </div>
                 )}
               </div>
@@ -327,49 +327,44 @@ function ProjectModal({
                     className="project-modal-image"
                   />
                   <div className="project-modal-summary">
-                    {selectedProject.historia}
+                    {selectedProject.history}
                   </div>
                 </div>
               </DialogDescription>
 
               {/* Minhas Responsabilidades */}
-              {selectedProject.minhasResponsabilidades && (
+              {selectedProject.responsibilities && (
                 <div className="project-responsibilities">
                   <h4 className="project-responsibilities-title">
-                    🎯 Minhas Responsabilidades no Projeto
+                    🎯 {t("modalResponsibilities")}
                   </h4>
                   <div className="project-responsibilities-container">
                     <div className="project-responsibilities-bg-decoration"></div>
                     <div className="project-responsibilities-content">
-                      {selectedProject.minhasResponsabilidades.map(
-                        (resp, idx) => (
-                          <div
-                            key={idx}
-                            className="project-responsibility-item"
-                          >
-                            <span className="project-responsibility-emoji">
-                              ✨
-                            </span>
-                            {resp}
-                          </div>
-                        )
-                      )}
+                      {selectedProject.responsibilities.map((resp, idx) => (
+                        <div key={idx} className="project-responsibility-item">
+                          <span className="project-responsibility-emoji">
+                            ✨
+                          </span>
+                          {resp}
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
               )}
 
               {/* Equipe do Projeto */}
-              {selectedProject.equipe && (
+              {selectedProject.team && (
                 <div className="project-team">
                   <h4 className="project-team-title">
                     <FaUsers
                       style={{ marginRight: "0.5rem", color: "#1e88e5" }}
                     />
-                    Equipe do Projeto
+                    {t("modalTeam")}
                   </h4>
                   <div className="project-team-grid">
-                    {selectedProject.equipe.map((membro, idx) => {
+                    {selectedProject.team.map((member, idx) => {
                       // Definir redes sociais para cada membro
                       const redesSociais = {
                         "Eduardo Wagner": {
@@ -389,7 +384,7 @@ function ProjectModal({
                         },
                       };
 
-                      const redes = redesSociais[membro.nome] || {
+                      const redes = redesSociais[member.name] || {
                         github: "#",
                         linkedin: "#",
                       };
@@ -398,22 +393,22 @@ function ProjectModal({
                         <div key={idx} className="project-team-member">
                           {/* Avatar placeholder */}
                           <div className="project-team-avatar">
-                            {membro.nome
+                            {member.name
                               .split(" ")
                               .map((n) => n[0])
                               .join("")}
                           </div>
 
                           <h6 className="project-team-member-name">
-                            {membro.nome}
+                            {member.name}
                           </h6>
 
                           <div className="project-team-member-role">
-                            {membro.papel}
+                            {member.role}
                           </div>
 
                           <div className="project-team-member-responsibilities">
-                            {membro.responsabilidades}
+                            {member.responsibilities}
                           </div>
 
                           {/* Redes Sociais */}
@@ -444,15 +439,15 @@ function ProjectModal({
               )}
 
               {/* Integração IoT (só para ThermalTech) */}
-              {selectedProject.integracaoIoT && (
+              {selectedProject.iotIntegration && (
                 <div className="iot-integration">
                   <h4 className="iot-integration-title">
-                    🌐 Integração IoT Desenvolvida pelo Victor
+                    🌐 {t("modalIoTIntegration")}
                   </h4>
                   <div className="iot-integration-container">
                     <div className="iot-integration-bg-decoration"></div>
                     <div className="iot-integration-content">
-                      {selectedProject.integracaoIoT.map((feature, idx) => (
+                      {selectedProject.iotIntegration.map((feature, idx) => (
                         <div key={idx} className="iot-integration-item">
                           <span className="iot-integration-emoji">🔧</span>
                           {feature}
@@ -465,20 +460,18 @@ function ProjectModal({
 
               {/* Funcionalidades do Projeto */}
               <div className="project-features">
-                {selectedProject.funcionalidades &&
-                  selectedProject.funcionalidades.map((func, idx) => (
+                {selectedProject.features &&
+                  selectedProject.features.map((func, idx) => (
                     <div key={idx} className="feature-row">
                       <img
-                        src={func.imagem}
-                        alt={func.titulo}
+                        src={func.image}
+                        alt={func.title}
                         className="feature-img"
-                        onClick={() =>
-                          handleImageClick(func.imagem, func.titulo)
-                        }
+                        onClick={() => handleImageClick(func.image, func.title)}
                       />
                       <div className="feature-content">
-                        <h6 className="feature-title">{func.titulo}</h6>
-                        <p className="feature-desc">{func.descricao}</p>
+                        <h6 className="feature-title">{func.title}</h6>
+                        <p className="feature-desc">{func.description}</p>
                       </div>
                     </div>
                   ))}
@@ -488,17 +481,29 @@ function ProjectModal({
               <div className="tech-details-grid">
                 {(() => {
                   const categories = [
-                    { key: "frontend", label: "Frontend", tag: "frontend-tag" },
-                    { key: "backend", label: "Backend", tag: "backend-tag" },
-                    { key: "database", label: "Database", tag: "database-tag" },
+                    {
+                      key: "frontend",
+                      label: t("modalFrontend"),
+                      tag: "frontend-tag",
+                    },
+                    {
+                      key: "backend",
+                      label: t("modalBackend"),
+                      tag: "backend-tag",
+                    },
+                    {
+                      key: "database",
+                      label: t("modalDatabase"),
+                      tag: "database-tag",
+                    },
                     {
                       key: "libraries",
-                      label: "Bibliotecas",
+                      label: t("modalLibraries"),
                       tag: "library-tag",
                     },
                     {
                       key: "integrations",
-                      label: "APIs e Integrações",
+                      label: t("modalIntegrations"),
                       tag: "general-tag",
                     },
                   ];

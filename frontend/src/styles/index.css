@@ -838,7 +838,7 @@
   margin-left: 1rem;
 }
 
-.status-finalizado {
+.status-finalizado, .status-completed {
   background: var(--success-green);
   color: var(--white);
 }
@@ -848,7 +848,7 @@
   color: var(--white);
 }
 
-.status-em-desenvolvimento {
+.status-em-desenvolvimento, .status-in-development, .status-en-desarrollo {
   background: var(--warning-yellow);
   color: var(--text-dark);
 }

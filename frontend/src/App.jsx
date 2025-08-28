@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { FaBriefcase, FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt, FaCode, FaDatabase, FaTools, FaCloud, FaDesktop, FaCogs, FaRocket, FaUserAstronaut, FaPhone, FaShieldAlt,
 } from "react-icons/fa";
 import { SiJira } from "react-icons/si";
-import { projects, skills } from "./data/projectsData";
+// Remover a importação: import { projects, skills } from "./data/projectsData";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ProjectModal from "./components/ProjectModal";
@@ -45,6 +45,10 @@ function App() {
   };
 
   const { t, i18n } = useTranslation();
+
+  // Adicionar as constantes para traduções
+  const projects = t("projects", { returnObjects: true });
+  const skills = t("skills", { returnObjects: true });
 
   useEffect(() => {
     i18n.changeLanguage(lang);
@@ -490,7 +494,7 @@ function App() {
                         <div className="project-overlay">
                           <button className="btn btn-primary btn-sm smooth-transition" onClick={() => handleProjectClick(project)} >
                             <FaExternalLinkAlt className="me-1 svg-icon-animated" />
-                            {t("seeDetails")}
+                            {t("projectsDetailsBtn")}
                           </button>
                         </div>
                       </div>

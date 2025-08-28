@@ -139,6 +139,56 @@
   "expTonerTopic1": "School printer management system",
   "expTonerTopic2": "PostgreSQL, authentication and admin panels",
   "expTonerTopic3": "Individual development focused on scalability",
+    "skills": {
+      "frontend": [
+        "HTML5",
+        "CSS3",
+        "JavaScript ES6+",
+        "Bootstrap",
+        "EJS",
+        "Chart.js",
+        "jQuery"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "Python"
+      ],
+      "database": [
+        "PostgreSQL",
+        "Firebase",
+        "Firestore",
+        "Firebase Storage",
+        "Firebase Auth"
+      ],
+      "cloud": [
+        "Google Cloud Platform",
+        "Firebase"
+      ],
+      "desktop": [
+        "Electron.js",
+        "PWA"
+      ],
+      "tools": [
+        "Git",
+        "GitHub",
+        "SweetAlert2",
+        "Multer",
+        "WebSockets",
+        "MQTT"
+      ],
+      "methodologies": [
+        "Scrum",
+        "Jira",
+        "Agile Methodologies",
+        "MVC Architecture",
+        "Teamwork"
+      ],
+      "learning": [
+        "ReactJS",
+        "React Native"
+      ]
+    },
   "projects": [
     {
       "title": "FlowTime",
@@ -168,7 +218,32 @@
         "🔐 Token System - Authentication and security development",
         "📱 Responsiveness - Adaptation for mobile and desktop devices",
         "✨ UX/UI - Design and user experience implementation"
-      ]
+      ],
+      "team": [
+        {
+          "name": "Eduardo Wagner",
+          "role": "Frontend Developer",
+          "responsibilities": "Complete frontend, interactive charts, security token system"
+        },
+        {
+          "name": "Victor Bueno",
+          "role": "Backend Developer",
+          "responsibilities": "Entire backend architecture, APIs, database"
+        },
+        {
+          "name": "Lucas Ulbrich",
+          "role": "UI/UX Designer",
+          "responsibilities": "Page prototyping in Figma, design system"
+        }
+      ],
+      "frontend": ["HTML5", "CSS3", "EJS", "JavaScript", "Electron.js", "SweetAlert2", "Chart.js"],
+      "backend": ["Node.js", "Express.js", "Multer", "Node-cron", "dotenv", "memory-cache", "node-cache", "web-push", "path", "cross-env"],
+      "database": ["Firebase Firestore", "Firebase Database", "Firebase Storage", "Firebase Authentication", "Firebase Admin SDK"],
+      "libraries": ["browser-image-compression", "moment-timezone", "node-fetch", "Chart.js", "SweetAlert2", "Choices.js", "html2pdf.js", "SignaturePad.js"],
+      "integrations": ["IBGE API", "WhatsApp API", "Web Push API", "Firebase Auth API", "Service Workers", "Local Storage"],
+      "status": "Completed",
+      "image": "/images/FlowTime.png",
+      "link": "#"
     },
     {
       "title": "TonnerTrack",
@@ -199,7 +274,22 @@
         "📊 Reports - Generation of reports and dashboards",
         "📱 Responsive Interface - Design adaptable for all devices",
         "🔧 Deployment and Maintenance - Implementation in production environment"
-      ]
+      ],
+      "team": [
+        {
+          "name": "Eduardo Wagner",
+          "role": "Full Stack Developer Solo",
+          "responsibilities": "Complete system development, from planning to final implementation"
+        }
+      ],
+      "frontend": ["HTML5", "CSS3", "JavaScript (ES6+)", "EJS", "Bootstrap", "Bootstrap Icons", "Chart.js", "SweetAlert2", "Electron.js"],
+      "backend": ["Node.js", "Express.js", "Express-Session", "Express-Handlebars", "Multer", "Socket.io", "dotenv", "cookie-parser"],
+      "database": ["PostgreSQL", "pg"],
+      "libraries": ["firebase", "firebase-admin", "path", "electron-updater"],
+      "integrations": ["Firebase Authentication", "Firebase Cloud Storage", "Own RESTful API"],
+      "status": "Completed",
+      "image": "/images/TonnerTrack.png",
+      "link": "#"
     },
     {
       "title": "ThermalTech",
@@ -231,7 +321,34 @@
         "🚫 Smart Blocking - Suspicious IPs and rate limiting",
         "📧 Real-Time Alerts - Automatic email notifications",
         "📋 Security Reports - Continuous automated monitoring"
-      ]
+      ],
+      "team": [
+        {
+          "name": "Eduardo Wagner",
+          "role": "Frontend & Security Developer",
+          "responsibilities": "Complete frontend, advanced security system, auditing middleware, threat detection"
+        },
+        {
+          "name": "Victor Bueno",
+          "role": "Backend & IoT Developer",
+          "responsibilities": "Backend, IoT integration, ESP sensors, Firebase Realtime Database, WebSocket/SSE communication"
+        }
+      ],
+      "iotIntegration": [
+        "🌡️ Temperature Capture - Sensors via HTTP POST to /api/sensor-data endpoint",
+        "📡 Bidirectional Communication - ESP via Firebase Realtime Database",
+        "⚡ Real-Time - Server-Sent Events (SSE) and WebSocket",
+        "🎯 Remote Control - Temperature, speed, and mode commands",
+        "⚠️ Automatic Alerts - Room limit verification"
+      ],
+      "frontend": ["HTML5", "CSS3", "Bootstrap 5", "Bootstrap Icons", "Chart.js", "SweetAlert2", "EJS", "HTML2Canvas", "JavaScript", "Socket.IO", "WebSocket"],
+      "backend": ["Node.js", "Express.js", "Multer", "Socket.IO", "EJS", "MQTT", "Firebase Admin SDK"],
+      "database": ["PostgreSQL", "Firebase Authentication", "Firebase Storage", "Firebase Database"],
+      "libraries": ["SweetAlert2", "Chart.js", "Bootstrap", "HTML2Canvas", "Multer", "Socket.IO", "Firebase", "MQTT", "EJS"],
+      "integrations": ["Firebase Authentication", "Firebase Storage", "Firebase Database", "Socket.IO", "MQTT", "Own REST APIs"],
+      "status": "In Development",
+      "image": "/images/ThermalTech.png",
+      "link": "#"
     }
   ]
 }

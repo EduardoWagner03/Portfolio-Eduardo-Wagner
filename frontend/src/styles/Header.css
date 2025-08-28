@@ -95,8 +95,27 @@ html {
     border-color: #00acc1;
 }
 
+.navbar-nav .nav-link {
+    min-width: 110px;
+    max-width: 130px;
+    width: 120px;  
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .navbar-nav {
-    gap: 1.5rem !important;
+    gap: 3rem; 
+}
+
+.desktop-buttons .btn-outline-primary, .mobile-small-buttons .btn-outline-primary {
+    min-width: 74px;
+    max-width: 74px;
+    width: 74px;
+    justify-content: center;
+    text-align: center;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .navbar .btn-primary {
