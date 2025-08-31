@@ -4,14 +4,13 @@ import React, { useState, useEffect } from "react";
 import { FaBriefcase, FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt, FaCode, FaDatabase, FaTools, FaCloud, FaDesktop, FaCogs, FaRocket, FaUserAstronaut, FaPhone, FaShieldAlt,
 } from "react-icons/fa";
 import { SiJira } from "react-icons/si";
-// Remover a importação: import { projects, skills } from "./data/projectsData";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ProjectModal from "./components/ProjectModal";
 import Loader from "./components/Loader";
 import ScrollAnimations from "./components/ScrollAnimations";
-import "../src/translations/i18next";
 import { useTranslation } from "react-i18next";
+import "../src/translations/i18next";
 import "./styles/Header.css";
 import "./styles/index.css";
 import "./styles/dark-mode.css";
@@ -240,93 +239,85 @@ function App() {
         </section>
 
         {/* 2. Sobre Mim com Animações */}
-        <section id="about" className="about-section section-gradient parallax-container" >
-          <div className="container">
-            <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
-              <span className="section-badge"
-                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", }} >
-                <FaUserAstronaut className="svg-icon-animated"
-                  style={{ color: "#fff", verticalAlign: "middle", fontSize: "1.1em", }} />
-                {t("aboutBadge")}
-              </span>
-              <h2 className="section-title">{t("aboutTitle")}</h2>
-              <p className="section-subtitle">{t("aboutSubtitle")}</p>
-            </div>
-            <div className="row justify-content-center">
-              <div className="col-lg-10">
-                <div className="about-content-modern animate-on-scroll animate-scale-in parallax-element" data-speed="0.1" >
-                  <div className="about-intro">
-                    <h3
-                      style={{ display: "inline-flex", alignItems: "center", gap: "1rem", }} >
-                      {t("aboutHello")}
-                      <span className="icon-gradient">
-                        <FaCode className="icon-gradient-code svg-icon-animated" />
-                      </span>
-                    </h3>
-                    <p className="intro-text">{t("aboutIntroText")}</p>
-                  </div>
-                  <div className="about-journey">
-                    <div className="journey-item animate-on-scroll animate-slide-left">
-                      <div className="journey-icon">
-                        <i className="fas fa-graduation-cap svg-icon-animated"></i>
-                      </div>
-                      <div className="journey-content">
-                        <h4>{t("aboutAcademicTitle")}</h4>
-                        <p>{t("aboutAcademicText")}</p>
-                      </div>
+      <section id="about" className="about-section section-gradient parallax-container">
+        <div className="container">
+          <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
+            <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backdropFilter: 'blur(10px)', borderRadius: '2rem', padding: '0.8rem 1.5rem' }} >
+              <FaUserAstronaut className="svg-icon-animated"
+                style={{ verticalAlign: "middle", fontSize: "1.1em", }} />
+              {t("aboutBadge")}
+            </span>
+            <h2 className="section-title" style={{ color: '#263799', fontSize: '3rem', fontWeight: 'bold', textShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>{t("aboutTitle")}</h2>
+            <p className="section-subtitle" style={{ color: '#3f4245', fontSize: '1.2rem' }}>{t("aboutSubtitle")}</p>
+          </div>
+          <div className="row justify-content-center">
+            <div className="col-lg-10">
+              <div className="about-content-modern animate-on-scroll animate-scale-in parallax-element" data-speed="0.1" style={{ background: 'rgba(255,255,255,0.95)', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.05)' }}>
+                <div className="about-intro" style={{ background: 'linear-gradient(135deg, #1e88e5 0%, #00acc1 100%)', color: '#fff', padding: '4rem', textAlign: 'center' }}>
+                  <h3 style={{ display: "inline-flex", alignItems: "center", gap: "1rem", fontSize: '2.5rem', fontWeight: '700' }}>
+                    {t("aboutHello")}
+                    <span className="icon-gradient" style={{ background: 'linear-gradient(45deg, #ff6b6b, #4ecdc4)', borderRadius: '50%', width: '80px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <img src="/images/img.jpeg" alt="Foto de Eduardo Wagner" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
+                    </span>
+                  </h3>
+                  <p className="intro-text" style={{ fontSize: '1.2rem', lineHeight: '1.8', opacity: '0.9' }}>{t("aboutIntroText")}</p>
+                </div>
+                <div className="about-journey" style={{ padding: '4rem', background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)', borderTop: '1px solid rgba(0,0,0,0.1)' }}>
+                  <div className="journey-item animate-on-scroll animate-slide-left" style={{ animationDelay: '0.2s', background: '#f8f9fa', borderRadius: '1.5rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)', marginBottom: '2rem', padding: '2.5rem', transition: 'transform 0.3s, box-shadow 0.3s', border: '1px solid rgba(0,0,0,0.05)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-15px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)'; }}>
+                    <div className="journey-icon" style={{ width: '70px', height: '70px', background: 'linear-gradient(135deg, #42a5f5 0%, #1976d2 100%)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '1.8rem', marginRight: '1.5rem', transition: 'all 0.3s ease', animation: 'fadeIn 2s ease-in-out' }}>
+                      <i className="fas fa-graduation-cap svg-icon-animated"></i>
                     </div>
-                    <div className="journey-item animate-on-scroll animate-slide-right">
-                      <div className="journey-icon">
-                        <i className="fas fa-users svg-icon-animated"></i>
-                      </div>
-                      <div className="journey-content">
-                        <h4>{t("aboutTeamTitle")}</h4>
-                        <p>{t("aboutTeamText")}</p>
-                      </div>
-                    </div>
-                    <div className="journey-item animate-on-scroll animate-slide-left">
-                      <div className="journey-icon">
-                        <i className="fas fa-lightbulb svg-icon-animated"></i>
-                      </div>
-                      <div className="journey-content">
-                        <h4>{t("aboutPhilosophyTitle")}</h4>
-                        <p>{t("aboutPhilosophyText")}</p>
-                      </div>
+                    <div className="journey-content">
+                      <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '0.5rem' }} title="Clique para mais detalhes">{t("aboutAcademicTitle")}</h4>
+                      <p style={{ color: '#666', lineHeight: '1.6' }}>{t("aboutAcademicText")}</p>
                     </div>
                   </div>
-                  <div className="about-cta animate-on-scroll animate-fade-in">
-                    <div className="cta-content">
-                      <h4>{t("aboutCtaTitle")}</h4>
-                      <p>{t("aboutCtaText")}</p>
-                      <div className="cta-buttons">
-                        <a href="#contact" className="btn btn-primary smooth-transition" >
-                          <i className="fas fa-handshake me-2"></i>
-                          {t("aboutCtaContactBtn")}
-                        </a>
-                        <a href="/cv.pdf" className="btn btn-outline-primary smooth-transition" target="_blank" rel="noreferrer">
-                          <i className="fas fa-download me-2"></i>
-                          {t("aboutCtaDownloadBtn")}
-                        </a>
-                      </div>
+                  <div className="journey-item animate-on-scroll animate-slide-right" style={{ animationDelay: '0.4s', background: '#f8f9fa', borderRadius: '1.5rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)', marginBottom: '2rem', padding: '2.5rem', transition: 'transform 0.3s, box-shadow 0.3s', border: '1px solid rgba(0,0,0,0.05)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-15px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)'; }}>
+                    <div className="journey-icon" style={{ width: '70px', height: '70px', background: 'linear-gradient(135deg, #81c784 0%, #4caf50 100%)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '1.8rem', marginRight: '1.5rem', transition: 'all 0.3s ease', animation: 'fadeIn 2s ease-in-out' }}>
+                      <i className="fas fa-users svg-icon-animated"></i>
+                    </div>
+                    <div className="journey-content">
+                      <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '0.5rem' }} title="Clique para mais detalhes">{t("aboutTeamTitle")}</h4>
+                      <p style={{ color: '#666', lineHeight: '1.6' }}>{t("aboutTeamText")}</p>
+                    </div>
+                  </div>
+                  <div className="journey-item animate-on-scroll animate-slide-left" style={{ animationDelay: '0.6s', background: '#f8f9fa', borderRadius: '1.5rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)', marginBottom: '2rem', padding: '2.5rem', transition: 'transform 0.3s, box-shadow 0.3s', border: '1px solid rgba(0,0,0,0.05)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-15px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)'; }}>
+                    <div className="journey-icon" style={{ width: '70px', height: '70px', background: 'linear-gradient(135deg, #ffb74d 0%, #ff9800 100%)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '1.8rem', marginRight: '1.5rem', transition: 'all 0.3s ease', animation: 'fadeIn 2s ease-in-out' }}>
+                      <i className="fas fa-lightbulb svg-icon-animated"></i>
+                    </div>
+                    <div className="journey-content">
+                      <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '0.5rem' }} title="Clique para mais detalhes">{t("aboutPhilosophyTitle")}</h4>
+                      <p style={{ color: '#666', lineHeight: '1.6' }}>{t("aboutPhilosophyText")}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="about-cta animate-on-scroll animate-fade-in" style={{ animationDelay: '0.8s', background: 'linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%)', padding: '4rem', textAlign: 'center', borderTop: '1px solid rgba(0,0,0,0.1)' }}>
+                  <div className="cta-content">
+                    <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '1rem', fontSize: '1.8rem' }}>{t("aboutCtaTitle")}</h4>
+                    <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '2rem' }}>{t("aboutCtaText")}</p>
+                    <div className="cta-buttons" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                      <a href="#contact" className="btn btn-primary smooth-transition" style={{ background: 'linear-gradient(135deg, #1e88e5 0%, #00acc1 100%)', border: 'none', padding: '0.75rem 2rem', borderRadius: '2rem', fontWeight: '600', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} >
+                        <i className="fas fa-handshake me-2"></i>
+                        {t("aboutCtaContactBtn")}
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* 3. Habilidades com Animações */}
         <section id="skills" className="skills-section section-gradient parallax-container">
           <div className="container">
             <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
-              <span className="section-badge"
-                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "#fff",}} >
-                <FaCogs className="svg-icon-animated" style={{ fontSize: "1.5em" }} />
+              <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backdropFilter: 'blur(10px)', borderRadius: '2rem', padding: '0.8rem 1.5rem' }} > <FaCogs className="svg-icon-animated" style={{ fontSize: "1.5em" }} />
                 {t("skillsBadge")}
               </span>
-              <h2 className="section-title">{t("skillsTitle")}</h2>
-              <p className="section-subtitle">{t("skillsSubtitle")}</p>
+              <h2 className="section-title" style={{ color: '#263799', fontSize: '3rem', fontWeight: 'bold', textShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>{t("skillsTitle")}</h2>
+              <p className="section-subtitle" style={{ color: '#3f4245', fontSize: '1.2rem' }}>{t("skillsSubtitle")}</p>
             </div>
             <div className="skills-grid animate-on-scroll animate-scale-in">
               <div className="row g-4">
@@ -475,14 +466,12 @@ function App() {
         <section id="projects" className="projects-section section-gradient parallax-container" >
           <div className="container">
             <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
-              <span className="section-badge"
-                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", }} >
-                <FaCode className="svg-icon-animated"
+              <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backdropFilter: 'blur(10px)', borderRadius: '2rem', padding: '0.8rem 1.5rem' }} > <FaCode className="svg-icon-animated"
                   style={{ color: "#fff", verticalAlign: "middle", fontSize: "1.1em", }} />
                 {t("projectsBadge")}
               </span>
-              <h2 className="section-title">{t("projectsTitle")}</h2>
-              <p className="section-subtitle">{t("projectsSubtitle")}</p>
+              <h2 className="section-title" style={{ color: '#263799', fontSize: '3rem', fontWeight: 'bold', textShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>{t("projectsTitle")}</h2>
+              <p className="section-subtitle" style={{ color: '#3f4245', fontSize: '1.2rem' }}>{t("projectsSubtitle")}</p>
             </div>
             <div className="projects-grid animate-on-scroll animate-scale-in">
               <div className="row g-4">
@@ -523,14 +512,12 @@ function App() {
         <section id="experience" className="experience-section section-gradient parallax-container" >
           <div className="container">
             <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
-              <span className="section-badge"
-                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "#fff", }} >
-                <FaBriefcase className="svg-icon-animated"
-                  style={{ color: "#fff", fontSize: "1.1em", verticalAlign: "middle", }}/>
+              <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backdropFilter: 'blur(10px)', borderRadius: '2rem', padding: '0.8rem 1.5rem' }} >
+                <FaBriefcase className="svg-icon-animated" style={{ color: "#fff", fontSize: "1.1em", verticalAlign: "middle", }}/>
                 {t("experienceBadge")}
               </span>
-              <h2 className="section-title">{t("experienceTitle")}</h2>
-              <p className="section-subtitle">{t("experienceSubtitle")}</p>
+              <h2 className="section-title" style={{ color: '#263799', fontSize: '3rem', fontWeight: 'bold', textShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>{t("experienceTitle")}</h2>
+              <p className="section-subtitle" style={{ color: '#3f4245', fontSize: '1.2rem' }}>{t("experienceSubtitle")}</p>
             </div>
             <div className="timeline">
               {/* 2021 - Início nos estudos - ESQUERDA */}
@@ -825,14 +812,11 @@ function App() {
         <section id="contact" className="contact-section section-gradient parallax-container" >
           <div className="container">
             <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
-              <span className="section-badge"
-                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "#fff", }} >
-                <FaPhone className="svg-icon-animated"
-                  style={{ color: "#fff", fontSize: "1.1em", verticalAlign: "middle", }} />
+              <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backdropFilter: 'blur(10px)', borderRadius: '2rem', padding: '0.8rem 1.5rem' }} > <FaPhone className="svg-icon-animated" style={{ color: "#fff", fontSize: "1.1em", verticalAlign: "middle", }} />
                 {t("contactBadge")}
               </span>
-              <h2 className="section-title">{t("contactTitle")}</h2>
-              <p className="section-subtitle">{t("contactSubtitle")}</p>
+              <h2 className="section-title" style={{ color: '#263799', fontSize: '3rem', fontWeight: 'bold', textShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>{t("contactTitle")}</h2>
+              <p className="section-subtitle" style={{ color: '#3f4245', fontSize: '1.2rem' }}>{t("contactSubtitle")}</p>
             </div>
             <div className="contact-wrapper">
               <div className="row g-4">
