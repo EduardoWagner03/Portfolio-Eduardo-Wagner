@@ -309,159 +309,260 @@ function App() {
         </div>
       </section>
 
-        {/* 3. Habilidades com Animações */}
-        <section id="skills" className="skills-section section-gradient parallax-container">
-          <div className="container">
-            <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
-              <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backdropFilter: 'blur(10px)', borderRadius: '2rem', padding: '0.8rem 1.5rem' }} > <FaCogs className="svg-icon-animated" style={{ fontSize: "1.5em" }} />
-                {t("skillsBadge")}
-              </span>
-              <h2 className="section-title" style={{ color: '#263799', fontSize: '3rem', fontWeight: 'bold', textShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>{t("skillsTitle")}</h2>
-              <p className="section-subtitle" style={{ color: '#3f4245', fontSize: '1.2rem' }}>{t("skillsSubtitle")}</p>
-            </div>
-            <div className="skills-grid animate-on-scroll animate-scale-in">
-              <div className="row g-4">
-                <div className="col-lg-4 col-md-6">
-                  <div className="skill-category skill-category-frontend smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaCode className="svg-icon-animated" />
+        
+      {/* 3. Habilidades com Animações */}
+      <section id="skills" className="skills-section section-gradient parallax-container">
+                  <div className="container">
+                    <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
+                      <div className="skills-badge-modern">
+                        <FaCogs className="svg-icon-animated badge-icon" />
+                        <span>{t("skillsBadge")}</span>
                       </div>
-                      <h4>{t("skillsFrontend")}</h4>
+                      <h2 className="skills-title-modern">{t("skillsTitle")}</h2>
+                      <p className="skills-subtitle-modern">{t("skillsSubtitle")}</p>
                     </div>
-                    <div className="skill-list">
-                      {skills.frontend.map((skill, index) => (
-                        <span key={index} className="skill-tag smooth-transition" >
-                          {skill}
-                        </span>
-                      ))}
+                    
+                    {/* Skills Overview Stats - CARD */}
+                    <div className="skills-overview animate-on-scroll animate-fade-in">
+                      <div className="overview-content">
+                        <h3 className="overview-title">Minha Stack Técnica</h3>
+                        <p className="overview-description">
+                          Um ecossistema completo de tecnologias modernas para desenvolvimento full-stack, 
+                          desde interfaces elegantes até infraestrutura robusta na nuvem.
+                        </p>
+                        <div className="overview-stats">
+                          <div className="stat-item">
+                            <span className="stat-number">32</span>
+                            <span className="stat-label">Tecnologias</span>
+                          </div>
+                          <div className="stat-divider"></div>
+                          <div className="stat-item">
+                            <span className="stat-number">8</span>
+                            <span className="stat-label">Categorias</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+        
+                    {/* Skills Categories - COM CARDS */}
+                    <div className="skills-categories animate-on-scroll animate-scale-in">
+                      
+                      {/* Frontend Category */}
+                      <div className="skill-category frontend-category">
+                        <div className="category-header">
+                          <div className="category-icon">
+                            <FaCode />
+                          </div>
+                          <div className="category-info">
+                            <h3 className="category-title">Frontend</h3>
+                            <p className="category-subtitle">Interfaces modernas e responsivas</p>
+                          </div>
+                          <div className="tech-count">
+                            <span className="count-number">{skills.frontend.length}</span>
+                            <span className="count-label">tecnologias</span>
+                          </div>
+                        </div>
+                        <div className="technologies-list">
+                          {skills.frontend.map((tech, index) => (
+                            <div key={index} className="tech-pill" style={{ '--delay': `${index * 0.1}s` }}>
+                              {tech}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+        
+                      {/* Backend Category */}
+                      <div className="skill-category backend-category">
+                        <div className="category-header">
+                          <div className="category-icon">
+                            <FaDatabase />
+                          </div>
+                          <div className="category-info">
+                            <h3 className="category-title">Backend</h3>
+                            <p className="category-subtitle">APIs robustas e escaláveis</p>
+                          </div>
+                          <div className="tech-count">
+                            <span className="count-number">{skills.backend.length}</span>
+                            <span className="count-label">tecnologias</span>
+                          </div>
+                        </div>
+                        <div className="technologies-list">
+                          {skills.backend.map((tech, index) => (
+                            <div key={index} className="tech-pill" style={{ '--delay': `${index * 0.1}s` }}>
+                              {tech}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+        
+                      {/* Database Category */}
+                      <div className="skill-category database-category">
+                        <div className="category-header">
+                          <div className="category-icon">
+                            <FaDatabase />
+                          </div>
+                          <div className="category-info">
+                            <h3 className="category-title">Banco de Dados</h3>
+                            <p className="category-subtitle">Armazenamento eficiente de dados</p>
+                          </div>
+                          <div className="tech-count">
+                            <span className="count-number">{skills.database.length}</span>
+                            <span className="count-label">tecnologias</span>
+                          </div>
+                        </div>
+                        <div className="technologies-list">
+                          {skills.database.map((tech, index) => (
+                            <div key={index} className="tech-pill" style={{ '--delay': `${index * 0.1}s` }}>
+                              {tech}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+        
+                      {/* Cloud Category */}
+                      <div className="skill-category cloud-category">
+                        <div className="category-header">
+                          <div className="category-icon">
+                            <FaCloud />
+                          </div>
+                          <div className="category-info">
+                            <h3 className="category-title">Serviços em Nuvem</h3>
+                            <p className="category-subtitle">Infraestrutura moderna e confiável</p>
+                          </div>
+                          <div className="tech-count">
+                            <span className="count-number">{skills.cloud.length}</span>
+                            <span className="count-label">tecnologias</span>
+                          </div>
+                        </div>
+                        <div className="technologies-list">
+                          {skills.cloud.map((tech, index) => (
+                            <div key={index} className="tech-pill" style={{ '--delay': `${index * 0.1}s` }}>
+                              {tech}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+        
+                      {/* Desktop Category */}
+                      <div className="skill-category desktop-category">
+                        <div className="category-header">
+                          <div className="category-icon">
+                            <FaDesktop />
+                          </div>
+                          <div className="category-info">
+                            <h3 className="category-title">Desktop</h3>
+                            <p className="category-subtitle">Aplicações nativas multiplataforma</p>
+                          </div>
+                          <div className="tech-count">
+                            <span className="count-number">{skills.desktop.length}</span>
+                            <span className="count-label">tecnologias</span>
+                          </div>
+                        </div>
+                        <div className="technologies-list">
+                          {skills.desktop.map((tech, index) => (
+                            <div key={index} className="tech-pill" style={{ '--delay': `${index * 0.1}s` }}>
+                              {tech}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+        
+                      {/* Tools Category */}
+                      <div className="skill-category tools-category">
+                        <div className="category-header">
+                          <div className="category-icon">
+                            <FaTools />
+                          </div>
+                          <div className="category-info">
+                            <h3 className="category-title">Ferramentas</h3>
+                            <p className="category-subtitle">Produtividade e qualidade no desenvolvimento</p>
+                          </div>
+                          <div className="tech-count">
+                            <span className="count-number">{skills.tools.length}</span>
+                            <span className="count-label">tecnologias</span>
+                          </div>
+                        </div>
+                        <div className="technologies-list">
+                          {skills.tools.map((tech, index) => (
+                            <div key={index} className="tech-pill" style={{ '--delay': `${index * 0.1}s` }}>
+                              {tech}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+        
+                      {/* Methodologies Category */}
+                      <div className="skill-category methodologies-category">
+                        <div className="category-header">
+                          <div className="category-icon">
+                            <FaCogs />
+                          </div>
+                          <div className="category-info">
+                            <h3 className="category-title">Metodologias</h3>
+                            <p className="category-subtitle">Práticas e processos de desenvolvimento</p>
+                          </div>
+                          <div className="tech-count">
+                            <span className="count-number">{skills.methodologies.length}</span>
+                            <span className="count-label">tecnologias</span>
+                          </div>
+                        </div>
+                        <div className="technologies-list">
+                          {skills.methodologies.map((tech, index) => (
+                            <div key={index} className="tech-pill" style={{ '--delay': `${index * 0.1}s` }}>
+                              {tech}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+        
+                      {/* Learning Category */}
+                      <div className="skill-category learning-category">
+                        <div className="category-header">
+                          <div className="category-icon learning-icon">
+                            <FaCode />
+                          </div>
+                          <div className="category-info">
+                            <h3 className="category-title">Aprendendo Atualmente</h3>
+                            <p className="category-subtitle">Expandindo conhecimentos e habilidades</p>
+                            <div className="learning-status">
+                              <span className="status-badge">Em Progresso</span>
+                            </div>
+                          </div>
+                          <div className="tech-count">
+                            <span className="count-number">{skills.learning.length}</span>
+                            <span className="count-label">tecnologias</span>
+                          </div>
+                        </div>
+                        <div className="technologies-list">
+                          {skills.learning.map((tech, index) => (
+                            <div key={index} className="tech-pill learning-pill" style={{ '--delay': `${index * 0.1}s` }}>
+                              {tech}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+        
+                    </div>
+        
+                    {/* Always Evolving Section - CARD */}
+                   <div className="evolving-section animate-on-scroll animate-fade-in">
+                      <div className="evolving-content">
+                        <h3 className="evolving-title">Sempre Evoluindo</h3>
+                        <p className="evolving-description">
+                          Esta stack está em constante evolução, sempre incorporando as melhores práticas e 
+                          tecnologias mais recentes do mercado para entregar soluções de alta qualidade.
+                        </p>
+                        <div className="evolving-badges">
+                          <span className="evolving-badge">Novas Tecnologias</span>
+                          <span className="evolving-badge">Melhores Práticas</span>
+                          <span className="evolving-badge">Inovação Contínua</span>
+                          <span className="evolving-badge">Qualidade Premium</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-lg-4 col-md-6">
-                  <div className="skill-category skill-category-backend smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaDatabase className="svg-icon-animated" />
-                      </div>
-                      <h4>{t("skillsBackend")}</h4>
-                    </div>
-                    <div className="skill-list">
-                      {skills.backend.map((skill, index) => (
-                        <span key={index} className="skill-tag smooth-transition" >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-4 col-md-6">
-                  <div className="skill-category skill-category-database smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaDatabase className="svg-icon-animated" />
-                      </div>
-                      <h4>{t("skillsDatabase")}</h4>
-                    </div>
-                    <div className="skill-list">
-                      {skills.database.map((skill, index) => (
-                        <span key={index} className="skill-tag smooth-transition" >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-4 col-md-6">
-                  <div className="skill-category skill-category-cloud smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaCloud className="svg-icon-animated" />
-                      </div>
-                      <h4>{t("skillsCloud")}</h4>
-                    </div>
-                    <div className="skill-list">
-                      {skills.cloud.map((skill, index) => (
-                        <span key={index} className="skill-tag smooth-transition" >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-4 col-md-6">
-                  <div className="skill-category skill-category-desktop smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaDesktop className="svg-icon-animated" />
-                      </div>
-                      <h4>{t("skillsDesktop")}</h4>
-                    </div>
-                    <div className="skill-list">
-                      {skills.desktop.map((skill, index) => (
-                        <span key={index} className="skill-tag smooth-transition" >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-4 col-md-6">
-                  <div className="skill-category skill-category-tools smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaTools className="svg-icon-animated" />
-                      </div>
-                      <h4>{t("skillsTools")}</h4>
-                    </div>
-                    <div className="skill-list">
-                      {skills.tools.map((skill, index) => (
-                        <span key={index} className="skill-tag smooth-transition" >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-6 col-md-6">
-                  <div className="skill-category methodology-category smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaCogs className="svg-icon-animated" />
-                      </div>
-                      <h4>{t("skillsMethodologies")}</h4>
-                    </div>
-                    <div className="skill-list">
-                      {skills.methodologies.map((skill, index) => (
-                        <span key={index} className="skill-tag methodology-tag smooth-transition" >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-6 col-md-6">
-                  <div className="skill-category learning-category smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaCode className="svg-icon-animated" />
-                      </div>
-                      <h4>{t("skillsLearning")}</h4>
-                    </div>
-                    <div className="skill-list">
-                      {skills.learning.map((skill, index) => (
-                        <span key={index} className="skill-tag learning-tag smooth-transition" >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
+      </section>
+        
         {/* 4. Projetos com Animações */}
         <section id="projects" className="projects-section section-gradient parallax-container" >
           <div className="container">
