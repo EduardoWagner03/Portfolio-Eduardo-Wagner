@@ -75,6 +75,48 @@
     color: #e6edf3;
 }
 
+.dark-mode .skills-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.dark-mode .skill-category {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .category-title {
+    color: #f1f5f9;
+}
+
+.dark-mode .category-subtitle {
+    color: #94a3b8;
+}
+
+.dark-mode .tech-count {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--category-color);
+    color: var(--category-color);
+}
+
+.dark-mode .tech-pill {
+    background: linear-gradient(135deg, #334155 0%, #475569 100%);
+    color: #cbd5e1;
+    border-color: #475569;
+}
+
+.dark-mode .evolving-section {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .evolving-title {
+    color: #f1f5f9;
+}
+
+.dark-mode .evolving-description {
+    color: #94a3b8;
+}
+
 .dark-mode .text-light {
     color: #8b949e !important;
 }

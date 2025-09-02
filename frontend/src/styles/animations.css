@@ -132,3 +132,55 @@
         opacity: 1;
     }
 }
+
+@keyframes pill-appear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+}
+
+@keyframes sparkle {
+
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+@keyframes rocket {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-5px) rotate(5deg);
+  }
+
+  75% {
+    transform: translateY(-3px) rotate(-5deg);
+  }
+} 
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

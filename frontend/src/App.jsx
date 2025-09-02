@@ -239,329 +239,346 @@ function App() {
         </section>
 
         {/* 2. Sobre Mim com Animações */}
-      <section id="about" className="about-section section-gradient parallax-container">
-        <div className="container">
-          <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
-            <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backdropFilter: 'blur(10px)', borderRadius: '2rem', padding: '0.8rem 1.5rem' }} >
-              <FaUserAstronaut className="svg-icon-animated"
-                style={{ verticalAlign: "middle", fontSize: "1.1em", }} />
-              {t("aboutBadge")}
-            </span>
-            <h2 className="section-title" style={{ color: '#263799', fontSize: '3rem', fontWeight: 'bold', textShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>{t("aboutTitle")}</h2>
-            <p className="section-subtitle" style={{ color: '#3f4245', fontSize: '1.2rem' }}>{t("aboutSubtitle")}</p>
-          </div>
-          <div className="row justify-content-center">
-            <div className="col-lg-10">
-              <div className="about-content-modern animate-on-scroll animate-scale-in parallax-element" data-speed="0.1" style={{ background: 'rgba(255,255,255,0.95)', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.05)' }}>
-                <div className="about-intro" style={{ background: 'linear-gradient(135deg, #1e88e5 0%, #00acc1 100%)', color: '#fff', padding: '4rem', textAlign: 'center' }}>
-                  <h3 style={{ display: "inline-flex", alignItems: "center", gap: "1rem", fontSize: '2.5rem', fontWeight: '700' }}>
-                    {t("aboutHello")}
-                    <span className="icon-gradient" style={{ background: 'linear-gradient(45deg, #ff6b6b, #4ecdc4)', borderRadius: '50%', width: '80px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <img src="/images/img.jpeg" alt="Foto de Eduardo Wagner" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
-                    </span>
-                  </h3>
-                  <p className="intro-text" style={{ fontSize: '1.2rem', lineHeight: '1.8', opacity: '0.9' }}>{t("aboutIntroText")}</p>
-                </div>
-                <div className="about-journey" style={{ padding: '4rem', background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)', borderTop: '1px solid rgba(0,0,0,0.1)' }}>
-                  <div className="journey-item animate-on-scroll animate-slide-left" style={{ animationDelay: '0.2s', background: '#f8f9fa', borderRadius: '1.5rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)', marginBottom: '2rem', padding: '2.5rem', transition: 'transform 0.3s, box-shadow 0.3s', border: '1px solid rgba(0,0,0,0.05)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-15px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)'; }}>
-                    <div className="journey-icon" style={{ width: '70px', height: '70px', background: 'linear-gradient(135deg, #42a5f5 0%, #1976d2 100%)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '1.8rem', marginRight: '1.5rem', transition: 'all 0.3s ease', animation: 'fadeIn 2s ease-in-out' }}>
-                      <i className="fas fa-graduation-cap svg-icon-animated"></i>
+        <section id="about" className="about-section section-gradient parallax-container">
+          <div className="container">
+            <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
+              <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backdropFilter: 'blur(10px)', borderRadius: '2rem', padding: '0.8rem 1.5rem' }} >
+                <FaUserAstronaut className="svg-icon-animated"
+                  style={{ verticalAlign: "middle", fontSize: "1.1em", }} />
+                {t("aboutBadge")}
+              </span>
+              <h2 className="section-title" style={{ color: '#263799', fontSize: '3rem', fontWeight: 'bold', textShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>{t("aboutTitle")}</h2>
+              <p className="section-subtitle" style={{ color: '#3f4245', fontSize: '1.2rem' }}>{t("aboutSubtitle")}</p>
+            </div>
+            <div className="row justify-content-center">
+              <div className="col-lg-10">
+                <div className="about-content-modern animate-on-scroll animate-scale-in parallax-element" data-speed="0.1" style={{ background: 'rgba(255,255,255,0.95)', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.05)' }}>
+                  <div className="about-intro" style={{ background: 'linear-gradient(135deg, #1e88e5 0%, #00acc1 100%)', color: '#fff', padding: '4rem', textAlign: 'center' }}>
+                    <h3 style={{ display: "inline-flex", alignItems: "center", gap: "1rem", fontSize: '2.5rem', fontWeight: '700' }}>
+                      {t("aboutHello")}
+                      <span className="icon-gradient" style={{ background: 'linear-gradient(45deg, #ff6b6b, #4ecdc4)', borderRadius: '50%', width: '80px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <img src="/images/img.jpeg" alt="Foto de Eduardo Wagner" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
+                      </span>
+                    </h3>
+                    <p className="intro-text" style={{ fontSize: '1.2rem', lineHeight: '1.8', opacity: '0.9' }}>{t("aboutIntroText")}</p>
+                  </div>
+                  <div className="about-journey" style={{ padding: '4rem', background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)', borderTop: '1px solid rgba(0,0,0,0.1)' }}>
+                    <div className="journey-item animate-on-scroll animate-slide-left" style={{ animationDelay: '0.2s', background: '#f8f9fa', borderRadius: '1.5rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)', marginBottom: '2rem', padding: '2.5rem', transition: 'transform 0.3s, box-shadow 0.3s', border: '1px solid rgba(0,0,0,0.05)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-15px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)'; }}>
+                      <div className="journey-icon" style={{ width: '70px', height: '70px', background: 'linear-gradient(135deg, #42a5f5 0%, #1976d2 100%)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '1.8rem', marginRight: '1.5rem', transition: 'all 0.3s ease', animation: 'fadeIn 2s ease-in-out' }}>
+                        <i className="fas fa-graduation-cap svg-icon-animated"></i>
+                      </div>
+                      <div className="journey-content">
+                        <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '0.5rem' }} title="Clique para mais detalhes">{t("aboutAcademicTitle")}</h4>
+                        <p style={{ color: '#666', lineHeight: '1.6' }}>{t("aboutAcademicText")}</p>
+                      </div>
                     </div>
-                    <div className="journey-content">
-                      <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '0.5rem' }} title="Clique para mais detalhes">{t("aboutAcademicTitle")}</h4>
-                      <p style={{ color: '#666', lineHeight: '1.6' }}>{t("aboutAcademicText")}</p>
+                    <div className="journey-item animate-on-scroll animate-slide-right" style={{ animationDelay: '0.4s', background: '#f8f9fa', borderRadius: '1.5rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)', marginBottom: '2rem', padding: '2.5rem', transition: 'transform 0.3s, box-shadow 0.3s', border: '1px solid rgba(0,0,0,0.05)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-15px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)'; }}>
+                      <div className="journey-icon" style={{ width: '70px', height: '70px', background: 'linear-gradient(135deg, #81c784 0%, #4caf50 100%)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '1.8rem', marginRight: '1.5rem', transition: 'all 0.3s ease', animation: 'fadeIn 2s ease-in-out' }}>
+                        <i className="fas fa-users svg-icon-animated"></i>
+                      </div>
+                      <div className="journey-content">
+                        <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '0.5rem' }} title="Clique para mais detalhes">{t("aboutTeamTitle")}</h4>
+                        <p style={{ color: '#666', lineHeight: '1.6' }}>{t("aboutTeamText")}</p>
+                      </div>
+                    </div>
+                    <div className="journey-item animate-on-scroll animate-slide-left" style={{ animationDelay: '0.6s', background: '#f8f9fa', borderRadius: '1.5rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)', marginBottom: '2rem', padding: '2.5rem', transition: 'transform 0.3s, box-shadow 0.3s', border: '1px solid rgba(0,0,0,0.05)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-15px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)'; }}>
+                      <div className="journey-icon" style={{ width: '70px', height: '70px', background: 'linear-gradient(135deg, #ffb74d 0%, #ff9800 100%)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '1.8rem', marginRight: '1.5rem', transition: 'all 0.3s ease', animation: 'fadeIn 2s ease-in-out' }}>
+                        <i className="fas fa-lightbulb svg-icon-animated"></i>
+                      </div>
+                      <div className="journey-content">
+                        <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '0.5rem' }} title="Clique para mais detalhes">{t("aboutPhilosophyTitle")}</h4>
+                        <p style={{ color: '#666', lineHeight: '1.6' }}>{t("aboutPhilosophyText")}</p>
+                      </div>
                     </div>
                   </div>
-                  <div className="journey-item animate-on-scroll animate-slide-right" style={{ animationDelay: '0.4s', background: '#f8f9fa', borderRadius: '1.5rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)', marginBottom: '2rem', padding: '2.5rem', transition: 'transform 0.3s, box-shadow 0.3s', border: '1px solid rgba(0,0,0,0.05)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-15px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)'; }}>
-                    <div className="journey-icon" style={{ width: '70px', height: '70px', background: 'linear-gradient(135deg, #81c784 0%, #4caf50 100%)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '1.8rem', marginRight: '1.5rem', transition: 'all 0.3s ease', animation: 'fadeIn 2s ease-in-out' }}>
-                      <i className="fas fa-users svg-icon-animated"></i>
-                    </div>
-                    <div className="journey-content">
-                      <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '0.5rem' }} title="Clique para mais detalhes">{t("aboutTeamTitle")}</h4>
-                      <p style={{ color: '#666', lineHeight: '1.6' }}>{t("aboutTeamText")}</p>
-                    </div>
-                  </div>
-                  <div className="journey-item animate-on-scroll animate-slide-left" style={{ animationDelay: '0.6s', background: '#f8f9fa', borderRadius: '1.5rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)', marginBottom: '2rem', padding: '2.5rem', transition: 'transform 0.3s, box-shadow 0.3s', border: '1px solid rgba(0,0,0,0.05)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-15px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)'; }}>
-                    <div className="journey-icon" style={{ width: '70px', height: '70px', background: 'linear-gradient(135deg, #ffb74d 0%, #ff9800 100%)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '1.8rem', marginRight: '1.5rem', transition: 'all 0.3s ease', animation: 'fadeIn 2s ease-in-out' }}>
-                      <i className="fas fa-lightbulb svg-icon-animated"></i>
-                    </div>
-                    <div className="journey-content">
-                      <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '0.5rem' }} title="Clique para mais detalhes">{t("aboutPhilosophyTitle")}</h4>
-                      <p style={{ color: '#666', lineHeight: '1.6' }}>{t("aboutPhilosophyText")}</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="about-cta animate-on-scroll animate-fade-in" style={{ animationDelay: '0.8s', background: 'linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%)', padding: '4rem', textAlign: 'center', borderTop: '1px solid rgba(0,0,0,0.1)' }}>
-                  <div className="cta-content">
-                    <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '1rem', fontSize: '1.8rem' }}>{t("aboutCtaTitle")}</h4>
-                    <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '2rem' }}>{t("aboutCtaText")}</p>
-                    <div className="cta-buttons" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                      <a href="#contact" className="btn btn-primary smooth-transition" style={{ background: 'linear-gradient(135deg, #1e88e5 0%, #00acc1 100%)', border: 'none', padding: '0.75rem 2rem', borderRadius: '2rem', fontWeight: '600', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} >
-                        <i className="fas fa-handshake me-2"></i>
-                        {t("aboutCtaContactBtn")}
-                      </a>
+                  <div className="about-cta animate-on-scroll animate-fade-in" style={{ animationDelay: '0.8s', background: 'linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%)', padding: '4rem', textAlign: 'center', borderTop: '1px solid rgba(0,0,0,0.1)' }}>
+                    <div className="cta-content">
+                      <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '1rem', fontSize: '1.8rem' }}>{t("aboutCtaTitle")}</h4>
+                      <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '2rem' }}>{t("aboutCtaText")}</p>
+                      <div className="cta-buttons" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                        <a href="#contact" className="btn btn-primary smooth-transition" style={{ background: 'linear-gradient(135deg, #1e88e5 0%, #00acc1 100%)', border: 'none', padding: '0.75rem 2rem', borderRadius: '2rem', fontWeight: '600', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} >
+                          <i className="fas fa-handshake me-2"></i>
+                          {t("aboutCtaContactBtn")}
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-        
-      {/* 3. Habilidades com Animações */}
-      <section id="skills" className="skills-section section-gradient parallax-container">
-                  <div className="container">
-                    <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
-                      <div className="skills-badge-modern">
-                        <FaCogs className="svg-icon-animated badge-icon" />
-                        <span>{t("skillsBadge")}</span>
-                      </div>
-                      <h2 className="skills-title-modern">{t("skillsTitle")}</h2>
-                      <p className="skills-subtitle-modern">{t("skillsSubtitle")}</p>
+        {/* 3. Habilidades com Animações */}
+        <section id="skills" className="skills-section section-gradient parallax-container">
+          <div className="container">
+            {/* Section Header */}
+            <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
+              <div className="skills-badge-modern">
+                <FaCogs className="svg-icon-animated badge-icon" />
+                <span>{t("skillsBadge")}</span>
+              </div>
+              <h2 className="skills-title-modern">{t("skillsTitle")}</h2>
+              <p className="skills-subtitle-modern">{t("skillsSubtitle")}</p>
+            </div>
+
+            {/* Skills Overview Stats - CARD */}
+            <div className="skills-overview animate-on-scroll animate-fade-in">
+              <div className="overview-content">
+                <h3 className="overview-title">Minha Stack Técnica</h3>
+                <p className="overview-description">
+                  Um ecossistema completo de tecnologias modernas para desenvolvimento full-stack, 
+                  desde interfaces elegantes até infraestrutura robusta na nuvem.
+                </p>
+                <div className="overview-stats">
+                  <div className="stat-item">
+                    <span className="stat-number">32</span>
+                    <span className="stat-label">Tecnologias</span>
+                  </div>
+                  <div className="stat-divider"></div>
+                  <div className="stat-item">
+                    <span className="stat-number">8</span>
+                    <span className="stat-label">Categorias</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Skills Categories - COM CARDS */}
+            <div className="skills-categories animate-on-scroll animate-scale-in">
+
+              {/* Frontend Category */}
+              <div className="skill-category frontend-category">
+                <div className="category-header">
+                  <div className="category-icon"><FaCode /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">Frontend</h3>
+                    <p className="category-subtitle">Interfaces modernas e responsivas</p>
+                  </div>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.frontend.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.frontend.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
                     </div>
-                    
-                    {/* Skills Overview Stats - CARD */}
-                    <div className="skills-overview animate-on-scroll animate-fade-in">
-                      <div className="overview-content">
-                        <h3 className="overview-title">Minha Stack Técnica</h3>
-                        <p className="overview-description">
-                          Um ecossistema completo de tecnologias modernas para desenvolvimento full-stack, 
-                          desde interfaces elegantes até infraestrutura robusta na nuvem.
-                        </p>
-                        <div className="overview-stats">
-                          <div className="stat-item">
-                            <span className="stat-number">32</span>
-                            <span className="stat-label">Tecnologias</span>
-                          </div>
-                          <div className="stat-divider"></div>
-                          <div className="stat-item">
-                            <span className="stat-number">8</span>
-                            <span className="stat-label">Categorias</span>
-                          </div>
-                        </div>
-                      </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Backend Category */}
+              <div className="skill-category backend-category">
+                <div className="category-header">
+                  <div className="category-icon"><FaDatabase /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">Backend</h3>
+                    <p className="category-subtitle">APIs robustas e escaláveis</p>
+                  </div>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.backend.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.backend.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
                     </div>
-        
-                    {/* Skills Categories - COM CARDS */}
-                    <div className="skills-categories animate-on-scroll animate-scale-in">
-                      
-                      {/* Frontend Category */}
-                      <div className="skill-category frontend-category">
-                        <div className="category-header">
-                          <div className="category-icon">
-                            <FaCode />
-                          </div>
-                          <div className="category-info">
-                            <h3 className="category-title">Frontend</h3>
-                            <p className="category-subtitle">Interfaces modernas e responsivas</p>
-                          </div>
-                          <div className="tech-count">
-                            <span className="count-number">{skills.frontend.length}</span>
-                            <span className="count-label">tecnologias</span>
-                          </div>
-                        </div>
-                        <div className="technologies-list">
-                          {skills.frontend.map((tech, index) => (
-                            <div key={index} className="tech-pill" style={{ '--delay': `${index * 0.1}s` }}>
-                              {tech}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-        
-                      {/* Backend Category */}
-                      <div className="skill-category backend-category">
-                        <div className="category-header">
-                          <div className="category-icon">
-                            <FaDatabase />
-                          </div>
-                          <div className="category-info">
-                            <h3 className="category-title">Backend</h3>
-                            <p className="category-subtitle">APIs robustas e escaláveis</p>
-                          </div>
-                          <div className="tech-count">
-                            <span className="count-number">{skills.backend.length}</span>
-                            <span className="count-label">tecnologias</span>
-                          </div>
-                        </div>
-                        <div className="technologies-list">
-                          {skills.backend.map((tech, index) => (
-                            <div key={index} className="tech-pill" style={{ '--delay': `${index * 0.1}s` }}>
-                              {tech}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-        
-                      {/* Database Category */}
-                      <div className="skill-category database-category">
-                        <div className="category-header">
-                          <div className="category-icon">
-                            <FaDatabase />
-                          </div>
-                          <div className="category-info">
-                            <h3 className="category-title">Banco de Dados</h3>
-                            <p className="category-subtitle">Armazenamento eficiente de dados</p>
-                          </div>
-                          <div className="tech-count">
-                            <span className="count-number">{skills.database.length}</span>
-                            <span className="count-label">tecnologias</span>
-                          </div>
-                        </div>
-                        <div className="technologies-list">
-                          {skills.database.map((tech, index) => (
-                            <div key={index} className="tech-pill" style={{ '--delay': `${index * 0.1}s` }}>
-                              {tech}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-        
-                      {/* Cloud Category */}
-                      <div className="skill-category cloud-category">
-                        <div className="category-header">
-                          <div className="category-icon">
-                            <FaCloud />
-                          </div>
-                          <div className="category-info">
-                            <h3 className="category-title">Serviços em Nuvem</h3>
-                            <p className="category-subtitle">Infraestrutura moderna e confiável</p>
-                          </div>
-                          <div className="tech-count">
-                            <span className="count-number">{skills.cloud.length}</span>
-                            <span className="count-label">tecnologias</span>
-                          </div>
-                        </div>
-                        <div className="technologies-list">
-                          {skills.cloud.map((tech, index) => (
-                            <div key={index} className="tech-pill" style={{ '--delay': `${index * 0.1}s` }}>
-                              {tech}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-        
-                      {/* Desktop Category */}
-                      <div className="skill-category desktop-category">
-                        <div className="category-header">
-                          <div className="category-icon">
-                            <FaDesktop />
-                          </div>
-                          <div className="category-info">
-                            <h3 className="category-title">Desktop</h3>
-                            <p className="category-subtitle">Aplicações nativas multiplataforma</p>
-                          </div>
-                          <div className="tech-count">
-                            <span className="count-number">{skills.desktop.length}</span>
-                            <span className="count-label">tecnologias</span>
-                          </div>
-                        </div>
-                        <div className="technologies-list">
-                          {skills.desktop.map((tech, index) => (
-                            <div key={index} className="tech-pill" style={{ '--delay': `${index * 0.1}s` }}>
-                              {tech}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-        
-                      {/* Tools Category */}
-                      <div className="skill-category tools-category">
-                        <div className="category-header">
-                          <div className="category-icon">
-                            <FaTools />
-                          </div>
-                          <div className="category-info">
-                            <h3 className="category-title">Ferramentas</h3>
-                            <p className="category-subtitle">Produtividade e qualidade no desenvolvimento</p>
-                          </div>
-                          <div className="tech-count">
-                            <span className="count-number">{skills.tools.length}</span>
-                            <span className="count-label">tecnologias</span>
-                          </div>
-                        </div>
-                        <div className="technologies-list">
-                          {skills.tools.map((tech, index) => (
-                            <div key={index} className="tech-pill" style={{ '--delay': `${index * 0.1}s` }}>
-                              {tech}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-        
-                      {/* Methodologies Category */}
-                      <div className="skill-category methodologies-category">
-                        <div className="category-header">
-                          <div className="category-icon">
-                            <FaCogs />
-                          </div>
-                          <div className="category-info">
-                            <h3 className="category-title">Metodologias</h3>
-                            <p className="category-subtitle">Práticas e processos de desenvolvimento</p>
-                          </div>
-                          <div className="tech-count">
-                            <span className="count-number">{skills.methodologies.length}</span>
-                            <span className="count-label">tecnologias</span>
-                          </div>
-                        </div>
-                        <div className="technologies-list">
-                          {skills.methodologies.map((tech, index) => (
-                            <div key={index} className="tech-pill" style={{ '--delay': `${index * 0.1}s` }}>
-                              {tech}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-        
-                      {/* Learning Category */}
-                      <div className="skill-category learning-category">
-                        <div className="category-header">
-                          <div className="category-icon learning-icon">
-                            <FaCode />
-                          </div>
-                          <div className="category-info">
-                            <h3 className="category-title">Aprendendo Atualmente</h3>
-                            <p className="category-subtitle">Expandindo conhecimentos e habilidades</p>
-                            <div className="learning-status">
-                              <span className="status-badge">Em Progresso</span>
-                            </div>
-                          </div>
-                          <div className="tech-count">
-                            <span className="count-number">{skills.learning.length}</span>
-                            <span className="count-label">tecnologias</span>
-                          </div>
-                        </div>
-                        <div className="technologies-list">
-                          {skills.learning.map((tech, index) => (
-                            <div key={index} className="tech-pill learning-pill" style={{ '--delay': `${index * 0.1}s` }}>
-                              {tech}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-        
+                  ))}
+                </div>
+              </div>
+
+              {/* Database Category */}
+              <div className="skill-category database-category">
+                <div className="category-header">
+                  <div className="category-icon"><FaDatabase /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">Banco de Dados</h3>
+                    <p className="category-subtitle">Armazenamento eficiente de dados</p>
+                  </div>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.database.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.database.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
                     </div>
-        
-                    {/* Always Evolving Section - CARD */}
-                   <div className="evolving-section animate-on-scroll animate-fade-in">
-                      <div className="evolving-content">
-                        <h3 className="evolving-title">Sempre Evoluindo</h3>
-                        <p className="evolving-description">
-                          Esta stack está em constante evolução, sempre incorporando as melhores práticas e 
-                          tecnologias mais recentes do mercado para entregar soluções de alta qualidade.
-                        </p>
-                        <div className="evolving-badges">
-                          <span className="evolving-badge">Novas Tecnologias</span>
-                          <span className="evolving-badge">Melhores Práticas</span>
-                          <span className="evolving-badge">Inovação Contínua</span>
-                          <span className="evolving-badge">Qualidade Premium</span>
-                        </div>
-                      </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Cloud Category */}
+              <div className="skill-category cloud-category">
+                <div className="category-header">
+                  <div className="category-icon"><FaCloud /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">Serviços em Nuvem</h3>
+                    <p className="category-subtitle">Infraestrutura moderna e confiável</p>
+                  </div>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.cloud.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.cloud.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Desktop Category */}
+              <div className="skill-category desktop-category">
+                <div className="category-header">
+                  <div className="category-icon"><FaDesktop /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">Desktop</h3>
+                    <p className="category-subtitle">Aplicações nativas multiplataforma</p>
+                  </div>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.desktop.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.desktop.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tools Category */}
+              <div className="skill-category tools-category">
+                <div className="category-header">
+                  <div className="category-icon"><FaTools /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">Ferramentas</h3>
+                    <p className="category-subtitle">Produtividade e qualidade no desenvolvimento</p>
+                  </div>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.tools.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.tools.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Methodologies Category */}
+              <div className="skill-category methodologies-category">
+                <div className="category-header">
+                  <div className="category-icon"><FaCogs /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">Metodologias</h3>
+                    <p className="category-subtitle">Práticas e processos de desenvolvimento</p>
+                  </div>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.methodologies.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.methodologies.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Learning Category */}
+              <div className="skill-category learning-category">
+                <div className="category-header">
+                  <div className="category-icon learning-icon"><FaCode /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">Aprendendo Atualmente</h3>
+                    <p className="category-subtitle">Expandindo conhecimentos e habilidades</p>
+                    <div className="learning-status">
+                      <span className="status-badge">Em Progresso</span>
                     </div>
                   </div>
-      </section>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.learning.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.learning.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill learning-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            {/* Always Evolving Section - CARD */}
+            <div className="evolving-section animate-on-scroll animate-fade-in">
+              <div className="evolving-content">
+                <h3 className="evolving-title">Sempre Evoluindo</h3>
+                <p className="evolving-description">
+                  Esta stack está em constante evolução, sempre incorporando as melhores práticas e 
+                  tecnologias mais recentes do mercado para entregar soluções de alta qualidade.
+                </p>
+                <div className="evolving-badges">
+                  <span className="evolving-badge">Novas Tecnologias</span>
+                  <span className="evolving-badge">Melhores Práticas</span>
+                  <span className="evolving-badge">Inovação Contínua</span>
+                  <span className="evolving-badge">Qualidade Premium</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
         
         {/* 4. Projetos com Animações */}
         <section id="projects" className="projects-section section-gradient parallax-container" >
