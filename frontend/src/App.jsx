@@ -344,15 +344,15 @@ function App() {
               </div>
             </div>
 
-            {/* Skills Categories - COM CARDS */}
-            <div className="skills-categories animate-on-scroll animate-scale-in">
+            {/* Skills Categories - COM CARDS com animação sequencial controlada por JS */}
+            <div className="skills-categories animate-on-scroll">
 
               {/* Frontend Category */}
               <div className="skill-category frontend-category">
                 <div className="category-header">
                   <div className="category-icon"><FaCode /></div>
                   <div className="category-info">
-                    <h3 className="category-title">Frontend</h3>
+                    <h3 className="category-title">{t("skillsFrontend")}</h3>
                     <p className="category-subtitle">Interfaces modernas e responsivas</p>
                   </div>
                   <div className="tech-count">
@@ -378,7 +378,7 @@ function App() {
                 <div className="category-header">
                   <div className="category-icon"><FaDatabase /></div>
                   <div className="category-info">
-                    <h3 className="category-title">Backend</h3>
+                    <h3 className="category-title">{t("skillsBackend")}</h3>
                     <p className="category-subtitle">APIs robustas e escaláveis</p>
                   </div>
                   <div className="tech-count">
@@ -404,7 +404,7 @@ function App() {
                 <div className="category-header">
                   <div className="category-icon"><FaDatabase /></div>
                   <div className="category-info">
-                    <h3 className="category-title">Banco de Dados</h3>
+                    <h3 className="category-title">{t("skillsDatabase")}</h3>
                     <p className="category-subtitle">Armazenamento eficiente de dados</p>
                   </div>
                   <div className="tech-count">
@@ -430,7 +430,7 @@ function App() {
                 <div className="category-header">
                   <div className="category-icon"><FaCloud /></div>
                   <div className="category-info">
-                    <h3 className="category-title">Serviços em Nuvem</h3>
+                    <h3 className="category-title">{t("skillsCloud")}</h3>
                     <p className="category-subtitle">Infraestrutura moderna e confiável</p>
                   </div>
                   <div className="tech-count">
@@ -456,7 +456,7 @@ function App() {
                 <div className="category-header">
                   <div className="category-icon"><FaDesktop /></div>
                   <div className="category-info">
-                    <h3 className="category-title">Desktop</h3>
+                    <h3 className="category-title">{t("skillsDesktop")}</h3>
                     <p className="category-subtitle">Aplicações nativas multiplataforma</p>
                   </div>
                   <div className="tech-count">
@@ -482,7 +482,7 @@ function App() {
                 <div className="category-header">
                   <div className="category-icon"><FaTools /></div>
                   <div className="category-info">
-                    <h3 className="category-title">Ferramentas</h3>
+                    <h3 className="category-title">{t("skillsTools")}</h3>
                     <p className="category-subtitle">Produtividade e qualidade no desenvolvimento</p>
                   </div>
                   <div className="tech-count">
@@ -508,7 +508,7 @@ function App() {
                 <div className="category-header">
                   <div className="category-icon"><FaCogs /></div>
                   <div className="category-info">
-                    <h3 className="category-title">Metodologias</h3>
+                    <h3 className="category-title">{t("skillsMethodologies")}</h3>
                     <p className="category-subtitle">Práticas e processos de desenvolvimento</p>
                   </div>
                   <div className="tech-count">
@@ -534,7 +534,7 @@ function App() {
                 <div className="category-header">
                   <div className="category-icon learning-icon"><FaCode /></div>
                   <div className="category-info">
-                    <h3 className="category-title">Aprendendo Atualmente</h3>
+                    <h3 className="category-title">{t("skillsLearning")}</h3>
                     <p className="category-subtitle">Expandindo conhecimentos e habilidades</p>
                     <div className="learning-status">
                       <span className="status-badge">Em Progresso</span>
@@ -581,46 +581,69 @@ function App() {
         </section>
         
         {/* 4. Projetos com Animações */}
-        <section id="projects" className="projects-section section-gradient parallax-container" >
+        <section id="projects" className="projects-section section-gradient parallax-container">
           <div className="container">
             <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
-              <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backdropFilter: 'blur(10px)', borderRadius: '2rem', padding: '0.8rem 1.5rem' }} > <FaCode className="svg-icon-animated"
-                  style={{ color: "#fff", verticalAlign: "middle", fontSize: "1.1em", }} />
+              <span 
+                className="section-badge" 
+                style={{  display: "inline-flex",  alignItems: "center", gap: "0.5rem",  backdropFilter: 'blur(10px)',  borderRadius: '2rem',  padding: '0.8rem 1.5rem'  }} >
+                <FaCode  className="svg-icon-animated" style={{  color: "#fff",  verticalAlign: "middle",  fontSize: "1.1em"  }} />
                 {t("projectsBadge")}
               </span>
-              <h2 className="section-title" style={{ color: '#263799', fontSize: '3rem', fontWeight: 'bold', textShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>{t("projectsTitle")}</h2>
-              <p className="section-subtitle" style={{ color: '#3f4245', fontSize: '1.2rem' }}>{t("projectsSubtitle")}</p>
+              <h2 
+                className="section-title"  style={{  color: '#263799',  fontSize: '3rem',  fontWeight: 'bold',  textShadow: '0 4px 8px rgba(0,0,0,0.3)'  }} >
+                {t("projectsTitle")}
+              </h2>
+              <p 
+                className="section-subtitle" 
+                style={{  color: '#3f4245',  fontSize: '1.2rem'  }} >
+                {t("projectsSubtitle")}
+              </p>
             </div>
-            <div className="projects-grid animate-on-scroll animate-scale-in">
+            
+            <div className="projects-grid animate-on-scroll">
               <div className="row g-4">
-                {projects.map((project, index) => (
-                  <div key={index} className="col-lg-4 col-md-6">
-                    <div className="project-card-modern smooth-transition">
-                      <div className="project-image">
-                        <img src={project.image || "/placeholder.svg"} alt={project.title} />
-                        <div className="project-overlay">
-                          <button className="btn btn-primary btn-sm smooth-transition" onClick={() => handleProjectClick(project)} >
-                            <FaExternalLinkAlt className="me-1 svg-icon-animated" />
-                            {t("projectsDetailsBtn")}
-                          </button>
+                {projects.map((project, index) => {
+                  // Determinar a direção da animação baseado no índice
+                  const getAnimationClass = (index) => {
+                    if (index % 3 === 0) return 'animate-slide-left';  
+                    if (index % 3 === 1) return 'animate-fade-in';       
+                    return 'animate-slide-right';                        
+                  };
+        
+                  return (
+                    <div 
+                      key={index} 
+                      className={`col-lg-4 col-md-6 animate-on-scroll ${getAnimationClass(index)}`} 
+                      style={{ animationDelay: `${index * 0.2}s` }} >
+                      <div className="project-card-modern smooth-transition">
+                        <div className="project-image">
+                          <img  src={project.image || "/placeholder.svg"}  alt={project.title}  />
+                          <div className="project-overlay">
+                            <button  className="btn btn-primary btn-sm smooth-transition"  onClick={() => handleProjectClick(project)} >
+                              <FaExternalLinkAlt className="me-1 svg-icon-animated" />
+                              {t("projectsDetailsBtn")}
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                      <div className="project-content">
-                        <div className="project-header">
-                          <h5 className="project-title">{project.title}</h5>
-                          <span className={`project-status status-${project.status
-                              .toLowerCase()
-                              .replace(" ", "-")} smooth-transition`} >
-                            {project.status}
-                          </span>
+                        <div className="project-content">
+                          <div className="project-header">
+                            <h5 className="project-title">{project.title}</h5>
+                            <span 
+                              className={`project-status status-${project.status
+                                .toLowerCase()
+                                .replace(" ", "-")} smooth-transition`} >
+                              {project.status}
+                            </span>
+                          </div>
+                          <p className="project-description">
+                            {project.description}
+                          </p>
                         </div>
-                        <p className="project-description">
-                          {project.description}
-                        </p>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             </div>
           </div>

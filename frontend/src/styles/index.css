@@ -2131,3 +2131,62 @@
 .evolving-badge:hover::before {
   left: 100%;
 }
+
+/* Animação sequencial para as categorias de skills - CORRIGIDO */
+.skills-categories .skill-category {
+  opacity: 1 !important;
+  /* Força visibilidade inicial */
+  transform: translateY(0) !important;
+  /* Remove transformação inicial */
+  animation: none !important;
+  animation-play-state: initial !important;
+  animation-delay: initial !important;
+  transition: none !important;
+}
+
+/* Quando o elemento pai entra na viewport, ativa as animações sequenciais */
+.skills-categories.animate-in .skill-category {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delays específicos para cada categoria - AUMENTADOS para ser mais visível */
+.skills-categories.animate-in .skill-category.show-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-categories.animate-in .backend-category {
+  transition-delay: 0.4s;
+}
+
+.skills-categories.animate-in .database-category {
+  transition-delay: 0.6s;
+}
+
+.skills-categories.animate-in .cloud-category {
+  transition-delay: 0.8s;
+}
+
+.skills-categories.animate-in .desktop-category {
+  transition-delay: 1.0s;
+}
+
+.skills-categories.animate-in .tools-category {
+  transition-delay: 1.2s;
+}
+
+.skills-categories.animate-in .methodologies-category {
+  transition-delay: 1.4s;
+}
+
+.skills-categories.animate-in .learning-category {
+  transition-delay: 1.6s;
+}
+
+/* Remove as animações CSS conflitantes */
+.skills-categories .skill-category {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}

@@ -184,3 +184,95 @@
         transform: rotate(360deg);
     }
 }
+
+@keyframes skill-category-appear {
+
+}
+
+/* ANIMAÇÕES DOS CARDS DE PROJETOS - VERSÃO CORRIGIDA */
+
+/* Estados iniciais (cards invisíveis) */
+.projects-section .col-lg-4 {
+  opacity: 1; /* Visível por padrão */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Aplicar estado inicial apenas quando tem classe de animação */
+.projects-section .col-lg-4.animate-slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+.projects-section .col-lg-4.animate-slide-right {
+  opacity: 0;
+  transform: translateX(60px);
+}
+
+.projects-section .col-lg-4.animate-fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Estados finais (quando aparecem) */
+.projects-section .col-lg-4.animate-slide-left.animate-in {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.projects-section .col-lg-4.animate-slide-right.animate-in {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.projects-section .col-lg-4.animate-fade-in.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Animações mais suaves para mobile */
+@media (max-width: 768px) {
+  .projects-section .col-lg-4.animate-slide-left,
+  .projects-section .col-lg-4.animate-slide-right {
+    transform: translateY(40px);
+  }
+  
+  .projects-section .col-lg-4.animate-slide-left.animate-in,
+  .projects-section .col-lg-4.animate-slide-right.animate-in {
+    transform: translateY(0);
+  }
+}
+
+/* Remover as classes antigas que podem estar conflitando */
+.animate-slide-left:not(.projects-section .col-lg-4),
+.animate-slide-right:not(.projects-section .col-lg-4),
+.animate-fade-in:not(.projects-section .col-lg-4) {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-slide-left:not(.projects-section .col-lg-4) {
+  transform: translateX(-50px);
+}
+
+.animate-slide-right:not(.projects-section .col-lg-4) {
+  transform: translateX(50px);
+}
+
+.animate-fade-in:not(.projects-section .col-lg-4) {
+  transform: translateY(30px);
+}
+
+.animate-slide-left.animate-in:not(.projects-section .col-lg-4) {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-slide-right.animate-in:not(.projects-section .col-lg-4) {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-fade-in.animate-in:not(.projects-section .col-lg-4) {
+  opacity: 1;
+  transform: translateY(0);
+}
