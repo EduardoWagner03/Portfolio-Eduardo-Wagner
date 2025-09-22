@@ -350,10 +350,37 @@
   filter: drop-shadow(0 0 0 rgba(30, 136, 229, 0));
 }
 
+.hero-badge .svg-icon-animated {
+  transition: none;
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+.hero-badge .svg-icon-animated:hover {
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
 .svg-icon-animated:hover {
   transform: scale(1.3) rotate(20deg) translateY(-5px);
   filter: drop-shadow(0 8px 16px rgba(30, 136, 229, 0.5)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.3)) hue-rotate(45deg) saturate(1.5);
   animation: iconEpicPulse 0.6s ease-in-out;
+}
+
+.smooth-transition {
+  transition: all 0.3s ease !important;
+}
+
+.timeline-icon .svg-icon-animated, .method-icon .svg-icon-animated .stat-icon.svg-icon-animated {
+  transition: all 0.3s ease;
+}
+
+.timeline-icon .svg-icon-animated:hover, .method-icon .svg-icon-animated:hover, .stat-icon.svg-icon-animated:hover {
+  transform: scale(1.1) !important;
+  filter: none !important;
+  animation: none !important;
 }
 
 @keyframes iconEpicPulse {
@@ -479,4 +506,30 @@
   0% { left: -100%; }
   50% { left: 100%; }
   100% { left: 100%; }
+}
+
+/* Remover efeitos de ícones SVG que usam currentColor */
+svg[fill="currentColor"],
+.svg-icon-animated[fill="currentColor"] {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+svg[fill="currentColor"]:hover,
+.svg-icon-animated[fill="currentColor"]:hover {
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+/* Versão mais suave para ícones que precisam manter algum efeito */
+.svg-icon-soft {
+  transition: all 0.3s ease;
+}
+
+.svg-icon-soft:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
 }

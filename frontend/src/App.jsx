@@ -150,7 +150,7 @@ function App() {
                   <div className="hero-badge">
                     <span
                       style={{ display: "flex", alignItems: "center", gap: "0.6rem", }} >
-                      <FaRocket className="svg-icon-animated"
+                      <FaRocket className="svg-icon-soft" // Mudança aqui
                         style={{ fontSize: "1.3em", color: "#fff", opacity: 0.95, }} />
                       {t("hello")}
                     </span>

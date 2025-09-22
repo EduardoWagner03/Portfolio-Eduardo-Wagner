@@ -276,3 +276,68 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Keyframe para o efeito bounce do tooltip */
+@keyframes tooltipBounce {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px) scale(0.8);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: translateX(-50%) translateY(-8px) scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px) scale(1);
+  }
+}
+
+/* Keyframe para o efeito bounce suave do tooltip */
+@keyframes tooltipBounceSmooth {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px) scale(0.9);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(-50%) translateY(-8px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px) scale(1);
+  }
+}
+
+/* Pulse suave para floating icons */
+@keyframes floatingPulseSmooth {
+  0%, 100% {
+    box-shadow: 
+      0 12px 35px rgba(30, 136, 229, 0.25),
+      0 5px 15px rgba(30, 136, 229, 0.12);
+  }
+  50% {
+    box-shadow: 
+      0 15px 45px rgba(30, 136, 229, 0.35),
+      0 8px 20px rgba(30, 136, 229, 0.18);
+  }
+}
+
+@keyframes tooltipAppearSmooth {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(8px) scale(0.96);
+  }
+
+  70% {
+    opacity: 0.9;
+    transform: translateX(-50%) translateY(-4px) scale(1.01);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-3px) scale(1);
+  }
+}
