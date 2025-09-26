@@ -870,6 +870,13 @@
   font-size: 0.75rem;
   font-weight: bold;
   margin-left: 1rem;
+  transition: none !important;
+  transform: none !important;
+}
+
+.project-status:hover {
+  transform: none !important;
+  scale: none !important;
 }
 
 .status-finalizado, .status-completed {
@@ -1029,6 +1036,30 @@
   font-size: 1.8rem;
   box-shadow: 0 2px 8px rgba(30, 136, 229, 0.15);
   overflow: hidden;
+  transition: none !important;
+  /* Remove transições */
+}
+
+/* Garantir que não haja efeitos de hover na timeline-icon */
+.timeline-icon:hover {
+  transform: none !important;
+  scale: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+/* Remover efeitos de todos os elementos filhos da timeline-icon */
+.timeline-icon * {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+.timeline-icon *:hover {
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
 }
 
 .timeline-item.timeline-left .timeline-icon {
@@ -1396,7 +1427,7 @@
 
 .contact-availability {
   padding: 1rem;
-  background: rgba(76, 175, 80, 0.1);
+  background: rgba(76, 175, 79, 0.507);
   border-radius: var(--border-radius-sm);
   border-left: 4px solid var(--success-green);
 }
@@ -1416,7 +1447,7 @@
 .availability-indicator {
   display: flex;
   align-items: center;
-  color: var(--success-green);
+  color: rgb(76, 175, 80);
   font-weight: 500;
 }
 

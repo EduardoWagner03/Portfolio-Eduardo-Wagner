@@ -533,3 +533,113 @@ svg[fill="currentColor"]:hover,
   transform: scale(1.05);
   opacity: 0.8;
 }
+
+/* Ajustar especificamente para a seção About */
+.about-section .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px) scale(0.95); /* Movimento menor */
+  transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); /* Transição mais rápida */
+  filter: blur(3px); /* Blur menor */
+}
+
+.about-section .animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* Especificamente para o container principal da seção about */
+.about-content-modern.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98); /* Movimento bem menor */
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); /* Mais rápido */
+  filter: blur(2px); /* Blur mínimo */
+}
+
+.about-content-modern.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* Remover efeitos específicos dos ícones da seção About */
+.about-section .journey-icon .svg-icon-animated {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+.about-section .journey-icon .svg-icon-animated:hover {
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+  scale: none !important;
+}
+
+/* Remover também qualquer efeito do ícone Font Awesome */
+.about-section .journey-icon i {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+.about-section .journey-icon i:hover {
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+/* Garante que não herde efeitos de classes pai */
+.project-status.smooth-transition {
+  transition: none !important;
+  transform: none !important;
+}
+
+.project-status.smooth-transition:hover {
+  transform: none !important;
+}
+
+/* Remover efeitos dos ícones da timeline */
+.timeline-icon .svg-icon-animated {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+.timeline-icon .svg-icon-animated:hover {
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+  scale: none !important;
+}
+
+/* Remover efeitos dos ícones Font Awesome na timeline */
+.timeline-icon i {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+.timeline-icon i:hover {
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+/* Remover efeitos de componentes React na timeline */
+.timeline-icon svg {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+.timeline-icon svg:hover {
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+}
