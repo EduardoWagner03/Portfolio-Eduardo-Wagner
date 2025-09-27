@@ -89,12 +89,6 @@
   z-index: -1;
 }
 
-@keyframes backgroundFlow {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.1); }
-  100% { transform: rotate(360deg) scale(1); }
-}
-
 .portfolio-loader {
   position: fixed;
   top: 0;
@@ -119,11 +113,6 @@
   background: conic-gradient(from 0deg, transparent, rgba(30, 136, 229, 0.1), transparent);
   animation: loaderSpin 3s linear infinite;
   z-index: -1;
-}
-
-@keyframes loaderSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 .portfolio-loader.fade-out {
@@ -268,83 +257,6 @@
   animation-delay: 4s;
 }
 
-@keyframes logoEpicFloat {
-  0%, 100% { 
-    transform: translateY(0px) rotateX(0deg) rotateY(0deg); 
-    box-shadow: 0 20px 40px rgba(30, 136, 229, 0.3);
-  }
-  25% { 
-    transform: translateY(-15px) rotateX(5deg) rotateY(-5deg); 
-    box-shadow: 0 30px 60px rgba(30, 136, 229, 0.5);
-  }
-  50% { 
-    transform: translateY(-30px) rotateX(0deg) rotateY(10deg); 
-    box-shadow: 0 40px 80px rgba(30, 136, 229, 0.4);
-  }
-  75% { 
-    transform: translateY(-15px) rotateX(-5deg) rotateY(-5deg); 
-    box-shadow: 0 30px 60px rgba(30, 136, 229, 0.5);
-  }
-}
-
-@keyframes logoShine {
-  0% { transform: translateX(-200%) rotate(45deg); }
-  50% { transform: translateX(200%) rotate(45deg); }
-  100% { transform: translateX(-200%) rotate(45deg); }
-}
-
-@keyframes textGradientFlow {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-@keyframes loadingProgressEpic {
-  0% { transform: translateX(-100%) scaleX(1); }
-  50% { transform: translateX(0) scaleX(1.1); }
-  100% { transform: translateX(300px) scaleX(1); }
-}
-
-@keyframes progressShine {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-@keyframes barGlow {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
-}
-
-@keyframes textEpicPulse {
-  0%, 100% { 
-    opacity: 0.8; 
-    transform: scale(1);
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  }
-  50% { 
-    opacity: 1; 
-    transform: scale(1.05);
-    text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
-  }
-}
-
-@keyframes particleEpicFloat {
-  0%, 100% { 
-    transform: translateY(0px) scale(1) rotate(0deg);
-    opacity: 0.6;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-  }
-  33% { 
-    transform: translateY(-100px) scale(1.5) rotate(120deg);
-    opacity: 1;
-    box-shadow: 0 0 40px rgba(30, 136, 229, 0.6);
-  }
-  66% { 
-    transform: translateY(-50px) scale(0.8) rotate(240deg);
-    opacity: 0.8;
-    box-shadow: 0 0 30px rgba(255, 0, 150, 0.5);
-  }
-}
-
 .svg-icon-animated {
   transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
   filter: drop-shadow(0 0 0 rgba(30, 136, 229, 0));
@@ -381,11 +293,6 @@
   transform: scale(1.1) !important;
   filter: none !important;
   animation: none !important;
-}
-
-@keyframes iconEpicPulse {
-  0%, 100% { transform: scale(1.3) rotate(20deg) translateY(-5px); }
-  50% { transform: scale(1.5) rotate(25deg) translateY(-10px); }
 }
 
 .smooth-transition {
@@ -431,56 +338,10 @@
   transition: all 0.8s ease-out;
 }
 
-@media (max-width: 768px) {
-  .loader-text {
-    font-size: 3rem;
-  }
-  
-  .loader-progress {
-    width: 250px;
-  }
-  
-  .animate-on-scroll {
-    transform: translateY(50px) scale(0.95);
-  }
-  
-  .loader-logo {
-    padding: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .loader-text {
-    font-size: 2.5rem;
-  }
-  
-  .loader-progress {
-    width: 200px;
-  }
-}
-
 .floating-animation {
   animation: epicFloat 6s ease-in-out infinite;
 }
 
-@keyframes epicFloat {
-  0%, 100% { 
-    transform: translateY(0px) rotateZ(0deg); 
-    filter: hue-rotate(0deg);
-  }
-  25% { 
-    transform: translateY(-20px) rotateZ(5deg); 
-    filter: hue-rotate(90deg);
-  }
-  50% { 
-    transform: translateY(-40px) rotateZ(0deg); 
-    filter: hue-rotate(180deg);
-  }
-  75% { 
-    transform: translateY(-20px) rotateZ(-5deg); 
-    filter: hue-rotate(270deg);
-  }
-}
 
 .glass-morphism {
   background: rgba(255, 255, 255, 0.1);
@@ -502,29 +363,19 @@
   animation: glassShine 4s ease-in-out infinite;
 }
 
-@keyframes glassShine {
-  0% { left: -100%; }
-  50% { left: 100%; }
-  100% { left: 100%; }
-}
-
-/* Remover efeitos de ícones SVG que usam currentColor */
-svg[fill="currentColor"],
-.svg-icon-animated[fill="currentColor"] {
+svg[fill="currentColor"], .svg-icon-animated[fill="currentColor"] {
   transition: none !important;
   transform: none !important;
   filter: none !important;
   animation: none !important;
 }
 
-svg[fill="currentColor"]:hover,
-.svg-icon-animated[fill="currentColor"]:hover {
+svg[fill="currentColor"]:hover, .svg-icon-animated[fill="currentColor"]:hover {
   transform: none !important;
   filter: none !important;
   animation: none !important;
 }
 
-/* Versão mais suave para ícones que precisam manter algum efeito */
 .svg-icon-soft {
   transition: all 0.3s ease;
 }
@@ -534,12 +385,11 @@ svg[fill="currentColor"]:hover,
   opacity: 0.8;
 }
 
-/* Ajustar especificamente para a seção About */
 .about-section .animate-on-scroll {
   opacity: 0;
-  transform: translateY(50px) scale(0.95); /* Movimento menor */
-  transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); /* Transição mais rápida */
-  filter: blur(3px); /* Blur menor */
+  transform: translateY(50px) scale(0.95);
+  transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); 
+  filter: blur(3px);
 }
 
 .about-section .animate-on-scroll.animate-in {
@@ -548,12 +398,11 @@ svg[fill="currentColor"]:hover,
   filter: blur(0);
 }
 
-/* Especificamente para o container principal da seção about */
 .about-content-modern.animate-on-scroll {
   opacity: 0;
-  transform: translateY(30px) scale(0.98); /* Movimento bem menor */
-  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); /* Mais rápido */
-  filter: blur(2px); /* Blur mínimo */
+  transform: translateY(30px) scale(0.98); 
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
+  filter: blur(2px);
 }
 
 .about-content-modern.animate-on-scroll.animate-in {
@@ -562,7 +411,6 @@ svg[fill="currentColor"]:hover,
   filter: blur(0);
 }
 
-/* Remover efeitos específicos dos ícones da seção About */
 .about-section .journey-icon .svg-icon-animated {
   transition: none !important;
   transform: none !important;
@@ -577,7 +425,6 @@ svg[fill="currentColor"]:hover,
   scale: none !important;
 }
 
-/* Remover também qualquer efeito do ícone Font Awesome */
 .about-section .journey-icon i {
   transition: none !important;
   transform: none !important;
@@ -591,7 +438,6 @@ svg[fill="currentColor"]:hover,
   animation: none !important;
 }
 
-/* Garante que não herde efeitos de classes pai */
 .project-status.smooth-transition {
   transition: none !important;
   transform: none !important;
@@ -601,7 +447,6 @@ svg[fill="currentColor"]:hover,
   transform: none !important;
 }
 
-/* Remover efeitos dos ícones da timeline */
 .timeline-icon .svg-icon-animated {
   transition: none !important;
   transform: none !important;
@@ -616,7 +461,6 @@ svg[fill="currentColor"]:hover,
   scale: none !important;
 }
 
-/* Remover efeitos dos ícones Font Awesome na timeline */
 .timeline-icon i {
   transition: none !important;
   transform: none !important;
@@ -630,7 +474,6 @@ svg[fill="currentColor"]:hover,
   animation: none !important;
 }
 
-/* Remover efeitos de componentes React na timeline */
 .timeline-icon svg {
   transition: none !important;
   transform: none !important;

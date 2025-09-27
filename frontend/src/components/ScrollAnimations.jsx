@@ -14,6 +14,12 @@ const ScrollAnimations = () => {
       rootMargin: '100px 0px -30px 0px' // Margem muito maior para disparar bem cedo
     };
 
+    // Configurações para a timeline da experiência
+    const timelineObserverOptions = {
+      threshold: 0.1,
+      rootMargin: '50px 0px -50px 0px'
+    };
+
     // Observador padrão
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -63,9 +69,34 @@ const ScrollAnimations = () => {
       });
     }, aboutObserverOptions);
 
+    // Observador especial para a timeline da experiência
+    const timelineObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          console.log('Timeline da experiência detectada - animando linha!');
+          entry.target.classList.add('timeline-animate');
+          
+          // Debug: verificar se a classe foi aplicada
+          setTimeout(() => {
+            const timelineBefore = window.getComputedStyle(entry.target.querySelector('.timeline'), ':before');
+            console.log('Timeline :before transform:', timelineBefore.transform);
+          }, 100);
+        }
+      });
+    }, timelineObserverOptions);
+
     // Identificar e separar elementos da seção about dos demais
     const aboutElements = document.querySelectorAll('.about-section .animate-on-scroll');
     const otherElements = document.querySelectorAll('.animate-on-scroll:not(.about-section .animate-on-scroll)');
+    
+    // Observar a seção de experiência para animar a timeline
+    const experienceSection = document.querySelector('.experience-section');
+    if (experienceSection) {
+      timelineObserver.observe(experienceSection);
+      console.log('✅ Observando seção de experiência para animar a timeline');
+    } else {
+      console.log('❌ Seção de experiência não encontrada');
+    }
     
     console.log(`Observando ${aboutElements.length} elementos da seção About com configurações especiais`);
     console.log(`Observando ${otherElements.length} outros elementos com configurações padrão`);
@@ -94,6 +125,7 @@ const ScrollAnimations = () => {
       console.log('Desconectando observadores de scroll');
       observer.disconnect();
       aboutObserver.disconnect();
+      timelineObserver.disconnect();
     };
   }, []);
 

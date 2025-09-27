@@ -103,6 +103,14 @@
     .evolving-description {
         font-size: 1rem;
     }
+
+    .loader-text {
+        font-size: 2.5rem;
+    }
+    
+    .loader-progress {
+        width: 200px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -874,7 +882,6 @@
         border-radius: 1rem !important;
     }
 
-    /* Responsabilidades */
     .project-responsibilities-title {
         font-size: 1.4rem !important;
         margin-bottom: 1rem !important;
@@ -902,7 +909,6 @@
         margin-bottom: 0.3rem !important;
     }
 
-    /* Equipe */
     .project-team-title {
         font-size: 1.4rem !important;
         margin-bottom: 1rem !important;
@@ -1601,5 +1607,32 @@
 
     .hero-section, .about-section, .skills-section, .projects-section, .experience-section, .contact-section {
         padding: 4rem 0rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .projects-section .col-lg-4.animate-slide-left, .projects-section .col-lg-4.animate-slide-right {
+        transform: translateY(40px);
+    }
+
+    .projects-section .col-lg-4.animate-slide-left.animate-in, .projects-section .col-lg-4.animate-slide-right.animate-in {
+        transform: translateY(0);
+    }
+
+    .loader-text {
+        font-size: 3rem;
+    }
+  
+    .loader-progress {
+        width: 250px;
+    }
+  
+    .animate-on-scroll {
+        transform: translateY(50px) scale(0.95);
+    }
+  
+    .loader-logo {
+        padding: 2rem;
     }
 }
