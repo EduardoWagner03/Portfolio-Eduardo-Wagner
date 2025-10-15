@@ -202,37 +202,43 @@
 .floating-icon-1 {
   top: 60px;
   left: 220px;
-  animation-delay: 4s;
+  animation: float1 4.5s ease-in-out infinite;
+  animation-delay: 0s;
 }
 
 .floating-icon-2 {
   top: 120px;
   right: 120px;
-  animation-delay: 4s;
+  animation: float2 5.2s ease-in-out infinite;
+  animation-delay: 0.8s;
 }
 
 .floating-icon-3 {
   bottom: 200px;
   right: 80px;
-  animation-delay: 4s;
+  animation: float3 4.8s ease-in-out infinite;
+  animation-delay: 1.6s;
 }
 
 .floating-icon-4 {
   top: 80%;
   bottom: 220px;
   left: 120px;
-  animation-delay: 4s;
+  animation: float4 5.5s ease-in-out infinite;
+  animation-delay: 2.4s;
 }
 
 .floating-icon-5 {
   top: 210px;
   left: 80px;
-  animation-delay: 4s;
+  animation: float5 4.2s ease-in-out infinite;
+  animation-delay: 3.2s;
 }
 
 .floating-icon-6 {
   bottom: 60px;
   left: 320px;
+  animation: float6 5.8s ease-in-out infinite;
   animation-delay: 4s;
 }
 
@@ -385,9 +391,9 @@
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  bottom: 110%;
+  top: 110%;
   left: 50%;
-  transform: translateX(-50%) translateY(8px);
+  transform: translateX(-50%) translateY(-8px);
   background: linear-gradient(135deg, var(--primary-blue) 0%, #1976d2 100%);
   color: var(--white);
   padding: 0.6rem 0.9rem;
@@ -404,13 +410,14 @@
 .custom-tooltip::after {
   content: '';
   position: absolute;
-  top: 100%;
+  bottom: 100%;
   left: 50%;
   margin-left: -4px;
   border-width: 4px;
   border-style: solid;
-  border-color: var(--primary-blue) transparent transparent transparent;
+  border-color: transparent transparent var(--primary-blue) transparent;
   transition: all 0.5s ease;
+  z-index: 11;
 }
 
 .floating-icon:hover {
@@ -421,7 +428,7 @@
 .floating-icon:hover .custom-tooltip {
   visibility: visible;
   opacity: 1;
-  transform: translateX(-50%) translateY(-3px);
+  transform: translateX(-50%) translateY(3px);
   animation: tooltipAppearSmooth 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -448,7 +455,6 @@
   color: var(--primary-blue);
   font-size: 1.5rem;
   box-shadow: var(--shadow);
-  animation: float 5s ease-in-out infinite;
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
 }
@@ -1882,7 +1888,7 @@
 }
 
 .category-title {
-  color: #1e293b;
+  color: #263799;
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -1983,8 +1989,8 @@
 }
 
 .tech-pill {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  color: #475569;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
   padding: 0.6rem 0.8rem;
   border-radius: 12px;
   font-size: 0.8rem;
@@ -2025,7 +2031,7 @@
 .evolving-section {
   position: relative;
   text-align: center;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(241, 245, 249, 0.9) 100%);
+  background: linear-gradient(135deg, rgb(227, 242, 253) 0%, rgb(187, 222, 251) 100%);
   border-radius: 20px;
   padding: 3rem 2.5rem;
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -2053,7 +2059,7 @@
 }
 
 .evolving-title {
-  color: #1e293b;
+  color: #263799;
   font-size: 1.8rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
@@ -2155,6 +2161,8 @@
 /* Delays específicos para cada categoria - AUMENTADOS para ser mais visível */
 .skills-categories.animate-in .skill-category.show-card {
   opacity: 1;
+  background: linear-gradient(135deg, rgb(245, 247, 250) 0%, rgb(195, 207, 226) 100%);
+  border: none;
   transform: translateY(0);
 }
 

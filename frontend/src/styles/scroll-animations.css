@@ -486,3 +486,58 @@ svg[fill="currentColor"]:hover, .svg-icon-animated[fill="currentColor"]:hover {
   filter: none !important;
   animation: none !important;
 }
+
+/* Animações específicas para cada ícone flutuante */
+@keyframes float1 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+}
+
+@keyframes float3 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes float4 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-22px);
+  }
+}
+
+@keyframes float5 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes float6 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-28px);
+  }
+}
