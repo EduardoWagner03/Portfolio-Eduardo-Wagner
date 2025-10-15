@@ -935,3 +935,77 @@
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 2px 4px rgba(76, 175, 80, 0.3));
 }
+
+.form-control {
+  border: 2px solid #90caf9;
+  border-radius: var(--border-radius-sm);
+  padding: 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: var(--white);
+}
+
+/* Remover efeitos de zoom dos inputs */
+.form-control {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+  transform: none !important;
+}
+
+.form-control:hover {
+  transform: none !important;
+  scale: none !important;
+}
+
+.form-control:focus {
+  border-color: #1e88e5;
+  box-shadow: 0 0 0 0.2rem rgba(30, 136, 229, 0.15);
+  background: var(--white);
+  transform: none !important;
+}
+
+/* Remover efeitos de zoom específicos para elementos do formulário */
+.contact-form-modern .form-control {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+  transform: none !important;
+}
+
+.contact-form-modern .form-control:hover {
+  transform: none !important;
+  scale: none !important;
+}
+
+.contact-form-modern .form-control:focus {
+  transform: none !important;
+  scale: none !important;
+}
+
+/* Remover efeitos de zoom do textarea */
+.contact-form-modern textarea.form-control {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+  transform: none !important;
+  resize: none;
+}
+
+.contact-form-modern textarea.form-control:hover {
+  transform: none !important;
+  scale: none !important;
+}
+
+.contact-form-modern textarea.form-control:focus {
+  transform: none !important;
+  scale: none !important;
+}
+
+/* Garantir que inputs com classe smooth-transition não tenham zoom */
+.form-control.smooth-transition {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+  transform: none !important;
+}
+
+.form-control.smooth-transition:hover {
+  transform: none !important;
+}
+
+.form-control.smooth-transition:focus {
+  transform: none !important;
+}

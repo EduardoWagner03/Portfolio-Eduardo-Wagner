@@ -4,12 +4,13 @@ import React, { useState, useEffect } from "react";
 import { FaBriefcase, FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt, FaCode, FaDatabase, FaTools, FaCloud, FaDesktop, FaCogs, FaRocket, FaUserAstronaut, FaPhone, FaShieldAlt,
 } from "react-icons/fa";
 import { SiJira } from "react-icons/si";
-import { projects, skills } from "./data/projectsData";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ProjectModal from "./components/ProjectModal";
 import Loader from "./components/Loader";
 import ScrollAnimations from "./components/ScrollAnimations";
+import { useTranslation } from "react-i18next";
+import "../src/translations/i18next";
 import "./styles/Header.css";
 import "./styles/index.css";
 import "./styles/dark-mode.css";
@@ -20,14 +21,38 @@ import "./styles/scroll-animations.css";
 import "./styles/section-backgrounds.css";
 
 function App() {
-  const [lang, setLang] = useState("pt-br");
+  const getDefaultLang = () => {
+    const browserLang = navigator.language || navigator.userLanguage;
+    console.log("Idioma detectado:", browserLang);
+    if (browserLang.startsWith("pt")) return "pt-br";
+    if (browserLang.startsWith("es")) return "es";
+    return "en";
+  };
+
+  const [lang, setLang] = useState(getDefaultLang());
   const [darkMode, setDarkMode] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const handleLang = () => setLang(lang === "pt-br" ? "en" : "pt-br");
+  // Função para alternar entre pt-br, en e es
+  const handleLang = () => {
+    if (lang === "pt-br") return setLang("en");
+    if (lang === "en") return setLang("es");
+    return setLang("pt-br");
+  };
+
+  const { t, i18n } = useTranslation();
+
+  // Adicionar as constantes para traduções
+  const projects = t("projects", { returnObjects: true });
+  const skills = t("skills", { returnObjects: true });
+
+  useEffect(() => {
+    i18n.changeLanguage(lang);
+  }, [lang, i18n]);
+
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
     document.body.classList.toggle("dark-mode");
@@ -45,17 +70,17 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.pageYOffset;
-      const parallaxElements = document.querySelectorAll('.parallax-element');
-      
-      parallaxElements.forEach(element => {
+      const parallaxElements = document.querySelectorAll(".parallax-element");
+
+      parallaxElements.forEach((element) => {
         const speed = element.dataset.speed || 0.5;
         const yPos = -(scrolled * speed);
-        element.style.setProperty('--parallax-y', `${yPos}px`);
+        element.style.setProperty("--parallax-y", `${yPos}px`);
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // ✨ LOADER
@@ -89,11 +114,15 @@ function App() {
     <>
       {/* ✨ LOADER ANIMADO */}
       <Loader loading={loading} />
-      
+
       {/* ✨ SCROLL ANIMATIONS */}
       <ScrollAnimations />
-      
-      <div className={`portfolio ${darkMode ? "dark-mode" : ""} ${loading ? "loading" : ""}`}>
+
+      <div
+        className={`portfolio ${darkMode ? "dark-mode" : ""} ${
+          loading ? "loading" : ""
+        }`}
+      >
         {/* Header estilo moderno */}
         <Header
           darkMode={darkMode}
@@ -110,8 +139,8 @@ function App() {
           <div className="hero-background">
             <div className="hero-shapes parallax-element" data-speed="0.3">
               <div className="shape shape-1 animate-on-scroll animate-scale-in"></div>
-              <div className="shape shape-2 animate-on-scroll animate-scale-in" style={{animationDelay: '0.2s'}}></div>
-              <div className="shape shape-3 animate-on-scroll animate-scale-in" style={{animationDelay: '0.4s'}}></div>
+              <div className="shape shape-2 animate-on-scroll animate-scale-in"  style={{ animationDelay: "0.2s" }}></div>
+              <div className="shape shape-3 animate-on-scroll animate-scale-in"style={{ animationDelay: "0.4s" }}></div>
             </div>
           </div>
           <div className="container">
@@ -120,21 +149,10 @@ function App() {
                 <div className="hero-content animate-on-scroll animate-slide-left">
                   <div className="hero-badge">
                     <span
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "0.6rem",
-                      }}
-                    >
-                      <FaRocket
-                        className="svg-icon-animated"
-                        style={{
-                          fontSize: "1.3em",
-                          color: "#fff",
-                          opacity: 0.95,
-                        }}
-                      />
-                      Olá, eu sou
+                      style={{ display: "flex", alignItems: "center", gap: "0.6rem", }} >
+                      <FaRocket className="svg-icon-soft" // Mudança aqui
+                        style={{ fontSize: "1.3em", color: "#fff", opacity: 0.95, }} />
+                      {t("hello")}
                     </span>
                   </div>
                   <h1 className="hero-name">
@@ -143,73 +161,60 @@ function App() {
                     <span className="hero-surname">Wagner</span>
                   </h1>
                   <h2 className="hero-subtitle hero-subtitle-highlight">
-                    Desenvolvedor Full Stack Júnior focado em Front-end
+                    {t("heroSubtitle")}
                   </h2>
-                  <p className="hero-description">
-                    Desenvolvedor Full Stack Júnior, com foco em Frontend e
-                    experiência em desenvolvimento web e desktop. Atuação com
-                    React, Node.js, PostgreSQL, JavaScript, entre outras
-                    tecnologias. Comprometido em entregar soluções de qualidade,
-                    alinhando desempenho, usabilidade e boas práticas de
-                    desenvolvimento.
-                  </p>
+                  <p className="hero-description">{t("heroDescription")}</p>
                   <div className="hero-buttons">
-                    <a href="#projects" className="btn btn-hero-primary btn-lg me-3 smooth-transition">
-                      <i className="fas fa-rocket me-2"></i>Ver Projetos
+                    <a href="#projects" className="btn btn-hero-primary btn-lg me-3 smooth-transition" >
+                      <i className="fas fa-rocket me-2"></i>
+                      {t("seeProjects")}
                     </a>
                     <a href="#contact" className="btn btn-hero-outline btn-lg smooth-transition">
-                      <i className="fas fa-envelope me-2"></i>Entre em Contato
+                      <i className="fas fa-envelope me-2"></i>
+                      {t("contactMe")}
                     </a>
                   </div>
-                  <div className="hero-stats animate-on-scroll animate-fade-in" style={{animationDelay: '0.6s'}}>
+                  <div className="hero-stats animate-on-scroll animate-fade-in" style={{ animationDelay: "0.6s" }}>
                     <div className="stat-item smooth-transition">
                       <FaCogs className="stat-icon svg-icon-animated" />
-                      <span className="stat-label">Projetos de alto impacto</span>
-                      <span className="stat-desc">
-                        Soluções completas para empresas e instituições
+                      <span className="stat-label">
+                        {t("highImpactProjects")}
                       </span>
+                      <span className="stat-desc">{t("highImpactDesc")}</span>
                     </div>
                     <div className="stat-item smooth-transition">
                       <FaTools className="stat-icon svg-icon-animated" />
-                      <span className="stat-label">Especialidade</span>
-                      <span className="stat-desc">
-                        Full Stack & Integrações avançadas
-                      </span>
+                      <span className="stat-label">{t("specialty")}</span>
+                      <span className="stat-desc">{t("specialtyDesc")}</span>
                     </div>
                     <div className="stat-item smooth-transition">
                       <FaCloud className="stat-icon svg-icon-animated" />
-                      <span className="stat-label">Resultados</span>
-                      <span className="stat-desc">
-                        Automação, performance e inovação
-                      </span>
+                      <span className="stat-label">{t("results")}</span>
+                      <span className="stat-desc">{t("resultsDesc")}</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="col-lg-6">
-                <div className="hero-image animate-on-scroll animate-slide-right parallax-element" data-speed="0.2">
+                <div className="hero-image animate-on-scroll animate-slide-right parallax-element" data-speed="0.2" >
                   <div className="profile-container">
                     <div className="profile-circle">
-                      <img
-                        src="/images/img.jpeg"
-                        alt="Eduardo Wagner"
-                        className="profile-img smooth-transition"
-                      />
+                      <img src="/images/img.jpeg" alt="Eduardo Wagner" className="profile-img smooth-transition" />
                     </div>
                     <div className="floating-elements">
                       <div className="floating-icon floating-icon-1 svg-icon-animated">
                         <FaCogs />
                         <span className="custom-tooltip">
-                          Engenharia de Software
+                          {t("engineering")}
                         </span>
                       </div>
                       <div className="floating-icon floating-icon-2 svg-icon-animated">
                         <FaDatabase />
-                        <span className="custom-tooltip">Banco de Dados</span>
+                        <span className="custom-tooltip">{t("database")}</span>
                       </div>
                       <div className="floating-icon floating-icon-3 svg-icon-animated">
                         <FaCloud />
-                        <span className="custom-tooltip">Nuvem</span>
+                        <span className="custom-tooltip">{t("cloud")}</span>
                       </div>
                       <div className="floating-icon floating-icon-4 svg-icon-animated">
                         <SiJira />
@@ -217,7 +222,9 @@ function App() {
                       </div>
                       <div className="floating-icon floating-icon-5 svg-icon-animated">
                         <FaDesktop />
-                        <span className="custom-tooltip">Aplicações Desktop</span>
+                        <span className="custom-tooltip">
+                          {t("desktopApps")}
+                        </span>
                       </div>
                       <div className="floating-icon floating-icon-6 svg-icon-animated">
                         <FaGithub />
@@ -235,132 +242,63 @@ function App() {
         <section id="about" className="about-section section-gradient parallax-container">
           <div className="container">
             <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
-              <span
-                className="section-badge"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                }}
-              >
-                <FaUserAstronaut
-                  className="svg-icon-animated"
-                  style={{
-                    color: "#fff",
-                    verticalAlign: "middle",
-                    fontSize: "1.1em",
-                  }}
-                />
-                Conheça mais
+              <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backdropFilter: 'blur(10px)', borderRadius: '2rem', padding: '0.8rem 1.5rem' }} >
+                <FaUserAstronaut className="svg-icon-animated"
+                  style={{ verticalAlign: "middle", fontSize: "1.1em", }} />
+                {t("aboutBadge")}
               </span>
-              <h2 className="section-title">Sobre Mim</h2>
-              <p className="section-subtitle">
-                Desenvolvedor apaixonado por criar soluções que fazem a diferença
-              </p>
+              <h2 className="section-title" style={{ color: '#263799', fontSize: '3rem', fontWeight: 'bold', textShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>{t("aboutTitle")}</h2>
+              <p className="section-subtitle" style={{ color: '#3f4245', fontSize: '1.2rem' }}>{t("aboutSubtitle")}</p>
             </div>
-
             <div className="row justify-content-center">
               <div className="col-lg-10">
-                <div className="about-content-modern animate-on-scroll animate-scale-in parallax-element" data-speed="0.1">
-                  <div className="about-intro">
-                    <h3
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "1rem",
-                      }}
-                    >
-                      Olá! Eu sou Eduardo
-                      <span className="icon-gradient">
-                        <FaCode className="icon-gradient-code svg-icon-animated" />
+                <div className="about-content-modern animate-on-scroll animate-scale-in parallax-element" data-speed="0.1" style={{ background: 'rgba(255,255,255,0.95)', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.05)' }}>
+                  <div className="about-intro" style={{ background: 'linear-gradient(135deg, #1e88e5 0%, #00acc1 100%)', color: '#fff', padding: '4rem', textAlign: 'center' }}>
+                    <h3 style={{ display: "inline-flex", alignItems: "center", gap: "1rem", fontSize: '2.5rem', fontWeight: '700' }}>
+                      {t("aboutHello")}
+                      <span className="icon-gradient" style={{ background: 'linear-gradient(45deg, #ff6b6b, #4ecdc4)', borderRadius: '50%', width: '80px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <img src="/images/img.jpeg" alt="Foto de Eduardo Wagner" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
                       </span>
                     </h3>
-                    <p className="intro-text">
-                      Desenvolvedor de 21 anos, natural do Paraná, cursando o
-                      último ano de Engenharia de Software. Minha jornada na
-                      programação começou pela curiosidade de entender como as
-                      tecnologias funcionam e como posso criar soluções que façam
-                      a diferença na vida das pessoas.
-                    </p>
+                    <p className="intro-text" style={{ fontSize: '1.2rem', lineHeight: '1.8', opacity: '0.9' }}>{t("aboutIntroText")}</p>
                   </div>
-
-                  <div className="about-journey">
-                    <div className="journey-item animate-on-scroll animate-slide-left">
-                      <div className="journey-icon">
+                  <div className="about-journey" style={{ padding: '4rem', background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)', borderTop: '1px solid rgba(0,0,0,0.1)' }}>
+                    <div className="journey-item animate-on-scroll animate-slide-left" style={{ animationDelay: '0.2s', background: '#f8f9fa', borderRadius: '1.5rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)', marginBottom: '2rem', padding: '2.5rem', transition: 'transform 0.3s, box-shadow 0.3s', border: '1px solid rgba(0,0,0,0.05)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-15px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)'; }}>
+                      <div className="journey-icon" style={{ width: '70px', height: '70px', background: 'linear-gradient(135deg, #42a5f5 0%, #1976d2 100%)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '1.8rem', marginRight: '1.5rem', transition: 'all 0.3s ease', animation: 'fadeIn 2s ease-in-out' }}>
                         <i className="fas fa-graduation-cap svg-icon-animated"></i>
                       </div>
                       <div className="journey-content">
-                        <h4>Formação Acadêmica</h4>
-                        <p>
-                          Sou estudante do último período do curso de Engenharia
-                          de Software pela UGV – Centro Universitário, com
-                          formação prevista para dezembro de 2025. Durante a
-                          graduação, desenvolvi projetos completos aplicando
-                          metodologias ágeis, versionamento com Git/GitHub e
-                          integração entre frontend e backend. Atuei em projetos
-                          acadêmicos e pessoais, focando na criação de soluções
-                          reais para empresas e instituições.
-                        </p>
+                        <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '0.5rem' }} title="Clique para mais detalhes">{t("aboutAcademicTitle")}</h4>
+                        <p style={{ color: '#666', lineHeight: '1.6' }}>{t("aboutAcademicText")}</p>
                       </div>
                     </div>
-
-                    <div className="journey-item animate-on-scroll animate-slide-right">
-                      <div className="journey-icon">
+                    <div className="journey-item animate-on-scroll animate-slide-right" style={{ animationDelay: '0.4s', background: '#f8f9fa', borderRadius: '1.5rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)', marginBottom: '2rem', padding: '2.5rem', transition: 'transform 0.3s, box-shadow 0.3s', border: '1px solid rgba(0,0,0,0.05)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-15px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)'; }}>
+                      <div className="journey-icon" style={{ width: '70px', height: '70px', background: 'linear-gradient(135deg, #81c784 0%, #4caf50 100%)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '1.8rem', marginRight: '1.5rem', transition: 'all 0.3s ease', animation: 'fadeIn 2s ease-in-out' }}>
                         <i className="fas fa-users svg-icon-animated"></i>
                       </div>
                       <div className="journey-content">
-                        <h4>Trabalho em Equipe</h4>
-                        <p>
-                          Possuo facilidade para trabalhar em equipe, mantendo boa
-                          comunicação e colaboração no dia a dia. Tenho
-                          experiência prática em times organizados por
-                          metodologias ágeis, sempre contribuindo de forma
-                          proativa no desenvolvimento das tarefas. Utilizo Git,
-                          GitHub e Jira para manter o fluxo de trabalho organizado
-                          e eficiente.
-                        </p>
+                        <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '0.5rem' }} title="Clique para mais detalhes">{t("aboutTeamTitle")}</h4>
+                        <p style={{ color: '#666', lineHeight: '1.6' }}>{t("aboutTeamText")}</p>
                       </div>
                     </div>
-
-                    <div className="journey-item animate-on-scroll animate-slide-left">
-                      <div className="journey-icon">
+                    <div className="journey-item animate-on-scroll animate-slide-left" style={{ animationDelay: '0.6s', background: '#f8f9fa', borderRadius: '1.5rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)', marginBottom: '2rem', padding: '2.5rem', transition: 'transform 0.3s, box-shadow 0.3s', border: '1px solid rgba(0,0,0,0.05)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-15px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)'; }}>
+                      <div className="journey-icon" style={{ width: '70px', height: '70px', background: 'linear-gradient(135deg, #ffb74d 0%, #ff9800 100%)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '1.8rem', marginRight: '1.5rem', transition: 'all 0.3s ease', animation: 'fadeIn 2s ease-in-out' }}>
                         <i className="fas fa-lightbulb svg-icon-animated"></i>
                       </div>
                       <div className="journey-content">
-                        <h4>Filosofia de Trabalho</h4>
-                        <p>
-                          Adoto uma filosofia de trabalho focada em
-                          comprometimento, organização e entrega de soluções
-                          funcionais. Busco sempre alinhar qualidade técnica com
-                          prazos definidos, mantendo atenção aos detalhes e
-                          buscando melhorias contínuas. Valorizo a clareza na
-                          comunicação e a colaboração para alcançar resultados
-                          consistentes em equipe.
-                        </p>
+                        <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '0.5rem' }} title="Clique para mais detalhes">{t("aboutPhilosophyTitle")}</h4>
+                        <p style={{ color: '#666', lineHeight: '1.6' }}>{t("aboutPhilosophyText")}</p>
                       </div>
                     </div>
                   </div>
-
-                  <div className="about-cta animate-on-scroll animate-fade-in">
+                  <div className="about-cta animate-on-scroll animate-fade-in" style={{ animationDelay: '0.8s', background: 'linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%)', padding: '4rem', textAlign: 'center', borderTop: '1px solid rgba(0,0,0,0.1)' }}>
                     <div className="cta-content">
-                      <h4>Pronto para o próximo desafio</h4>
-                      <p>
-                        Estou em busca da minha primeira oportunidade como
-                        desenvolvedor júnior ou estágio, com foco em atuar de
-                        forma colaborativa em projetos reais, contribuindo para o
-                        crescimento da equipe e para a entrega de soluções
-                        eficientes e bem estruturadas.
-                      </p>
-                      <div className="cta-buttons">
-                        <a href="#contact" className="btn btn-primary smooth-transition">
-                          <i className="fas fa-handshake me-2"></i>Vamos conversar
-                        </a>
-                        <a href="/cv.pdf"
-                          className="btn btn-outline-primary smooth-transition"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <i className="fas fa-download me-2"></i>Download CV
+                      <h4 style={{ color: '#333', fontWeight: '600', marginBottom: '1rem', fontSize: '1.8rem' }}>{t("aboutCtaTitle")}</h4>
+                      <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '2rem' }}>{t("aboutCtaText")}</p>
+                      <div className="cta-buttons" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                        <a href="#contact" className="btn btn-primary smooth-transition" style={{ background: 'linear-gradient(135deg, #1e88e5 0%, #00acc1 100%)', border: 'none', padding: '0.75rem 2rem', borderRadius: '2rem', fontWeight: '600', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} >
+                          <i className="fas fa-handshake me-2"></i>
+                          {t("aboutCtaContactBtn")}
                         </a>
                       </div>
                     </div>
@@ -374,321 +312,390 @@ function App() {
         {/* 3. Habilidades com Animações */}
         <section id="skills" className="skills-section section-gradient parallax-container">
           <div className="container">
+            {/* Section Header */}
             <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
-              <span
-                className="section-badge"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  color: "#fff",
-                }}
-              >
-                <FaCogs className="svg-icon-animated" style={{ fontSize: "1.5em" }} />
-                Stack Técnica
-              </span>
-              <h2 className="section-title">Habilidades</h2>
-              <p className="section-subtitle">
-                Tecnologias e ferramentas que domino
-              </p>
+              <div className="skills-badge-modern">
+                <FaCogs className="svg-icon-animated badge-icon" />
+                <span>{t("skillsBadge")}</span>
+              </div>
+              <h2 className="skills-title-modern">{t("skillsTitle")}</h2>
+              <p className="skills-subtitle-modern">{t("skillsSubtitle")}</p>
             </div>
 
-            <div className="skills-grid animate-on-scroll animate-scale-in">
-              <div className="row g-4">
-                <div className="col-lg-4 col-md-6">
-                  <div className="skill-category skill-category-frontend smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaCode className="svg-icon-animated" />
-                      </div>
-                      <h4>Frontend</h4>
-                    </div>
-                    <div className="skill-list">
-                      {skills.frontend.map((skill, index) => (
-                        <span key={index} className="skill-tag smooth-transition">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
+            {/* Skills Overview Stats - CARD */}
+            <div className="skills-overview animate-on-scroll animate-fade-in">
+              <div className="overview-content">
+                <h3 className="overview-title">Minha Stack Técnica</h3>
+                <p className="overview-description">
+                  Um ecossistema completo de tecnologias modernas para desenvolvimento full-stack, 
+                  desde interfaces elegantes até infraestrutura robusta na nuvem.
+                </p>
+                <div className="overview-stats">
+                  <div className="stat-item">
+                    <span className="stat-number">32</span>
+                    <span className="stat-label">Tecnologias</span>
                   </div>
-                </div>
-
-                <div className="col-lg-4 col-md-6">
-                  <div className="skill-category skill-category-backend smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaDatabase className="svg-icon-animated" />
-                      </div>
-                      <h4>Backend</h4>
-                    </div>
-                    <div className="skill-list">
-                      {skills.backend.map((skill, index) => (
-                        <span key={index} className="skill-tag smooth-transition">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-4 col-md-6">
-                  <div className="skill-category skill-category-database smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaDatabase className="svg-icon-animated" />
-                      </div>
-                      <h4>Banco de Dados</h4>
-                    </div>
-                    <div className="skill-list">
-                      {skills.database.map((skill, index) => (
-                        <span key={index} className="skill-tag smooth-transition">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-4 col-md-6">
-                  <div className="skill-category skill-category-cloud smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaCloud className="svg-icon-animated" />
-                      </div>
-                      <h4>Serviços em Nuvem</h4>
-                    </div>
-                    <div className="skill-list">
-                      {skills.cloud.map((skill, index) => (
-                        <span key={index} className="skill-tag smooth-transition">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-4 col-md-6">
-                  <div className="skill-category skill-category-desktop smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaDesktop className="svg-icon-animated" />
-                      </div>
-                      <h4>Desktop</h4>
-                    </div>
-                    <div className="skill-list">
-                      {skills.desktop.map((skill, index) => (
-                        <span key={index} className="skill-tag smooth-transition">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-4 col-md-6">
-                  <div className="skill-category skill-category-tools smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaTools className="svg-icon-animated" />
-                      </div>
-                      <h4>Ferramentas</h4>
-                    </div>
-                    <div className="skill-list">
-                      {skills.tools.map((skill, index) => (
-                        <span key={index} className="skill-tag smooth-transition">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="skill-category methodology-category smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaCogs className="svg-icon-animated" />
-                      </div>
-                      <h4>Metodologias</h4>
-                    </div>
-                    <div className="skill-list">
-                      {skills.methodologies.map((skill, index) => (
-                        <span key={index} className="skill-tag methodology-tag smooth-transition">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="skill-category learning-category smooth-transition">
-                    <div className="skill-header">
-                      <div className="skill-icon">
-                        <FaCode className="svg-icon-animated" />
-                      </div>
-                      <h4>Aprendendo Atualmente</h4>
-                    </div>
-                    <div className="skill-list">
-                      {skills.learning.map((skill, index) => (
-                        <span key={index} className="skill-tag learning-tag smooth-transition">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
+                  <div className="stat-divider"></div>
+                  <div className="stat-item">
+                    <span className="stat-number">8</span>
+                    <span className="stat-label">Categorias</span>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* Skills Categories - COM CARDS com animação sequencial controlada por JS */}
+            <div className="skills-categories animate-on-scroll">
+
+              {/* Frontend Category */}
+              <div className="skill-category frontend-category">
+                <div className="category-header">
+                  <div className="category-icon"><FaCode /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">{t("skillsFrontend")}</h3>
+                    <p className="category-subtitle">Interfaces modernas e responsivas</p>
+                  </div>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.frontend.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.frontend.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Backend Category */}
+              <div className="skill-category backend-category">
+                <div className="category-header">
+                  <div className="category-icon"><FaDatabase /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">{t("skillsBackend")}</h3>
+                    <p className="category-subtitle">APIs robustas e escaláveis</p>
+                  </div>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.backend.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.backend.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Database Category */}
+              <div className="skill-category database-category">
+                <div className="category-header">
+                  <div className="category-icon"><FaDatabase /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">{t("skillsDatabase")}</h3>
+                    <p className="category-subtitle">Armazenamento eficiente de dados</p>
+                  </div>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.database.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.database.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Cloud Category */}
+              <div className="skill-category cloud-category">
+                <div className="category-header">
+                  <div className="category-icon"><FaCloud /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">{t("skillsCloud")}</h3>
+                    <p className="category-subtitle">Infraestrutura moderna e confiável</p>
+                  </div>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.cloud.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.cloud.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Desktop Category */}
+              <div className="skill-category desktop-category">
+                <div className="category-header">
+                  <div className="category-icon"><FaDesktop /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">{t("skillsDesktop")}</h3>
+                    <p className="category-subtitle">Aplicações nativas multiplataforma</p>
+                  </div>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.desktop.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.desktop.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tools Category */}
+              <div className="skill-category tools-category">
+                <div className="category-header">
+                  <div className="category-icon"><FaTools /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">{t("skillsTools")}</h3>
+                    <p className="category-subtitle">Produtividade e qualidade no desenvolvimento</p>
+                  </div>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.tools.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.tools.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Methodologies Category */}
+              <div className="skill-category methodologies-category">
+                <div className="category-header">
+                  <div className="category-icon"><FaCogs /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">{t("skillsMethodologies")}</h3>
+                    <p className="category-subtitle">Práticas e processos de desenvolvimento</p>
+                  </div>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.methodologies.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.methodologies.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Learning Category */}
+              <div className="skill-category learning-category">
+                <div className="category-header">
+                  <div className="category-icon learning-icon"><FaCode /></div>
+                  <div className="category-info">
+                    <h3 className="category-title">{t("skillsLearning")}</h3>
+                    <p className="category-subtitle">Expandindo conhecimentos e habilidades</p>
+                    <div className="learning-status">
+                      <span className="status-badge">Em Progresso</span>
+                    </div>
+                  </div>
+                  <div className="tech-count">
+                    <span className="count-number">{skills.learning.length}</span>
+                    <span className="count-label">tecnologias</span>
+                  </div>
+                </div>
+                <div className="technologies-list">
+                  {skills.learning.map((tech, index) => (
+                    <div 
+                      key={index} 
+                      className="tech-pill learning-pill" 
+                      style={{ '--delay': `${index * 0.1}s` }}
+                    >
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            {/* Always Evolving Section - CARD */}
+            <div className="evolving-section animate-on-scroll animate-fade-in">
+              <div className="evolving-content">
+                <h3 className="evolving-title">Sempre Evoluindo</h3>
+                <p className="evolving-description">
+                  Esta stack está em constante evolução, sempre incorporando as melhores práticas e 
+                  tecnologias mais recentes do mercado para entregar soluções de alta qualidade.
+                </p>
+                <div className="evolving-badges">
+                  <span className="evolving-badge">Novas Tecnologias</span>
+                  <span className="evolving-badge">Melhores Práticas</span>
+                  <span className="evolving-badge">Inovação Contínua</span>
+                  <span className="evolving-badge">Qualidade Premium</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </section>
-
+        
         {/* 4. Projetos com Animações */}
         <section id="projects" className="projects-section section-gradient parallax-container">
           <div className="container">
             <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
-              <span
-                className="section-badge"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                }}
-              >
-                <FaCode
-                  className="svg-icon-animated"
-                  style={{
-                    color: "#fff",
-                    verticalAlign: "middle",
-                    fontSize: "1.1em",
-                  }}
-                />
-                Portfólio
+              <span 
+                className="section-badge" 
+                style={{  display: "inline-flex",  alignItems: "center", gap: "0.5rem",  backdropFilter: 'blur(10px)',  borderRadius: '2rem',  padding: '0.8rem 1.5rem'  }} >
+                <FaCode  className="svg-icon-animated" style={{  color: "#fff",  verticalAlign: "middle",  fontSize: "1.1em"  }} />
+                {t("projectsBadge")}
               </span>
-              <h2 className="section-title">Principais Projetos</h2>
-              <p className="section-subtitle">
-                Alguns dos principais projetos que desenvolvi
+              <h2 
+                className="section-title"  style={{  color: '#263799',  fontSize: '3rem',  fontWeight: 'bold',  textShadow: '0 4px 8px rgba(0,0,0,0.3)'  }} >
+                {t("projectsTitle")}
+              </h2>
+              <p 
+                className="section-subtitle" 
+                style={{  color: '#3f4245',  fontSize: '1.2rem'  }} >
+                {t("projectsSubtitle")}
               </p>
             </div>
-            <div className="projects-grid animate-on-scroll animate-scale-in">
+            
+            <div className="projects-grid animate-on-scroll">
               <div className="row g-4">
-                {projects.map((project, index) => (
-                  <div key={index} className="col-lg-4 col-md-6">
-                    <div className="project-card-modern smooth-transition">
-                      <div className="project-image">
-                        <img
-                          src={project.image || "/placeholder.svg"}
-                          alt={project.title}
-                        />
-                        <div className="project-overlay">
-                          <button
-                            className="btn btn-primary btn-sm smooth-transition"
-                            onClick={() => handleProjectClick(project)}
-                          >
-                            <FaExternalLinkAlt className="me-1 svg-icon-animated" />
-                            Ver Detalhes
-                          </button>
+                {projects.map((project, index) => {
+                  // Determinar a direção da animação baseado no índice
+                  const getAnimationClass = (index) => {
+                    if (index % 3 === 0) return 'animate-slide-left';  
+                    if (index % 3 === 1) return 'animate-fade-in';       
+                    return 'animate-slide-right';                        
+                  };
+        
+                  return (
+                    <div 
+                      key={index} 
+                      className={`col-lg-4 col-md-6 animate-on-scroll ${getAnimationClass(index)}`} 
+                      style={{ animationDelay: `${index * 0.2}s` }} >
+                      <div className="project-card-modern smooth-transition">
+                        <div className="project-image">
+                          <img  src={project.image || "/placeholder.svg"}  alt={project.title}  />
+                          <div className="project-overlay">
+                            <button  className="btn btn-primary btn-sm smooth-transition"  onClick={() => handleProjectClick(project)} >
+                              <FaExternalLinkAlt className="me-1 svg-icon-animated" />
+                              {t("projectsDetailsBtn")}
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                      <div className="project-content">
-                        <div className="project-header">
-                          <h5 className="project-title">{project.title}</h5>
-                          <span className={`project-status status-${project.status
-                              .toLowerCase()
-                              .replace(" ", "-")} smooth-transition`}
-                          >
-                            {project.status}
-                          </span>
+                        <div className="project-content">
+                          <div className="project-header">
+                            <h5 className="project-title">{project.title}</h5>
+                            <span 
+                              className={`project-status status-${project.status
+                                .toLowerCase()
+                                .replace(" ", "-")} smooth-transition`} >
+                              {project.status}
+                            </span>
+                          </div>
+                          <p className="project-description">
+                            {project.description}
+                          </p>
                         </div>
-                        <p className="project-description">
-                          {project.description}
-                        </p>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             </div>
           </div>
         </section>
 
         {/* 5. Experiência com Animações */}
-        <section id="experience" className="experience-section section-gradient parallax-container">
+        <section id="experience" className="experience-section section-gradient parallax-container" >
           <div className="container">
             <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
-              <span
-                className="section-badge"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  color: "#fff",
-                }}
-              >
-                <FaBriefcase
-                  className="svg-icon-animated"
-                  style={{
-                    color: "#fff",
-                    fontSize: "1.1em",
-                    verticalAlign: "middle",
-                  }}
-                />
-                Trajetória Profissional
+              <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backdropFilter: 'blur(10px)', borderRadius: '2rem', padding: '0.8rem 1.5rem' }} >
+                <FaBriefcase className="svg-icon-animated" style={{ color: "#fff", fontSize: "1.1em", verticalAlign: "middle", }}/>
+                {t("experienceBadge")}
               </span>
-              <h2 className="section-title">Experiência Profissional</h2>
-              <p className="section-subtitle">
-                Minha evolução prática no desenvolvimento de software
-              </p>
+              <h2 className="section-title" style={{ color: '#263799', fontSize: '3rem', fontWeight: 'bold', textShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>{t("experienceTitle")}</h2>
+              <p className="section-subtitle" style={{ color: '#3f4245', fontSize: '1.2rem' }}>{t("experienceSubtitle")}</p>
             </div>
-
             <div className="timeline">
               {/* 2021 - Início nos estudos - ESQUERDA */}
               <div className="timeline-item timeline-left animate-on-scroll animate-slide-left">
                 <div className="timeline-content smooth-transition">
-                  <div
-                    className="timeline-header"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "18.7rem",
-                    }}
-                  >
-                    <span className="period-badge teste" style={{ background: "#673ab7" }}>
+                  <div className="timeline-header"
+                    style={{ display: "flex", alignItems: "center", gap: "18.7rem", }} >
+                    <span className="period-badge teste" style={{ background: "#673ab7" }} >
                       2021
                     </span>
                     <span className="timeline-icon svg-icon-animated" style={{ background: "#673ab7" }} >
                       <i className="fas fa-book-open"></i>
                     </span>
                   </div>
-                  <h4 className="mb-1" style={{ color: "#673ab7", fontWeight: 700 }}>
-                    Início nos Estudos de Programação
+                  <h4 className="mb-1" style={{ color: "#673ab7", fontWeight: 700 }} >
+                    {t("expStartTitle")}
                   </h4>
                   <span className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
-                    Cursos Livres
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
+                    {t("expStartCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      HTML5, CSS3, JavaScript
+                      {t("expStartTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Páginas estáticas e fundamentos de lógica
+                      {t("expStartTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Versionamento com Git
+                      {t("expStartTopic3")}
                     </li>
                   </ul>
                 </div>
               </div>
-
               {/* 2022 - Faculdade - DIREITA */}
               <div className="timeline-item timeline-right animate-on-scroll animate-slide-right">
                 <div className="timeline-content smooth-transition">
@@ -701,47 +708,33 @@ function App() {
                     </span>
                   </div>
                   <h4 className="mb-1" style={{ color: "#3f51b5", fontWeight: 700 }} >
-                    Engenharia de Software
+                    {t("expCollegeTitle")}
                   </h4>
-                  <span
-                    className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
-                    Centro Universitário UGV
+                  <span className="company-type"
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
+                    {t("expCollegeCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Foco em desenvolvimento web e desktop
+                      {t("expCollegeTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Projetos com JavaScript, Node.js, PostgreSQL, Firebase,
-                      Google Cloud
+                      {t("expCollegeTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Participação em projetos reais e acadêmicos
+                      {t("expCollegeTopic3")}
                     </li>
                   </ul>
                 </div>
               </div>
-
               {/* 2022-2024 - Eventos Acadêmicos - ESQUERDA */}
               <div className="timeline-item timeline-left animate-on-scroll animate-slide-left">
                 <div className="timeline-content smooth-transition">
-                  <div
-                    className="timeline-header"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "15.5rem",
-                    }}
-                  >
+                  <div className="timeline-header"
+                    style={{ display: "flex", alignItems: "center", gap: "15.5rem", }} >
                     <span className="period-badge" style={{ background: "#5e35b1" }} >
                       2022 - 2024
                     </span>
@@ -750,43 +743,36 @@ function App() {
                     </span>
                   </div>
                   <h4 className="mb-1" style={{ color: "#5e35b1", fontWeight: 700 }} >
-                    Participação em Eventos Acadêmicos
+                    {t("expEventsTitle")}
                   </h4>
-                  <span
-                    className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
-                    Centro Universitário UGV
+                  <span className="company-type"
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
+                    {t("expEventsCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      XVII Encontro de Iniciação Científica 2022 - Ouvinte
+                      {t("expEventsTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      XVIII Encontro de Iniciação Científica 2023 - Apresentação
+                      {t("expEventsTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      XIX Encontro de Iniciação Científica 2024 - Ouvinte
+                      {t("expEventsTopic3")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      SEMTEC - Semana de Tecnologia da UGV 2022
+                      {t("expEventsTopic4")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      SEMTEC - Semana de Tecnologia da UGV 2024
+                      {t("expEventsTopic5")}
                     </li>
                   </ul>
                 </div>
               </div>
-
               {/* 2024 - Projeto Garra Robótica - DIREITA */}
               <div className="timeline-item timeline-right animate-on-scroll animate-slide-right">
                 <div className="timeline-content smooth-transition">
@@ -799,48 +785,33 @@ function App() {
                     </span>
                   </div>
                   <h4 className="mb-1" style={{ color: "#9c27b0", fontWeight: 700 }} >
-                    Projeto Garra Robótica
+                    {t("expRoboticTitle")}
                   </h4>
-                  <span
-                    className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
-                    Disciplina de Robótica
+                  <span className="company-type"
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
+                    {t("expRoboticCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Construção de garra robótica controlada por microcontrolador
+                      {t("expRoboticTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Desenvolvimento de comandos automatizados e controle de
-                      movimento
+                      {t("expRoboticTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Integração entre hardware e software com programação
-                      embarcada
+                      {t("expRoboticTopic3")}
                     </li>
                   </ul>
                 </div>
               </div>
-
               {/* 2024 - Batalha de Robôs - ESQUERDA */}
               <div className="timeline-item timeline-left animate-on-scroll animate-slide-left">
                 <div className="timeline-content smooth-transition">
-                  <div
-                    className="timeline-header"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "18.7rem",
-                    }}
-                  >
+                  <div className="timeline-header"
+                    style={{ display: "flex", alignItems: "center", gap: "18.7rem", }} >
                     <span className="period-badge" style={{ background: "#e91e63" }} >
                       2024
                     </span>
@@ -849,36 +820,28 @@ function App() {
                     </span>
                   </div>
                   <h4 className="mb-1" style={{ color: "#e91e63", fontWeight: 700 }} >
-                    Projeto Batalha de Robôs
+                    {t("expBattleTitle")}
                   </h4>
-                  <span
-                    className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
-                    Competição Interna
+                  <span className="company-type"
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
+                    {t("expBattleCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Construção de robô de combate com sensores de colisão
+                      {t("expBattleTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Prototipação, testes e combate em arena com outras equipes
+                      {t("expBattleTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Trabalho em equipe e otimização de desempenho físico e
-                      lógico
+                      {t("expBattleTopic3")}
                     </li>
                   </ul>
                 </div>
               </div>
-
               {/* 2024 - Projeto Thermal Tech - DIREITA */}
               <div className="timeline-item timeline-right animate-on-scroll animate-slide-right">
                 <div className="timeline-content smooth-transition">
@@ -890,84 +853,64 @@ function App() {
                       2024
                     </span>
                   </div>
-                  <h4 className="mb-1" style={{ color: "#4caf50", fontWeight: 700 }} >
-                    Desenvolvedor IoT
+                  <h4 className="mb-1" style={{ color: "#4caf50", fontWeight: 700 }}>
+                    {t("expIotTitle")}
                   </h4>
-                  <span
-                    className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
-                    Projeto Thermal Tech
+                  <span className="company-type"
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
+                    {t("expIotCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Monitoramento térmico com Electron.js e sensores
+                      {t("expIotTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Backend com Node.js e dashboard interativo
+                      {t("expIotTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Projeto em equipe de 2 pessoas
+                      {t("expIotTopic3")}
                     </li>
                   </ul>
                 </div>
               </div>
-
               {/* 2024 - FlowTime - ESQUERDA */}
               <div className="timeline-item timeline-left animate-on-scroll animate-slide-left">
                 <div className="timeline-content smooth-transition">
-                  <div
-                    className="timeline-header"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "18.7rem",
-                    }}
-                  >
+                  <div className="timeline-header"
+                    style={{ display: "flex", alignItems: "center", gap: "18.7rem", }} >
                     <span className="period-badge period-full-stack" style={{ background: "var(--primary-blue)" }} >
                       Out/2024 - Jan/2025
                     </span>
-                    <span className="timeline-icon svg-icon-animated" style={{ background: "var(--primary-blue)" }}>
+                    <span className="timeline-icon svg-icon-animated" style={{ background: "var(--primary-blue)" }} >
                       <FaBriefcase color="#fff" />
                     </span>
                   </div>
                   <h4 className="mb-1" style={{ color: "var(--primary-blue)", fontWeight: 700 }} >
-                    Desenvolvedor Full Stack
+                    {t("expFlowTitle")}
                   </h4>
-                  <span
-                    className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
-                    Projeto FlowTime
+                  <span className="company-type"
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
+                    {t("expFlowCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Sistema para clínica de podologia com dashboard e relatórios
+                      {t("expFlowTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Frontend (HTML, CSS, JS), backend com Node.js/Firebase
+                      {t("expFlowTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Desktop com Electron.js, entregue em ambiente real
+                      {t("expFlowTopic3")}
                     </li>
                   </ul>
                 </div>
               </div>
-
               {/* 2025 - Projeto TonerTrack - DIREITA */}
               <div className="timeline-item timeline-right animate-on-scroll animate-slide-right">
                 <div className="timeline-content smooth-transition">
@@ -980,30 +923,24 @@ function App() {
                     </span>
                   </div>
                   <h4 className="mb-1" style={{ color: "#ff9800", fontWeight: 700 }} >
-                    Desenvolvedor Full Stack
+                    {t("expTonerTitle")}
                   </h4>
-                  <span
-                    className="company-type"
-                    style={{
-                      fontWeight: 600,
-                      marginBottom: "2.5rem",
-                      display: "block",
-                    }}
-                  >
-                    Projeto TonerTrack
+                  <span className="company-type"
+                    style={{ fontWeight: 600, marginBottom: "2.5rem", display: "block", }} >
+                    {t("expTonerCompany")}
                   </span>
                   <ul style={{ paddingLeft: 0, listStyle: "none" }}>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Sistema de gestão de impressoras escolares
+                      {t("expTonerTopic1")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      PostgreSQL, autenticação e painéis administrativos
+                      {t("expTonerTopic2")}
                     </li>
                     <li className="timeline-topico">
                       <span className="timeline-topico-dot"></span>
-                      Desenvolvimento individual com foco em escalabilidade
+                      {t("expTonerTopic3")}
                     </li>
                   </ul>
                 </div>
@@ -1013,62 +950,36 @@ function App() {
         </section>
 
         {/* 6. Contato com Animações */}
-        <section id="contact" className="contact-section section-gradient parallax-container">
+        <section id="contact" className="contact-section section-gradient parallax-container" >
           <div className="container">
             <div className="section-header text-center mb-5 animate-on-scroll animate-fade-in">
-              <span
-                className="section-badge"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  color: "#fff",
-                }}
-              >
-                <FaPhone
-                  className="svg-icon-animated"
-                  style={{
-                    color: "#fff",
-                    fontSize: "1.1em",
-                    verticalAlign: "middle",
-                  }}
-                />
-                Vamos conversar
+              <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backdropFilter: 'blur(10px)', borderRadius: '2rem', padding: '0.8rem 1.5rem' }} > <FaPhone className="svg-icon-animated" style={{ color: "#fff", fontSize: "1.1em", verticalAlign: "middle", }} />
+                {t("contactBadge")}
               </span>
-              <h2 className="section-title">Entre em Contato</h2>
-              <p className="section-subtitle">
-                Estou sempre aberto a novas oportunidades e projetos interessantes
-              </p>
+              <h2 className="section-title" style={{ color: '#263799', fontSize: '3rem', fontWeight: 'bold', textShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>{t("contactTitle")}</h2>
+              <p className="section-subtitle" style={{ color: '#3f4245', fontSize: '1.2rem' }}>{t("contactSubtitle")}</p>
             </div>
-
             <div className="contact-wrapper">
               <div className="row g-4">
                 <div className="col-lg-5">
                   <div className="contact-info-modern animate-on-scroll animate-slide-left">
                     <div className="contact-intro">
-                      <h3>Vamos trabalhar juntos! 🚀</h3>
-                      <p>
-                        Estou sempre aberto a novas oportunidades, parcerias e
-                        projetos inovadores. Se você tem uma ideia interessante ou
-                        precisa de um desenvolvedor dedicado para o seu time,
-                        vamos conversar!
-                      </p>
+                      <h3>{t("contactIntroTitle")}</h3>
+                      <p>{t("contactIntroText")}</p>
                     </div>
-
                     <div className="contact-methods-modern">
-                      <a href="mailto:eduardogwagner2003@gmail.com" className="contact-method-modern smooth-transition">
+                      <a href="mailto:eduardogwagner2003@gmail.com" className="contact-method-modern smooth-transition" >
                         <div className="method-icon NoneEmail">
                           <FaEnvelope className="svg-icon-animated" />
                         </div>
                         <div className="method-info">
-                          <h5>Email</h5>
+                          <h5>{t("contactEmailTitle")}</h5>
                           <span>eduardogwagner2003@gmail.com</span>
                         </div>
                         <div className="method-arrow">
                           <i className="fas fa-arrow-right svg-icon-animated"></i>
                         </div>
                       </a>
-                      
                       <a href="https://www.linkedin.com/in/eduardowagner03/" target="_blank" rel="noopener noreferrer" className="contact-method-modern smooth-transition" >
                         <div className="method-icon">
                           <FaLinkedin className="svg-icon-animated" />
@@ -1081,7 +992,6 @@ function App() {
                           <i className="fas fa-arrow-right svg-icon-animated"></i>
                         </div>
                       </a>
-
                       <a href="https://github.com/EduardoWagner03/" target="_blank" rel="noopener noreferrer" className="contact-method-modern smooth-transition" >
                         <div className="method-icon">
                           <FaGithub className="svg-icon-animated" />
@@ -1095,55 +1005,44 @@ function App() {
                         </div>
                       </a>
                     </div>
-
-                    <div className="contact-availability animate-on-scroll animate-fade-in" style={{animationDelay: '0.4s'}}>
+                    <div className="contact-availability animate-on-scroll animate-fade-in" style={{ animationDelay: "0.4s" }} >
                       <div className="availability-indicator">
                         <div className="status-dot"></div>
-                        <span>Disponível para oportunidades</span>
+                        <span>{t("contactAvailable")}</span>
                       </div>
                     </div>
                   </div>
                 </div>
-
                 <div className="col-lg-7">
                   <div className="contact-form-modern animate-on-scroll animate-slide-right">
-                    <h3>Envie uma mensagem</h3>
+                    <h3>{t("contactFormTitle")}</h3>
                     <form className="modern-form">
                       <div className="form-row">
                         <div className="form-group">
-                          <label>Nome:</label>
-                          <input type="text" className="form-control smooth-transition" placeholder="Eduardo" required />
+                          <label>{t("contactFormNameLabel")}</label>
+                          <input type="text" className="form-control smooth-transition" placeholder={t("contactFormNamePlaceholder")} required />
                         </div>
                         <div className="form-group">
-                          <label>Email:</label>
-                          <input type="email" className="form-control smooth-transition" placeholder="exemplo@email.com" required />
+                          <label>{t("contactFormEmailLabel")}</label>
+                          <input type="email" className="form-control smooth-transition" placeholder={t("contactFormEmailPlaceholder")} required />
                         </div>
                       </div>
                       <div className="form-group">
-                        <label>Assunto:</label>
-                        <input type="text" className="form-control smooth-transition" placeholder="Sobre o que deseja falar?" required
-                        />
+                        <label>{t("contactFormSubjectLabel")}</label>
+                        <input type="text" className="form-control smooth-transition" placeholder={t("contactFormSubjectPlaceholder")} required />
                       </div>
                       <div className="form-group">
-                        <label>Mensagem:</label>
-                        <textarea className="form-control smooth-transition" rows="5" placeholder="Digite sua mensagem..." required ></textarea>
+                        <label>{t("contactFormMessageLabel")}</label>
+                        <textarea className="form-control smooth-transition" rows="5" placeholder={t("contactFormMessagePlaceholder")} required ></textarea>
                       </div>
                       <button type="submit" className="btn btn-primary btn-lg w-100 smooth-transition" >
                         <FaEnvelope className="me-2 svg-icon-animated" />
-                        Enviar Mensagem
+                        {t("contactFormSendBtn")}
                       </button>
                     </form>
                     <p className="form-privacy">
-                      <FaShieldAlt
-                        className="svg-icon-animated"
-                        style={{
-                          marginRight: "0.6rem",
-                          fontSize: "1.1em",
-                          verticalAlign: "middle",
-                        }}
-                      />
-                      Suas informações estão seguras e não serão compartilhadas
-                      com terceiros.
+                      <FaShieldAlt className="svg-icon-animated" style={{ marginRight: "0.6rem", fontSize: "1.1em", verticalAlign: "middle", }} />
+                      {t("contactFormPrivacy")}
                     </p>
                   </div>
                 </div>

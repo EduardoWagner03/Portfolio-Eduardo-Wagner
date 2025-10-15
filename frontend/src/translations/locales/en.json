@@ -1,0 +1,354 @@
+{
+  "navHome": "Home",
+  "navAbout": "About",
+  "navSkills": "Skills",
+  "navProjects": "Projects",
+  "navExperience": "Experience",
+  "navContact": "Contact",
+  "navCloseMenu": "Close menu",
+  "modeLight": "Light mode",
+  "modeDark": "Dark mode",
+  "downloadCV": "Download CV",
+  "downloadCVTooltip": "Download resume",
+  "changeLanguage": "Change language",
+  "footerName": "Eduardo Wagner",
+  "footerPortfolio": "Portfolio",
+  "footerRole": "Junior Full Stack Developer | Paraná, Brazil",
+  "footerPhrase": "Turning ideas into code, code into solutions, solutions into impact",
+  "footerRights": "All rights reserved.",
+  "modalClose": "Close",
+  "modalTeam": "Project Team",
+  "modalResponsibilities": "My Responsibilities in the Project",
+  "modalIoTIntegration": "IoT Integration Developed by Victor",
+  "modalFrontend": "Frontend",
+  "modalBackend": "Backend",
+  "modalDatabase": "Database",
+  "modalLibraries": "Libraries",
+  "modalIntegrations": "APIs and Integrations",
+  "modalFeatures": "Features",
+  "modalGithub": "GitHub",
+  "modalLinkedin": "LinkedIn",
+  "modalImageError": "Error loading image",
+  "modalImageFooter": "ESC to close • F11 for fullscreen",
+  "modalPopupBlocked": "Popups are blocked! Please allow popups for this site and try again.",
+  "hello": "Hello, I am",
+  "heroSubtitle": "Junior Full Stack Developer focused on Front-end",
+  "heroDescription": "Junior Full Stack Developer, focused on Frontend and experienced in web and desktop development. Skilled in React, Node.js, PostgreSQL, JavaScript, among other technologies. Committed to delivering quality solutions, aligning performance, usability, and best development practices.",
+  "seeProjects": "See Projects",
+  "contactMe": "Contact Me",
+  "highImpactProjects": "High-impact projects",
+  "highImpactDesc": "Complete solutions for companies and institutions",
+  "specialty": "Specialty",
+  "specialtyDesc": "Full Stack & Advanced Integrations",
+  "results": "Results",
+  "resultsDesc": "Automation, performance and innovation",
+  "engineering": "Software Engineering",
+  "database": "Database",
+  "cloud": "Cloud",
+  "desktopApps": "Desktop Applications",
+  "aboutBadge": "Learn more",
+  "aboutTitle": "About Me",
+  "aboutSubtitle": "Developer passionate about creating solutions that make a difference",
+  "aboutHello": "Hello! I'm Eduardo",
+  "aboutIntroText": "21-year-old developer from Paraná, currently in the last year of Software Engineering. My journey in programming began with curiosity about how technologies work and how I can create solutions that make a difference in people's lives.",
+  "aboutAcademicTitle": "Academic Background",
+  "aboutAcademicText": "I'm a student in the final period of Software Engineering at UGV – Centro Universitário, expected to graduate in December 2025. During college, I developed complete projects applying agile methodologies, version control with Git/GitHub, and integration between frontend and backend. I participated in academic and personal projects, focusing on creating real solutions for companies and institutions.",
+  "aboutTeamTitle": "Teamwork",
+  "aboutTeamText": "I am comfortable working in teams, maintaining good communication and collaboration daily. I have practical experience in teams organized by agile methodologies, always contributing proactively to task development. I use Git, GitHub, and Jira to keep the workflow organized and efficient.",
+  "aboutPhilosophyTitle": "Work Philosophy",
+  "aboutPhilosophyText": "I adopt a work philosophy focused on commitment, organization, and delivering functional solutions. I always seek to align technical quality with defined deadlines, paying attention to details and seeking continuous improvement. I value clear communication and collaboration to achieve consistent results as a team.",
+  "aboutCtaTitle": "Ready for the next challenge",
+  "aboutCtaText": "I'm looking for my first opportunity as a junior developer or intern, aiming to collaborate on real projects, contribute to team growth, and deliver efficient and well-structured solutions.",
+  "aboutCtaContactBtn": "Let's talk",
+  "aboutCtaDownloadBtn": "Download CV",
+  "skillsBadge": "Tech Stack",
+  "skillsTitle": "Skills",
+  "skillsSubtitle": "Technologies and tools I master",
+  "skillsFrontend": "Frontend",
+  "skillsBackend": "Backend",
+  "skillsDatabase": "Database",
+  "skillsCloud": "Cloud Services",
+  "skillsDesktop": "Desktop",
+  "skillsTools": "Tools",
+  "skillsMethodologies": "Methodologies",
+  "skillsLearning": "Currently Learning",
+  "projectsBadge": "Portfolio",
+  "projectsTitle": "Main Projects",
+  "projectsSubtitle": "Some of the main projects I've developed",
+  "projectsDetailsBtn": "See Details",
+  "experienceBadge": "Professional Journey",
+  "experienceTitle": "Professional Experience",
+  "experienceSubtitle": "My practical evolution in software development",
+  "contactBadge": "Let's talk",
+  "contactTitle": "Contact Me",
+  "contactSubtitle": "I'm always open to new opportunities and interesting projects",
+  "contactIntroTitle": "Let's work together! 🚀",
+  "contactIntroText": "I'm always open to new opportunities, partnerships, and innovative projects. If you have an interesting idea or need a dedicated developer for your team, let's talk!",
+  "contactEmailTitle": "Email",
+  "contactAvailable": "Available for opportunities",
+  "contactFormTitle": "Send a message",
+  "contactFormNameLabel": "Name:",
+  "contactFormNamePlaceholder": "Your name",
+  "contactFormEmailLabel": "Email:",
+  "contactFormEmailPlaceholder": "your@email.com",
+  "contactFormSubjectLabel": "Subject:",
+  "contactFormSubjectPlaceholder": "What would you like to talk about?",
+  "contactFormMessageLabel": "Message:",
+  "contactFormMessagePlaceholder": "Type your message...",
+  "contactFormSendBtn": "Send Message",
+  "contactFormPrivacy": "Your information is safe and will not be shared with third parties.",
+  "expStartTitle": "Beginning of Programming Studies",
+  "expStartCompany": "Free Courses",
+  "expStartTopic1": "HTML5, CSS3, JavaScript",
+  "expStartTopic2": "Static pages and logic fundamentals",
+  "expStartTopic3": "Version control with Git",
+  "expCollegeTitle": "Software Engineering",
+  "expCollegeCompany": "Centro Universitário UGV",
+  "expCollegeTopic1": "Focus on web and desktop development",
+  "expCollegeTopic2": "Projects with JavaScript, Node.js, PostgreSQL, Firebase, Google Cloud",
+  "expCollegeTopic3": "Participation in real and academic projects",
+  "expEventsTitle": "Participation in Academic Events",
+  "expEventsCompany": "Centro Universitário UGV",
+  "expEventsTopic1": "XVII Scientific Initiation Meeting 2022 - Attendee",
+  "expEventsTopic2": "XVIII Scientific Initiation Meeting 2023 - Presenter",
+  "expEventsTopic3": "XIX Scientific Initiation Meeting 2024 - Attendee",
+  "expEventsTopic4": "SEMTEC - UGV Technology Week 2022",
+  "expEventsTopic5": "SEMTEC - UGV Technology Week 2024",
+  "expRoboticTitle": "Robotic Gripper Project",
+  "expRoboticCompany": "Robotics Course",
+  "expRoboticTopic1": "Building a robotic gripper controlled by microcontroller",
+  "expRoboticTopic2": "Development of automated commands and motion control",
+  "expRoboticTopic3": "Integration between hardware and software with embedded programming",
+  "expBattleTitle": "Robot Battle Project",
+  "expBattleCompany": "Internal Competition",
+  "expBattleTopic1": "Building a combat robot with collision sensors",
+  "expBattleTopic2": "Prototyping, testing, and arena combat with other teams",
+  "expBattleTopic3": "Teamwork and optimization of physical and logical performance",
+  "expIotTitle": "IoT Developer",
+  "expIotCompany": "Thermal Tech Project",
+  "expIotTopic1": "Thermal monitoring with Electron.js and sensors",
+  "expIotTopic2": "Backend with Node.js and interactive dashboard",
+  "expIotTopic3": "Team project with 2 people",
+  "expFlowTitle": "Full Stack Developer",
+  "expFlowCompany": "FlowTime Project",
+  "expFlowTopic1": "System for podiatry clinic with dashboard and reports",
+  "expFlowTopic2": "Frontend (HTML, CSS, JS), backend with Node.js/Firebase",
+  "expFlowTopic3": "Desktop with Electron.js, delivered in a real environment",
+  "expTonerTitle": "Full Stack Developer",
+  "expTonerCompany": "TonerTrack Project",
+  "expTonerTopic1": "School printer management system",
+  "expTonerTopic2": "PostgreSQL, authentication and admin panels",
+  "expTonerTopic3": "Individual development focused on scalability",
+    "skills": {
+      "frontend": [
+        "HTML5",
+        "CSS3",
+        "JavaScript ES6+",
+        "Bootstrap",
+        "EJS",
+        "Chart.js",
+        "jQuery"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "Python"
+      ],
+      "database": [
+        "PostgreSQL",
+        "Firebase",
+        "Firestore",
+        "Firebase Storage",
+        "Firebase Auth"
+      ],
+      "cloud": [
+        "Google Cloud Platform",
+        "Firebase"
+      ],
+      "desktop": [
+        "Electron.js",
+        "PWA"
+      ],
+      "tools": [
+        "Git",
+        "GitHub",
+        "SweetAlert2",
+        "Multer",
+        "WebSockets",
+        "MQTT"
+      ],
+      "methodologies": [
+        "Scrum",
+        "Jira",
+        "Agile Methodologies",
+        "MVC Architecture",
+        "Teamwork"
+      ],
+      "learning": [
+        "ReactJS",
+        "React Native"
+      ]
+    },
+  "projects": [
+    {
+      "title": "FlowTime",
+      "subtitle": "Completed System",
+      "description": "Complete web system for managing podiatry clinics, bringing efficiency, organization, and practicality to daily routines. FlowTime optimizes scheduling, customer service, and administrative processes, all in an intuitive platform.",
+      "history": "FlowTime started in October 2024 and was completed in January 2025, developed by a team of 3 people. The system arose from the need to digitize and automate workflows in podiatry clinics. The project offers an interactive dashboard, PDF reports, digital signatures, and advanced features to facilitate the management of appointments, patients, and prescriptions. With a modern interface and robust functionalities, FlowTime provides more agility, security, and quality in service, being successfully implemented in a real environment.",
+      "features": [
+        {
+          "image": "/images/homeFlowtime.png",
+          "title": "Interactive Dashboard",
+          "description": "Quickly view the clinic's main indicators, such as appointments, services, and prescriptions. Complete frontend development and implementation of interactive charts."
+        },
+        {
+          "image": "/images/AppointmentsFlowTime.png",
+          "title": "Schedule Management",
+          "description": "Easily schedule, edit, and view appointments. Fully developed responsive and intuitive interface."
+        },
+        {
+          "image": "/images/FichaAnamnese.png",
+          "title": "PDF Reports",
+          "description": "Generate detailed reports of services, prescriptions, and patients in just a few clicks. Frontend for the feature and security token system for access."
+        }
+      ],
+      "responsibilities": [
+        "🎨 Complete Frontend - Development of the entire user interface",
+        "📊 Interactive Charts - Implementation of dashboards and visualizations",
+        "🔐 Token System - Authentication and security development",
+        "📱 Responsiveness - Adaptation for mobile and desktop devices",
+        "✨ UX/UI - Design and user experience implementation"
+      ],
+      "team": [
+        {
+          "name": "Eduardo Wagner",
+          "role": "Frontend Developer",
+          "responsibilities": "Complete frontend, interactive charts, security token system"
+        },
+        {
+          "name": "Victor Bueno",
+          "role": "Backend Developer",
+          "responsibilities": "Entire backend architecture, APIs, database"
+        },
+        {
+          "name": "Lucas Ulbrich",
+          "role": "UI/UX Designer",
+          "responsibilities": "Page prototyping in Figma, design system"
+        }
+      ],
+      "frontend": ["HTML5", "CSS3", "EJS", "JavaScript", "Electron.js", "SweetAlert2", "Chart.js"],
+      "backend": ["Node.js", "Express.js", "Multer", "Node-cron", "dotenv", "memory-cache", "node-cache", "web-push", "path", "cross-env"],
+      "database": ["Firebase Firestore", "Firebase Database", "Firebase Storage", "Firebase Authentication", "Firebase Admin SDK"],
+      "libraries": ["browser-image-compression", "moment-timezone", "node-fetch", "Chart.js", "SweetAlert2", "Choices.js", "html2pdf.js", "SignaturePad.js"],
+      "integrations": ["IBGE API", "WhatsApp API", "Web Push API", "Firebase Auth API", "Service Workers", "Local Storage"],
+      "status": "Completed",
+      "image": "/images/FlowTime.png",
+      "link": "#"
+    },
+    {
+      "title": "TonnerTrack",
+      "subtitle": "Completed System",
+      "description": "System developed to automate the management of printing supplies in educational institutions, reducing waste and providing complete reports. TonnerTrack facilitates the management of printers and toners, bringing more efficiency and organization to the school environment.",
+      "history": "TonnerTrack was an Academic Extension project started in February 2025 and completed in June 2025, carried out in a public school. The system arose from the real need to control the use of printers and toners, automating records, generating detailed reports, and reducing waste. The project features an intuitive interface and intelligent resources, contributing to improved supply management and being successfully implemented in the institution.",
+      "features": [
+        {
+          "image": "/images/GerenciamentoTonnerTrack.png",
+          "title": "Supply Management",
+          "description": "Manage toner and printer stock, avoiding waste and shortages. Complete system developed from scratch."
+        },
+        {
+          "image": "/images/Relatórios.png",
+          "title": "Detailed Reports",
+          "description": "Generate complete reports on printer usage, facilitating decision-making. Fully developed interface and backend."
+        },
+        {
+          "image": "/images/NotificacaoTonnerTrac.png",
+          "title": "Smart Alerts",
+          "description": "Receive notifications when stock is low or maintenance is needed. Notification system fully developed."
+        }
+      ],
+      "responsibilities": [
+        "🎨 Complete Development - Frontend and Backend from scratch",
+        "🗄️ Database - PostgreSQL modeling and implementation",
+        "🔐 Authentication - Login and access control system",
+        "📊 Reports - Generation of reports and dashboards",
+        "📱 Responsive Interface - Design adaptable for all devices",
+        "🔧 Deployment and Maintenance - Implementation in production environment"
+      ],
+      "team": [
+        {
+          "name": "Eduardo Wagner",
+          "role": "Full Stack Developer Solo",
+          "responsibilities": "Complete system development, from planning to final implementation"
+        }
+      ],
+      "frontend": ["HTML5", "CSS3", "JavaScript (ES6+)", "EJS", "Bootstrap", "Bootstrap Icons", "Chart.js", "SweetAlert2", "Electron.js"],
+      "backend": ["Node.js", "Express.js", "Express-Session", "Express-Handlebars", "Multer", "Socket.io", "dotenv", "cookie-parser"],
+      "database": ["PostgreSQL", "pg"],
+      "libraries": ["firebase", "firebase-admin", "path", "electron-updater"],
+      "integrations": ["Firebase Authentication", "Firebase Cloud Storage", "Own RESTful API"],
+      "status": "Completed",
+      "image": "/images/TonnerTrack.png",
+      "link": "#"
+    },
+    {
+      "title": "ThermalTech",
+      "subtitle": "Ongoing System",
+      "description": "Academic project in pairs that created a CMMS system integrated with IoT for monitoring and controlling air-conditioned environments. Allows management of air conditioning equipment, registering tickets, generating work orders, and monitoring environmental conditions in real time via MQTT sensors. Also features real-time chat for teams.",
+      "history": "ThermalTech is being developed as part of a college academic project, started in 2025, developed in pairs. The goal is to create a robust system for monitoring and automating industrial environments, integrating IoT sensors, dashboards, reports, and team communication. The system is constantly evolving, receiving improvements and new features as development progresses.",
+      "features": [
+        {
+          "image": "/images/Monitoriamento.png",
+          "title": "Real-Time Monitoring",
+          "description": "Track temperature and equipment status in real time via IoT sensors. Complete frontend and security system implemented."
+        },
+        {
+          "image": "/images/ConsultarChamados.png",
+          "title": "Ticket Management",
+          "description": "Register, track, and resolve technical tickets in a centralized and efficient way. Interface developed with advanced auditing system."
+        },
+        {
+          "image": "/images/ChatTT.png",
+          "title": "Integrated Chat",
+          "description": "Communicate with the team directly through the system, speeding up support and maintenance. Frontend and security middleware implemented."
+        }
+      ],
+      "responsibilities": [
+        "🎨 Complete Frontend - Development of the entire system interface",
+        "🛡️ Auditing Middleware - Advanced threat detection system",
+        "🔍 Threat Detection - SQL injection, XSS, malicious bots",
+        "📊 Threat Scoring - Intelligent threat scoring system",
+        "🚫 Smart Blocking - Suspicious IPs and rate limiting",
+        "📧 Real-Time Alerts - Automatic email notifications",
+        "📋 Security Reports - Continuous automated monitoring"
+      ],
+      "team": [
+        {
+          "name": "Eduardo Wagner",
+          "role": "Frontend & Security Developer",
+          "responsibilities": "Complete frontend, advanced security system, auditing middleware, threat detection"
+        },
+        {
+          "name": "Victor Bueno",
+          "role": "Backend & IoT Developer",
+          "responsibilities": "Backend, IoT integration, ESP sensors, Firebase Realtime Database, WebSocket/SSE communication"
+        }
+      ],
+      "iotIntegration": [
+        "🌡️ Temperature Capture - Sensors via HTTP POST to /api/sensor-data endpoint",
+        "📡 Bidirectional Communication - ESP via Firebase Realtime Database",
+        "⚡ Real-Time - Server-Sent Events (SSE) and WebSocket",
+        "🎯 Remote Control - Temperature, speed, and mode commands",
+        "⚠️ Automatic Alerts - Room limit verification"
+      ],
+      "frontend": ["HTML5", "CSS3", "Bootstrap 5", "Bootstrap Icons", "Chart.js", "SweetAlert2", "EJS", "HTML2Canvas", "JavaScript", "Socket.IO", "WebSocket"],
+      "backend": ["Node.js", "Express.js", "Multer", "Socket.IO", "EJS", "MQTT", "Firebase Admin SDK"],
+      "database": ["PostgreSQL", "Firebase Authentication", "Firebase Storage", "Firebase Database"],
+      "libraries": ["SweetAlert2", "Chart.js", "Bootstrap", "HTML2Canvas", "Multer", "Socket.IO", "Firebase", "MQTT", "EJS"],
+      "integrations": ["Firebase Authentication", "Firebase Storage", "Firebase Database", "Socket.IO", "MQTT", "Own REST APIs"],
+      "status": "In Development",
+      "image": "/images/ThermalTech.png",
+      "link": "#"
+    }
+  ]
+}
