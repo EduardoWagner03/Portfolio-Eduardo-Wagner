@@ -108,7 +108,7 @@ const pt = {
     journey: [
       {
         title: "Formação Acadêmica",
-        text: "Bacharel em Engenharia de Software pela UGV - Centro Universitário, com graduação concluída em dezembro de 2025 e colação de grau em março de 2026. Defendi como TCC o projeto FlowTime, o SaaS de gestão para clínicas de podologia, aprovado com nota máxima 10 e depois entregue para uso comercial. Durante a trajetória acadêmica, liderei múltiplas equipes de desenvolvimento em projetos práticos, aplicando metodologias ágeis e coordenando todo o ciclo de vida do software: da análise de requisitos e diagramação de arquitetura (UML/DER) até o deploy final em produção.",
+        text: "Bacharel em Engenharia de Software pela UGV - Centro Universitário, com graduação concluída em dezembro de 2025 e colação de grau em março de 2026. Defendi como TCC o projeto FlowTime, sistema de gestão feito sob medida para uma clínica de podologia, aprovado com nota máxima 10 e entregue para uso comercial. Durante a trajetória acadêmica, liderei múltiplas equipes de desenvolvimento em projetos práticos, aplicando metodologias ágeis e coordenando todo o ciclo de vida do software: da análise de requisitos e diagramação de arquitetura (UML/DER) até o deploy final em produção.",
       },
       {
         title: "StreamDev - Software House",
@@ -288,9 +288,9 @@ const pt = {
         title: "FlowTime",
         subtitle: "Sistema Finalizado",
         description:
-          "Sistema web completo para gestão de clínicas de podologia, trazendo eficiência, organização e praticidade para o dia a dia das clínicas. O FlowTime permite otimizar agendamentos, atendimento ao cliente e processos administrativos, tudo em uma plataforma intuitiva.",
+          "Sistema web completo de gestão, desenvolvido sob medida para uma clínica de podologia específica, trazendo eficiência, organização e praticidade para o dia a dia dela. O FlowTime permite otimizar agendamentos, atendimento ao cliente e processos administrativos, tudo em uma plataforma intuitiva.",
         story:
-          "O FlowTime foi iniciado em outubro de 2024 e finalizado em janeiro de 2025, desenvolvido em equipe de 3 pessoas. Ele também foi o nosso Trabalho de Conclusão de Curso, defendido na UGV e aprovado com nota máxima 10, e depois entregue para uso comercial em uma clínica real. O sistema surgiu da necessidade de digitalizar e automatizar o fluxo de trabalho em clínicas de podologia. O projeto oferece dashboard interativo, relatórios em PDF, assinatura digital e recursos avançados para facilitar o controle de agendamentos, pacientes e receitas. Com uma interface moderna e funcionalidades robustas, o FlowTime proporciona mais agilidade, segurança e qualidade no atendimento, sendo implementado com sucesso em ambiente real.",
+          "O FlowTime foi iniciado em outubro de 2024 e finalizado em janeiro de 2025, desenvolvido em equipe de 3 pessoas. Ele também foi o nosso Trabalho de Conclusão de Curso, defendido na UGV e aprovado com nota máxima 10, e entregue para uso comercial. Na época da apresentação, o sistema atendia uma clínica específica, e não era um SaaS: a evolução para um produto multi-cliente foi justamente o caminho futuro que apresentei na defesa, e que já estava em estudo. O sistema surgiu da necessidade real de digitalizar e automatizar o fluxo de trabalho dessa clínica. O projeto oferece dashboard interativo, relatórios em PDF, assinatura digital e recursos avançados para facilitar o controle de agendamentos, pacientes e receitas. Com uma interface moderna e funcionalidades robustas, o FlowTime proporciona mais agilidade, segurança e qualidade no atendimento, sendo implementado com sucesso em ambiente real.",
         period: "Out/2024 - Jan/2025",
         role: "Co-Líder Técnico & Front-end",
         teamSize: "Equipe de 3",
@@ -547,7 +547,7 @@ const pt = {
         title: "Co-Líder Técnico e Líder de Frontend",
         org: "Projeto FlowTime",
         bullets: [
-          "SaaS para clínica de podologia com dashboard e relatórios",
+          "Sistema de gestão sob medida para uma clínica de podologia",
           "Defendido como TCC na UGV, aprovado com nota máxima 10",
           "Modelagem UML/DER e prototipagem no Figma",
           "Frontend (HTML, CSS, JS), backend com Node.js/Firebase",
