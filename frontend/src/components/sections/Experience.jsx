@@ -8,9 +8,11 @@ import {
   Gamepad2,
   GraduationCap,
   LaptopMinimal,
+  Palette,
   Rocket,
   Route,
   Thermometer,
+  UtensilsCrossed,
 } from "lucide-react";
 import { cn } from "../../lib/cn";
 import { GlassCard, Section, SectionHeading, T } from "../ui/primitives";
@@ -27,7 +29,9 @@ const ICONS = {
   Thermometer,
   Briefcase,
   LaptopMinimal,
+  Palette,
   Rocket,
+  UtensilsCrossed,
 };
 
 export default function Experience() {

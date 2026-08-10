@@ -7,6 +7,7 @@ import {
   GitBranch,
   MonitorSmartphone,
   Server,
+  ShieldCheck,
   ShoppingCart,
   Sparkles,
   Wrench,
@@ -27,6 +28,7 @@ const ICONS = {
   GitBranch,
   Sparkles,
   ShoppingCart,
+  ShieldCheck,
 };
 
 export default function Skills() {

@@ -5,7 +5,7 @@ const en = {
     locale: "en-US",
     title: "Eduardo Wagner | Mid-level Full Stack Developer",
     description:
-      "Portfolio of Eduardo Gregório Wagner, mid-level Full Stack Developer and co-founder of StreamDev. React, Next.js, TypeScript, Node.js, PostgreSQL and Supabase.",
+      "Portfolio of Eduardo Gregório Wagner, mid-level Full Stack Developer and co-founder of StreamDev. React, Next.js, TypeScript, Node.js, PostgreSQL, Supabase and Google Cloud, focused on e-commerce and multi-tenant SaaS.",
     switchTo: "PT",
     switchLabel: "Switch language to Portuguese",
   },
@@ -45,7 +45,7 @@ const en = {
     ],
     subtitle: "Mid-level Full Stack Developer · React, Next.js and TypeScript",
     description:
-      "Software Engineering graduate with 4 years of hands-on Full Stack experience and a front-end focus. I work across the modern JavaScript ecosystem (React, Next.js and TypeScript), building high-performance, scalable interfaces, and I cover the whole software lifecycle from architecture to delivery with Node.js, PostgreSQL, Supabase and Firebase.",
+      "Software Engineering graduate with 4 years of hands-on Full Stack experience and a front-end focus. I work across the modern JavaScript ecosystem (React, Next.js and TypeScript), building high-performance, scalable interfaces, and I cover the whole software lifecycle from architecture to running in production with Node.js, PostgreSQL, Supabase, Redis and Google Cloud, on multi-tenant SaaS architectures.",
     primaryCta: "View Projects",
     secondaryCta: "Get in Touch",
     scroll: "Scroll to explore",
@@ -94,7 +94,7 @@ const en = {
       },
       {
         title: "StreamDev - Software House",
-        text: "As co-founder of StreamDev, I'm responsible for technical leadership and project management, focused on scalable solutions and modern system architecture. It's where I bring together the stack I know best (React, Next.js, TypeScript and Supabase) to take products from concept all the way into the client's real operation.",
+        text: "As co-founder of StreamDev, I'm responsible for technical leadership and project management, focused on scalable solutions and modern system architecture. It's where I bring together the stack I know best (React, Next.js, TypeScript, Node.js and Supabase) to take products from concept all the way into the client's real operation, such as Bloco3D, an e-commerce for the 3D technology market, and MenuDigital, a multi-tenant digital-menu SaaS with stores running commercially.",
       },
       {
         title: "Leadership and Teamwork",
@@ -121,8 +121,9 @@ const en = {
       backend: "Backend",
       database: "Databases",
       commerce: "E-commerce & Integrations",
-      cloud: "Cloud Services",
-      desktop: "Desktop",
+      cloud: "Cloud & Infrastructure",
+      desktop: "Desktop & Mobile",
+      quality: "Security & Quality",
       tools: "Tools",
       methodologies: "Methodologies",
       learning: "Currently Learning",
@@ -154,6 +155,7 @@ const en = {
         frontend: "Frontend",
         backend: "Backend",
         database: "Database",
+        cloud: "Cloud & Infrastructure",
         libraries: "Libraries",
         integrations: "APIs & Integrations",
       },
@@ -169,44 +171,98 @@ const en = {
         title: "Bloco3D",
         subtitle: "Platform in Operation",
         description:
-          "An e-commerce platform specialized in the 3D technology market: printers, filaments and accessories. Built on React, Next.js and TypeScript with Supabase, and administered through a modular Medusa infrastructure, with stock and invoice syncing via the Bling API and payments through Mercado Pago.",
+          "An e-commerce platform specialized in the 3D technology market: printers, filaments and accessories. Built in Next.js 15 and React on top of a headless backend, with serverless infrastructure on Google Cloud Run, asynchronous webhook processing via Pub/Sub and Redis, and integrations with Mercado Pago, Bling ERP and Melhor Envio.",
         story:
-          "Bloco3D is the project I lead at StreamDev, the software house I co-founded. I took on the architecture and end-to-end development: the front-end in React, Next.js and TypeScript; Supabase handling the database, authentication and storage; and the Medusa framework backing a modular, scalable admin area. The work included complex administrative dashboards synced through the Bling API for stock management and invoice issuing, integration of the Mercado Pago payment gateway, and full compliance with Brazil's LGPD data protection law.",
+          "Bloco3D is the project I lead at StreamDev, the software house I co-founded. I took on the architecture and full-stack development, from the storefront to the headless backend: front-end in Next.js 15 and React, Supabase handling the database, authentication and storage, and Medusa v2 backing a modular admin area. The infrastructure runs serverless on Google Cloud Run, with Docker and CI/CD through Cloud Build across separate staging and production environments. Payment webhooks are processed asynchronously with GCP Pub/Sub and Redis (Upstash), keeping services independent and preventing duplicate charges. The project also includes 2FA, webhook signature validation, audit logs, LGPD compliance and an automated Jest test suite wired into the CI pipeline.",
         period: "Jan/2026 - Present",
         role: "Architecture & Full Stack",
         teamSize: "Technical lead",
         responsibilities: [
           "Platform Architecture: Stack decisions, data modeling and project structure",
-          "Next.js Front-end: React and TypeScript interfaces built for performance",
+          "Next.js 15 Front-end: React interfaces built for performance",
           "Supabase: Database, authentication and storage",
-          "Medusa Infrastructure: Modular, scalable e-commerce administration",
-          "Admin Dashboards: Complex management and monitoring panels",
-          "ERP Integration: Stock and invoice syncing through the Bling API",
-          "Payments: Mercado Pago gateway integration",
-          "LGPD: Compliance in handling personal data",
+          "Medusa v2 Infrastructure: Modular, scalable e-commerce administration",
+          "Cloud Run and Docker: Serverless infrastructure with CI/CD via Cloud Build",
+          "Pub/Sub and Redis: Asynchronous webhook processing without duplication",
+          "Admin Dashboards: Products, orders, coupons and featured items",
+          "ERP Integration: Invoice syncing through Bling with OAuth2",
+          "Payments and Shipping: Mercado Pago (PIX and card), Melhor Envio and Jadlog",
+          "Security: 2FA, webhook signature validation, audit logs and LGPD",
+          "Testing: Jest suite wired into the CI pipeline",
         ],
         features: [
           {
-            title: "Next.js Storefront",
-            desc: "Storefront and checkout built in React, Next.js and TypeScript, with a catalog specialized in 3D printers, filaments and accessories.",
+            title: "Next.js 15 Storefront",
+            desc: "Storefront and checkout built in Next.js 15 and React, with a catalog specialized in 3D printers, filaments and accessories.",
           },
           {
-            title: "Medusa Administration",
-            desc: "Admin panel on top of the Medusa framework, enabling modular management of products, orders and store operations at scale.",
+            title: "Serverless Infrastructure",
+            desc: "Deployed on Google Cloud Run with Docker and CI/CD through Cloud Build, across separate staging and production environments.",
           },
           {
-            title: "Stock and Invoices via Bling",
-            desc: "Automatic syncing with the Bling API for stock control and invoice issuing, removing manual data entry from the loop.",
+            title: "Asynchronous Webhooks",
+            desc: "Payments processed through GCP Pub/Sub and Redis (Upstash), keeping services independent and preventing duplicate processing.",
           },
           {
-            title: "Payments and LGPD",
-            desc: "Checkout wired to the Mercado Pago gateway, with personal data handled in full compliance with the LGPD.",
+            title: "Tax and Shipping Integrations",
+            desc: "Mercado Pago for PIX and card, Bling ERP through OAuth2 for invoices, and Melhor Envio/Jadlog for shipping rates and labels.",
           },
         ],
         team: [
           {
             role: "Co-founder & Software Engineer",
-            resp: "Architecture, Next.js front-end, ERP and payment gateway integrations, LGPD compliance",
+            resp: "Architecture, Next.js front-end, Google Cloud infrastructure, ERP, payment and shipping integrations, security and LGPD compliance",
+          },
+        ],
+      },
+      menudigital: {
+        title: "MenuDigital",
+        subtitle: "SaaS in Operation",
+        description:
+          "A multi-tenant SaaS for digital menus and restaurant management, with several stores running commercially. It covers the full order flow, from the customer browsing via link or QR Code through payment, tax invoicing and real-time tracking, plus the store owner panel and the platform's Super Admin.",
+        story:
+          "MenuDigital is the SaaS platform I build at StreamDev, today with several stores running commercially. The architecture is multi-tenant, with data isolation between stores and access control applied at every layer. End customers browse the menu via link or QR Code, pay and follow the order in real time with Socket.IO. On the financial and tax side, I integrated Mercado Pago with payment splitting between store and platform, commissions and recurring subscriptions, Focus NFe for automated NFC-e issuing with email delivery, and Asaas for StreamDev's own service invoices. Customer communication runs through WhatsApp via the Evolution API plus Web Push notifications. I also built the Super Admin panel, covering stores, plans, subscriptions, billing, onboarding, support and platform health monitoring. Everything lives in a monorepo with npm workspaces and CI/CD through GitHub Actions, with separate staging and production environments.",
+        period: "Jan/2026 - Present",
+        role: "Architecture & Full Stack",
+        teamSize: "Technical lead",
+        responsibilities: [
+          "Multi-tenant Architecture: Data isolation between stores and access control",
+          "Order Flow: From link or QR Code menu through to real-time tracking",
+          "Payments: Mercado Pago with PIX, splitting, commissions and subscriptions",
+          "Tax Invoicing: Focus NFe for automated NFC-e and Asaas for service invoices",
+          "Real Time: Socket.IO for order updates and Web Push for notifications",
+          "WhatsApp: Customer communication through the Evolution API",
+          "Geolocation: Mapbox and ViaCEP for addresses and delivery radiuses",
+          "Super Admin Panel: Stores, plans, billing, onboarding, support and monitoring",
+          "Store Owner Panel: Products, categories, hours, coupons, reports and staff",
+          "Infrastructure: Monorepo with npm workspaces, CI/CD, staging and production",
+        ],
+        features: [
+          {
+            title: "Menu by Link or QR Code",
+            desc: "Customers open the store's menu with nothing to install, build the order, pay and follow every step in real time.",
+          },
+          {
+            title: "Payment Splitting",
+            desc: "Mercado Pago with PIX, automatic splitting between store and platform, commissions and recurring plan subscriptions.",
+          },
+          {
+            title: "Automated Tax Invoicing",
+            desc: "NFC-e issued automatically through Focus NFe and emailed to the customer, with StreamDev's service invoices through Asaas.",
+          },
+          {
+            title: "Delivery Areas on the Map",
+            desc: "Mapbox and ViaCEP integration for address geocoding and visual definition of delivery areas and radiuses.",
+          },
+          {
+            title: "Super Admin Panel",
+            desc: "Management of stores, plans, subscriptions, billing, onboarding, support and overall platform health.",
+          },
+        ],
+        team: [
+          {
+            role: "Co-founder & Software Engineer",
+            resp: "Multi-tenant architecture, front-end, back-end, financial and tax integrations, admin panels and CI/CD infrastructure",
           },
         ],
       },
@@ -348,6 +404,50 @@ const en = {
           "Automatic Alerts: Per-room threshold checks",
         ],
       },
+      autopintura: {
+        title: "Auto Pintura Luizinho",
+        subtitle: "Institutional Landing Page",
+        description:
+          "A one-page institutional site for an auto body, paint and detailing shop, focused on attracting local customers and generating quote requests. A lightweight static page with no framework dependency, built to load fast and convert.",
+        story:
+          "I built the entire Auto Pintura Luizinho landing page, from layout to publishing. The goal was simple and direct: turn local visits into quote requests. I chose a static page in semantic HTML5, CSS3 and Tailwind, with no framework, so it loads fast even on mobile connections. All interactivity is plain JavaScript, with scroll-triggered entrance animations using IntersectionObserver and performant transitions through requestAnimationFrame. The conversion path runs through a WhatsApp deep link that opens the chat ready for a quote. I also handled SEO, with descriptive meta tags, lazy-loaded images and font preconnect, and accessibility, with ARIA attributes, adequate contrast and keyboard navigation.",
+        period: "2022 - 2025",
+        role: "Solo Full Stack",
+        teamSize: "Solo project",
+        responsibilities: [
+          "Complete Development: Layout, code and publishing of the page",
+          "Visual Identity: Custom, conversion-oriented design",
+          "Mobile-first: Responsive design built for phones first",
+          "Interactivity: Scroll animations, mobile menu, testimonials and FAQ",
+          "Conversion: WhatsApp deep link for instant quote requests",
+          "SEO and Performance: Meta tags, lazy loading, preconnect and a light page",
+          "Accessibility: ARIA attributes, contrast and keyboard navigation",
+        ],
+        features: [
+          {
+            title: "Quotes via WhatsApp",
+            desc: "wa.me deep links at key points of the page, opening a chat already aimed at requesting a quote.",
+          },
+          {
+            title: "Plain JavaScript Animations",
+            desc: "Scroll entrances with IntersectionObserver and transitions through requestAnimationFrame, with no animation library at all.",
+          },
+          {
+            title: "Testimonials and FAQ",
+            desc: "Customer testimonials and an accordion FAQ section, clearing up questions before the first contact.",
+          },
+          {
+            title: "SEO and Fast Loading",
+            desc: "Descriptive meta tags, theme-color, lazy-loaded images and font preconnect on a page with no framework.",
+          },
+        ],
+        team: [
+          {
+            role: "Solo Full Stack Developer",
+            resp: "Complete landing page development, from design and code through to SEO, accessibility and publishing",
+          },
+        ],
+      },
     },
   },
 
@@ -441,6 +541,17 @@ const en = {
           "Solo development focused on scalability",
         ],
       },
+      autopintura: {
+        period: "2022 - 2025",
+        title: "Full Stack Developer",
+        org: "Auto Pintura Luizinho - Consulting",
+        bullets: [
+          "One-page institutional landing page for an auto body shop",
+          "Semantic HTML5, CSS3 and Tailwind CSS with a mobile-first design",
+          "Interactivity in plain JavaScript, with no framework dependency",
+          "WhatsApp, Google Maps and Instagram integrations, aimed at quote requests",
+        ],
+      },
       streamdev: {
         period: "Jan/2026 - Present",
         title: "Software Engineer and Co-founder",
@@ -448,9 +559,23 @@ const en = {
         bullets: [
           "Technical leadership and project management at my own software house",
           "Architecture of Bloco3D, an e-commerce for the 3D technology market",
-          "React, Next.js and TypeScript integrated with Supabase",
-          "Administrative infrastructure on top of the Medusa framework",
-          "Bling (ERP) and Mercado Pago integrations, compliant with the LGPD",
+          "Next.js 15 and React over a headless backend with Medusa v2 and Supabase",
+          "Serverless infrastructure on Google Cloud Run, with Docker and CI/CD",
+          "Asynchronous webhooks with Pub/Sub and Redis, preventing duplicate payments",
+          "Bling (ERP), Mercado Pago and Melhor Envio integrations, under the LGPD",
+        ],
+      },
+      menudigital: {
+        period: "Jan/2026 - Present",
+        title: "Architecture and Full Stack",
+        org: "MenuDigital - StreamDev SaaS",
+        bullets: [
+          "Multi-tenant digital-menu SaaS with stores running commercially",
+          "React 19, React Router 7, Tailwind CSS, Node.js and PostgreSQL",
+          "Mercado Pago with splitting, Focus NFe for NFC-e and Asaas for service invoices",
+          "WhatsApp through the Evolution API, Web Push and real time with Socket.IO",
+          "Super Admin panel for stores, plans, billing and platform health",
+          "Monorepo with npm workspaces and CI/CD through GitHub Actions",
         ],
       },
     },

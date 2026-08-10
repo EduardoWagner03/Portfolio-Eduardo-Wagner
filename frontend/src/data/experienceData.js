@@ -9,5 +9,7 @@ export const experience = [
   { id: "thermal", icon: "Thermometer", accent: "flux" },
   { id: "flowtime", icon: "Briefcase", accent: "pulse" },
   { id: "tonner", icon: "LaptopMinimal", accent: "flux" },
+  { id: "autopintura", icon: "Palette", accent: "pulse" },
   { id: "streamdev", icon: "Rocket", accent: "pulse", current: true },
+  { id: "menudigital", icon: "UtensilsCrossed", accent: "flux", current: true },
 ];
