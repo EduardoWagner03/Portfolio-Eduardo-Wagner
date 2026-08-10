@@ -412,8 +412,8 @@ const pt = {
         description:
           "Site institucional one-page para uma oficina de funilaria, pintura automotiva e estética, com foco em captação de clientes locais e geração de orçamentos. Página estática leve, sem dependência de framework, construída para carregar rápido e converter.",
         story:
-          "Desenvolvi a landing page completa da Auto Pintura Luizinho, do layout à publicação. O objetivo era simples e direto: transformar visitas locais em pedidos de orçamento. Optei por uma página estática em HTML5 semântico, CSS3 e Tailwind, sem framework, para garantir carregamento rápido mesmo em conexões móveis. A interatividade toda é em JavaScript puro, com animações de entrada por scroll usando IntersectionObserver e transições performáticas com requestAnimationFrame. O caminho de conversão passa pelo deep link do WhatsApp, que abre a conversa já pronta para o orçamento. Também cuidei do SEO, com meta tags descritivas, carregamento lazy de imagens e preconnect de fontes, e da acessibilidade, com atributos ARIA, contraste adequado e navegação por teclado.",
-        period: "2022 - 2025",
+          "Desenvolvi a landing page completa da Auto Pintura Luizinho em 2026, do layout à publicação. O objetivo era simples e direto: transformar visitas locais em pedidos de orçamento. Optei por uma página estática em HTML5 semântico, CSS3 e Tailwind, sem framework, para garantir carregamento rápido mesmo em conexões móveis. A interatividade toda é em JavaScript puro, com animações de entrada por scroll usando IntersectionObserver e transições performáticas com requestAnimationFrame. O caminho de conversão passa pelo deep link do WhatsApp, que abre a conversa já pronta para o orçamento. Também cuidei do SEO, com meta tags descritivas, carregamento lazy de imagens e preconnect de fontes, e da acessibilidade, com atributos ARIA, contraste adequado e navegação por teclado.",
+        period: "2026",
         role: "Full Stack Solo",
         teamSize: "Projeto individual",
         responsibilities: [
@@ -470,9 +470,9 @@ const pt = {
         ],
       },
       college: {
-        period: "Fev/2022 - Dez/2025",
-        title: "Bacharelado em Engenharia de Software",
-        org: "Centro Universitário UGV · Concluído",
+        period: "Fev/2022",
+        title: "Início do Bacharelado em Engenharia de Software",
+        org: "Centro Universitário UGV",
         bullets: [
           "Foco em desenvolvimento web e desktop",
           "Projetos com JavaScript, Node.js, PostgreSQL, Firebase, Google Cloud",
@@ -543,15 +543,12 @@ const pt = {
           "Desenvolvimento individual com foco em escalabilidade",
         ],
       },
-      autopintura: {
-        period: "2022 - 2025",
-        title: "Desenvolvedor Full Stack",
-        org: "Auto Pintura Luizinho - Consultoria",
+      graduation: {
+        period: "Dez/2025",
+        title: "Conclusão do Bacharelado em Engenharia de Software",
+        org: "Centro Universitário UGV · Concluído",
         bullets: [
-          "Landing page institucional one-page para oficina automotiva",
-          "HTML5 semântico, CSS3 e Tailwind CSS com design mobile-first",
-          "Interatividade em JavaScript puro, sem dependência de framework",
-          "Integração com WhatsApp, Google Maps e Instagram, com foco em orçamentos",
+          "Graduação concluída em dezembro de 2025",
         ],
       },
       streamdev: {
@@ -567,8 +564,21 @@ const pt = {
           "Integrações com Bling (ERP), Mercado Pago e Melhor Envio, sob a LGPD",
         ],
       },
+      bloco3d: {
+        period: "2026 - Presente",
+        title: "Arquitetura e Full Stack",
+        org: "Bloco3D - E-commerce da StreamDev",
+        bullets: [
+          "E-commerce especializado no mercado de tecnologia 3D",
+          "Next.js 15 e React sobre backend headless com Medusa v2 e Supabase",
+          "Infraestrutura serverless no Cloud Run, com Docker e CI/CD via Cloud Build",
+          "Webhooks assíncronos com Pub/Sub e Redis, sem processamento duplicado",
+          "Mercado Pago, Bling ERP via OAuth2 e Melhor Envio/Jadlog",
+          "2FA, validação de webhooks, logs de auditoria e testes em Jest no CI",
+        ],
+      },
       menudigital: {
-        period: "Jan/2026 - Presente",
+        period: "2026 - Presente",
         title: "Arquitetura e Full Stack",
         org: "MenuDigital - SaaS da StreamDev",
         bullets: [
@@ -578,6 +588,17 @@ const pt = {
           "WhatsApp via Evolution API, Web Push e tempo real com Socket.IO",
           "Painel Super Admin de lojas, planos, billing e saúde da plataforma",
           "Monorepo com npm workspaces e CI/CD via GitHub Actions",
+        ],
+      },
+      autopintura: {
+        period: "2026",
+        title: "Desenvolvedor Full Stack",
+        org: "Auto Pintura Luizinho - Cliente",
+        bullets: [
+          "Landing page institucional one-page para oficina automotiva",
+          "HTML5 semântico, CSS3 e Tailwind CSS com design mobile-first",
+          "Interatividade em JavaScript puro, sem dependência de framework",
+          "Integração com WhatsApp, Google Maps e Instagram, com foco em orçamentos",
         ],
       },
     },

@@ -9,7 +9,9 @@ export const experience = [
   { id: "thermal", icon: "Thermometer", accent: "flux" },
   { id: "flowtime", icon: "Briefcase", accent: "pulse" },
   { id: "tonner", icon: "LaptopMinimal", accent: "flux" },
-  { id: "autopintura", icon: "Palette", accent: "pulse" },
+  { id: "graduation", icon: "GraduationCap", accent: "pulse" },
   { id: "streamdev", icon: "Rocket", accent: "pulse", current: true },
-  { id: "menudigital", icon: "UtensilsCrossed", accent: "flux", current: true },
+  { id: "bloco3d", icon: "Boxes", accent: "flux", current: true },
+  { id: "menudigital", icon: "UtensilsCrossed", accent: "pulse", current: true },
+  { id: "autopintura", icon: "Palette", accent: "flux" },
 ];

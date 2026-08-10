@@ -410,8 +410,8 @@ const en = {
         description:
           "A one-page institutional site for an auto body, paint and detailing shop, focused on attracting local customers and generating quote requests. A lightweight static page with no framework dependency, built to load fast and convert.",
         story:
-          "I built the entire Auto Pintura Luizinho landing page, from layout to publishing. The goal was simple and direct: turn local visits into quote requests. I chose a static page in semantic HTML5, CSS3 and Tailwind, with no framework, so it loads fast even on mobile connections. All interactivity is plain JavaScript, with scroll-triggered entrance animations using IntersectionObserver and performant transitions through requestAnimationFrame. The conversion path runs through a WhatsApp deep link that opens the chat ready for a quote. I also handled SEO, with descriptive meta tags, lazy-loaded images and font preconnect, and accessibility, with ARIA attributes, adequate contrast and keyboard navigation.",
-        period: "2022 - 2025",
+          "I built the entire Auto Pintura Luizinho landing page in 2026, from layout to publishing. The goal was simple and direct: turn local visits into quote requests. I chose a static page in semantic HTML5, CSS3 and Tailwind, with no framework, so it loads fast even on mobile connections. All interactivity is plain JavaScript, with scroll-triggered entrance animations using IntersectionObserver and performant transitions through requestAnimationFrame. The conversion path runs through a WhatsApp deep link that opens the chat ready for a quote. I also handled SEO, with descriptive meta tags, lazy-loaded images and font preconnect, and accessibility, with ARIA attributes, adequate contrast and keyboard navigation.",
+        period: "2026",
         role: "Solo Full Stack",
         teamSize: "Solo project",
         responsibilities: [
@@ -468,9 +468,9 @@ const en = {
         ],
       },
       college: {
-        period: "Feb/2022 - Dec/2025",
-        title: "BSc in Software Engineering",
-        org: "UGV University Center · Completed",
+        period: "Feb/2022",
+        title: "Started the BSc in Software Engineering",
+        org: "UGV University Center",
         bullets: [
           "Focused on web and desktop development",
           "Projects with JavaScript, Node.js, PostgreSQL, Firebase, Google Cloud",
@@ -541,15 +541,12 @@ const en = {
           "Solo development focused on scalability",
         ],
       },
-      autopintura: {
-        period: "2022 - 2025",
-        title: "Full Stack Developer",
-        org: "Auto Pintura Luizinho - Consulting",
+      graduation: {
+        period: "Dec/2025",
+        title: "Completed the BSc in Software Engineering",
+        org: "UGV University Center · Completed",
         bullets: [
-          "One-page institutional landing page for an auto body shop",
-          "Semantic HTML5, CSS3 and Tailwind CSS with a mobile-first design",
-          "Interactivity in plain JavaScript, with no framework dependency",
-          "WhatsApp, Google Maps and Instagram integrations, aimed at quote requests",
+          "Degree completed in December 2025",
         ],
       },
       streamdev: {
@@ -565,8 +562,21 @@ const en = {
           "Bling (ERP), Mercado Pago and Melhor Envio integrations, under the LGPD",
         ],
       },
+      bloco3d: {
+        period: "2026 - Present",
+        title: "Architecture and Full Stack",
+        org: "Bloco3D - StreamDev E-commerce",
+        bullets: [
+          "E-commerce specialized in the 3D technology market",
+          "Next.js 15 and React over a headless backend with Medusa v2 and Supabase",
+          "Serverless infrastructure on Cloud Run, with Docker and CI/CD via Cloud Build",
+          "Asynchronous webhooks with Pub/Sub and Redis, with no duplicate processing",
+          "Mercado Pago, Bling ERP through OAuth2 and Melhor Envio/Jadlog",
+          "2FA, webhook validation, audit logs and Jest tests in the CI pipeline",
+        ],
+      },
       menudigital: {
-        period: "Jan/2026 - Present",
+        period: "2026 - Present",
         title: "Architecture and Full Stack",
         org: "MenuDigital - StreamDev SaaS",
         bullets: [
@@ -576,6 +586,17 @@ const en = {
           "WhatsApp through the Evolution API, Web Push and real time with Socket.IO",
           "Super Admin panel for stores, plans, billing and platform health",
           "Monorepo with npm workspaces and CI/CD through GitHub Actions",
+        ],
+      },
+      autopintura: {
+        period: "2026",
+        title: "Full Stack Developer",
+        org: "Auto Pintura Luizinho - Client",
+        bullets: [
+          "One-page institutional landing page for an auto body shop",
+          "Semantic HTML5, CSS3 and Tailwind CSS with a mobile-first design",
+          "Interactivity in plain JavaScript, with no framework dependency",
+          "WhatsApp, Google Maps and Instagram integrations, aimed at quote requests",
         ],
       },
     },
