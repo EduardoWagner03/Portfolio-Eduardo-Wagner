@@ -66,12 +66,15 @@ const pt = {
       },
     ],
     orbit: [
-      "Engenharia de Software",
-      "Banco de Dados",
-      "Nuvem",
-      "Jira",
-      "Aplicações Desktop",
-      "GitHub",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Supabase",
+      "Google Cloud",
+      "Docker",
+      "Firebase",
     ],
   },
 
@@ -83,6 +86,15 @@ const pt = {
     introTitle: "Olá! Eu sou Eduardo",
     introText:
       "Desenvolvedor de 23 anos, de Irineópolis (SC), bacharel em Engenharia de Software. Minha jornada na programação começou pela curiosidade de entender como as tecnologias funcionam. Hoje, quatro anos depois, transformo requisitos de negócio em sistemas robustos para web e desktop, com foco em código limpo, escalabilidade e entrega contínua de valor.",
+    courseLogoAlt:
+      "Logo oficial do curso de Engenharia de Software da UGV",
+    education: {
+      badge: "Formação",
+      course: "Bacharelado em Engenharia de Software",
+      institution: "UGV - Centro Universitário",
+      period:
+        "2022 - 2025 · TCC nota 10 · Colação de grau em março de 2026",
+    },
     graduationAlt:
       "Eduardo Wagner com beca e canudo na formatura em Engenharia de Software",
     graduationCaption:
@@ -462,6 +474,7 @@ const pt = {
     title: "Experiência Profissional",
     subtitle: "Minha evolução prática no desenvolvimento de software",
     currentLabel: "Atual",
+    courseLogoAlt: "Logo oficial do curso de Engenharia de Software da UGV",
     items: {
       studies: {
         period: "2021",

@@ -65,12 +65,15 @@ const en = {
       },
     ],
     orbit: [
-      "Software Engineering",
-      "Databases",
-      "Cloud",
-      "Jira",
-      "Desktop Apps",
-      "GitHub",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Supabase",
+      "Google Cloud",
+      "Docker",
+      "Firebase",
     ],
   },
 
@@ -81,6 +84,15 @@ const en = {
     introTitle: "Hi! I'm Eduardo",
     introText:
       "A 23-year-old developer from Irineópolis, Brazil, with a bachelor's degree in Software Engineering. My journey into programming started with the curiosity to understand how technology works. Four years on, I turn business requirements into robust web and desktop systems, with a focus on clean code, scalability and continuous delivery of value.",
+    courseLogoAlt:
+      "Official logo of the Software Engineering course at UGV",
+    education: {
+      badge: "Education",
+      course: "BSc in Software Engineering",
+      institution: "UGV - University Center",
+      period:
+        "2022 - 2025 · Thesis graded 10 · Graduation ceremony in March 2026",
+    },
     graduationAlt:
       "Eduardo Wagner in cap and gown at his Software Engineering graduation",
     graduationCaption:
@@ -460,6 +472,7 @@ const en = {
     title: "Professional Experience",
     subtitle: "How my software development practice has evolved",
     currentLabel: "Current",
+    courseLogoAlt: "Official logo of the Software Engineering course at UGV",
     items: {
       studies: {
         period: "2021",

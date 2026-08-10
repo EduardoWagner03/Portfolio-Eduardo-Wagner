@@ -88,13 +88,21 @@ export default function About() {
             </dl>
 
             {/* Retrato de formatura: fecha o cartão de identidade. */}
-            <figure className="mt-7">
+            <figure className="relative mt-7">
               <img
                 src={profile.graduationPhoto}
                 alt={t.about.graduationAlt}
                 loading="lazy"
                 decoding="async"
                 className="aspect-square w-full rounded-2xl object-cover object-top ring-1 ring-flux-400/25"
+              />
+              {/* Selo do curso sobre a foto, no canto oposto ao rosto. */}
+              <img
+                src={profile.courseLogo}
+                alt=""
+                loading="lazy"
+                decoding="async"
+                className="absolute right-3 top-3 h-12 w-12 rounded-xl object-contain shadow-glass ring-1 ring-white/25"
               />
               <figcaption
                 className={cn(T.faint, "mt-3 text-center text-xs")}
@@ -113,9 +121,21 @@ export default function About() {
               <RevealItem key={item.title} variant="slideRight">
                 <GlassCard className="p-6 sm:p-7">
                   <div className="flex flex-col gap-4 sm:flex-row sm:gap-5">
-                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-flux-400/25 bg-gradient-to-br from-flux-400/15 to-pulse-500/15 text-flux-600 dark:text-flux-300">
-                      <Icon className="h-5 w-5" aria-hidden="true" />
-                    </span>
+                    {/* O primeiro cartão é o da formação: ali a logo do curso
+                        diz mais do que o ícone genérico de capelo. */}
+                    {index === 0 ? (
+                      <img
+                        src={profile.courseLogo}
+                        alt={t.about.courseLogoAlt}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-11 w-11 shrink-0 rounded-xl object-contain ring-1 ring-flux-400/25"
+                      />
+                    ) : (
+                      <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-flux-400/25 bg-gradient-to-br from-flux-400/15 to-pulse-500/15 text-flux-600 dark:text-flux-300">
+                        <Icon className="h-5 w-5" aria-hidden="true" />
+                      </span>
+                    )}
                     <div>
                       <h4
                         className={cn(
@@ -142,6 +162,40 @@ export default function About() {
           })}
         </RevealGroup>
       </div>
+
+      {/* ------------------------------------------- Faixa de formação */}
+      <Reveal className="mt-6">
+        <GlassCard interactive={false} className="p-6 sm:p-7">
+          <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center">
+            <img
+              src={profile.courseLogo}
+              alt={t.about.courseLogoAlt}
+              loading="lazy"
+              decoding="async"
+              className="h-20 w-20 shrink-0 rounded-2xl object-contain ring-1 ring-flux-400/25"
+            />
+            <div className="min-w-0">
+              <p
+                className={cn(
+                  T.faint,
+                  "text-[0.65rem] uppercase tracking-[0.16em]"
+                )}
+              >
+                {t.about.education.badge}
+              </p>
+              <h3 className={cn(T.heading, "mt-1.5 text-lg sm:text-xl")}>
+                {t.about.education.course}
+              </h3>
+              <p className={cn(T.body, "mt-1 text-sm")}>
+                {t.about.education.institution}
+              </p>
+              <p className={cn(T.faint, "mt-2 font-mono text-xs")}>
+                {t.about.education.period}
+              </p>
+            </div>
+          </div>
+        </GlassCard>
+      </Reveal>
 
       {/* -------------------------------------------------- Faixa de CTA */}
       <Reveal className="mt-6">

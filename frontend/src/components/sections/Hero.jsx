@@ -4,16 +4,23 @@ import {
   ArrowRight,
   Cloud,
   Cog,
-  Database,
   Mail,
-  Monitor,
   MousePointerClick,
   Rocket,
   Sparkles,
   Wrench,
 } from "lucide-react";
-import { SiJira } from "react-icons/si";
-import { FaGithub } from "react-icons/fa6";
+import {
+  SiDocker,
+  SiFirebase,
+  SiGooglecloud,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiReact,
+  SiSupabase,
+  SiTypescript,
+} from "react-icons/si";
 import { cn } from "../../lib/cn";
 import { Badge, Button, GlassCard, T } from "../ui/primitives";
 import Reveal, { RevealGroup, RevealItem } from "../ui/Reveal";
@@ -24,15 +31,34 @@ import { profile } from "../../data/profile";
 
 const STAT_ICONS = [Cog, Wrench, Cloud];
 
-// Ícones orbitais e sua posição no anel ao redor da foto.
+// Ícones orbitais. A ordem espelha `hero.orbit` no dicionário de idioma e traz
+// o núcleo da stack: é o que a pessoa precisa reconhecer nos primeiros
+// segundos. As posições são calculadas em vez de escritas à mão, para o anel
+// continuar distribuído por igual quando um ícone entra ou sai da lista.
 const ORBIT = [
-  { Icon: Cog, at: "left-0 top-6 sm:-left-2" },
-  { Icon: Database, at: "right-2 top-0 sm:-top-2" },
-  { Icon: Cloud, at: "-right-1 top-1/3 sm:-right-4" },
-  { Icon: SiJira, at: "bottom-8 -right-1 sm:-right-3" },
-  { Icon: Monitor, at: "bottom-0 left-8" },
-  { Icon: FaGithub, at: "-left-1 bottom-1/3 sm:-left-4" },
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiNodedotjs,
+  SiPostgresql,
+  SiSupabase,
+  SiGooglecloud,
+  SiDocker,
+  SiFirebase,
 ];
+
+// Raio em % do lado do quadrado. 47% deixa o chip centrado sobre a borda do
+// anel, meio dentro e meio fora.
+const ORBIT_RADIUS = 47;
+
+function orbitPosition(index, total) {
+  // Começa no topo (-90°) e segue no sentido horário.
+  const angle = (-90 + (360 / total) * index) * (Math.PI / 180);
+  return {
+    left: `${50 + ORBIT_RADIUS * Math.cos(angle)}%`,
+    top: `${50 + ORBIT_RADIUS * Math.sin(angle)}%`,
+  };
+}
 
 export default function Hero() {
   const { t } = useI18n();
@@ -176,10 +202,11 @@ export default function Hero() {
             </div>
 
             {/* Chips de tecnologia orbitando */}
-            {ORBIT.map(({ Icon, at }, index) => (
+            {ORBIT.map((Icon, index) => (
               <motion.div
                 key={t.hero.orbit[index]}
-                className={cn("absolute z-10", at)}
+                className="absolute z-10 -translate-x-1/2 -translate-y-1/2"
+                style={orbitPosition(index, ORBIT.length)}
                 animate={reduce ? undefined : { y: [0, -10, 0] }}
                 transition={{
                   duration: 5 + index * 0.55,
@@ -188,22 +215,30 @@ export default function Hero() {
                   delay: index * 0.3,
                 }}
               >
-                <div
+                {/* O hover vive numa camada própria, por dentro da flutuação:
+                    assim a mola do hover e o vaivém contínuo não disputam a
+                    mesma propriedade de transform. A mola também segura o
+                    chip parado embaixo do cursor, o que antes causava o
+                    liga-desliga que fazia o efeito parecer seco. */}
+                <motion.div
                   className={cn(
-                    "group/chip flex items-center gap-2 rounded-xl px-2.5 py-2",
+                    "group/chip flex cursor-default items-center gap-2 rounded-xl px-3 py-2.5",
                     T.glass,
-                    "shadow-glass transition duration-300 hover:shadow-glow"
+                    "shadow-glass transition-colors duration-500 ease-smooth",
+                    "hover:border-flux-400/50 hover:bg-flux-400/[0.07] hover:shadow-glow"
                   )}
                   title={t.hero.orbit[index]}
+                  whileHover={reduce ? undefined : { scale: 1.14, y: -8 }}
+                  transition={{ type: "spring", stiffness: 210, damping: 17 }}
                 >
                   <Icon
-                    className="h-4 w-4 shrink-0 text-flux-500 dark:text-flux-300"
+                    className="h-6 w-6 shrink-0 text-flux-500 dark:text-flux-300 sm:h-7 sm:w-7"
                     aria-hidden="true"
                   />
-                  <span className="max-w-0 overflow-hidden whitespace-nowrap text-xs font-medium text-slate-700 opacity-0 transition-all duration-300 group-hover/chip:max-w-[10rem] group-hover/chip:opacity-100 dark:text-slate-200">
+                  <span className="max-w-0 overflow-hidden whitespace-nowrap text-xs font-medium text-slate-700 opacity-0 transition-all duration-500 ease-smooth group-hover/chip:max-w-[10rem] group-hover/chip:opacity-100 dark:text-slate-200">
                     {t.hero.orbit[index]}
                   </span>
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>

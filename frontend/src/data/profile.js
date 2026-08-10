@@ -8,6 +8,8 @@ export const profile = {
   photo: "/images/eduardo-perfil.jpg",
   // Foto de formatura, exibida na seção "Sobre".
   graduationPhoto: "/images/eduardo-formatura.jpg",
+  // Logo oficial do curso, usada nos pontos ligados à formação.
+  courseLogo: "/images/ugv-engenharia-software.jpg",
   email: "eduardogwagner2003@gmail.com",
   linkedin: {
     url: "https://www.linkedin.com/in/eduardowagner03/",

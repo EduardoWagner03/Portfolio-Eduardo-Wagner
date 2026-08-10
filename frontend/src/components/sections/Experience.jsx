@@ -19,6 +19,7 @@ import { cn } from "../../lib/cn";
 import { GlassCard, Section, SectionHeading, T } from "../ui/primitives";
 import Reveal from "../ui/Reveal";
 import { experience } from "../../data/experienceData";
+import { profile } from "../../data/profile";
 import { useI18n } from "../../i18n";
 
 const ICONS = {
@@ -143,6 +144,17 @@ export default function Experience() {
                           />
                           {t.experience.currentLabel}
                         </span>
+                      )}
+                      {/* A logo entra no cartão, não no nó do trilho: lá ela
+                          teria 16px e o texto dela ficaria ilegível. */}
+                      {entry.logo && (
+                        <img
+                          src={profile.courseLogo}
+                          alt={t.experience.courseLogoAlt}
+                          loading="lazy"
+                          decoding="async"
+                          className="h-9 w-9 rounded-lg object-contain ring-1 ring-flux-400/25"
+                        />
                       )}
                     </div>
 
