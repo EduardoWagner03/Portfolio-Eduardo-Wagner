@@ -63,7 +63,7 @@ export const projects = [
   },
   {
     id: "menudigital",
-    status: "live",
+    status: "wip",
     // Sem screenshots ainda: cai na capa tipográfica gerada em CSS.
     cover: null,
     accent: "flux",
@@ -226,7 +226,7 @@ export const projects = [
   },
   {
     id: "thermaltech",
-    status: "wip",
+    status: "done",
     cover: "/images/ThermalTech.png",
     accent: "flux",
     link: null,

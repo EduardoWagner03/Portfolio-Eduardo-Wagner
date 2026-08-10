@@ -217,11 +217,11 @@ const en = {
       },
       menudigital: {
         title: "MenuDigital",
-        subtitle: "SaaS in Operation",
+        subtitle: "SaaS in Development",
         description:
-          "A multi-tenant SaaS for digital menus and restaurant management, with several stores running commercially. It covers the full order flow, from the customer browsing via link or QR Code through payment, tax invoicing and real-time tracking, plus the store owner panel and the platform's Super Admin.",
+          "A multi-tenant SaaS for digital menus and restaurant management, under active development and already running commercially in several stores. It covers the full order flow, from the customer browsing via link or QR Code through payment, tax invoicing and real-time tracking, plus the store owner panel and the platform's Super Admin.",
         story:
-          "MenuDigital is the SaaS platform I build at StreamDev, today with several stores running commercially. The architecture is multi-tenant, with data isolation between stores and access control applied at every layer. End customers browse the menu via link or QR Code, pay and follow the order in real time with Socket.IO. On the financial and tax side, I integrated Mercado Pago with payment splitting between store and platform, commissions and recurring subscriptions, Focus NFe for automated NFC-e issuing with email delivery, and Asaas for StreamDev's own service invoices. Customer communication runs through WhatsApp via the Evolution API plus Web Push notifications. I also built the Super Admin panel, covering stores, plans, subscriptions, billing, onboarding, support and platform health monitoring. Everything lives in a monorepo with npm workspaces and CI/CD through GitHub Actions, with separate staging and production environments.",
+          "MenuDigital is the SaaS platform I build at StreamDev, still under active development and already serving stores in commercial operation. The architecture is multi-tenant, with data isolation between stores and access control applied at every layer. End customers browse the menu via link or QR Code, pay and follow the order in real time with Socket.IO. On the financial and tax side, I integrated Mercado Pago with payment splitting between store and platform, commissions and recurring subscriptions, Focus NFe for automated NFC-e issuing with email delivery, and Asaas for StreamDev's own service invoices. Customer communication runs through WhatsApp via the Evolution API plus Web Push notifications. I also built the Super Admin panel, covering stores, plans, subscriptions, billing, onboarding, support and platform health monitoring. Everything lives in a monorepo with npm workspaces and CI/CD through GitHub Actions, with separate staging and production environments.",
         period: "Jan/2026 - Present",
         role: "Architecture & Full Stack",
         teamSize: "Technical lead",
@@ -355,12 +355,12 @@ const en = {
       },
       thermaltech: {
         title: "ThermalTech",
-        subtitle: "System in Progress",
+        subtitle: "Completed System",
         description:
-          "An academic project built as a pair: a CMMS system integrated with IoT for monitoring and controlling climate-controlled environments. It manages air-conditioning equipment, logs service tickets, generates work orders and monitors environmental conditions in real time through MQTT sensors, plus real-time team chat.",
+          "A completed academic project built as a pair: a CMMS system integrated with IoT for monitoring and controlling climate-controlled environments. It manages air-conditioning equipment, logs service tickets, generates work orders and monitors environmental conditions in real time through MQTT sensors, plus real-time team chat.",
         story:
-          "ThermalTech is being developed as part of an academic project started in 2025, built as a pair. The goal is a robust system for monitoring and automating industrial environments, integrating IoT sensors, dashboards, reporting and team communication. The system keeps evolving, receiving improvements and new features as development progresses.",
-        period: "2025 - Ongoing",
+          "ThermalTech was built as a pair for an academic project that started in 2025 and has since been completed. The goal was a robust system for monitoring and automating industrial environments, integrating IoT sensors, dashboards, reporting and team communication. The delivered result brings together real-time MQTT monitoring, ticket management, integrated chat and a security layer with audit middleware and threat detection.",
+        period: "2025",
         role: "Frontend & Security",
         teamSize: "Pair",
         responsibilities: [

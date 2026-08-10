@@ -219,11 +219,11 @@ const pt = {
       },
       menudigital: {
         title: "MenuDigital",
-        subtitle: "SaaS em Operação",
+        subtitle: "SaaS em Desenvolvimento",
         description:
-          "SaaS multi-tenant de cardápio digital e gestão para restaurantes e delivery, com múltiplas lojas em operação comercial. Cobre o fluxo completo do pedido, da navegação do cliente por link ou QR Code até pagamento, emissão fiscal e acompanhamento em tempo real, além do painel do lojista e do Super Admin da plataforma.",
+          "SaaS multi-tenant de cardápio digital e gestão para restaurantes e delivery, em desenvolvimento ativo e já com lojas em operação comercial. Cobre o fluxo completo do pedido, da navegação do cliente por link ou QR Code até pagamento, emissão fiscal e acompanhamento em tempo real, além do painel do lojista e do Super Admin da plataforma.",
         story:
-          "O MenuDigital é a plataforma SaaS que desenvolvo na StreamDev, hoje com múltiplas lojas em operação comercial. A arquitetura é multi-tenant, com isolamento de dados entre lojas e controle de acesso aplicado em cada camada. O cliente final navega pelo cardápio via link ou QR Code, paga e acompanha o pedido em tempo real com Socket.IO. Do lado financeiro e fiscal, integrei o Mercado Pago com split de pagamentos entre loja e plataforma, comissões e assinaturas recorrentes, o Focus NFe para emissão automatizada de NFC-e com envio por e-mail e o Asaas para as NFS-e da própria StreamDev. A comunicação com o cliente acontece por WhatsApp via Evolution API e notificações Web Push. Também desenvolvi o painel Super Admin, que cuida de lojas, planos, assinaturas, billing, onboarding, suporte e monitoramento da saúde da plataforma. Tudo em um monorepo com npm workspaces e CI/CD via GitHub Actions, com staging e produção separados.",
+          "O MenuDigital é a plataforma SaaS que desenvolvo na StreamDev, ainda em desenvolvimento ativo e já com lojas rodando em operação comercial. A arquitetura é multi-tenant, com isolamento de dados entre lojas e controle de acesso aplicado em cada camada. O cliente final navega pelo cardápio via link ou QR Code, paga e acompanha o pedido em tempo real com Socket.IO. Do lado financeiro e fiscal, integrei o Mercado Pago com split de pagamentos entre loja e plataforma, comissões e assinaturas recorrentes, o Focus NFe para emissão automatizada de NFC-e com envio por e-mail e o Asaas para as NFS-e da própria StreamDev. A comunicação com o cliente acontece por WhatsApp via Evolution API e notificações Web Push. Também desenvolvi o painel Super Admin, que cuida de lojas, planos, assinaturas, billing, onboarding, suporte e monitoramento da saúde da plataforma. Tudo em um monorepo com npm workspaces e CI/CD via GitHub Actions, com staging e produção separados.",
         period: "Jan/2026 - Presente",
         role: "Arquitetura & Full Stack",
         teamSize: "Liderança técnica",
@@ -357,12 +357,12 @@ const pt = {
       },
       thermaltech: {
         title: "ThermalTech",
-        subtitle: "Sistema em Andamento",
+        subtitle: "Sistema Finalizado",
         description:
-          "Projeto acadêmico em dupla que criou um sistema CMMS integrado com IoT para monitoramento e controle de ambientes climatizados. Permite gerenciar equipamentos de ar-condicionado, registrar chamados, gerar ordens de serviço e monitorar condições ambientais em tempo real via sensores MQTT. Conta ainda com chat em tempo real para equipes.",
+          "Projeto acadêmico finalizado, desenvolvido em dupla, que criou um sistema CMMS integrado com IoT para monitoramento e controle de ambientes climatizados. Permite gerenciar equipamentos de ar-condicionado, registrar chamados, gerar ordens de serviço e monitorar condições ambientais em tempo real via sensores MQTT. Conta ainda com chat em tempo real para equipes.",
         story:
-          "O ThermalTech está sendo desenvolvido como parte de um projeto acadêmico na faculdade, com início em 2025, desenvolvido em dupla. O objetivo é criar um sistema robusto para monitoramento e automação de ambientes industriais, integrando sensores IoT, dashboards, relatórios e comunicação entre equipes. O sistema está em constante evolução, recebendo melhorias e novas funcionalidades conforme o desenvolvimento avança.",
-        period: "2025 - Em andamento",
+          "O ThermalTech foi desenvolvido em dupla como projeto acadêmico da faculdade, com início em 2025 e desenvolvimento já concluído. O objetivo era criar um sistema robusto para monitoramento e automação de ambientes industriais, integrando sensores IoT, dashboards, relatórios e comunicação entre equipes. O resultado entregue reúne monitoramento em tempo real via MQTT, gestão de chamados, chat integrado e uma camada de segurança com middleware de auditoria e detecção de ameaças.",
+        period: "2025",
         role: "Frontend & Security",
         teamSize: "Dupla",
         responsibilities: [
