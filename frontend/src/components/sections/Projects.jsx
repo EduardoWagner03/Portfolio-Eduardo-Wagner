@@ -13,6 +13,24 @@ import { projects } from "../../data/projectsData";
 import { useI18n } from "../../i18n";
 
 /**
+ * Corta o texto na última palavra inteira antes do limite.
+ *
+ * O `line-clamp` do CSS resolve a altura, mas corta por caractere: as
+ * descrições terminavam em "infraestrutura serv..." e "navegação do clien...".
+ * Cortando aqui, o corte cai sempre entre palavras.
+ */
+// 160 e não 185: o texto justificado abre espaço entre as palavras e reduz o
+// que cabe em quatro linhas. Acima disso, o line-clamp voltava a cortar por
+// caractere nas descrições mais densas.
+function clampWords(text, max = 160) {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  const lastSpace = cut.lastIndexOf(" ");
+  // Tira pontuação solta antes das reticências ("3D:" vira "3D").
+  return `${cut.slice(0, lastSpace).replace(/[\s,.;:·-]+$/, "")}…`;
+}
+
+/**
  * Chip de status com semântica de cor:
  * verde = entregue, ciano pulsante = no ar hoje, âmbar = em construção.
  */
@@ -68,6 +86,7 @@ export default function Projects({ onSelect }) {
         {projects.map((project) => {
           const copy = t.projects.items[project.id];
           const highlights = project.stack.frontend.slice(0, 3);
+          const summary = clampWords(copy.description);
 
           return (
             <RevealItem key={project.id} variant="fadeUp" className="min-w-0">
@@ -105,9 +124,11 @@ export default function Projects({ onSelect }) {
                           />
                         </span>
                       ) : (
+                        // `truncate` e a largura limitada evitam que nomes
+                        // longos vazem pelas bordas da capa.
                         <span
                           aria-hidden="true"
-                          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-5xl font-bold text-white/[0.07] sm:text-6xl"
+                          className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 truncate px-4 text-center font-display text-5xl font-bold text-white/[0.07] sm:text-6xl"
                         >
                           {copy.title}
                         </span>
@@ -166,13 +187,16 @@ export default function Projects({ onSelect }) {
 
                 {/* Corpo */}
                 <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  {/* O texto já chega cortado em palavra inteira; o
+                      line-clamp fica como rede de segurança para larguras
+                      onde ele ainda passe de quatro linhas. */}
                   <p
                     className={cn(
                       T.body,
-                      "line-clamp-4 text-pretty text-justify hyphens-auto text-sm leading-relaxed"
+                      "line-clamp-4 text-pretty text-justify text-sm leading-relaxed"
                     )}
                   >
-                    {copy.description}
+                    {summary}
                   </p>
 
                   <ul className="mt-4 flex flex-wrap gap-1.5">
@@ -192,8 +216,11 @@ export default function Projects({ onSelect }) {
 
                   {/* Rodapé do cartão em duas linhas: a informação da equipe
                       em cima e as ações embaixo. Com os três lado a lado, o
-                      texto da equipe e os botões se espremiam e quebravam. */}
-                  <div className="mt-6 flex flex-col gap-2 pt-1">
+                      texto da equipe e os botões se espremiam e quebravam.
+                      `mt-auto` prende o bloco na base, para os rodapés dos
+                      cartões vizinhos alinharem mesmo quando um deles tem uma
+                      linha a mais de tecnologias. */}
+                  <div className="mt-auto flex flex-col gap-2 pt-6">
                     <span
                       className={cn(
                         T.faint,
