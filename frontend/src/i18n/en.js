@@ -464,10 +464,11 @@ const en = {
       studies: {
         period: "2021",
         title: "Started Studying Programming",
-        org: "Independent Courses",
+        org: "Curso em Vídeo · Gustavo Guanabara",
         bullets: [
-          "HTML5, CSS3, JavaScript",
-          "Static pages and programming logic fundamentals",
+          "First steps through Gustavo Guanabara's Programming Logic course",
+          "Algorithms and logic fundamentals before any specific language",
+          "HTML5, CSS3 and JavaScript, with my first static pages",
           "Version control with Git",
         ],
       },

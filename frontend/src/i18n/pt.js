@@ -466,10 +466,11 @@ const pt = {
       studies: {
         period: "2021",
         title: "Início nos Estudos de Programação",
-        org: "Cursos Livres",
+        org: "Curso em Vídeo · Gustavo Guanabara",
         bullets: [
-          "HTML5, CSS3, JavaScript",
-          "Páginas estáticas e fundamentos de lógica",
+          "Primeiro contato pelo curso de Lógica de Programação do Gustavo Guanabara",
+          "Fundamentos de algoritmos e lógica antes de qualquer linguagem",
+          "HTML5, CSS3 e JavaScript, com as primeiras páginas estáticas",
           "Versionamento com Git",
         ],
       },
