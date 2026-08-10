@@ -484,13 +484,14 @@ const en = {
         ],
       },
       events: {
-        period: "2022 - 2024",
+        period: "2022 - 2025",
         title: "Academic Events",
         org: "UGV University Center",
         bullets: [
           "17th Scientific Initiation Meeting 2022 - Attendee",
           "18th Scientific Initiation Meeting 2023 - Presenter",
           "19th Scientific Initiation Meeting 2024 - Attendee",
+          "20th Scientific Initiation Meeting 2025 - Presenter",
           "SEMTEC - UGV Technology Week 2022",
           "SEMTEC - UGV Technology Week 2024",
         ],

@@ -486,13 +486,14 @@ const pt = {
         ],
       },
       events: {
-        period: "2022 - 2024",
+        period: "2022 - 2025",
         title: "Participação em Eventos Acadêmicos",
         org: "Centro Universitário UGV",
         bullets: [
           "XVII Encontro de Iniciação Científica 2022 - Ouvinte",
           "XVIII Encontro de Iniciação Científica 2023 - Apresentação",
           "XIX Encontro de Iniciação Científica 2024 - Ouvinte",
+          "XX Encontro de Iniciação Científica 2025 - Apresentação",
           "SEMTEC - Semana de Tecnologia da UGV 2022",
           "SEMTEC - Semana de Tecnologia da UGV 2024",
         ],
