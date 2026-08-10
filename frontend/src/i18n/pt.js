@@ -3,9 +3,9 @@
 const pt = {
   meta: {
     locale: "pt-BR",
-    title: "Eduardo Wagner — Desenvolvedor Full Stack",
+    title: "Eduardo Wagner — Desenvolvedor Full Stack Pleno",
     description:
-      "Portfolio de Eduardo Gregório Wagner, Desenvolvedor Full Stack Júnior focado em Front-end. React, Node.js, PostgreSQL e integrações IoT.",
+      "Portfolio de Eduardo Gregório Wagner, Desenvolvedor Full Stack Pleno e sócio-fundador da StreamDev. React, Next.js, TypeScript, Node.js, PostgreSQL e Supabase.",
     switchTo: "EN",
     switchLabel: "Mudar idioma para inglês",
   },
@@ -38,30 +38,31 @@ const pt = {
     firstName: "Eduardo Gregório",
     lastName: "Wagner",
     roles: [
-      "Desenvolvedor Full Stack Júnior",
-      "Especialista em Front-end",
+      "Desenvolvedor Full Stack Pleno",
+      "React · Next.js · TypeScript",
+      "Sócio-fundador da StreamDev",
       "Engenheiro de Software",
-      "Integrações IoT & Tempo Real",
     ],
-    subtitle: "Desenvolvedor Full Stack Júnior focado em Front-end",
+    subtitle:
+      "Desenvolvedor Full Stack Pleno · React, Next.js e TypeScript",
     description:
-      "Desenvolvedor Full Stack Júnior, com foco em Frontend e experiência em desenvolvimento web e desktop. Atuação com React, Node.js, PostgreSQL, JavaScript, entre outras tecnologias. Comprometido em entregar soluções de qualidade, alinhando desempenho, usabilidade e boas práticas de desenvolvimento.",
+      "Bacharel em Engenharia de Software com 4 anos de experiência prática em desenvolvimento Full Stack e foco em Front-end. Trabalho com o ecossistema JavaScript moderno — React, Next.js e TypeScript — para criar interfaces de alta performance e escaláveis, cobrindo todo o ciclo do software: da arquitetura à entrega, com Node.js, PostgreSQL, Supabase e Firebase.",
     primaryCta: "Ver Projetos",
     secondaryCta: "Entre em Contato",
     scroll: "Role para explorar",
     photoAlt: "Eduardo Wagner",
     stats: [
       {
-        label: "Projetos de alto impacto",
-        desc: "Soluções completas para empresas e instituições",
+        label: "4 anos de experiência",
+        desc: "Ciclo completo: arquitetura, código, deploy e manutenção",
       },
       {
-        label: "Especialidade",
-        desc: "Full Stack & Integrações avançadas",
+        label: "Sócio-fundador da StreamDev",
+        desc: "Software house própria, com liderança técnica de projetos",
       },
       {
-        label: "Resultados",
-        desc: "Automação, performance e inovação",
+        label: "Bacharel em Eng. de Software",
+        desc: "UGV — Centro Universitário, concluído em 2025",
       },
     ],
     orbit: [
@@ -81,30 +82,34 @@ const pt = {
       "Desenvolvedor apaixonado por criar soluções que fazem a diferença",
     introTitle: "Olá! Eu sou Eduardo",
     introText:
-      "Desenvolvedor de 21 anos, natural do Paraná, cursando o último ano de Engenharia de Software. Minha jornada na programação começou pela curiosidade de entender como as tecnologias funcionam e como posso criar soluções que façam a diferença na vida das pessoas.",
+      "Desenvolvedor de 23 anos, de Irineópolis (SC), bacharel em Engenharia de Software. Minha jornada na programação começou pela curiosidade de entender como as tecnologias funcionam — hoje, quatro anos depois, transformo requisitos de negócio em sistemas robustos para web e desktop, com foco em código limpo, escalabilidade e entrega contínua de valor.",
     facts: [
-      { label: "Idade", value: "21 anos" },
-      { label: "Local", value: "Paraná, Brasil" },
-      { label: "Formação", value: "Eng. de Software" },
-      { label: "Conclusão", value: "Dez/2025" },
+      { label: "Idade", value: "23 anos" },
+      { label: "Local", value: "Irineópolis, SC" },
+      { label: "Formação", value: "Bacharel em Eng. de Software" },
+      { label: "Experiência", value: "4 anos" },
     ],
     journey: [
       {
         title: "Formação Acadêmica",
-        text: "Sou estudante do último período do curso de Engenharia de Software pela UGV – Centro Universitário, com formação prevista para dezembro de 2025. Durante a graduação, desenvolvi projetos completos aplicando metodologias ágeis, versionamento com Git/GitHub e integração entre frontend e backend. Atuei em projetos acadêmicos e pessoais, focando na criação de soluções reais para empresas e instituições.",
+        text: "Bacharel em Engenharia de Software pela UGV – Centro Universitário, com graduação concluída em dezembro de 2025. Durante a trajetória acadêmica, liderei múltiplas equipes de desenvolvimento em projetos práticos, aplicando metodologias ágeis e coordenando todo o ciclo de vida do software: da análise de requisitos e diagramação de arquitetura (UML/DER) até o deploy final em produção.",
       },
       {
-        title: "Trabalho em Equipe",
-        text: "Possuo facilidade para trabalhar em equipe, mantendo boa comunicação e colaboração no dia a dia. Tenho experiência prática em times organizados por metodologias ágeis, sempre contribuindo de forma proativa no desenvolvimento das tarefas. Utilizo Git, GitHub e Jira para manter o fluxo de trabalho organizado e eficiente.",
+        title: "StreamDev — Software House",
+        text: "Como sócio-fundador da StreamDev, respondo pela liderança técnica e pela gestão de projetos, com foco em soluções escaláveis e arquitetura de sistemas modernos. É onde reúno o stack que domino — React, Next.js, TypeScript e Supabase — para tirar produtos do papel e levá-los até a operação real do cliente.",
+      },
+      {
+        title: "Liderança e Trabalho em Equipe",
+        text: "Tenho experiência prática liderando e integrando times organizados por metodologias ágeis, mantendo comunicação clara e colaboração no dia a dia. Já atuei como Co-Líder Técnico e Líder de Frontend, dividindo escopo, revisando entregas e mantendo o fluxo de trabalho organizado com Git, GitHub e Jira.",
       },
       {
         title: "Filosofia de Trabalho",
         text: "Adoto uma filosofia de trabalho focada em comprometimento, organização e entrega de soluções funcionais. Busco sempre alinhar qualidade técnica com prazos definidos, mantendo atenção aos detalhes e buscando melhorias contínuas. Valorizo a clareza na comunicação e a colaboração para alcançar resultados consistentes em equipe.",
       },
     ],
-    ctaTitle: "Pronto para o próximo desafio",
+    ctaTitle: "Vamos construir algo juntos",
     ctaText:
-      "Estou em busca da minha primeira oportunidade como desenvolvedor júnior ou estágio, com foco em atuar de forma colaborativa em projetos reais, contribuindo para o crescimento da equipe e para a entrega de soluções eficientes e bem estruturadas.",
+      "Estou aberto a novos projetos, parcerias e oportunidades que envolvam produtos web modernos, e-commerce e sistemas sob medida. Se você precisa de alguém que assuma o problema do início ao fim — da arquitetura à operação em produção — vamos conversar.",
     ctaPrimary: "Vamos conversar",
     ctaSecondary: "Download CV",
   },
@@ -117,6 +122,7 @@ const pt = {
       frontend: "Frontend",
       backend: "Backend",
       database: "Banco de Dados",
+      commerce: "E-commerce & Integrações",
       cloud: "Serviços em Nuvem",
       desktop: "Desktop",
       tools: "Ferramentas",
@@ -131,9 +137,11 @@ const pt = {
     subtitle: "Alguns dos principais projetos que desenvolvi",
     viewDetails: "Ver Detalhes",
     openProject: "Abrir detalhes do projeto",
+    featured: "Destaque",
     status: {
       done: "Finalizado",
       wip: "Em Desenvolvimento",
+      live: "Em Operação",
     },
     modal: {
       close: "Fechar detalhes do projeto",
@@ -159,6 +167,51 @@ const pt = {
       hint: "Use as setas para navegar • ESC para fechar",
     },
     items: {
+      bloco3d: {
+        title: "Bloco3D",
+        subtitle: "Plataforma em Operação",
+        description:
+          "Plataforma de e-commerce especializada no mercado de tecnologia 3D — impressoras, filamentos e acessórios. Construída sobre React, Next.js e TypeScript com Supabase, e administrada por uma infraestrutura modular em Medusa, com sincronização de estoque e notas fiscais via API do Bling e pagamentos pelo Mercado Pago.",
+        story:
+          "O Bloco3D é o projeto que lidero na StreamDev, a software house da qual sou sócio-fundador. Assumi a arquitetura e o desenvolvimento de ponta a ponta: o front-end em React, Next.js e TypeScript; o Supabase cuidando de banco de dados, autenticação e storage; e o framework Medusa sustentando a área administrativa de forma modular e escalável. O trabalho incluiu dashboards administrativos complexos com sincronização via API do Bling para gestão de estoque e emissão de notas fiscais, a integração do gateway de pagamentos do Mercado Pago e a adequação total à LGPD.",
+        period: "Jan/2026 — Presente",
+        role: "Arquitetura & Full Stack",
+        teamSize: "Liderança técnica",
+        responsibilities: [
+          "Arquitetura da Plataforma — Definição de stack, modelagem e estrutura do projeto",
+          "Front-end em Next.js — Interfaces em React e TypeScript com foco em performance",
+          "Supabase — Banco de dados, autenticação e storage",
+          "Infraestrutura Medusa — Administração modular e escalável do e-commerce",
+          "Dashboards Administrativos — Painéis complexos de gestão e acompanhamento",
+          "Integração ERP — Sincronização de estoque e notas fiscais via API do Bling",
+          "Pagamentos — Integração do gateway do Mercado Pago",
+          "LGPD — Conformidade no tratamento de dados pessoais",
+        ],
+        features: [
+          {
+            title: "Loja em Next.js",
+            desc: "Vitrine e checkout construídos em React, Next.js e TypeScript, com catálogo especializado em impressoras 3D, filamentos e acessórios.",
+          },
+          {
+            title: "Administração com Medusa",
+            desc: "Painel administrativo sobre o framework Medusa, permitindo gestão modular de produtos, pedidos e operação da loja de forma escalável.",
+          },
+          {
+            title: "Estoque e Notas via Bling",
+            desc: "Sincronização automática com a API do Bling para controle de estoque e emissão de notas fiscais, eliminando lançamento manual.",
+          },
+          {
+            title: "Pagamentos e LGPD",
+            desc: "Checkout integrado ao gateway do Mercado Pago, com o tratamento de dados pessoais em total conformidade com a LGPD.",
+          },
+        ],
+        team: [
+          {
+            role: "Sócio-fundador & Engenheiro de Software",
+            resp: "Arquitetura, front-end em Next.js, integrações com ERP e gateway de pagamento, conformidade LGPD",
+          },
+        ],
+      },
       flowtime: {
         title: "FlowTime",
         subtitle: "Sistema Finalizado",
@@ -167,9 +220,11 @@ const pt = {
         story:
           "O FlowTime foi iniciado em outubro de 2024 e finalizado em janeiro de 2025, desenvolvido em equipe de 3 pessoas. O sistema surgiu da necessidade de digitalizar e automatizar o fluxo de trabalho em clínicas de podologia. O projeto oferece dashboard interativo, relatórios em PDF, assinatura digital e recursos avançados para facilitar o controle de agendamentos, pacientes e receitas. Com uma interface moderna e funcionalidades robustas, o FlowTime proporciona mais agilidade, segurança e qualidade no atendimento, sendo implementado com sucesso em ambiente real.",
         period: "Out/2024 — Jan/2025",
-        role: "Frontend Developer",
+        role: "Co-Líder Técnico & Front-end",
         teamSize: "Equipe de 3",
         responsibilities: [
+          "Co-Liderança Técnica — Condução do projeto junto ao time",
+          "Modelagem — Diagramas UML/DER e prototipagem no Figma",
           "Frontend Completo — Desenvolvimento de toda interface do usuário",
           "Gráficos Interativos — Implementação de dashboards e visualizações",
           "Sistema de Tokens — Desenvolvimento de autenticação e segurança",
@@ -192,8 +247,8 @@ const pt = {
         ],
         team: [
           {
-            role: "Frontend Developer",
-            resp: "Frontend completo, gráficos interativos, sistema de tokens de segurança",
+            role: "Co-Líder Técnico & Frontend Developer",
+            resp: "Co-liderança técnica, modelagem UML/DER, prototipagem no Figma, frontend completo, gráficos interativos, sistema de tokens de segurança",
           },
           {
             role: "Backend Developer",
@@ -302,6 +357,7 @@ const pt = {
     badge: "Trajetória Profissional",
     title: "Experiência Profissional",
     subtitle: "Minha evolução prática no desenvolvimento de software",
+    currentLabel: "Atual",
     items: {
       studies: {
         period: "2021",
@@ -315,12 +371,13 @@ const pt = {
       },
       college: {
         period: "Fev/2022 — Dez/2025",
-        title: "Engenharia de Software",
-        org: "Centro Universitário UGV",
+        title: "Bacharelado em Engenharia de Software",
+        org: "Centro Universitário UGV · Concluído",
         bullets: [
           "Foco em desenvolvimento web e desktop",
           "Projetos com JavaScript, Node.js, PostgreSQL, Firebase, Google Cloud",
-          "Participação em projetos reais e acadêmicos",
+          "Liderança de múltiplas equipes em projetos práticos",
+          "Ciclo completo: requisitos, arquitetura (UML/DER) e deploy em produção",
         ],
       },
       events: {
@@ -367,12 +424,13 @@ const pt = {
       },
       flowtime: {
         period: "Out/2024 — Jan/2025",
-        title: "Desenvolvedor Full Stack",
+        title: "Co-Líder Técnico e Líder de Frontend",
         org: "Projeto FlowTime",
         bullets: [
-          "Sistema para clínica de podologia com dashboard e relatórios",
+          "SaaS para clínica de podologia com dashboard e relatórios",
+          "Modelagem UML/DER e prototipagem no Figma",
           "Frontend (HTML, CSS, JS), backend com Node.js/Firebase",
-          "Desktop com Electron.js, entregue em ambiente real",
+          "Desktop com Electron.js, entregue em operação comercial",
         ],
       },
       tonner: {
@@ -385,6 +443,18 @@ const pt = {
           "Desenvolvimento individual com foco em escalabilidade",
         ],
       },
+      streamdev: {
+        period: "Jan/2026 — Presente",
+        title: "Engenheiro de Software e Sócio-Fundador",
+        org: "StreamDev — Software House",
+        bullets: [
+          "Liderança técnica e gestão de projetos em software house própria",
+          "Arquitetura do Bloco3D, e-commerce do mercado de tecnologia 3D",
+          "React, Next.js e TypeScript integrados ao Supabase",
+          "Infraestrutura administrativa sobre o framework Medusa",
+          "Integrações com API do Bling (ERP) e Mercado Pago, em conformidade com a LGPD",
+        ],
+      },
     },
   },
 
@@ -395,7 +465,7 @@ const pt = {
       "Estou sempre aberto a novas oportunidades e projetos interessantes",
     introTitle: "Vamos trabalhar juntos!",
     introText:
-      "Estou sempre aberto a novas oportunidades, parcerias e projetos inovadores. Se você tem uma ideia interessante ou precisa de um desenvolvedor dedicado para o seu time, vamos conversar!",
+      "Estou sempre aberto a novas oportunidades, parcerias e projetos inovadores — seja um produto web do zero, um e-commerce ou um sistema sob medida. Se você tem uma ideia interessante ou precisa de um desenvolvedor experiente no time, vamos conversar!",
     methods: {
       email: "Email",
       linkedin: "LinkedIn",
@@ -403,7 +473,7 @@ const pt = {
     },
     copy: "Copiar",
     copied: "Copiado!",
-    available: "Disponível para oportunidades",
+    available: "Disponível para novos projetos e parcerias",
     formTitle: "Envie uma mensagem",
     form: {
       name: "Nome",
@@ -429,8 +499,8 @@ const pt = {
   },
 
   footer: {
-    role: "Desenvolvedor Full Stack Júnior",
-    location: "Paraná, Brasil",
+    role: "Desenvolvedor Full Stack Pleno · StreamDev",
+    location: "Irineópolis, SC — Brasil",
     quote:
       "Transformando ideias em código, código em soluções, soluções em impacto",
     rights: "Todos os direitos reservados.",

@@ -7,6 +7,7 @@ import {
   GitBranch,
   MonitorSmartphone,
   Server,
+  ShoppingCart,
   Sparkles,
   Wrench,
 } from "lucide-react";
@@ -25,6 +26,7 @@ const ICONS = {
   Wrench,
   GitBranch,
   Sparkles,
+  ShoppingCart,
 };
 
 export default function Skills() {

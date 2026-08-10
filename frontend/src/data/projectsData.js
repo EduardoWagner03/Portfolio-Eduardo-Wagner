@@ -6,6 +6,39 @@
 
 export const projects = [
   {
+    id: "bloco3d",
+    status: "live",
+    // Sem screenshots ainda: o cartão e o modal caem em uma capa tipográfica
+    // gerada em CSS. Basta apontar `cover` para um arquivo em /public/images
+    // e preencher `gallery` para que as imagens passem a ser usadas.
+    cover: null,
+    accent: "pulse",
+    featured: true,
+    link: null,
+    repo: null,
+    gallery: [],
+    team: [{ name: "Eduardo Wagner", handle: "EduardoWagner03", self: true }],
+    stack: {
+      frontend: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript (ES6+)",
+        "HTML5",
+        "CSS3",
+      ],
+      backend: ["Medusa", "Node.js", "API Routes", "Webhooks"],
+      database: ["Supabase", "PostgreSQL", "Supabase Storage", "Supabase Auth"],
+      libraries: ["Medusa Admin", "Chart.js"],
+      integrations: [
+        "Mercado Pago",
+        "API Bling (ERP)",
+        "Emissão de NF-e",
+        "LGPD",
+      ],
+    },
+  },
+  {
     id: "flowtime",
     status: "done",
     cover: "/images/FlowTime.png",
@@ -201,33 +234,54 @@ export const teamSocials = {
 
 export const skills = {
   frontend: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "JavaScript ES6+",
     "HTML5",
     "CSS3",
-    "JavaScript ES6+",
     "Bootstrap",
-    "EJS",
     "Chart.js",
-    "jQuery",
+    "EJS",
+    "PWA",
   ],
-  backend: ["Node.js", "Express.js", "Python"],
+  backend: ["Node.js", "Express.js", "Medusa", "Python"],
   database: [
     "PostgreSQL",
+    "Supabase",
     "Firebase",
     "Firestore",
     "Firebase Storage",
     "Firebase Auth",
   ],
-  cloud: ["Google Cloud Platform", "Firebase"],
+  cloud: ["Google Cloud Platform", "Supabase", "Firebase"],
   desktop: ["Electron.js", "PWA"],
-  tools: ["Git", "GitHub", "SweetAlert2", "Multer", "WebSockets", "MQTT"],
+  commerce: [
+    "Medusa",
+    "Mercado Pago",
+    "API Bling (ERP)",
+    "Emissão de NF-e",
+    "LGPD",
+  ],
+  tools: [
+    "Git",
+    "GitHub",
+    "Jira",
+    "Figma",
+    "WebSockets",
+    "MQTT",
+    "SweetAlert2",
+    "Multer",
+  ],
   methodologies: [
     "Scrum",
-    "Jira",
     "Metodologias Ágeis",
     "Arquitetura MVC",
+    "UML / DER",
+    "Liderança Técnica",
     "Trabalho em Equipe",
   ],
-  learning: ["ReactJS", "React Native"],
+  learning: ["React Native"],
 };
 
 // Ordem de exibição e destaque visual de cada categoria de skill.
@@ -235,9 +289,10 @@ export const skillCategories = [
   { key: "frontend", icon: "Code2", accent: "flux", span: "md:col-span-2" },
   { key: "backend", icon: "Server", accent: "pulse" },
   { key: "database", icon: "Database", accent: "flux" },
-  { key: "cloud", icon: "Cloud", accent: "pulse" },
-  { key: "desktop", icon: "MonitorSmartphone", accent: "flux" },
-  { key: "tools", icon: "Wrench", accent: "pulse", span: "md:col-span-2" },
-  { key: "methodologies", icon: "GitBranch", accent: "flux" },
-  { key: "learning", icon: "Sparkles", accent: "pulse", learning: true },
+  { key: "commerce", icon: "ShoppingCart", accent: "pulse", span: "md:col-span-2" },
+  { key: "cloud", icon: "Cloud", accent: "flux" },
+  { key: "desktop", icon: "MonitorSmartphone", accent: "pulse" },
+  { key: "tools", icon: "Wrench", accent: "flux", span: "md:col-span-2" },
+  { key: "methodologies", icon: "GitBranch", accent: "pulse" },
+  { key: "learning", icon: "Sparkles", accent: "flux", learning: true },
 ];

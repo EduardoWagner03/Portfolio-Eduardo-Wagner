@@ -5,6 +5,7 @@ import {
   GraduationCap,
   Handshake,
   Lightbulb,
+  Rocket,
   Users,
   UserRoundSearch,
 } from "lucide-react";
@@ -14,7 +15,7 @@ import Reveal, { RevealGroup, RevealItem } from "../ui/Reveal";
 import { useI18n } from "../../i18n";
 import { profile } from "../../data/profile";
 
-const JOURNEY_ICONS = [GraduationCap, Users, Lightbulb];
+const JOURNEY_ICONS = [GraduationCap, Rocket, Users, Lightbulb];
 
 export default function About() {
   const { t } = useI18n();

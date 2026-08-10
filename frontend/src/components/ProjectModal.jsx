@@ -102,11 +102,20 @@ export default function ProjectModal({ project, onClose }) {
                 >
                   {/* ---------------------------------------- Capa do modal */}
                   <div className="relative aspect-[21/9] max-h-[19rem] w-full overflow-hidden">
-                    <img
-                      src={project.cover}
-                      alt={copy.title}
-                      className="h-full w-full object-cover object-top"
-                    />
+                    {project.cover ? (
+                      <img
+                        src={project.cover}
+                        alt={copy.title}
+                        className="h-full w-full object-cover object-top"
+                      />
+                    ) : (
+                      <div className="h-full w-full bg-gradient-to-br from-pulse-600/40 via-ink-900 to-flux-600/30">
+                        <span
+                          aria-hidden="true"
+                          className="block h-full w-full bg-grid-dark bg-grid-sm opacity-60"
+                        />
+                      </div>
+                    )}
                     <span
                       aria-hidden="true"
                       className="absolute inset-0 bg-white/40 dark:bg-ink-950/45"
@@ -286,10 +295,29 @@ export default function ProjectModal({ project, onClose }) {
                       </Block>
                     )}
 
-                    {/* Funcionalidades com galeria */}
+                    {/* Funcionalidades — com galeria quando houver imagens */}
                     <Block icon={Expand} title={t.projects.modal.features}>
                       <div className="flex flex-col gap-4">
-                        {copy.features.map((feature, index) => (
+                        {copy.features.map((feature, index) => {
+                          const image = project.gallery[index];
+                          if (!image) {
+                            return (
+                              <GlassCard key={feature.title} className="p-4 sm:p-5">
+                                <h4 className="font-display text-base font-semibold text-slate-900 dark:text-white">
+                                  {feature.title}
+                                </h4>
+                                <p
+                                  className={cn(
+                                    T.body,
+                                    "mt-2 text-pretty text-sm leading-relaxed"
+                                  )}
+                                >
+                                  {feature.desc}
+                                </p>
+                              </GlassCard>
+                            );
+                          }
+                          return (
                           <GlassCard
                             key={feature.title}
                             className="grid grid-cols-1 gap-5 p-4 sm:grid-cols-5 sm:p-5"
@@ -329,7 +357,8 @@ export default function ProjectModal({ project, onClose }) {
                               </p>
                             </div>
                           </GlassCard>
-                        ))}
+                          );
+                        })}
                       </div>
                     </Block>
 

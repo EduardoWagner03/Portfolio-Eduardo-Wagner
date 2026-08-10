@@ -8,6 +8,7 @@ import {
   Gamepad2,
   GraduationCap,
   LaptopMinimal,
+  Rocket,
   Route,
   Thermometer,
 } from "lucide-react";
@@ -26,6 +27,7 @@ const ICONS = {
   Thermometer,
   Briefcase,
   LaptopMinimal,
+  Rocket,
 };
 
 export default function Experience() {
@@ -86,7 +88,7 @@ export default function Experience() {
                   "relative pl-11 lg:grid lg:grid-cols-2 lg:gap-x-14 lg:pl-0"
                 )}
               >
-                {/* Nó do trilho */}
+                {/* Nó do trilho — a posição atual ganha um halo pulsante */}
                 <span
                   aria-hidden="true"
                   className={cn(
@@ -96,7 +98,10 @@ export default function Experience() {
                     "lg:left-1/2 lg:-translate-x-1/2"
                   )}
                 >
-                  <Icon className="h-4 w-4" />
+                  {entry.current && (
+                    <span className="absolute inset-0 rounded-full bg-pulse-400/40 motion-safe:animate-pulse-ring" />
+                  )}
+                  <Icon className="relative h-4 w-4" />
                 </span>
 
                 <Reveal
@@ -124,6 +129,15 @@ export default function Experience() {
                       >
                         {copy.period}
                       </span>
+                      {entry.current && (
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">
+                          <span
+                            aria-hidden="true"
+                            className="h-1.5 w-1.5 rounded-full bg-emerald-400 motion-safe:animate-pulse"
+                          />
+                          {t.experience.currentLabel}
+                        </span>
+                      )}
                     </div>
 
                     <h3

@@ -9,4 +9,5 @@ export const experience = [
   { id: "thermal", icon: "Thermometer", accent: "flux" },
   { id: "flowtime", icon: "Briefcase", accent: "pulse" },
   { id: "tonner", icon: "LaptopMinimal", accent: "flux" },
+  { id: "streamdev", icon: "Rocket", accent: "pulse", current: true },
 ];

@@ -1,29 +1,42 @@
 import React from "react";
-import { ArrowUpRight, FolderCode, Users } from "lucide-react";
+import { ArrowUpRight, FolderCode, Star, Users } from "lucide-react";
 import { cn } from "../../lib/cn";
 import { GlassCard, Section, SectionHeading, Tag, T } from "../ui/primitives";
 import { RevealGroup, RevealItem } from "../ui/Reveal";
 import { projects } from "../../data/projectsData";
 import { useI18n } from "../../i18n";
 
-/** Chip de status com semântica de cor (verde = entregue, âmbar = em curso). */
+/**
+ * Chip de status com semântica de cor:
+ * verde = entregue, ciano pulsante = no ar hoje, âmbar = em construção.
+ */
+const STATUS_STYLES = {
+  done: {
+    chip: "border-emerald-400/30 bg-emerald-400/15 text-emerald-700 dark:text-emerald-300",
+    dot: "bg-emerald-500",
+  },
+  live: {
+    chip: "border-flux-400/35 bg-flux-400/15 text-flux-700 dark:text-flux-200",
+    dot: "bg-flux-400 motion-safe:animate-pulse",
+  },
+  wip: {
+    chip: "border-amber-400/30 bg-amber-400/15 text-amber-700 dark:text-amber-300",
+    dot: "bg-amber-500 motion-safe:animate-pulse",
+  },
+};
+
 function StatusPill({ status, label }) {
-  const done = status === "done";
+  const style = STATUS_STYLES[status] ?? STATUS_STYLES.wip;
   return (
     <span
       className={cn(
         "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-wider backdrop-blur-md",
-        done
-          ? "border-emerald-400/30 bg-emerald-400/15 text-emerald-700 dark:text-emerald-300"
-          : "border-amber-400/30 bg-amber-400/15 text-amber-700 dark:text-amber-300"
+        style.chip
       )}
     >
       <span
         aria-hidden="true"
-        className={cn(
-          "h-1.5 w-1.5 rounded-full",
-          done ? "bg-emerald-500" : "bg-amber-500 motion-safe:animate-pulse"
-        )}
+        className={cn("h-1.5 w-1.5 rounded-full", style.dot)}
       />
       {label}
     </span>
@@ -58,13 +71,30 @@ export default function Projects({ onSelect }) {
               >
                 {/* Capa */}
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
-                    src={project.cover}
-                    alt={copy.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover object-top transition duration-700 ease-smooth group-hover/card:scale-[1.06]"
-                  />
+                  {project.cover ? (
+                    <img
+                      src={project.cover}
+                      alt={copy.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover object-top transition duration-700 ease-smooth group-hover/card:scale-[1.06]"
+                    />
+                  ) : (
+                    // Sem screenshot: capa tipográfica gerada, com a mesma
+                    // linguagem visual do resto do site.
+                    <div className="relative h-full w-full bg-gradient-to-br from-pulse-600/40 via-ink-900 to-flux-600/30">
+                      <span
+                        aria-hidden="true"
+                        className="absolute inset-0 bg-grid-dark bg-grid-sm opacity-60"
+                      />
+                      <span
+                        aria-hidden="true"
+                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-5xl font-bold text-white/[0.07] sm:text-6xl"
+                      >
+                        {copy.title}
+                      </span>
+                    </div>
+                  )}
                   {/* Duplo scrim: um véu geral + um degradê forte na base, para
                       que o título branco tenha contraste sobre qualquer print. */}
                   <span
@@ -75,11 +105,17 @@ export default function Projects({ onSelect }) {
                     aria-hidden="true"
                     className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/75 to-transparent"
                   />
-                  <div className="absolute left-4 top-4">
+                  <div className="absolute inset-x-4 top-4 flex flex-wrap gap-2">
                     <StatusPill
                       status={project.status}
                       label={t.projects.status[project.status]}
                     />
+                    {project.featured && (
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-flux-400/30 bg-flux-400/15 px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-wider text-flux-200 backdrop-blur-md">
+                        <Star className="h-3 w-3" aria-hidden="true" />
+                        {t.projects.featured}
+                      </span>
+                    )}
                   </div>
                   <div className="absolute inset-x-4 bottom-4 flex items-end justify-between gap-3">
                     <div className="min-w-0">

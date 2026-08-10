@@ -14,6 +14,11 @@ export const profile = {
     url: "https://github.com/EduardoWagner03",
     handle: "/EduardoWagner03",
   },
+  company: {
+    name: "StreamDev",
+    role: "Engenheiro de Software e Sócio-Fundador",
+    since: "2026",
+  },
   // Coloque o arquivo em frontend/public/cv.pdf para habilitar o botão.
   cv: "/cv.pdf",
 };
