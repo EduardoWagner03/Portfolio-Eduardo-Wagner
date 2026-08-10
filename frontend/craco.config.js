@@ -21,8 +21,16 @@ function injectTailwind(rules, found) {
   });
 }
 
+const path = require("path");
+
 module.exports = {
   webpack: {
+    // O webpack do CRA não lê `paths` do jsconfig.json, então o alias `@/`
+    // precisa ser declarado aqui para valer também no build — do contrário
+    // funcionaria só no editor e quebraria ao compilar.
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
     configure: (webpackConfig) => {
       const found = { count: 0 };
       injectTailwind(webpackConfig.module.rules, found);
