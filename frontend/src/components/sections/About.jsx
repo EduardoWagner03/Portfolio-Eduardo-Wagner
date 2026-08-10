@@ -86,6 +86,22 @@ export default function About() {
                 </div>
               ))}
             </dl>
+
+            {/* Retrato de formatura: fecha o cartão de identidade. */}
+            <figure className="mt-7">
+              <img
+                src={profile.graduationPhoto}
+                alt={t.about.graduationAlt}
+                loading="lazy"
+                decoding="async"
+                className="aspect-square w-full rounded-2xl object-cover object-top ring-1 ring-flux-400/25"
+              />
+              <figcaption
+                className={cn(T.faint, "mt-3 text-center text-xs")}
+              >
+                {t.about.graduationCaption}
+              </figcaption>
+            </figure>
           </GlassCard>
         </Reveal>
 

@@ -4,7 +4,10 @@ export const profile = {
   name: "Eduardo Gregório Wagner",
   shortName: "Eduardo Wagner",
   initials: "EW",
-  photo: "/images/img.jpeg",
+  // Retrato usado no hero, no cartão do "Sobre" e no rodapé.
+  photo: "/images/eduardo-perfil.jpg",
+  // Foto de formatura, exibida na seção "Sobre".
+  graduationPhoto: "/images/eduardo-formatura.jpg",
   email: "eduardogwagner2003@gmail.com",
   linkedin: {
     url: "https://www.linkedin.com/in/eduardowagner03/",

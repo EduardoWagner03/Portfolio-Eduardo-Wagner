@@ -167,7 +167,7 @@ export default function Hero() {
                 height={420}
                 fetchPriority="high"
                 decoding="async"
-                className="h-full w-full object-cover transition duration-700 ease-smooth hover:scale-105"
+                className="h-full w-full object-cover object-top transition duration-700 ease-smooth hover:scale-105"
               />
               <span
                 aria-hidden="true"

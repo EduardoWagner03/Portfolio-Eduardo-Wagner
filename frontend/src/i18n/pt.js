@@ -83,6 +83,10 @@ const pt = {
     introTitle: "Olá! Eu sou Eduardo",
     introText:
       "Desenvolvedor de 23 anos, de Irineópolis (SC), bacharel em Engenharia de Software. Minha jornada na programação começou pela curiosidade de entender como as tecnologias funcionam. Hoje, quatro anos depois, transformo requisitos de negócio em sistemas robustos para web e desktop, com foco em código limpo, escalabilidade e entrega contínua de valor.",
+    graduationAlt:
+      "Eduardo Wagner com beca e canudo na formatura em Engenharia de Software",
+    graduationCaption:
+      "Formatura em Engenharia de Software · UGV, dezembro de 2025",
     facts: [
       { label: "Idade", value: "23 anos" },
       { label: "Local", value: "Irineópolis, SC" },

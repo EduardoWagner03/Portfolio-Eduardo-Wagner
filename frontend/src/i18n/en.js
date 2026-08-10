@@ -81,6 +81,10 @@ const en = {
     introTitle: "Hi! I'm Eduardo",
     introText:
       "A 23-year-old developer from Irineópolis, Brazil, with a bachelor's degree in Software Engineering. My journey into programming started with the curiosity to understand how technology works. Four years on, I turn business requirements into robust web and desktop systems, with a focus on clean code, scalability and continuous delivery of value.",
+    graduationAlt:
+      "Eduardo Wagner in cap and gown at his Software Engineering graduation",
+    graduationCaption:
+      "Software Engineering graduation · UGV, December 2025",
     facts: [
       { label: "Age", value: "23 years old" },
       { label: "Location", value: "Irineópolis, Brazil" },
