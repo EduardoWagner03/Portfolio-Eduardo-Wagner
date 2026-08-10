@@ -178,9 +178,9 @@ export default function Experience() {
                         left && "lg:items-end"
                       )}
                     >
-                      {copy.bullets.map((bullet) => (
+                      {copy.bullets.map((bullet, bulletIndex) => (
                         <li
-                          key={bullet}
+                          key={bulletIndex}
                           className={cn(
                             T.body,
                             "flex gap-2.5 text-sm leading-relaxed",

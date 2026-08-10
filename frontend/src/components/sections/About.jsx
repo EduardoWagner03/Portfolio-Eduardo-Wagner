@@ -67,9 +67,9 @@ export default function About() {
             </p>
 
             <dl className="mt-7 grid grid-cols-2 gap-3">
-              {t.about.facts.map((fact) => (
+              {t.about.facts.map((fact, index) => (
                 <div
-                  key={fact.label}
+                  key={index}
                   className="rounded-xl border border-slate-900/[0.07] bg-slate-900/[0.02] px-3.5 py-3 dark:border-white/[0.07] dark:bg-white/[0.02]"
                 >
                   <dt
@@ -118,7 +118,11 @@ export default function About() {
           {t.about.journey.map((item, index) => {
             const Icon = JOURNEY_ICONS[index];
             return (
-              <RevealItem key={item.title} variant="slideRight">
+              // A chave é o índice, e não o texto: com o texto, trocar de
+              // idioma trocava a chave, o React remontava o cartão e ele
+              // nascia no estado "hidden" de um RevealGroup que já havia
+              // animado com `once: true`. O cartão ficava invisível.
+              <RevealItem key={index} variant="slideRight">
                 <GlassCard className="p-6 sm:p-7">
                   <div className="flex flex-col gap-4 sm:flex-row sm:gap-5">
                     {/* O primeiro cartão é o da formação: ali a logo do curso

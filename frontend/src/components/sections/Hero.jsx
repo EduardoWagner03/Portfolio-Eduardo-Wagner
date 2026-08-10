@@ -143,7 +143,7 @@ export default function Hero() {
             {t.hero.stats.map((stat, index) => {
               const Icon = STAT_ICONS[index];
               return (
-                <RevealItem key={stat.label}>
+                <RevealItem key={index}>
                   <GlassCard className="h-full p-4">
                     <Icon
                       className="mb-3 h-5 w-5 text-flux-500 dark:text-flux-400"
@@ -204,7 +204,7 @@ export default function Hero() {
             {/* Chips de tecnologia orbitando */}
             {ORBIT.map((Icon, index) => (
               <motion.div
-                key={t.hero.orbit[index]}
+                key={index}
                 className="absolute z-10 -translate-x-1/2 -translate-y-1/2"
                 style={orbitPosition(index, ORBIT.length)}
                 animate={reduce ? undefined : { y: [0, -10, 0] }}
