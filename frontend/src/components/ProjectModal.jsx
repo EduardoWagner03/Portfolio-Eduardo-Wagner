@@ -158,7 +158,7 @@ export default function ProjectModal({ project, onClose }) {
                   {/* -------------------------------------------- Conteúdo */}
                   <div className="px-5 pb-10 pt-6 sm:px-8 lg:px-10">
                     <Block icon={Layers} title={t.projects.modal.overview}>
-                      <p className={cn(T.body, "text-pretty leading-relaxed")}>
+                      <p className={cn(T.body, "text-pretty text-justify hyphens-auto leading-relaxed")}>
                         {copy.story}
                       </p>
                     </Block>
@@ -176,6 +176,7 @@ export default function ProjectModal({ project, onClose }) {
                               "flex gap-3 rounded-xl border border-slate-900/[0.07] bg-slate-900/[0.02] p-3.5",
                               "dark:border-white/[0.07] dark:bg-white/[0.02]",
                               T.body,
+                              T.prose,
                               "text-sm leading-relaxed"
                             )}
                           >
@@ -235,6 +236,7 @@ export default function ProjectModal({ project, onClose }) {
                               <p
                                 className={cn(
                                   T.body,
+                                  T.prose,
                                   "mt-3 flex-1 text-xs leading-relaxed"
                                 )}
                               >
@@ -253,7 +255,7 @@ export default function ProjectModal({ project, onClose }) {
                                       href={href}
                                       target="_blank"
                                       rel="noreferrer"
-                                      aria-label={`${member.name} — ${Icon === FaGithub ? "GitHub" : "LinkedIn"}`}
+                                      aria-label={`${member.name} no ${Icon === FaGithub ? "GitHub" : "LinkedIn"}`}
                                       className={cn(
                                         "inline-flex h-8 w-8 items-center justify-center rounded-lg",
                                         "border border-slate-900/10 text-slate-600 dark:border-white/10 dark:text-slate-300",
@@ -281,6 +283,7 @@ export default function ProjectModal({ project, onClose }) {
                               className={cn(
                                 "flex gap-3 rounded-xl border border-pulse-400/20 bg-pulse-400/[0.06] p-3.5",
                                 T.body,
+                                T.prose,
                                 "text-sm leading-relaxed"
                               )}
                             >
@@ -309,7 +312,7 @@ export default function ProjectModal({ project, onClose }) {
                                 <p
                                   className={cn(
                                     T.body,
-                                    "mt-2 text-pretty text-sm leading-relaxed"
+                                    "mt-2 text-pretty text-justify hyphens-auto text-sm leading-relaxed"
                                   )}
                                 >
                                   {feature.desc}
@@ -350,7 +353,7 @@ export default function ProjectModal({ project, onClose }) {
                               <p
                                 className={cn(
                                   T.body,
-                                  "mt-2 text-pretty text-sm leading-relaxed"
+                                  "mt-2 text-pretty text-justify hyphens-auto text-sm leading-relaxed"
                                 )}
                               >
                                 {feature.desc}

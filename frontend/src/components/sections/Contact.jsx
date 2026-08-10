@@ -174,7 +174,7 @@ export default function Contact() {
 
     setStatus("sending");
     // Sem back-end publicado: abre o cliente de email já preenchido.
-    const body = `${values.message}\n\n—\n${values.name} · ${values.email}`;
+    const body = `${values.message}\n\n--\n${values.name} · ${values.email}`;
     const mailto = `mailto:${profile.email}?subject=${encodeURIComponent(
       values.subject
     )}&body=${encodeURIComponent(body)}`;
@@ -207,7 +207,7 @@ export default function Contact() {
               <h3 className={cn(T.heading, "text-2xl")}>
                 {t.contact.introTitle}
               </h3>
-              <p className={cn(T.body, "mt-3 text-pretty leading-relaxed")}>
+              <p className={cn(T.body, "mt-3 text-pretty text-justify hyphens-auto leading-relaxed")}>
                 {t.contact.introText}
               </p>
 

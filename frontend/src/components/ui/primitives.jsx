@@ -17,6 +17,9 @@ export const T = {
   heading: "font-display font-bold tracking-tight text-slate-900 dark:text-white",
   body: "text-slate-600 dark:text-slate-400",
   faint: "text-slate-500 dark:text-slate-500",
+  // Texto corrido justificado. A hifenização evita os "rios" de espaço em
+  // branco que a justificação cria em colunas estreitas.
+  prose: "text-justify hyphens-auto",
   ring: "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flux-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-ink-950",
   gradientText:
     "bg-gradient-to-r from-flux-500 via-flux-400 to-pulse-500 bg-clip-text text-transparent dark:from-flux-300 dark:via-flux-400 dark:to-pulse-400",
@@ -144,6 +147,14 @@ export function GlassCard({
       )}
       {...rest}
     >
+      {/*
+        Os filhos são renderizados diretamente, sem wrapper. Um <div> em volta
+        deles fazia com que classes de layout passadas em `className`
+        (grid, flex) se aplicassem a um único filho, empilhando o conteúdo.
+        As camadas decorativas vêm depois no DOM e são absolutas, então
+        continuam por cima sem ocupar espaço no grid/flex.
+      */}
+      {children}
       {interactive && !reduce && (
         <span
           aria-hidden="true"
@@ -154,7 +165,6 @@ export function GlassCard({
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent dark:via-white/25"
       />
-      <div className="relative">{children}</div>
     </Tag>
   );
 }

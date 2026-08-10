@@ -79,7 +79,7 @@ export default function Hero() {
               <p
                 className={cn(
                   T.body,
-                  "max-w-2xl text-pretty text-[0.95rem] leading-relaxed sm:text-lg"
+                  "max-w-2xl text-pretty text-justify hyphens-auto text-[0.95rem] leading-relaxed sm:text-lg"
                 )}
               >
                 {t.hero.description}

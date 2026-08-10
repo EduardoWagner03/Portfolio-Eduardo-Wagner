@@ -62,7 +62,7 @@ export default function About() {
               </div>
             </div>
 
-            <p className={cn(T.body, "mt-6 text-pretty leading-relaxed")}>
+            <p className={cn(T.body, "mt-6 text-pretty text-justify hyphens-auto leading-relaxed")}>
               {t.about.introText}
             </p>
 
@@ -113,7 +113,7 @@ export default function About() {
                       <p
                         className={cn(
                           T.body,
-                          "mt-2.5 text-pretty text-sm leading-relaxed sm:text-[0.95rem]"
+                          "mt-2.5 text-pretty text-justify hyphens-auto text-sm leading-relaxed sm:text-[0.95rem]"
                         )}
                       >
                         {item.text}
@@ -146,7 +146,7 @@ export default function About() {
               <h3 className={cn(T.heading, "text-2xl sm:text-3xl")}>
                 {t.about.ctaTitle}
               </h3>
-              <p className={cn(T.body, "mt-3 text-pretty leading-relaxed")}>
+              <p className={cn(T.body, "mt-3 text-pretty text-justify hyphens-auto leading-relaxed")}>
                 {t.about.ctaText}
               </p>
             </div>

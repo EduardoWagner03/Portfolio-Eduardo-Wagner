@@ -43,7 +43,7 @@ export default function Footer() {
             <p
               className={cn(
                 T.body,
-                "mt-5 text-pretty text-sm italic leading-relaxed"
+                "mt-5 text-pretty text-justify hyphens-auto text-sm italic leading-relaxed"
               )}
             >
               “{t.footer.quote}”

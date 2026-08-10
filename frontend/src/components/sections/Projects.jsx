@@ -134,7 +134,7 @@ export default function Projects({ onSelect }) {
                   <p
                     className={cn(
                       T.body,
-                      "line-clamp-4 text-pretty text-sm leading-relaxed"
+                      "line-clamp-4 text-pretty text-justify hyphens-auto text-sm leading-relaxed"
                     )}
                   >
                     {copy.description}

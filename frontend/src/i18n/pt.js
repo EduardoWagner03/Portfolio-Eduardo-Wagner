@@ -1,9 +1,9 @@
 // Conteúdo em português (idioma padrão). Todo texto visível do portfolio vive
-// aqui — nenhum componente contém string literal de conteúdo.
+// aqui. Nenhum componente contém string literal de conteúdo.
 const pt = {
   meta: {
     locale: "pt-BR",
-    title: "Eduardo Wagner — Desenvolvedor Full Stack Pleno",
+    title: "Eduardo Wagner | Desenvolvedor Full Stack Pleno",
     description:
       "Portfolio de Eduardo Gregório Wagner, Desenvolvedor Full Stack Pleno e sócio-fundador da StreamDev. React, Next.js, TypeScript, Node.js, PostgreSQL e Supabase.",
     switchTo: "EN",
@@ -46,7 +46,7 @@ const pt = {
     subtitle:
       "Desenvolvedor Full Stack Pleno · React, Next.js e TypeScript",
     description:
-      "Bacharel em Engenharia de Software com 4 anos de experiência prática em desenvolvimento Full Stack e foco em Front-end. Trabalho com o ecossistema JavaScript moderno — React, Next.js e TypeScript — para criar interfaces de alta performance e escaláveis, cobrindo todo o ciclo do software: da arquitetura à entrega, com Node.js, PostgreSQL, Supabase e Firebase.",
+      "Bacharel em Engenharia de Software com 4 anos de experiência prática em desenvolvimento Full Stack e foco em Front-end. Trabalho com o ecossistema JavaScript moderno (React, Next.js e TypeScript) para criar interfaces de alta performance e escaláveis, cobrindo todo o ciclo do software: da arquitetura à entrega, com Node.js, PostgreSQL, Supabase e Firebase.",
     primaryCta: "Ver Projetos",
     secondaryCta: "Entre em Contato",
     scroll: "Role para explorar",
@@ -62,7 +62,7 @@ const pt = {
       },
       {
         label: "Bacharel em Eng. de Software",
-        desc: "UGV — Centro Universitário, concluído em 2025",
+        desc: "UGV - Centro Universitário, concluído em 2025",
       },
     ],
     orbit: [
@@ -82,7 +82,7 @@ const pt = {
       "Desenvolvedor apaixonado por criar soluções que fazem a diferença",
     introTitle: "Olá! Eu sou Eduardo",
     introText:
-      "Desenvolvedor de 23 anos, de Irineópolis (SC), bacharel em Engenharia de Software. Minha jornada na programação começou pela curiosidade de entender como as tecnologias funcionam — hoje, quatro anos depois, transformo requisitos de negócio em sistemas robustos para web e desktop, com foco em código limpo, escalabilidade e entrega contínua de valor.",
+      "Desenvolvedor de 23 anos, de Irineópolis (SC), bacharel em Engenharia de Software. Minha jornada na programação começou pela curiosidade de entender como as tecnologias funcionam. Hoje, quatro anos depois, transformo requisitos de negócio em sistemas robustos para web e desktop, com foco em código limpo, escalabilidade e entrega contínua de valor.",
     facts: [
       { label: "Idade", value: "23 anos" },
       { label: "Local", value: "Irineópolis, SC" },
@@ -92,11 +92,11 @@ const pt = {
     journey: [
       {
         title: "Formação Acadêmica",
-        text: "Bacharel em Engenharia de Software pela UGV – Centro Universitário, com graduação concluída em dezembro de 2025. Durante a trajetória acadêmica, liderei múltiplas equipes de desenvolvimento em projetos práticos, aplicando metodologias ágeis e coordenando todo o ciclo de vida do software: da análise de requisitos e diagramação de arquitetura (UML/DER) até o deploy final em produção.",
+        text: "Bacharel em Engenharia de Software pela UGV - Centro Universitário, com graduação concluída em dezembro de 2025. Durante a trajetória acadêmica, liderei múltiplas equipes de desenvolvimento em projetos práticos, aplicando metodologias ágeis e coordenando todo o ciclo de vida do software: da análise de requisitos e diagramação de arquitetura (UML/DER) até o deploy final em produção.",
       },
       {
-        title: "StreamDev — Software House",
-        text: "Como sócio-fundador da StreamDev, respondo pela liderança técnica e pela gestão de projetos, com foco em soluções escaláveis e arquitetura de sistemas modernos. É onde reúno o stack que domino — React, Next.js, TypeScript e Supabase — para tirar produtos do papel e levá-los até a operação real do cliente.",
+        title: "StreamDev - Software House",
+        text: "Como sócio-fundador da StreamDev, respondo pela liderança técnica e pela gestão de projetos, com foco em soluções escaláveis e arquitetura de sistemas modernos. É onde reúno o stack que domino (React, Next.js, TypeScript e Supabase) para tirar produtos do papel e levá-los até a operação real do cliente.",
       },
       {
         title: "Liderança e Trabalho em Equipe",
@@ -109,7 +109,7 @@ const pt = {
     ],
     ctaTitle: "Vamos construir algo juntos",
     ctaText:
-      "Estou aberto a novos projetos, parcerias e oportunidades que envolvam produtos web modernos, e-commerce e sistemas sob medida. Se você precisa de alguém que assuma o problema do início ao fim — da arquitetura à operação em produção — vamos conversar.",
+      "Estou aberto a novos projetos, parcerias e oportunidades que envolvam produtos web modernos, e-commerce e sistemas sob medida. Se você precisa de alguém que assuma o problema do início ao fim, da arquitetura à operação em produção, vamos conversar.",
     ctaPrimary: "Vamos conversar",
     ctaSecondary: "Download CV",
   },
@@ -171,21 +171,21 @@ const pt = {
         title: "Bloco3D",
         subtitle: "Plataforma em Operação",
         description:
-          "Plataforma de e-commerce especializada no mercado de tecnologia 3D — impressoras, filamentos e acessórios. Construída sobre React, Next.js e TypeScript com Supabase, e administrada por uma infraestrutura modular em Medusa, com sincronização de estoque e notas fiscais via API do Bling e pagamentos pelo Mercado Pago.",
+          "Plataforma de e-commerce especializada no mercado de tecnologia 3D: impressoras, filamentos e acessórios. Construída sobre React, Next.js e TypeScript com Supabase, e administrada por uma infraestrutura modular em Medusa, com sincronização de estoque e notas fiscais via API do Bling e pagamentos pelo Mercado Pago.",
         story:
           "O Bloco3D é o projeto que lidero na StreamDev, a software house da qual sou sócio-fundador. Assumi a arquitetura e o desenvolvimento de ponta a ponta: o front-end em React, Next.js e TypeScript; o Supabase cuidando de banco de dados, autenticação e storage; e o framework Medusa sustentando a área administrativa de forma modular e escalável. O trabalho incluiu dashboards administrativos complexos com sincronização via API do Bling para gestão de estoque e emissão de notas fiscais, a integração do gateway de pagamentos do Mercado Pago e a adequação total à LGPD.",
-        period: "Jan/2026 — Presente",
+        period: "Jan/2026 - Presente",
         role: "Arquitetura & Full Stack",
         teamSize: "Liderança técnica",
         responsibilities: [
-          "Arquitetura da Plataforma — Definição de stack, modelagem e estrutura do projeto",
-          "Front-end em Next.js — Interfaces em React e TypeScript com foco em performance",
-          "Supabase — Banco de dados, autenticação e storage",
-          "Infraestrutura Medusa — Administração modular e escalável do e-commerce",
-          "Dashboards Administrativos — Painéis complexos de gestão e acompanhamento",
-          "Integração ERP — Sincronização de estoque e notas fiscais via API do Bling",
-          "Pagamentos — Integração do gateway do Mercado Pago",
-          "LGPD — Conformidade no tratamento de dados pessoais",
+          "Arquitetura da Plataforma: Definição de stack, modelagem e estrutura do projeto",
+          "Front-end em Next.js: Interfaces em React e TypeScript com foco em performance",
+          "Supabase: Banco de dados, autenticação e storage",
+          "Infraestrutura Medusa: Administração modular e escalável do e-commerce",
+          "Dashboards Administrativos: Painéis complexos de gestão e acompanhamento",
+          "Integração ERP: Sincronização de estoque e notas fiscais via API do Bling",
+          "Pagamentos: Integração do gateway do Mercado Pago",
+          "LGPD: Conformidade no tratamento de dados pessoais",
         ],
         features: [
           {
@@ -219,17 +219,17 @@ const pt = {
           "Sistema web completo para gestão de clínicas de podologia, trazendo eficiência, organização e praticidade para o dia a dia das clínicas. O FlowTime permite otimizar agendamentos, atendimento ao cliente e processos administrativos, tudo em uma plataforma intuitiva.",
         story:
           "O FlowTime foi iniciado em outubro de 2024 e finalizado em janeiro de 2025, desenvolvido em equipe de 3 pessoas. O sistema surgiu da necessidade de digitalizar e automatizar o fluxo de trabalho em clínicas de podologia. O projeto oferece dashboard interativo, relatórios em PDF, assinatura digital e recursos avançados para facilitar o controle de agendamentos, pacientes e receitas. Com uma interface moderna e funcionalidades robustas, o FlowTime proporciona mais agilidade, segurança e qualidade no atendimento, sendo implementado com sucesso em ambiente real.",
-        period: "Out/2024 — Jan/2025",
+        period: "Out/2024 - Jan/2025",
         role: "Co-Líder Técnico & Front-end",
         teamSize: "Equipe de 3",
         responsibilities: [
-          "Co-Liderança Técnica — Condução do projeto junto ao time",
-          "Modelagem — Diagramas UML/DER e prototipagem no Figma",
-          "Frontend Completo — Desenvolvimento de toda interface do usuário",
-          "Gráficos Interativos — Implementação de dashboards e visualizações",
-          "Sistema de Tokens — Desenvolvimento de autenticação e segurança",
-          "Responsividade — Adaptação para dispositivos móveis e desktop",
-          "UX/UI — Implementação do design e experiência do usuário",
+          "Co-Liderança Técnica: Condução do projeto junto ao time",
+          "Modelagem: Diagramas UML/DER e prototipagem no Figma",
+          "Frontend Completo: Desenvolvimento de toda interface do usuário",
+          "Gráficos Interativos: Implementação de dashboards e visualizações",
+          "Sistema de Tokens: Desenvolvimento de autenticação e segurança",
+          "Responsividade: Adaptação para dispositivos móveis e desktop",
+          "UX/UI: Implementação do design e experiência do usuário",
         ],
         features: [
           {
@@ -267,16 +267,16 @@ const pt = {
           "Sistema desenvolvido para automatizar o controle de suprimentos de impressão em instituições de ensino, reduzindo desperdícios e fornecendo relatórios completos. O TonnerTrack facilita a gestão de impressoras e toners, trazendo mais eficiência e organização para o ambiente escolar.",
         story:
           "O TonnerTrack foi um projeto de Extensão Acadêmica iniciado em fevereiro de 2025 e finalizado em junho de 2025, realizado em uma escola pública. O sistema surgiu da necessidade real de controlar o uso de impressoras e toners, automatizando registros, gerando relatórios detalhados e reduzindo desperdícios. O projeto conta com interface intuitiva e recursos inteligentes, contribuindo para a melhoria da gestão de suprimentos e sendo implementado com sucesso na instituição.",
-        period: "Fev/2025 — Jun/2025",
+        period: "Fev/2025 - Jun/2025",
         role: "Full Stack Solo",
         teamSize: "Projeto individual",
         responsibilities: [
-          "Desenvolvimento Completo — Frontend e Backend do zero",
-          "Banco de Dados — Modelagem e implementação PostgreSQL",
-          "Autenticação — Sistema de login e controle de acesso",
-          "Relatórios — Geração de relatórios e dashboards",
-          "Interface Responsiva — Design adaptável para todos dispositivos",
-          "Deploy e Manutenção — Implementação em ambiente de produção",
+          "Desenvolvimento Completo: Frontend e Backend do zero",
+          "Banco de Dados: Modelagem e implementação PostgreSQL",
+          "Autenticação: Sistema de login e controle de acesso",
+          "Relatórios: Geração de relatórios e dashboards",
+          "Interface Responsiva: Design adaptável para todos dispositivos",
+          "Deploy e Manutenção: Implementação em ambiente de produção",
         ],
         features: [
           {
@@ -306,17 +306,17 @@ const pt = {
           "Projeto acadêmico em dupla que criou um sistema CMMS integrado com IoT para monitoramento e controle de ambientes climatizados. Permite gerenciar equipamentos de ar-condicionado, registrar chamados, gerar ordens de serviço e monitorar condições ambientais em tempo real via sensores MQTT. Conta ainda com chat em tempo real para equipes.",
         story:
           "O ThermalTech está sendo desenvolvido como parte de um projeto acadêmico na faculdade, com início em 2025, desenvolvido em dupla. O objetivo é criar um sistema robusto para monitoramento e automação de ambientes industriais, integrando sensores IoT, dashboards, relatórios e comunicação entre equipes. O sistema está em constante evolução, recebendo melhorias e novas funcionalidades conforme o desenvolvimento avança.",
-        period: "2025 — Em andamento",
+        period: "2025 - Em andamento",
         role: "Frontend & Security",
         teamSize: "Dupla",
         responsibilities: [
-          "Frontend Completo — Desenvolvimento de toda interface do sistema",
-          "Middleware de Auditoria — Sistema avançado de detecção de ameaças",
-          "Detecção de Ameaças — SQL injection, XSS, bots maliciosos",
-          "Threat Scoring — Sistema inteligente de pontuação de ameaças",
-          "Bloqueio Inteligente — IPs suspeitos e rate limiting",
-          "Alertas em Tempo Real — Notificações por email automáticas",
-          "Relatórios de Segurança — Monitoramento contínuo automatizado",
+          "Frontend Completo: Desenvolvimento de toda interface do sistema",
+          "Middleware de Auditoria: Sistema avançado de detecção de ameaças",
+          "Detecção de Ameaças: SQL injection, XSS, bots maliciosos",
+          "Threat Scoring: Sistema inteligente de pontuação de ameaças",
+          "Bloqueio Inteligente: IPs suspeitos e rate limiting",
+          "Alertas em Tempo Real: Notificações por email automáticas",
+          "Relatórios de Segurança: Monitoramento contínuo automatizado",
         ],
         features: [
           {
@@ -343,11 +343,11 @@ const pt = {
           },
         ],
         iot: [
-          "Captura de Temperatura — Sensores via HTTP POST no endpoint /api/sensor-data",
-          "Comunicação Bidirecional — ESP via Firebase Realtime Database",
-          "Tempo Real — Server-Sent Events (SSE) e WebSocket",
-          "Controle Remoto — Comandos de temperatura, velocidade e modo",
-          "Alertas Automáticos — Verificação de limites por sala",
+          "Captura de Temperatura: Sensores via HTTP POST no endpoint /api/sensor-data",
+          "Comunicação Bidirecional: ESP via Firebase Realtime Database",
+          "Tempo Real: Server-Sent Events (SSE) e WebSocket",
+          "Controle Remoto: Comandos de temperatura, velocidade e modo",
+          "Alertas Automáticos: Verificação de limites por sala",
         ],
       },
     },
@@ -370,7 +370,7 @@ const pt = {
         ],
       },
       college: {
-        period: "Fev/2022 — Dez/2025",
+        period: "Fev/2022 - Dez/2025",
         title: "Bacharelado em Engenharia de Software",
         org: "Centro Universitário UGV · Concluído",
         bullets: [
@@ -381,19 +381,19 @@ const pt = {
         ],
       },
       events: {
-        period: "2022 — 2024",
+        period: "2022 - 2024",
         title: "Participação em Eventos Acadêmicos",
         org: "Centro Universitário UGV",
         bullets: [
-          "XVII Encontro de Iniciação Científica 2022 — Ouvinte",
-          "XVIII Encontro de Iniciação Científica 2023 — Apresentação",
-          "XIX Encontro de Iniciação Científica 2024 — Ouvinte",
-          "SEMTEC — Semana de Tecnologia da UGV 2022",
-          "SEMTEC — Semana de Tecnologia da UGV 2024",
+          "XVII Encontro de Iniciação Científica 2022 - Ouvinte",
+          "XVIII Encontro de Iniciação Científica 2023 - Apresentação",
+          "XIX Encontro de Iniciação Científica 2024 - Ouvinte",
+          "SEMTEC - Semana de Tecnologia da UGV 2022",
+          "SEMTEC - Semana de Tecnologia da UGV 2024",
         ],
       },
       robotics: {
-        period: "Fev/2024 — Jun/2024",
+        period: "Fev/2024 - Jun/2024",
         title: "Projeto Garra Robótica",
         org: "Disciplina de Robótica",
         bullets: [
@@ -423,7 +423,7 @@ const pt = {
         ],
       },
       flowtime: {
-        period: "Out/2024 — Jan/2025",
+        period: "Out/2024 - Jan/2025",
         title: "Co-Líder Técnico e Líder de Frontend",
         org: "Projeto FlowTime",
         bullets: [
@@ -434,7 +434,7 @@ const pt = {
         ],
       },
       tonner: {
-        period: "Mar/2025 — Jun/2025",
+        period: "Mar/2025 - Jun/2025",
         title: "Desenvolvedor Full Stack",
         org: "Projeto TonerTrack",
         bullets: [
@@ -444,9 +444,9 @@ const pt = {
         ],
       },
       streamdev: {
-        period: "Jan/2026 — Presente",
+        period: "Jan/2026 - Presente",
         title: "Engenheiro de Software e Sócio-Fundador",
-        org: "StreamDev — Software House",
+        org: "StreamDev - Software House",
         bullets: [
           "Liderança técnica e gestão de projetos em software house própria",
           "Arquitetura do Bloco3D, e-commerce do mercado de tecnologia 3D",
@@ -465,7 +465,7 @@ const pt = {
       "Estou sempre aberto a novas oportunidades e projetos interessantes",
     introTitle: "Vamos trabalhar juntos!",
     introText:
-      "Estou sempre aberto a novas oportunidades, parcerias e projetos inovadores — seja um produto web do zero, um e-commerce ou um sistema sob medida. Se você tem uma ideia interessante ou precisa de um desenvolvedor experiente no time, vamos conversar!",
+      "Estou sempre aberto a novas oportunidades, parcerias e projetos inovadores, seja um produto web do zero, um e-commerce ou um sistema sob medida. Se você tem uma ideia interessante ou precisa de um desenvolvedor experiente no time, vamos conversar!",
     methods: {
       email: "Email",
       linkedin: "LinkedIn",
@@ -500,7 +500,7 @@ const pt = {
 
   footer: {
     role: "Desenvolvedor Full Stack Pleno · StreamDev",
-    location: "Irineópolis, SC — Brasil",
+    location: "Irineópolis, SC, Brasil",
     quote:
       "Transformando ideias em código, código em soluções, soluções em impacto",
     rights: "Todos os direitos reservados.",

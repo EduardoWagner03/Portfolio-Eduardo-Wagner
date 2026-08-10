@@ -1,9 +1,9 @@
-// English content. Mirrors the shape of pt.js exactly — the language toggle
+// English content. Mirrors the shape of pt.js exactly. The language toggle
 // simply swaps which object feeds the components.
 const en = {
   meta: {
     locale: "en-US",
-    title: "Eduardo Wagner — Mid-level Full Stack Developer",
+    title: "Eduardo Wagner | Mid-level Full Stack Developer",
     description:
       "Portfolio of Eduardo Gregório Wagner, mid-level Full Stack Developer and co-founder of StreamDev. React, Next.js, TypeScript, Node.js, PostgreSQL and Supabase.",
     switchTo: "PT",
@@ -45,7 +45,7 @@ const en = {
     ],
     subtitle: "Mid-level Full Stack Developer · React, Next.js and TypeScript",
     description:
-      "Software Engineering graduate with 4 years of hands-on Full Stack experience and a front-end focus. I work across the modern JavaScript ecosystem — React, Next.js and TypeScript — building high-performance, scalable interfaces, and I cover the whole software lifecycle from architecture to delivery with Node.js, PostgreSQL, Supabase and Firebase.",
+      "Software Engineering graduate with 4 years of hands-on Full Stack experience and a front-end focus. I work across the modern JavaScript ecosystem (React, Next.js and TypeScript), building high-performance, scalable interfaces, and I cover the whole software lifecycle from architecture to delivery with Node.js, PostgreSQL, Supabase and Firebase.",
     primaryCta: "View Projects",
     secondaryCta: "Get in Touch",
     scroll: "Scroll to explore",
@@ -80,7 +80,7 @@ const en = {
     subtitle: "A developer passionate about building solutions that matter",
     introTitle: "Hi! I'm Eduardo",
     introText:
-      "A 23-year-old developer from Irineópolis, Brazil, with a bachelor's degree in Software Engineering. My journey into programming started with the curiosity to understand how technology works — four years on, I turn business requirements into robust web and desktop systems, with a focus on clean code, scalability and continuous delivery of value.",
+      "A 23-year-old developer from Irineópolis, Brazil, with a bachelor's degree in Software Engineering. My journey into programming started with the curiosity to understand how technology works. Four years on, I turn business requirements into robust web and desktop systems, with a focus on clean code, scalability and continuous delivery of value.",
     facts: [
       { label: "Age", value: "23 years old" },
       { label: "Location", value: "Irineópolis, Brazil" },
@@ -90,11 +90,11 @@ const en = {
     journey: [
       {
         title: "Academic Background",
-        text: "I hold a bachelor's degree in Software Engineering from UGV – Centro Universitário, completed in December 2025. Throughout the program I led multiple development teams on practical projects, applying agile methodologies and coordinating the entire software lifecycle: from requirements analysis and architecture diagramming (UML/ERD) through to production deployment.",
+        text: "I hold a bachelor's degree in Software Engineering from UGV - Centro Universitário, completed in December 2025. Throughout the program I led multiple development teams on practical projects, applying agile methodologies and coordinating the entire software lifecycle: from requirements analysis and architecture diagramming (UML/ERD) through to production deployment.",
       },
       {
-        title: "StreamDev — Software House",
-        text: "As co-founder of StreamDev, I'm responsible for technical leadership and project management, focused on scalable solutions and modern system architecture. It's where I bring together the stack I know best — React, Next.js, TypeScript and Supabase — to take products from concept all the way into the client's real operation.",
+        title: "StreamDev - Software House",
+        text: "As co-founder of StreamDev, I'm responsible for technical leadership and project management, focused on scalable solutions and modern system architecture. It's where I bring together the stack I know best (React, Next.js, TypeScript and Supabase) to take products from concept all the way into the client's real operation.",
       },
       {
         title: "Leadership and Teamwork",
@@ -107,7 +107,7 @@ const en = {
     ],
     ctaTitle: "Let's build something together",
     ctaText:
-      "I'm open to new projects, partnerships and opportunities involving modern web products, e-commerce and custom systems. If you need someone who can own the problem end to end — from architecture through to running in production — let's talk.",
+      "I'm open to new projects, partnerships and opportunities involving modern web products, e-commerce and custom systems. If you need someone who can own the problem end to end, from architecture through to running in production, let's talk.",
     ctaPrimary: "Let's talk",
     ctaSecondary: "Download CV",
   },
@@ -169,21 +169,21 @@ const en = {
         title: "Bloco3D",
         subtitle: "Platform in Operation",
         description:
-          "An e-commerce platform specialized in the 3D technology market — printers, filaments and accessories. Built on React, Next.js and TypeScript with Supabase, and administered through a modular Medusa infrastructure, with stock and invoice syncing via the Bling API and payments through Mercado Pago.",
+          "An e-commerce platform specialized in the 3D technology market: printers, filaments and accessories. Built on React, Next.js and TypeScript with Supabase, and administered through a modular Medusa infrastructure, with stock and invoice syncing via the Bling API and payments through Mercado Pago.",
         story:
           "Bloco3D is the project I lead at StreamDev, the software house I co-founded. I took on the architecture and end-to-end development: the front-end in React, Next.js and TypeScript; Supabase handling the database, authentication and storage; and the Medusa framework backing a modular, scalable admin area. The work included complex administrative dashboards synced through the Bling API for stock management and invoice issuing, integration of the Mercado Pago payment gateway, and full compliance with Brazil's LGPD data protection law.",
-        period: "Jan/2026 — Present",
+        period: "Jan/2026 - Present",
         role: "Architecture & Full Stack",
         teamSize: "Technical lead",
         responsibilities: [
-          "Platform Architecture — Stack decisions, data modeling and project structure",
-          "Next.js Front-end — React and TypeScript interfaces built for performance",
-          "Supabase — Database, authentication and storage",
-          "Medusa Infrastructure — Modular, scalable e-commerce administration",
-          "Admin Dashboards — Complex management and monitoring panels",
-          "ERP Integration — Stock and invoice syncing through the Bling API",
-          "Payments — Mercado Pago gateway integration",
-          "LGPD — Compliance in handling personal data",
+          "Platform Architecture: Stack decisions, data modeling and project structure",
+          "Next.js Front-end: React and TypeScript interfaces built for performance",
+          "Supabase: Database, authentication and storage",
+          "Medusa Infrastructure: Modular, scalable e-commerce administration",
+          "Admin Dashboards: Complex management and monitoring panels",
+          "ERP Integration: Stock and invoice syncing through the Bling API",
+          "Payments: Mercado Pago gateway integration",
+          "LGPD: Compliance in handling personal data",
         ],
         features: [
           {
@@ -216,23 +216,23 @@ const en = {
         description:
           "A complete web system for managing podiatry clinics, bringing efficiency, organization and convenience to daily operations. FlowTime streamlines scheduling, patient care and administrative processes in a single intuitive platform.",
         story:
-          "FlowTime started in October 2024 and was completed in January 2025, built by a team of 3. The system came from the need to digitize and automate the workflow of podiatry clinics. It offers an interactive dashboard, PDF reports, digital signatures and advanced features to manage appointments, patients and revenue. With a modern interface and robust functionality, FlowTime brought more agility, security and quality to patient care — and was successfully deployed in a real production environment.",
-        period: "Oct/2024 — Jan/2025",
+          "FlowTime started in October 2024 and was completed in January 2025, built by a team of 3. The system came from the need to digitize and automate the workflow of podiatry clinics. It offers an interactive dashboard, PDF reports, digital signatures and advanced features to manage appointments, patients and revenue. With a modern interface and robust functionality, FlowTime brought more agility, security and quality to patient care, and was successfully deployed in a real production environment.",
+        period: "Oct/2024 - Jan/2025",
         role: "Technical Co-Lead & Front-end",
         teamSize: "Team of 3",
         responsibilities: [
-          "Technical Co-Leadership — Drove the project alongside the team",
-          "Modeling — UML/ERD diagrams and Figma prototyping",
-          "Complete Frontend — Built the entire user interface",
-          "Interactive Charts — Dashboards and data visualizations",
-          "Token System — Authentication and security implementation",
-          "Responsiveness — Adapted for mobile and desktop devices",
-          "UX/UI — Design implementation and user experience",
+          "Technical Co-Leadership: Drove the project alongside the team",
+          "Modeling: UML/ERD diagrams and Figma prototyping",
+          "Complete Frontend: Built the entire user interface",
+          "Interactive Charts: Dashboards and data visualizations",
+          "Token System: Authentication and security implementation",
+          "Responsiveness: Adapted for mobile and desktop devices",
+          "UX/UI: Design implementation and user experience",
         ],
         features: [
           {
             title: "Interactive Dashboard",
-            desc: "See the clinic's key indicators at a glance — appointments, treatments and revenue. Full front-end development and interactive chart implementation.",
+            desc: "See the clinic's key indicators at a glance: appointments, treatments and revenue. Full front-end development and interactive chart implementation.",
           },
           {
             title: "Schedule Management",
@@ -264,17 +264,17 @@ const en = {
         description:
           "A system built to automate printing-supply control in educational institutions, reducing waste and providing complete reporting. TonnerTrack simplifies printer and toner management, bringing more efficiency and organization to the school environment.",
         story:
-          "TonnerTrack was an Academic Extension project that ran from February 2025 to June 2025 at a public school. The system came from a real need to control printer and toner usage — automating records, generating detailed reports and cutting waste. It features an intuitive interface and smart resources, improving supply management and being successfully deployed at the institution.",
-        period: "Feb/2025 — Jun/2025",
+          "TonnerTrack was an Academic Extension project that ran from February 2025 to June 2025 at a public school. The system came from a real need to control printer and toner usage: automating records, generating detailed reports and cutting waste. It features an intuitive interface and smart resources, improving supply management and being successfully deployed at the institution.",
+        period: "Feb/2025 - Jun/2025",
         role: "Solo Full Stack",
         teamSize: "Solo project",
         responsibilities: [
-          "Complete Development — Front-end and back-end from scratch",
-          "Database — PostgreSQL modeling and implementation",
-          "Authentication — Login system and access control",
-          "Reporting — Report generation and dashboards",
-          "Responsive Interface — Design adapted to every device",
-          "Deploy & Maintenance — Rollout to a production environment",
+          "Complete Development: Front-end and back-end from scratch",
+          "Database: PostgreSQL modeling and implementation",
+          "Authentication: Login system and access control",
+          "Reporting: Report generation and dashboards",
+          "Responsive Interface: Design adapted to every device",
+          "Deploy & Maintenance: Rollout to a production environment",
         ],
         features: [
           {
@@ -301,20 +301,20 @@ const en = {
         title: "ThermalTech",
         subtitle: "System in Progress",
         description:
-          "An academic project built as a pair: a CMMS system integrated with IoT for monitoring and controlling climate-controlled environments. It manages air-conditioning equipment, logs service tickets, generates work orders and monitors environmental conditions in real time through MQTT sensors — plus real-time team chat.",
+          "An academic project built as a pair: a CMMS system integrated with IoT for monitoring and controlling climate-controlled environments. It manages air-conditioning equipment, logs service tickets, generates work orders and monitors environmental conditions in real time through MQTT sensors, plus real-time team chat.",
         story:
           "ThermalTech is being developed as part of an academic project started in 2025, built as a pair. The goal is a robust system for monitoring and automating industrial environments, integrating IoT sensors, dashboards, reporting and team communication. The system keeps evolving, receiving improvements and new features as development progresses.",
-        period: "2025 — Ongoing",
+        period: "2025 - Ongoing",
         role: "Frontend & Security",
         teamSize: "Pair",
         responsibilities: [
-          "Complete Frontend — Built the entire system interface",
-          "Audit Middleware — Advanced threat detection system",
-          "Threat Detection — SQL injection, XSS, malicious bots",
-          "Threat Scoring — Intelligent threat-scoring system",
-          "Smart Blocking — Suspicious IPs and rate limiting",
-          "Real-time Alerts — Automatic email notifications",
-          "Security Reports — Automated continuous monitoring",
+          "Complete Frontend: Built the entire system interface",
+          "Audit Middleware: Advanced threat detection system",
+          "Threat Detection: SQL injection, XSS, malicious bots",
+          "Threat Scoring: Intelligent threat-scoring system",
+          "Smart Blocking: Suspicious IPs and rate limiting",
+          "Real-time Alerts: Automatic email notifications",
+          "Security Reports: Automated continuous monitoring",
         ],
         features: [
           {
@@ -341,11 +341,11 @@ const en = {
           },
         ],
         iot: [
-          "Temperature Capture — Sensors via HTTP POST on the /api/sensor-data endpoint",
-          "Two-way Communication — ESP through Firebase Realtime Database",
-          "Real Time — Server-Sent Events (SSE) and WebSocket",
-          "Remote Control — Temperature, fan speed and mode commands",
-          "Automatic Alerts — Per-room threshold checks",
+          "Temperature Capture: Sensors via HTTP POST on the /api/sensor-data endpoint",
+          "Two-way Communication: ESP through Firebase Realtime Database",
+          "Real Time: Server-Sent Events (SSE) and WebSocket",
+          "Remote Control: Temperature, fan speed and mode commands",
+          "Automatic Alerts: Per-room threshold checks",
         ],
       },
     },
@@ -368,7 +368,7 @@ const en = {
         ],
       },
       college: {
-        period: "Feb/2022 — Dec/2025",
+        period: "Feb/2022 - Dec/2025",
         title: "BSc in Software Engineering",
         org: "UGV University Center · Completed",
         bullets: [
@@ -379,19 +379,19 @@ const en = {
         ],
       },
       events: {
-        period: "2022 — 2024",
+        period: "2022 - 2024",
         title: "Academic Events",
         org: "UGV University Center",
         bullets: [
-          "17th Scientific Initiation Meeting 2022 — Attendee",
-          "18th Scientific Initiation Meeting 2023 — Presenter",
-          "19th Scientific Initiation Meeting 2024 — Attendee",
-          "SEMTEC — UGV Technology Week 2022",
-          "SEMTEC — UGV Technology Week 2024",
+          "17th Scientific Initiation Meeting 2022 - Attendee",
+          "18th Scientific Initiation Meeting 2023 - Presenter",
+          "19th Scientific Initiation Meeting 2024 - Attendee",
+          "SEMTEC - UGV Technology Week 2022",
+          "SEMTEC - UGV Technology Week 2024",
         ],
       },
       robotics: {
-        period: "Feb/2024 — Jun/2024",
+        period: "Feb/2024 - Jun/2024",
         title: "Robotic Claw Project",
         org: "Robotics Course",
         bullets: [
@@ -421,7 +421,7 @@ const en = {
         ],
       },
       flowtime: {
-        period: "Oct/2024 — Jan/2025",
+        period: "Oct/2024 - Jan/2025",
         title: "Technical Co-Lead and Front-end Lead",
         org: "FlowTime Project",
         bullets: [
@@ -432,7 +432,7 @@ const en = {
         ],
       },
       tonner: {
-        period: "Mar/2025 — Jun/2025",
+        period: "Mar/2025 - Jun/2025",
         title: "Full Stack Developer",
         org: "TonerTrack Project",
         bullets: [
@@ -442,9 +442,9 @@ const en = {
         ],
       },
       streamdev: {
-        period: "Jan/2026 — Present",
+        period: "Jan/2026 - Present",
         title: "Software Engineer and Co-founder",
-        org: "StreamDev — Software House",
+        org: "StreamDev - Software House",
         bullets: [
           "Technical leadership and project management at my own software house",
           "Architecture of Bloco3D, an e-commerce for the 3D technology market",
@@ -462,7 +462,7 @@ const en = {
     subtitle: "I'm always open to new opportunities and interesting projects",
     introTitle: "Let's work together!",
     introText:
-      "I'm always open to new opportunities, partnerships and innovative projects — a web product from scratch, an e-commerce, or a custom system. If you have an interesting idea or need an experienced developer on your team, let's talk!",
+      "I'm always open to new opportunities, partnerships and innovative projects, a web product from scratch, an e-commerce, or a custom system. If you have an interesting idea or need an experienced developer on your team, let's talk!",
     methods: {
       email: "Email",
       linkedin: "LinkedIn",
