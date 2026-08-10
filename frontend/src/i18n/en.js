@@ -84,7 +84,7 @@ const en = {
     graduationAlt:
       "Eduardo Wagner in cap and gown at his Software Engineering graduation",
     graduationCaption:
-      "Software Engineering graduation · UGV, December 2025",
+      "Software Engineering graduation ceremony · UGV, March 2026",
     facts: [
       { label: "Age", value: "23 years old" },
       { label: "Location", value: "Irineópolis, Brazil" },
@@ -94,7 +94,7 @@ const en = {
     journey: [
       {
         title: "Academic Background",
-        text: "I hold a bachelor's degree in Software Engineering from UGV - Centro Universitário, completed in December 2025. Throughout the program I led multiple development teams on practical projects, applying agile methodologies and coordinating the entire software lifecycle: from requirements analysis and architecture diagramming (UML/ERD) through to production deployment.",
+        text: "I hold a bachelor's degree in Software Engineering from UGV - Centro Universitário, completed in December 2025, with the graduation ceremony in March 2026. My final thesis project was FlowTime, the management SaaS for podiatry clinics, awarded the top grade of 10 and later delivered for commercial use. Throughout the program I led multiple development teams on practical projects, applying agile methodologies and coordinating the entire software lifecycle: from requirements analysis and architecture diagramming (UML/ERD) through to production deployment.",
       },
       {
         title: "StreamDev - Software House",
@@ -276,7 +276,7 @@ const en = {
         description:
           "A complete web system for managing podiatry clinics, bringing efficiency, organization and convenience to daily operations. FlowTime streamlines scheduling, patient care and administrative processes in a single intuitive platform.",
         story:
-          "FlowTime started in October 2024 and was completed in January 2025, built by a team of 3. The system came from the need to digitize and automate the workflow of podiatry clinics. It offers an interactive dashboard, PDF reports, digital signatures and advanced features to manage appointments, patients and revenue. With a modern interface and robust functionality, FlowTime brought more agility, security and quality to patient care, and was successfully deployed in a real production environment.",
+          "FlowTime started in October 2024 and was completed in January 2025, built by a team of 3. It was also our final thesis project, defended at UGV and awarded the top grade of 10, and later delivered for commercial use in a real clinic. The system came from the need to digitize and automate the workflow of podiatry clinics. It offers an interactive dashboard, PDF reports, digital signatures and advanced features to manage appointments, patients and revenue. With a modern interface and robust functionality, FlowTime brought more agility, security and quality to patient care, and was successfully deployed in a real production environment.",
         period: "Oct/2024 - Jan/2025",
         role: "Technical Co-Lead & Front-end",
         teamSize: "Team of 3",
@@ -531,6 +531,7 @@ const en = {
         org: "FlowTime Project",
         bullets: [
           "SaaS for a podiatry clinic with dashboard and reporting",
+          "Defended as the final thesis at UGV, awarded the top grade of 10",
           "UML/ERD modeling and Figma prototyping",
           "Front-end (HTML, CSS, JS), back-end with Node.js/Firebase",
           "Desktop build with Electron.js, running in commercial operation",
@@ -547,11 +548,13 @@ const en = {
         ],
       },
       graduation: {
-        period: "Dec/2025",
+        period: "Dec/2025 - Mar/2026",
         title: "Completed the BSc in Software Engineering",
         org: "UGV University Center · Completed",
         bullets: [
           "Degree completed in December 2025",
+          "Final thesis project: FlowTime, awarded the top grade of 10",
+          "Graduation ceremony held on 21 and 22 March 2026",
         ],
       },
       streamdev: {

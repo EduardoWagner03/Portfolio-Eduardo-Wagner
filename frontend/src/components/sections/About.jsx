@@ -41,7 +41,7 @@ export default function About() {
                 height={72}
                 loading="lazy"
                 decoding="async"
-                className="h-16 w-16 rounded-2xl object-cover ring-1 ring-flux-400/30"
+                className="h-16 w-16 rounded-2xl object-cover object-top ring-1 ring-flux-400/30"
               />
               <div>
                 <h3

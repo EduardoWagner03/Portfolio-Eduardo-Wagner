@@ -86,7 +86,7 @@ const pt = {
     graduationAlt:
       "Eduardo Wagner com beca e canudo na formatura em Engenharia de Software",
     graduationCaption:
-      "Formatura em Engenharia de Software · UGV, dezembro de 2025",
+      "Colação de grau em Engenharia de Software · UGV, março de 2026",
     facts: [
       { label: "Idade", value: "23 anos" },
       { label: "Local", value: "Irineópolis, SC" },
@@ -96,7 +96,7 @@ const pt = {
     journey: [
       {
         title: "Formação Acadêmica",
-        text: "Bacharel em Engenharia de Software pela UGV - Centro Universitário, com graduação concluída em dezembro de 2025. Durante a trajetória acadêmica, liderei múltiplas equipes de desenvolvimento em projetos práticos, aplicando metodologias ágeis e coordenando todo o ciclo de vida do software: da análise de requisitos e diagramação de arquitetura (UML/DER) até o deploy final em produção.",
+        text: "Bacharel em Engenharia de Software pela UGV - Centro Universitário, com graduação concluída em dezembro de 2025 e colação de grau em março de 2026. Defendi como TCC o projeto FlowTime, o SaaS de gestão para clínicas de podologia, aprovado com nota máxima 10 e depois entregue para uso comercial. Durante a trajetória acadêmica, liderei múltiplas equipes de desenvolvimento em projetos práticos, aplicando metodologias ágeis e coordenando todo o ciclo de vida do software: da análise de requisitos e diagramação de arquitetura (UML/DER) até o deploy final em produção.",
       },
       {
         title: "StreamDev - Software House",
@@ -278,7 +278,7 @@ const pt = {
         description:
           "Sistema web completo para gestão de clínicas de podologia, trazendo eficiência, organização e praticidade para o dia a dia das clínicas. O FlowTime permite otimizar agendamentos, atendimento ao cliente e processos administrativos, tudo em uma plataforma intuitiva.",
         story:
-          "O FlowTime foi iniciado em outubro de 2024 e finalizado em janeiro de 2025, desenvolvido em equipe de 3 pessoas. O sistema surgiu da necessidade de digitalizar e automatizar o fluxo de trabalho em clínicas de podologia. O projeto oferece dashboard interativo, relatórios em PDF, assinatura digital e recursos avançados para facilitar o controle de agendamentos, pacientes e receitas. Com uma interface moderna e funcionalidades robustas, o FlowTime proporciona mais agilidade, segurança e qualidade no atendimento, sendo implementado com sucesso em ambiente real.",
+          "O FlowTime foi iniciado em outubro de 2024 e finalizado em janeiro de 2025, desenvolvido em equipe de 3 pessoas. Ele também foi o nosso Trabalho de Conclusão de Curso, defendido na UGV e aprovado com nota máxima 10, e depois entregue para uso comercial em uma clínica real. O sistema surgiu da necessidade de digitalizar e automatizar o fluxo de trabalho em clínicas de podologia. O projeto oferece dashboard interativo, relatórios em PDF, assinatura digital e recursos avançados para facilitar o controle de agendamentos, pacientes e receitas. Com uma interface moderna e funcionalidades robustas, o FlowTime proporciona mais agilidade, segurança e qualidade no atendimento, sendo implementado com sucesso em ambiente real.",
         period: "Out/2024 - Jan/2025",
         role: "Co-Líder Técnico & Front-end",
         teamSize: "Equipe de 3",
@@ -533,6 +533,7 @@ const pt = {
         org: "Projeto FlowTime",
         bullets: [
           "SaaS para clínica de podologia com dashboard e relatórios",
+          "Defendido como TCC na UGV, aprovado com nota máxima 10",
           "Modelagem UML/DER e prototipagem no Figma",
           "Frontend (HTML, CSS, JS), backend com Node.js/Firebase",
           "Desktop com Electron.js, entregue em operação comercial",
@@ -549,11 +550,13 @@ const pt = {
         ],
       },
       graduation: {
-        period: "Dez/2025",
+        period: "Dez/2025 - Mar/2026",
         title: "Conclusão do Bacharelado em Engenharia de Software",
         org: "Centro Universitário UGV · Concluído",
         bullets: [
           "Graduação concluída em dezembro de 2025",
+          "TCC com o projeto FlowTime, aprovado com nota máxima 10",
+          "Colação de grau e formatura em 21 e 22 de março de 2026",
         ],
       },
       streamdev: {

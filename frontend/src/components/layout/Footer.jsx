@@ -45,7 +45,7 @@ export default function Footer() {
                 height={48}
                 loading="lazy"
                 decoding="async"
-                className="h-12 w-12 shrink-0 rounded-xl object-cover ring-1 ring-flux-400/30"
+                className="h-12 w-12 shrink-0 rounded-xl object-cover object-top ring-1 ring-flux-400/30"
               />
               <div className="min-w-0">
                 <p className="font-display text-sm font-semibold text-slate-900 dark:text-white">
