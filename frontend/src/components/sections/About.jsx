@@ -165,7 +165,7 @@ export default function About() {
 
       {/* ------------------------------------------- Faixa de formação */}
       <Reveal className="mt-6">
-        <GlassCard interactive={false} className="p-6 sm:p-7">
+        <GlassCard className="p-6 sm:p-7">
           <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center">
             <img
               src={profile.courseLogo}
@@ -199,10 +199,7 @@ export default function About() {
 
       {/* -------------------------------------------------- Faixa de CTA */}
       <Reveal className="mt-6">
-        <GlassCard
-          interactive={false}
-          className="overflow-hidden p-7 sm:p-10"
-        >
+        <GlassCard className="overflow-hidden p-7 sm:p-10">
           <span
             aria-hidden="true"
             className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-flux-400/20 blur-3xl"
