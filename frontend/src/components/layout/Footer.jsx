@@ -39,7 +39,7 @@ export default function Footer() {
               centrada na faixa e não apenas no espaço que sobra. */}
           <div className="flex items-center gap-4 lg:flex-1">
             <img
-              src={profile.photo}
+              src={profile.avatar}
               alt=""
               width={48}
               height={48}

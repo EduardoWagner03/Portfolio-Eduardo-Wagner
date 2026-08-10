@@ -151,6 +151,7 @@ const en = {
     title: "Featured Projects",
     subtitle: "A selection of the main projects I've built",
     viewDetails: "View Details",
+    visitSite: "Visit site",
     openProject: "Open project details",
     featured: "Featured",
     status: {
@@ -160,6 +161,8 @@ const en = {
     },
     modal: {
       close: "Close project details",
+      visit: "Visit the site",
+      repo: "View repository",
       overview: "Overview",
       responsibilities: "My Responsibilities on the Project",
       team: "Project Team",
@@ -192,7 +195,7 @@ const en = {
           "Bloco3D is the project I lead at StreamDev, the software house I co-founded. I took on the architecture and full-stack development, from the storefront to the headless backend: front-end in Next.js 15 and React, Supabase handling the database, authentication and storage, and Medusa v2 backing a modular admin area. The infrastructure runs serverless on Google Cloud Run, with Docker and CI/CD through Cloud Build across separate staging and production environments. Payment webhooks are processed asynchronously with GCP Pub/Sub and Redis (Upstash), keeping services independent and preventing duplicate charges. The project also includes 2FA, webhook signature validation, audit logs, LGPD compliance and an automated Jest test suite wired into the CI pipeline.",
         period: "Jan/2026 - Present",
         role: "Architecture & Full Stack",
-        teamSize: "Technical lead",
+        teamSize: "Pair · Technical lead",
         responsibilities: [
           "Platform Architecture: Stack decisions, data modeling and project structure",
           "Next.js 15 Front-end: React interfaces built for performance",
@@ -227,7 +230,11 @@ const en = {
         team: [
           {
             role: "Co-founder & Software Engineer",
-            resp: "Architecture, Next.js front-end, Google Cloud infrastructure, ERP, payment and shipping integrations, security and LGPD compliance",
+            resp: "Architecture, Next.js front-end, ERP, payment and shipping integrations, security and LGPD compliance",
+          },
+          {
+            role: "Co-founder & Backend and Infrastructure",
+            resp: "Back-end, database and Google Cloud infrastructure, including the deploy pipeline and the staging and production environments",
           },
         ],
       },
@@ -240,7 +247,7 @@ const en = {
           "MenuDigital is the SaaS platform I build at StreamDev, still under active development and already serving stores in commercial operation. The architecture is multi-tenant, with data isolation between stores and access control applied at every layer. End customers browse the menu via link or QR Code, pay and follow the order in real time with Socket.IO. On the financial and tax side, I integrated Mercado Pago with payment splitting between store and platform, commissions and recurring subscriptions, Focus NFe for automated NFC-e issuing with email delivery, and Asaas for StreamDev's own service invoices. Customer communication runs through WhatsApp via the Evolution API plus Web Push notifications. I also built the Super Admin panel, covering stores, plans, subscriptions, billing, onboarding, support and platform health monitoring. Everything lives in a monorepo with npm workspaces and CI/CD through GitHub Actions, with separate staging and production environments.",
         period: "Jan/2026 - Present",
         role: "Architecture & Full Stack",
-        teamSize: "Technical lead",
+        teamSize: "Pair · Technical lead",
         responsibilities: [
           "Multi-tenant Architecture: Data isolation between stores and access control",
           "Order Flow: From link or QR Code menu through to real-time tracking",
@@ -278,7 +285,11 @@ const en = {
         team: [
           {
             role: "Co-founder & Software Engineer",
-            resp: "Multi-tenant architecture, front-end, back-end, financial and tax integrations, admin panels and CI/CD infrastructure",
+            resp: "Multi-tenant architecture, front-end, financial and tax integrations and admin panels",
+          },
+          {
+            role: "Co-founder & Backend and Infrastructure",
+            resp: "Back-end, database and infrastructure, including the monorepo, CI/CD and the staging and production environments",
           },
         ],
       },

@@ -35,7 +35,7 @@ export default function About() {
           <GlassCard className="h-full p-6 sm:p-8 lg:sticky lg:top-28">
             <div className="flex items-center gap-4">
               <img
-                src={profile.photo}
+                src={profile.avatar}
                 alt=""
                 width={72}
                 height={72}

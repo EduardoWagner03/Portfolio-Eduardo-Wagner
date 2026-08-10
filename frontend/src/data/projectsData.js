@@ -14,10 +14,13 @@ export const projects = [
     cover: null,
     accent: "pulse",
     featured: true,
-    link: null,
+    link: "https://bloco3d.com.br/",
     repo: null,
     gallery: [],
-    team: [{ name: "Eduardo Wagner", handle: "EduardoWagner03", self: true }],
+    team: [
+      { name: "Eduardo Wagner", handle: "EduardoWagner03", self: true },
+      { name: "Victor Bueno", handle: "VictorBueno011" },
+    ],
     stack: {
       frontend: [
         "React",
@@ -71,7 +74,10 @@ export const projects = [
     link: null,
     repo: null,
     gallery: [],
-    team: [{ name: "Eduardo Wagner", handle: "EduardoWagner03", self: true }],
+    team: [
+      { name: "Eduardo Wagner", handle: "EduardoWagner03", self: true },
+      { name: "Victor Bueno", handle: "VictorBueno011" },
+    ],
     stack: {
       frontend: [
         "React 19",
@@ -128,7 +134,7 @@ export const projects = [
     ],
     team: [
       { name: "Eduardo Wagner", handle: "EduardoWagner03", self: true },
-      { name: "Victor Bueno", handle: "victorbueno920" },
+      { name: "Victor Bueno", handle: "VictorBueno011" },
       { name: "Lucas Ulbrich", handle: "lucasulbrich" },
     ],
     stack: {
@@ -238,7 +244,7 @@ export const projects = [
     ],
     team: [
       { name: "Eduardo Wagner", handle: "EduardoWagner03", self: true },
-      { name: "Victor Bueno", handle: "victorbueno920" },
+      { name: "Victor Bueno", handle: "VictorBueno011" },
     ],
     stack: {
       frontend: [
@@ -333,8 +339,8 @@ export const teamSocials = {
     linkedin: "https://www.linkedin.com/in/eduardowagner03/",
   },
   "Victor Bueno": {
-    github: "https://github.com/victorbueno920",
-    linkedin: "https://www.linkedin.com/in/victor-bueno-365461288/",
+    github: "https://github.com/VictorBueno011",
+    linkedin: "https://www.linkedin.com/in/victorlcbueno/",
   },
   "Lucas Ulbrich": {
     github: "https://github.com/lucasulbrich",

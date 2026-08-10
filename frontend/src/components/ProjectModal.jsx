@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   Cpu,
   Expand,
+  ExternalLink,
   Layers,
   Radio,
   Target,
@@ -157,6 +158,45 @@ export default function ProjectModal({ project, onClose }) {
 
                   {/* -------------------------------------------- Conteúdo */}
                   <div className="px-5 pb-10 pt-6 sm:px-8 lg:px-10">
+                    {/* Links externos do projeto, quando existirem. */}
+                    {(project.link || project.repo) && (
+                      <div className="mb-7 flex flex-wrap gap-3">
+                        {project.link && (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={cn(
+                              "inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold",
+                              "bg-gradient-to-r from-flux-400 to-pulse-500 text-ink-950",
+                              "transition duration-300 ease-smooth hover:-translate-y-0.5 hover:shadow-glow",
+                              T.ring
+                            )}
+                          >
+                            <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                            {t.projects.modal.visit}
+                          </a>
+                        )}
+                        {project.repo && (
+                          <a
+                            href={project.repo}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={cn(
+                              "inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold",
+                              T.glass,
+                              "text-slate-700 dark:text-slate-200",
+                              "transition duration-300 ease-smooth hover:-translate-y-0.5 hover:border-flux-400/50 hover:shadow-glow",
+                              T.ring
+                            )}
+                          >
+                            <FaGithub className="h-4 w-4" aria-hidden="true" />
+                            {t.projects.modal.repo}
+                          </a>
+                        )}
+                      </div>
+                    )}
+
                     <Block icon={Layers} title={t.projects.modal.overview}>
                       <p className={cn(T.body, "text-pretty text-justify hyphens-auto leading-relaxed")}>
                         {copy.story}
@@ -203,26 +243,34 @@ export default function ProjectModal({ project, onClose }) {
                           return (
                             <GlassCard
                               key={member.name}
-                              className="flex h-full flex-col p-4"
+                              className={cn(
+                                "flex h-full flex-col p-5",
+                                // O cartão do próprio Eduardo ganha um leve
+                                // realce, para a equipe se ler de relance.
+                                member.self &&
+                                  "ring-1 ring-flux-400/25 dark:ring-flux-400/20"
+                              )}
                             >
-                              <div className="flex items-center gap-3">
+                              <div className="flex items-start gap-3.5">
                                 <span
                                   className={cn(
-                                    "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl font-display text-sm font-bold",
+                                    "inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl font-display text-sm font-bold",
                                     member.self
-                                      ? "bg-gradient-to-br from-flux-400 to-pulse-500 text-ink-950"
-                                      : "border border-slate-900/10 bg-slate-900/[0.04] text-slate-700 dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-200"
+                                      ? "bg-gradient-to-br from-flux-400 to-pulse-500 text-ink-950 shadow-glow"
+                                      : "border border-flux-400/25 bg-gradient-to-br from-flux-400/10 to-pulse-500/10 text-slate-700 dark:text-slate-200"
                                   )}
                                 >
                                   {initials}
                                 </span>
-                                <div className="min-w-0">
-                                  <p className="truncate font-display text-sm font-semibold text-slate-900 dark:text-white">
+                                <div className="min-w-0 flex-1">
+                                  <p className="font-display text-sm font-semibold leading-tight text-slate-900 dark:text-white">
                                     {member.name}
                                   </p>
+                                  {/* Sem truncate: os papéis passaram a ter
+                                      nomes longos e ficavam cortados. */}
                                   <p
                                     className={cn(
-                                      "truncate text-xs",
+                                      "mt-1 text-xs leading-snug",
                                       member.self
                                         ? "text-flux-600 dark:text-flux-300"
                                         : T.faint
@@ -237,13 +285,13 @@ export default function ProjectModal({ project, onClose }) {
                                 className={cn(
                                   T.body,
                                   T.prose,
-                                  "mt-3 flex-1 text-xs leading-relaxed"
+                                  "mt-4 flex-1 text-xs leading-relaxed"
                                 )}
                               >
                                 {memberCopy?.resp}
                               </p>
 
-                              <div className="mt-4 flex gap-2">
+                              <div className="mt-4 flex gap-2 border-t border-slate-900/[0.07] pt-4 dark:border-white/[0.07]">
                                 {[
                                   { Icon: FaGithub, href: links.github },
                                   { Icon: FaLinkedinIn, href: links.linkedin },
@@ -257,9 +305,10 @@ export default function ProjectModal({ project, onClose }) {
                                       rel="noreferrer"
                                       aria-label={`${member.name} no ${Icon === FaGithub ? "GitHub" : "LinkedIn"}`}
                                       className={cn(
-                                        "inline-flex h-8 w-8 items-center justify-center rounded-lg",
+                                        "inline-flex h-9 w-9 items-center justify-center rounded-lg",
                                         "border border-slate-900/10 text-slate-600 dark:border-white/10 dark:text-slate-300",
-                                        "transition duration-300 hover:border-flux-400/50 hover:text-flux-600 dark:hover:text-flux-300",
+                                        "transition duration-300 ease-smooth hover:border-flux-400/50 hover:text-flux-600 dark:hover:text-flux-300",
+                                        "hover:-translate-y-0.5 hover:bg-flux-400/[0.07] hover:shadow-glow",
                                         T.ring
                                       )}
                                     >

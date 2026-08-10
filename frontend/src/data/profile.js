@@ -4,8 +4,12 @@ export const profile = {
   name: "Eduardo Gregório Wagner",
   shortName: "Eduardo Wagner",
   initials: "EW",
-  // Retrato usado no hero, no cartão do "Sobre" e no rodapé.
+  // Retrato usado no hero, onde a imagem aparece grande.
   photo: "/images/eduardo-perfil.jpg",
+  // Versão 192x192, já recortada em quadrado a partir do topo, para os
+  // avatares pequenos do "Sobre" e do rodapé. Reduzir 912px para 48px no
+  // navegador deixava a foto serrilhada.
+  avatar: "/images/eduardo-avatar.jpg",
   // Foto de formatura, exibida na seção "Sobre".
   graduationPhoto: "/images/eduardo-formatura.jpg",
   // Logo oficial do curso, usada nos pontos ligados à formação.

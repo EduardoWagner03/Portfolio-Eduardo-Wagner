@@ -1,5 +1,11 @@
 import React from "react";
-import { ArrowUpRight, FolderCode, Star, Users } from "lucide-react";
+import {
+  ArrowUpRight,
+  ExternalLink,
+  FolderCode,
+  Star,
+  Users,
+} from "lucide-react";
 import { cn } from "../../lib/cn";
 import { GlassCard, Section, SectionHeading, Tag, T } from "../ui/primitives";
 import { RevealGroup, RevealItem } from "../ui/Reveal";
@@ -165,6 +171,27 @@ export default function Projects({ onSelect }) {
                       <Users className="h-3.5 w-3.5" aria-hidden="true" />
                       {copy.teamSize}
                     </span>
+
+                    {/* Acesso direto ao site publicado. Precisa de z-10 para
+                        ficar acima da camada que torna o cartão inteiro
+                        clicável, senão o clique abriria o modal. */}
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={(event) => event.stopPropagation()}
+                        className={cn(
+                          "relative z-10 -ml-1 mr-auto inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-xs font-semibold",
+                          "text-flux-600 transition duration-300 dark:text-flux-300",
+                          "hover:bg-flux-500/10 hover:text-flux-700 dark:hover:text-flux-200",
+                          T.ring
+                        )}
+                      >
+                        <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                        {t.projects.visitSite}
+                      </a>
+                    )}
 
                     <button
                       type="button"

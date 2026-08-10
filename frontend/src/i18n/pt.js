@@ -153,6 +153,7 @@ const pt = {
     title: "Principais Projetos",
     subtitle: "Alguns dos principais projetos que desenvolvi",
     viewDetails: "Ver Detalhes",
+    visitSite: "Acessar site",
     openProject: "Abrir detalhes do projeto",
     featured: "Destaque",
     status: {
@@ -162,6 +163,8 @@ const pt = {
     },
     modal: {
       close: "Fechar detalhes do projeto",
+      visit: "Acessar o site",
+      repo: "Ver repositório",
       overview: "Visão Geral",
       responsibilities: "Minhas Responsabilidades no Projeto",
       team: "Equipe do Projeto",
@@ -194,7 +197,7 @@ const pt = {
           "O Bloco3D é o projeto que lidero na StreamDev, a software house da qual sou sócio-fundador. Assumi a arquitetura e o desenvolvimento full-stack, do storefront ao backend headless: front-end em Next.js 15 e React, Supabase cuidando de banco de dados, autenticação e storage, e o Medusa v2 sustentando a área administrativa de forma modular. A infraestrutura roda serverless no Google Cloud Run, com Docker e CI/CD via Cloud Build em ambientes separados de staging e produção. Os webhooks de pagamento são processados de forma assíncrona com GCP Pub/Sub e Redis (Upstash), o que garante independência entre serviços e evita cobrança duplicada. O projeto inclui ainda 2FA, validação de assinatura de webhooks, logs de auditoria, adequação à LGPD e uma suíte de testes automatizados em Jest integrada ao pipeline de CI.",
         period: "Jan/2026 - Presente",
         role: "Arquitetura & Full Stack",
-        teamSize: "Liderança técnica",
+        teamSize: "Dupla · Liderança técnica",
         responsibilities: [
           "Arquitetura da Plataforma: Definição de stack, modelagem e estrutura do projeto",
           "Front-end em Next.js 15: Interfaces em React com foco em performance",
@@ -229,7 +232,11 @@ const pt = {
         team: [
           {
             role: "Sócio-fundador & Engenheiro de Software",
-            resp: "Arquitetura, front-end em Next.js, infraestrutura no Google Cloud, integrações com ERP, pagamentos e frete, segurança e conformidade LGPD",
+            resp: "Arquitetura, front-end em Next.js, integrações com ERP, pagamentos e frete, segurança e conformidade LGPD",
+          },
+          {
+            role: "Sócio-fundador & Backend e Infraestrutura",
+            resp: "Back-end, banco de dados e infraestrutura no Google Cloud, com o pipeline de deploy e os ambientes de staging e produção",
           },
         ],
       },
@@ -242,7 +249,7 @@ const pt = {
           "O MenuDigital é a plataforma SaaS que desenvolvo na StreamDev, ainda em desenvolvimento ativo e já com lojas rodando em operação comercial. A arquitetura é multi-tenant, com isolamento de dados entre lojas e controle de acesso aplicado em cada camada. O cliente final navega pelo cardápio via link ou QR Code, paga e acompanha o pedido em tempo real com Socket.IO. Do lado financeiro e fiscal, integrei o Mercado Pago com split de pagamentos entre loja e plataforma, comissões e assinaturas recorrentes, o Focus NFe para emissão automatizada de NFC-e com envio por e-mail e o Asaas para as NFS-e da própria StreamDev. A comunicação com o cliente acontece por WhatsApp via Evolution API e notificações Web Push. Também desenvolvi o painel Super Admin, que cuida de lojas, planos, assinaturas, billing, onboarding, suporte e monitoramento da saúde da plataforma. Tudo em um monorepo com npm workspaces e CI/CD via GitHub Actions, com staging e produção separados.",
         period: "Jan/2026 - Presente",
         role: "Arquitetura & Full Stack",
-        teamSize: "Liderança técnica",
+        teamSize: "Dupla · Liderança técnica",
         responsibilities: [
           "Arquitetura Multi-tenant: Isolamento de dados entre lojas e controle de acesso",
           "Fluxo de Pedidos: Do cardápio por link ou QR Code ao acompanhamento em tempo real",
@@ -280,7 +287,11 @@ const pt = {
         team: [
           {
             role: "Sócio-fundador & Engenheiro de Software",
-            resp: "Arquitetura multi-tenant, front-end, back-end, integrações financeiras e fiscais, painéis administrativos e infraestrutura de CI/CD",
+            resp: "Arquitetura multi-tenant, front-end, integrações financeiras e fiscais e painéis administrativos",
+          },
+          {
+            role: "Sócio-fundador & Backend e Infraestrutura",
+            resp: "Back-end, banco de dados e infraestrutura, com o monorepo, o CI/CD e os ambientes de staging e produção",
           },
         ],
       },
