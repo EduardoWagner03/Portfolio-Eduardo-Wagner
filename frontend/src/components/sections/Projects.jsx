@@ -93,12 +93,25 @@ export default function Projects({ onSelect }) {
                         aria-hidden="true"
                         className="absolute inset-0 bg-grid-dark bg-grid-sm opacity-60"
                       />
-                      <span
-                        aria-hidden="true"
-                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-5xl font-bold text-white/[0.07] sm:text-6xl"
-                      >
-                        {copy.title}
-                      </span>
+                      {project.logo ? (
+                        // Sem screenshot, mas com marca: a logo vira a capa.
+                        <span className="absolute left-1/2 top-1/2 inline-flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl bg-white/95 p-3 shadow-glass ring-1 ring-white/40 transition duration-700 ease-smooth group-hover/card:scale-[1.06]">
+                          <img
+                            src={project.logo}
+                            alt={copy.title}
+                            loading="lazy"
+                            decoding="async"
+                            className="h-full w-full object-contain"
+                          />
+                        </span>
+                      ) : (
+                        <span
+                          aria-hidden="true"
+                          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-5xl font-bold text-white/[0.07] sm:text-6xl"
+                        >
+                          {copy.title}
+                        </span>
+                      )}
                     </div>
                   )}
                   {/* Duplo scrim: um véu geral + um degradê forte na base, para
@@ -124,7 +137,23 @@ export default function Projects({ onSelect }) {
                     )}
                   </div>
                   <div className="absolute inset-x-4 bottom-4 flex items-end justify-between gap-3">
-                    <div className="min-w-0">
+                    {/* Com screenshot, a logo vira selo ao lado do título: na
+                        capa ela competiria com a imagem. */}
+                    {project.cover && project.logo && (
+                      // Fundo claro atrás da marca: várias logos são feitas
+                      // para papel branco e desaparecem sobre o véu escuro
+                      // que a capa aplica.
+                      <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/95 p-1.5 shadow-glass ring-1 ring-white/40">
+                        <img
+                          src={project.logo}
+                          alt=""
+                          loading="lazy"
+                          decoding="async"
+                          className="h-full w-full object-contain"
+                        />
+                      </span>
+                    )}
+                    <div className="min-w-0 flex-1">
                       <h3 className="truncate font-display text-xl font-bold text-white">
                         {copy.title}
                       </h3>
@@ -161,54 +190,62 @@ export default function Projects({ onSelect }) {
                     </li>
                   </ul>
 
-                  <div className="mt-6 flex items-center justify-between gap-3 pt-1">
+                  {/* Rodapé do cartão em duas linhas: a informação da equipe
+                      em cima e as ações embaixo. Com os três lado a lado, o
+                      texto da equipe e os botões se espremiam e quebravam. */}
+                  <div className="mt-6 flex flex-col gap-2 pt-1">
                     <span
                       className={cn(
                         T.faint,
                         "inline-flex items-center gap-1.5 text-xs"
                       )}
                     >
-                      <Users className="h-3.5 w-3.5" aria-hidden="true" />
+                      <Users className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                       {copy.teamSize}
                     </span>
 
-                    {/* Acesso direto ao site publicado. Precisa de z-10 para
-                        ficar acima da camada que torna o cartão inteiro
-                        clicável, senão o clique abriria o modal. */}
-                    {project.link && (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        onClick={(event) => event.stopPropagation()}
+                    <div className="flex items-center justify-between gap-2">
+                      {/* Acesso direto ao site publicado. Precisa de z-10 para
+                          ficar acima da camada que torna o cartão inteiro
+                          clicável, senão o clique abriria o modal. */}
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          onClick={(event) => event.stopPropagation()}
+                          className={cn(
+                            "relative z-10 -ml-1 inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-2 text-xs font-semibold",
+                            "text-flux-600 transition duration-300 dark:text-flux-300",
+                            "hover:bg-flux-500/10 hover:text-flux-700 dark:hover:text-flux-200",
+                            T.ring
+                          )}
+                        >
+                          <ExternalLink
+                            className="h-3.5 w-3.5"
+                            aria-hidden="true"
+                          />
+                          {t.projects.visitSite}
+                        </a>
+                      )}
+
+                      <button
+                        type="button"
+                        onClick={() => onSelect(project)}
+                        aria-label={`${t.projects.openProject}: ${copy.title}`}
                         className={cn(
-                          "relative z-10 -ml-1 mr-auto inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-xs font-semibold",
+                          "ml-auto inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-semibold",
                           "text-flux-600 transition duration-300 dark:text-flux-300",
                           "hover:bg-flux-500/10 hover:text-flux-700 dark:hover:text-flux-200",
-                          T.ring
+                          T.ring,
+                          // Amplia a área clicável para o cartão inteiro.
+                          "after:absolute after:inset-0 after:content-['']"
                         )}
                       >
-                        <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-                        {t.projects.visitSite}
-                      </a>
-                    )}
-
-                    <button
-                      type="button"
-                      onClick={() => onSelect(project)}
-                      aria-label={`${t.projects.openProject}: ${copy.title}`}
-                      className={cn(
-                        "inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold",
-                        "text-flux-600 transition duration-300 dark:text-flux-300",
-                        "hover:bg-flux-500/10 hover:text-flux-700 dark:hover:text-flux-200",
-                        T.ring,
-                        // Amplia a área clicável para o cartão inteiro.
-                        "after:absolute after:inset-0 after:content-['']"
-                      )}
-                    >
-                      {t.projects.viewDetails}
-                      <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5" />
-                    </button>
+                        {t.projects.viewDetails}
+                        <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </GlassCard>

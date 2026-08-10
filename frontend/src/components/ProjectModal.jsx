@@ -110,11 +110,20 @@ export default function ProjectModal({ project, onClose }) {
                         className="h-full w-full object-cover object-top"
                       />
                     ) : (
-                      <div className="h-full w-full bg-gradient-to-br from-pulse-600/40 via-ink-900 to-flux-600/30">
+                      <div className="relative h-full w-full bg-gradient-to-br from-pulse-600/40 via-ink-900 to-flux-600/30">
                         <span
                           aria-hidden="true"
                           className="block h-full w-full bg-grid-dark bg-grid-sm opacity-60"
                         />
+                        {project.logo && (
+                          <span className="absolute left-1/2 top-1/2 inline-flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl bg-white/95 p-3 shadow-glass ring-1 ring-white/40">
+                            <img
+                              src={project.logo}
+                              alt=""
+                              className="h-full w-full object-contain"
+                            />
+                          </span>
+                        )}
                       </div>
                     )}
                     <span
@@ -140,19 +149,30 @@ export default function ProjectModal({ project, onClose }) {
                       <X className="h-5 w-5" />
                     </button>
 
-                    <div className="absolute inset-x-5 bottom-4 sm:inset-x-8">
-                      <p className="font-mono text-xs text-flux-600 dark:text-flux-300">
-                        {copy.period} · {copy.role}
-                      </p>
-                      <h2
-                        id="project-modal-title"
-                        className={cn(
-                          T.heading,
-                          "mt-1 text-3xl sm:text-4xl lg:text-5xl"
-                        )}
-                      >
-                        {copy.title}
-                      </h2>
+                    <div className="absolute inset-x-5 bottom-4 flex items-end gap-4 sm:inset-x-8">
+                      {project.cover && project.logo && (
+                        <span className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white/95 p-2 shadow-glass ring-1 ring-white/40">
+                          <img
+                            src={project.logo}
+                            alt=""
+                            className="h-full w-full object-contain"
+                          />
+                        </span>
+                      )}
+                      <div className="min-w-0">
+                        <p className="font-mono text-xs text-flux-600 dark:text-flux-300">
+                          {copy.period} · {copy.role}
+                        </p>
+                        <h2
+                          id="project-modal-title"
+                          className={cn(
+                            T.heading,
+                            "mt-1 text-3xl sm:text-4xl lg:text-5xl"
+                          )}
+                        >
+                          {copy.title}
+                        </h2>
+                      </div>
                     </div>
                   </div>
 

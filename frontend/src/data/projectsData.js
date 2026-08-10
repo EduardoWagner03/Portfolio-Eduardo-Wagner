@@ -12,6 +12,7 @@ export const projects = [
     // gerada em CSS. Basta apontar `cover` para um arquivo em /public/images
     // e preencher `gallery` para que as imagens passem a ser usadas.
     cover: null,
+    logo: "/images/logo-bloco3d.jpg",
     accent: "pulse",
     featured: true,
     link: "https://bloco3d.com.br/",
@@ -124,6 +125,7 @@ export const projects = [
     id: "flowtime",
     status: "done",
     cover: "/images/FlowTime.png",
+    logo: "/images/logo-flowtime.png",
     accent: "flux",
     link: null,
     repo: null,
@@ -135,7 +137,7 @@ export const projects = [
     team: [
       { name: "Eduardo Wagner", handle: "EduardoWagner03", self: true },
       { name: "Victor Bueno", handle: "VictorBueno011" },
-      { name: "Lucas Ulbrich", handle: "lucasulbrich" },
+      { name: "Lucas Ulbrich", handle: "Lukszera" },
     ],
     stack: {
       frontend: [
@@ -299,8 +301,9 @@ export const projects = [
   {
     id: "autopintura",
     status: "done",
-    // Sem screenshots ainda: cai na capa tipográfica gerada em CSS.
+    // Sem screenshots ainda: a capa usa a logo do cliente.
     cover: null,
+    logo: "/images/logo-autopintura.png",
     accent: "pulse",
     link: null,
     repo: null,
@@ -343,8 +346,8 @@ export const teamSocials = {
     linkedin: "https://www.linkedin.com/in/victorlcbueno/",
   },
   "Lucas Ulbrich": {
-    github: "https://github.com/lucasulbrich",
-    linkedin: "https://www.linkedin.com/in/lucas-ulbrich/",
+    github: "https://github.com/Lukszera",
+    linkedin: "https://www.linkedin.com/in/lucas-ulbrich-franco/",
   },
 };
 
