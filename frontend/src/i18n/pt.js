@@ -297,11 +297,11 @@ const pt = {
       },
       flowtime: {
         title: "FlowTime",
-        subtitle: "Sistema Finalizado",
+        subtitle: "Finalizado e em Operação",
         description:
-          "Sistema web completo de gestão, desenvolvido sob medida para uma clínica de podologia específica, trazendo eficiência, organização e praticidade para o dia a dia dela. O FlowTime permite otimizar agendamentos, atendimento ao cliente e processos administrativos, tudo em uma plataforma intuitiva.",
+          "Sistema web completo de gestão, desenvolvido sob medida para uma clínica de podologia específica, trazendo eficiência, organização e praticidade para o dia a dia dela. Está finalizado e em operação desde a entrega, e hoje passa por uma expansão para se tornar um SaaS.",
         story:
-          "O FlowTime foi iniciado em outubro de 2024 e finalizado em janeiro de 2025, desenvolvido em equipe de 3 pessoas. Ele também foi o meu Trabalho de Conclusão de Curso, defendido individualmente na UGV e aprovado com nota máxima 10, e entregue para uso comercial. Na época da apresentação, o sistema atendia uma clínica específica, e não era um SaaS: a evolução para um produto multi-cliente foi justamente o caminho futuro que apresentei na defesa. Esse caminho saiu do papel, e hoje o FlowTime passa por uma reorganização para se tornar um SaaS. O sistema surgiu da necessidade real de digitalizar e automatizar o fluxo de trabalho dessa clínica. O projeto oferece dashboard interativo, relatórios em PDF, assinatura digital e recursos avançados para facilitar o controle de agendamentos, pacientes e receitas. Com uma interface moderna e funcionalidades robustas, o FlowTime proporciona mais agilidade, segurança e qualidade no atendimento, sendo implementado com sucesso em ambiente real.",
+          "O FlowTime foi iniciado em outubro de 2024 e finalizado em janeiro de 2025, desenvolvido em equipe de 3 pessoas. Ele também foi o meu Trabalho de Conclusão de Curso, defendido individualmente na UGV e aprovado com nota máxima 10, e entregue para uso comercial. Na época da apresentação, o sistema atendia uma clínica específica, e não era um SaaS: a evolução para um produto multi-cliente foi justamente o caminho futuro que apresentei na defesa. Esse caminho saiu do papel: o sistema segue finalizado e em operação na clínica, e em paralelo passa por uma expansão para se tornar um SaaS. O sistema surgiu da necessidade real de digitalizar e automatizar o fluxo de trabalho dessa clínica. O projeto oferece dashboard interativo, relatórios em PDF, assinatura digital e recursos avançados para facilitar o controle de agendamentos, pacientes e receitas. Com uma interface moderna e funcionalidades robustas, o FlowTime proporciona mais agilidade, segurança e qualidade no atendimento, sendo implementado com sucesso em ambiente real.",
         period: "Out/2024 - Jan/2025",
         role: "Co-Líder Técnico & Front-end",
         teamSize: "Equipe de 3",
