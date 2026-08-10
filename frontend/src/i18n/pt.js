@@ -644,7 +644,9 @@ const pt = {
       sending: "Enviando...",
       sent: "Mensagem pronta!",
       required: "Campo obrigatório",
-      invalidEmail: "Informe um email válido",
+      minName: "Informe seu nome com pelo menos 2 letras",
+      invalidEmail: "Informe um email válido, como nome@dominio.com",
+      minSubject: "O assunto precisa de pelo menos 3 caracteres",
       minMessage: "Escreva pelo menos 20 caracteres",
       counter: "caracteres",
       fallbackNote:

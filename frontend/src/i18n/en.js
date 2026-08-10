@@ -641,7 +641,9 @@ const en = {
       sending: "Sending...",
       sent: "Message ready!",
       required: "This field is required",
-      invalidEmail: "Enter a valid email address",
+      minName: "Enter your name with at least 2 letters",
+      invalidEmail: "Enter a valid email address, like name@domain.com",
+      minSubject: "The subject needs at least 3 characters",
       minMessage: "Write at least 20 characters",
       counter: "characters",
       fallbackNote:

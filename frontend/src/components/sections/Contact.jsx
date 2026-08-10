@@ -15,8 +15,12 @@ import { Button, GlassCard, Section, SectionHeading, T } from "../ui/primitives"
 import Reveal from "../ui/Reveal";
 import { useI18n } from "../../i18n";
 import { profile } from "../../data/profile";
-
-const MIN_MESSAGE = 20;
+import {
+  LIMITS,
+  sanitize,
+  validateAll,
+  validateField,
+} from "../../lib/formValidation";
 
 /* ------------------------------------------------------------------ *
  * Campo de formulário com label flutuante e estado de erro acessível.
@@ -146,31 +150,46 @@ export default function Contact() {
     subject: "",
     message: "",
   });
+  // Guarda a chave da mensagem (ex.: "minName"), não o texto: assim os erros
+  // já visíveis acompanham a troca de idioma.
   const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
   const [status, setStatus] = useState("idle");
 
+  const message = (key) => (key ? t.contact.form[key] : null);
+
   const update = (key) => (event) => {
-    setValues((current) => ({ ...current, [key]: event.target.value }));
-    if (errors[key]) setErrors((current) => ({ ...current, [key]: null }));
+    const value = sanitize(key, event.target.value);
+    setValues((current) => ({ ...current, [key]: value }));
+    // Só revalida em tempo real depois que o campo já foi visitado, para o
+    // erro não aparecer enquanto a pessoa ainda está digitando pela primeira
+    // vez. Depois disso, some assim que o valor fica válido.
+    if (touched[key])
+      setErrors((current) => ({ ...current, [key]: validateField(key, value) }));
   };
 
-  const validate = () => {
-    const next = {};
-    if (!values.name.trim()) next.name = t.contact.form.required;
-    if (!values.email.trim()) next.email = t.contact.form.required;
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(values.email))
-      next.email = t.contact.form.invalidEmail;
-    if (!values.subject.trim()) next.subject = t.contact.form.required;
-    if (values.message.trim().length < MIN_MESSAGE)
-      next.message = t.contact.form.minMessage;
-    return next;
+  const handleBlur = (key) => () => {
+    setTouched((current) => ({ ...current, [key]: true }));
+    setErrors((current) => ({
+      ...current,
+      [key]: validateField(key, values[key]),
+    }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const nextErrors = validate();
+    const nextErrors = validateAll(values);
     setErrors(nextErrors);
-    if (Object.keys(nextErrors).length) return;
+    setTouched({ name: true, email: true, subject: true, message: true });
+    if (Object.keys(nextErrors).length) {
+      // Leva o foco ao primeiro campo com problema, em vez de deixar a pessoa
+      // procurar onde está o erro.
+      const first = ["name", "email", "subject", "message"].find(
+        (field) => nextErrors[field]
+      );
+      document.getElementById(`contact-${first}`)?.focus();
+      return;
+    }
 
     setStatus("sending");
     // Sem back-end publicado: abre o cliente de email já preenchido.
@@ -262,8 +281,11 @@ export default function Contact() {
                   placeholder={t.contact.form.namePlaceholder}
                   value={values.name}
                   onChange={update("name")}
-                  error={errors.name}
+                  onBlur={handleBlur("name")}
+                  error={message(errors.name)}
                   autoComplete="name"
+                  maxLength={LIMITS.name.max}
+                  spellCheck={false}
                 />
                 <Field
                   id="contact-email"
@@ -272,8 +294,13 @@ export default function Contact() {
                   placeholder={t.contact.form.emailPlaceholder}
                   value={values.email}
                   onChange={update("email")}
-                  error={errors.email}
+                  onBlur={handleBlur("email")}
+                  error={message(errors.email)}
                   autoComplete="email"
+                  inputMode="email"
+                  maxLength={LIMITS.email.max}
+                  spellCheck={false}
+                  autoCapitalize="none"
                 />
               </div>
 
@@ -283,7 +310,9 @@ export default function Contact() {
                 placeholder={t.contact.form.subjectPlaceholder}
                 value={values.subject}
                 onChange={update("subject")}
-                error={errors.subject}
+                onBlur={handleBlur("subject")}
+                error={message(errors.subject)}
+                maxLength={LIMITS.subject.max}
               />
 
               <Field
@@ -294,8 +323,10 @@ export default function Contact() {
                 placeholder={t.contact.form.messagePlaceholder}
                 value={values.message}
                 onChange={update("message")}
-                error={errors.message}
-                hint={`${values.message.length} ${t.contact.form.counter}`}
+                onBlur={handleBlur("message")}
+                error={message(errors.message)}
+                maxLength={LIMITS.message.max}
+                hint={`${values.message.length}/${LIMITS.message.max} ${t.contact.form.counter}`}
               />
 
               <Button
