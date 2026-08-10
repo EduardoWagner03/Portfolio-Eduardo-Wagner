@@ -265,19 +265,22 @@ export default function ProjectModal({ project, onClose }) {
                               key={member.name}
                               className={cn(
                                 "flex h-full flex-col p-5",
-                                // O cartão do próprio Eduardo ganha um leve
-                                // realce, para a equipe se ler de relance.
-                                member.self &&
-                                  "ring-1 ring-flux-400/25 dark:ring-flux-400/20"
+                                // Todos os integrantes recebem o mesmo peso
+                                // visual; só o tom do acento muda, para o
+                                // cartão do próprio Eduardo se distinguir sem
+                                // rebaixar os demais.
+                                member.self
+                                  ? "ring-1 ring-flux-400/25 dark:ring-flux-400/20"
+                                  : "ring-1 ring-pulse-400/25 dark:ring-pulse-400/20"
                               )}
                             >
                               <div className="flex items-start gap-3.5">
                                 <span
                                   className={cn(
-                                    "inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl font-display text-sm font-bold",
+                                    "inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl font-display text-sm font-bold text-ink-950 shadow-glow",
                                     member.self
-                                      ? "bg-gradient-to-br from-flux-400 to-pulse-500 text-ink-950 shadow-glow"
-                                      : "border border-flux-400/25 bg-gradient-to-br from-flux-400/10 to-pulse-500/10 text-slate-700 dark:text-slate-200"
+                                      ? "bg-gradient-to-br from-flux-400 to-pulse-500"
+                                      : "bg-gradient-to-br from-pulse-400 to-flux-400"
                                   )}
                                 >
                                   {initials}
@@ -293,7 +296,7 @@ export default function ProjectModal({ project, onClose }) {
                                       "mt-1 text-xs leading-snug",
                                       member.self
                                         ? "text-flux-600 dark:text-flux-300"
-                                        : T.faint
+                                        : "text-pulse-600 dark:text-pulse-300"
                                     )}
                                   >
                                     {memberCopy?.role}

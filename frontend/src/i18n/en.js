@@ -647,6 +647,7 @@ const en = {
       email: "Email",
       linkedin: "LinkedIn",
       github: "GitHub",
+      company: "StreamDev",
     },
     copy: "Copy",
     copied: "Copied!",

@@ -6,6 +6,7 @@ import {
   Copy,
   Mail,
   MessageSquare,
+  Rocket,
   Send,
   ShieldCheck,
 } from "lucide-react";
@@ -263,6 +264,12 @@ export default function Contact() {
             label={t.contact.methods.github}
             value={profile.github.handle}
             href={profile.github.url}
+          />
+          <Channel
+            icon={Rocket}
+            label={t.contact.methods.company}
+            value={profile.company.handle}
+            href={profile.company.url}
           />
         </Reveal>
 

@@ -27,6 +27,8 @@ export const profile = {
     name: "StreamDev",
     role: "Engenheiro de Software e Sócio-Fundador",
     since: "2026",
+    url: "https://streamdev.dev.br/",
+    handle: "streamdev.dev.br",
   },
   // Coloque o arquivo em frontend/public/cv.pdf para habilitar o botão.
   cv: "/cv.pdf",

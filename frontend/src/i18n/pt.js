@@ -650,6 +650,7 @@ const pt = {
       email: "Email",
       linkedin: "LinkedIn",
       github: "GitHub",
+      company: "StreamDev",
     },
     copy: "Copiar",
     copied: "Copiado!",
