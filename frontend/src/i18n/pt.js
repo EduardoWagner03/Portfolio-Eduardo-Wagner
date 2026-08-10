@@ -361,8 +361,8 @@ const pt = {
         description:
           "Projeto acadêmico finalizado, desenvolvido em dupla, que criou um sistema CMMS integrado com IoT para monitoramento e controle de ambientes climatizados. Permite gerenciar equipamentos de ar-condicionado, registrar chamados, gerar ordens de serviço e monitorar condições ambientais em tempo real via sensores MQTT. Conta ainda com chat em tempo real para equipes.",
         story:
-          "O ThermalTech foi desenvolvido em dupla como projeto acadêmico da faculdade, com início em 2025 e desenvolvimento já concluído. O objetivo era criar um sistema robusto para monitoramento e automação de ambientes industriais, integrando sensores IoT, dashboards, relatórios e comunicação entre equipes. O resultado entregue reúne monitoramento em tempo real via MQTT, gestão de chamados, chat integrado e uma camada de segurança com middleware de auditoria e detecção de ameaças.",
-        period: "2025",
+          "O ThermalTech foi desenvolvido em dupla como projeto acadêmico da faculdade, com início em 2023 e conclusão em 2025. O objetivo era criar um sistema robusto para monitoramento e automação de ambientes industriais, integrando sensores IoT, dashboards, relatórios e comunicação entre equipes. O resultado entregue reúne monitoramento em tempo real via MQTT, gestão de chamados, chat integrado e uma camada de segurança com middleware de auditoria e detecção de ameaças.",
+        period: "2023 - 2025",
         role: "Frontend & Security",
         teamSize: "Dupla",
         responsibilities: [
@@ -513,13 +513,14 @@ const pt = {
         ],
       },
       thermal: {
-        period: "2024",
+        period: "2023 - 2025",
         title: "Desenvolvedor IoT",
-        org: "Projeto Thermal Tech",
+        org: "Projeto ThermalTech · Faculdade",
         bullets: [
-          "Monitoramento térmico com Electron.js e sensores",
+          "Projeto acadêmico em dupla, do início em 2023 à conclusão em 2025",
+          "Monitoramento térmico em tempo real com sensores e MQTT",
           "Backend com Node.js e dashboard interativo",
-          "Projeto em equipe de 2 pessoas",
+          "Middleware de auditoria e detecção de ameaças",
         ],
       },
       flowtime: {

@@ -359,8 +359,8 @@ const en = {
         description:
           "A completed academic project built as a pair: a CMMS system integrated with IoT for monitoring and controlling climate-controlled environments. It manages air-conditioning equipment, logs service tickets, generates work orders and monitors environmental conditions in real time through MQTT sensors, plus real-time team chat.",
         story:
-          "ThermalTech was built as a pair for an academic project that started in 2025 and has since been completed. The goal was a robust system for monitoring and automating industrial environments, integrating IoT sensors, dashboards, reporting and team communication. The delivered result brings together real-time MQTT monitoring, ticket management, integrated chat and a security layer with audit middleware and threat detection.",
-        period: "2025",
+          "ThermalTech was built as a pair for an academic project that started in 2023 and was completed in 2025. The goal was a robust system for monitoring and automating industrial environments, integrating IoT sensors, dashboards, reporting and team communication. The delivered result brings together real-time MQTT monitoring, ticket management, integrated chat and a security layer with audit middleware and threat detection.",
+        period: "2023 - 2025",
         role: "Frontend & Security",
         teamSize: "Pair",
         responsibilities: [
@@ -511,13 +511,14 @@ const en = {
         ],
       },
       thermal: {
-        period: "2024",
+        period: "2023 - 2025",
         title: "IoT Developer",
-        org: "Thermal Tech Project",
+        org: "ThermalTech Project · University",
         bullets: [
-          "Thermal monitoring with Electron.js and sensors",
+          "Academic project built as a pair, from its 2023 start to completion in 2025",
+          "Real-time thermal monitoring with sensors and MQTT",
           "Node.js back-end and interactive dashboard",
-          "Built by a team of 2",
+          "Audit middleware and threat detection",
         ],
       },
       flowtime: {
