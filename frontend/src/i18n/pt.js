@@ -667,7 +667,7 @@ const pt = {
       messagePlaceholder: "Digite sua mensagem...",
       submit: "Enviar Mensagem",
       sending: "Enviando...",
-      sent: "Mensagem pronta!",
+      sent: "Mensagem enviada!",
       required: "Campo obrigatório",
       minName: "Informe seu nome com pelo menos 2 letras",
       invalidEmail: "Informe um email válido, como nome@dominio.com",
@@ -675,7 +675,7 @@ const pt = {
       minMessage: "Escreva pelo menos 20 caracteres",
       counter: "caracteres",
       fallbackNote:
-        "O envio abre seu cliente de email com a mensagem já preenchida.",
+        "Não consegui enviar direto: abri seu cliente de email com a mensagem já preenchida.",
     },
     privacy:
       "Suas informações estão seguras e não serão compartilhadas com terceiros.",

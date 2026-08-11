@@ -664,7 +664,7 @@ const en = {
       messagePlaceholder: "Type your message...",
       submit: "Send Message",
       sending: "Sending...",
-      sent: "Message ready!",
+      sent: "Message sent!",
       required: "This field is required",
       minName: "Enter your name with at least 2 letters",
       invalidEmail: "Enter a valid email address, like name@domain.com",
@@ -672,7 +672,7 @@ const en = {
       minMessage: "Write at least 20 characters",
       counter: "characters",
       fallbackNote:
-        "Submitting opens your email client with the message pre-filled.",
+        "Couldn't send it directly: opened your email client with the message pre-filled.",
     },
     privacy:
       "Your information is safe and will never be shared with third parties.",

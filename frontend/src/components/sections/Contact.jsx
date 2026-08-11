@@ -177,7 +177,15 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const openMailtoFallback = () => {
+    const body = `${values.message}\n\n--\n${values.name} · ${values.email}`;
+    const mailto = `mailto:${profile.email}?subject=${encodeURIComponent(
+      values.subject
+    )}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const nextErrors = validateAll(values);
     setErrors(nextErrors);
@@ -193,17 +201,22 @@ export default function Contact() {
     }
 
     setStatus("sending");
-    // Sem back-end publicado: abre o cliente de email já preenchido.
-    const body = `${values.message}\n\n--\n${values.name} · ${values.email}`;
-    const mailto = `mailto:${profile.email}?subject=${encodeURIComponent(
-      values.subject
-    )}&body=${encodeURIComponent(body)}`;
 
-    window.setTimeout(() => {
-      window.location.href = mailto;
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/contato`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      if (!response.ok) throw new Error("Falha no envio");
       setStatus("sent");
-      window.setTimeout(() => setStatus("idle"), 4000);
-    }, 500);
+    } catch {
+      // Backend indisponível: cai para o cliente de email do visitante.
+      openMailtoFallback();
+      setStatus("fallback");
+    }
+
+    window.setTimeout(() => setStatus("idle"), 4000);
   };
 
   return (
@@ -340,19 +353,19 @@ export default function Contact() {
                 type="submit"
                 size="lg"
                 className="mt-2 w-full"
-                icon={status === "sent" ? Check : Send}
+                icon={status === "sent" || status === "fallback" ? Check : Send}
                 loading={status === "sending"}
                 disabled={status === "sending"}
               >
                 {status === "sending"
                   ? t.contact.form.sending
-                  : status === "sent"
+                  : status === "sent" || status === "fallback"
                     ? t.contact.form.sent
                     : t.contact.form.submit}
               </Button>
 
               <AnimatePresence>
-                {status === "sent" && (
+                {status === "fallback" && (
                   <motion.p
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
