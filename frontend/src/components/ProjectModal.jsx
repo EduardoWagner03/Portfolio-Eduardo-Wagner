@@ -1,536 +1,493 @@
-import React, { useEffect } from "react";
-import { FaGithub, FaLinkedin, FaUsers } from "react-icons/fa";
-import { Dialog, DialogContent, DialogDescription } from "./dialog";
-import { useTranslation } from "react-i18next";
+import React, { useCallback, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import {
+  Cpu,
+  Expand,
+  ExternalLink,
+  Layers,
+  Radio,
+  Target,
+  Users,
+  X,
+} from "lucide-react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { cn } from "../lib/cn";
+import { GlassCard, Tag, T } from "./ui/primitives";
+import Lightbox from "./ui/Lightbox";
+import { teamSocials } from "../data/projectsData";
+import { useI18n } from "../i18n";
+import { useEscapeKey, useLockBodyScroll } from "../lib/hooks";
 
-function ProjectModal({
-  isModalOpen,
-  setIsModalOpen,
-  selectedProject,
-  handleProjectClick,
-}) {
-  const { t } = useTranslation();
+const STACK_KEYS = [
+  "frontend",
+  "backend",
+  "database",
+  "libraries",
+  "integrations",
+];
 
-  useEffect(() => {
-    if (isModalOpen) {
-      document.body.classList.add("body-modal-open");
-    } else {
-      document.body.classList.remove("body-modal-open");
-    }
-
-    return () => {
-      document.body.classList.remove("body-modal-open");
-    };
-  }, [isModalOpen]);
-
-  // ✅ FUNÇÃO handleImageClick DENTRO DO COMPONENTE
-  const handleImageClick = (imageSrc, imageTitle) => {
-    // Calcular as dimensões da tela
-    const screenWidth = window.screen.availWidth;
-    const screenHeight = window.screen.availHeight;
-
-    // Definir dimensões da janela (responsivo)
-    const windowWidth = Math.min(1400, screenWidth * 0.9);
-    const windowHeight = Math.min(900, screenHeight * 0.9);
-
-    // Calcular posição centralizada
-    const left = (screenWidth - windowWidth) / 2;
-    const top = (screenHeight - windowHeight) / 2;
-
-    // CSS organizado do iframe.css
-    const iframeCss = `
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html, body {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background: linear-gradient(135deg, #f0f8ff 0%, #e3f2fd 100%);
-      }
-
-      .image-viewer-container {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-      }
-
-      .image-viewer-header {
-        background: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%);
-        color: white;
-        padding: 1rem 2rem;
-        text-align: center;
-        box-shadow: 0 4px 20px rgba(21, 101, 192, 0.3);
-        z-index: 10;
-        position: relative;
-      }
-
-      .image-viewer-header h1 {
-        margin: 0;
-        font-size: 1.8rem;
-        font-weight: 700;
-        text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      }
-
-      .image-viewer-body {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        background: linear-gradient(135deg, #4a6b8a 0%, #5c7a9a 50%, #607fa9 100%);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .image-viewer-wrapper {
-        max-width: 90%;
-        max-height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 12px;
-        box-shadow: 0 20px 60px rgba(30, 136, 229, 0.25);
-        background: linear-gradient(135deg, #607fa9 0%, #395e7a 50%, #000102 100%);
-        padding: 15px;
-      }
-
-      .image-viewer-img {
-        max-width: 100%;
-        max-height: 45rem;
-        width: auto;
-        height: auto;
-        border-radius: 8px;
-        object-fit: contain;
-        transition: all 0.8s cubic-bezier(0.45, 0.56, 0.55, 0.99);
-        display: block;
-        cursor: pointer;
-        transform-origin: center center;
-        filter: brightness(1) contrast(1) saturate(1);
-      }
-
-      .image-viewer-close-btn {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        color: white;
-        font-size: 1.6rem;
-        cursor: pointer;
-        box-shadow: 0 8px 25px rgba(229, 62, 62, 0.4);
-        transition: all 0.3s ease;
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-      }
-
-      .image-viewer-close-btn:hover {
-        background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
-        transform: scale(1.1);
-        box-shadow: 0 12px 35px rgba(229, 62, 62, 0.5);
-      }
-
-      .image-viewer-close-btn:active {
-        transform: scale(0.95);
-      }
-
-      .image-viewer-loading {
-        color: #1565c0;
-        font-size: 18px;
-        text-align: center;
-        padding: 3rem;
-        font-weight: 500;
-      }
-
-      .image-viewer-footer-info {
-        position: absolute;
-        bottom: 15px;
-        left: 50%;
-        transform: translateX(-50%);
-        color: #1565c0;
-        font-size: 0.85rem;
-        text-align: center;
-        opacity: 0.8;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        box-shadow: 0 2px 10px rgba(30, 136, 229, 0.1);
-      }
-
-      @media (min-width: 1200px) {
-        .image-viewer-header h1 {
-          font-size: 2.2rem;
-        }
-        .image-viewer-body {
-          padding: 30px;
-        }
-        .image-viewer-wrapper {
-          padding: 25px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .image-viewer-header {
-          padding: 0.8rem 1.5rem;
-        }
-        .image-viewer-header h1 {
-          font-size: 1.4rem;
-        }
-        .image-viewer-body {
-          padding: 15px;
-        }
-        .image-viewer-close-btn {
-          width: 45px;
-          height: 45px;
-          font-size: 1.4rem;
-        }
-      }
-
-      :fullscreen .image-viewer-container, :-webkit-full-screen .image-viewer-container, :-moz-full-screen .image-viewer-container {
-        width: 100vw;
-        height: 100vh;
-      }
-    `;
-
-    // Criar uma nova janela centralizada
-    const newWindow = window.open(
-      "",
-      "_blank",
-      `width=${windowWidth},height=${windowHeight},left=${left},top=${top},scrollbars=no,resizable=yes,toolbar=no,menubar=no,location=no,status=no`
-    );
-
-    if (newWindow) {
-      newWindow.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>${imageTitle}</title>
-          <link rel="preconnect" href="https://fonts.googleapis.com">
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-          <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
-          <style>
-            ${iframeCss}
-          </style>
-        </head>
-        <body>
-          <div class="image-viewer-container">
-            <button class="image-viewer-close-btn" onclick="window.close()" title="Fechar janela">&times;</button>
-
-            <div class="image-viewer-header">
-              <h1>${imageTitle}</h1>
-            </div>
-
-            <div class="image-viewer-body">
-              <div class="image-viewer-wrapper">
-                <img src="${imageSrc}" alt="${imageTitle}" class="image-viewer-img"
-                     onerror="this.parentElement.innerHTML='<div class=image-viewer-loading>❌ Erro ao carregar imagem</div>'"
-                     onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.5s">
-              </div>
-
-              <div class="image-viewer-footer-info">
-                ESC para fechar • F11 para tela cheia
-              </div>
-            </div>
-          </div>
-
-          <script>
-            window.focus();
-
-            document.addEventListener('keydown', function(e) {
-              if (e.key === 'Escape') {
-                window.close();
-              }
-              if (e.key === 'F11') {
-                e.preventDefault();
-                if (!document.fullscreenElement) {
-                  document.documentElement.requestFullscreen();
-                } else {
-                  document.exitFullscreen();
-                }
-              }
-            });
-
-            window.addEventListener('resize', function() {
-              if (!document.fullscreenElement) {
-                const screenWidth = window.screen.availWidth;
-                const screenHeight = window.screen.availHeight;
-                const windowWidth = window.outerWidth;
-                const windowHeight = window.outerHeight;
-                const left = (screenWidth - windowWidth) / 2;
-                const top = (screenHeight - windowHeight) / 2;
-                window.moveTo(left, top);
-              }
-            });
-
-            document.addEventListener('fullscreenchange', function() {
-              const container = document.querySelector('.image-viewer-container');
-              if (document.fullscreenElement) {
-                container.style.width = '100vw';
-                container.style.height = '100vh';
-              }
-            });
-          </script>
-        </body>
-        </html>
-      `);
-      newWindow.document.close();
-      newWindow.focus();
-    } else {
-      alert(
-        "⚠️ Popups estão bloqueados!\n\nPor favor, permita popups para este site e tente novamente."
-      );
-    }
-  };
-
+/** Cabeçalho de bloco dentro do modal. */
+function Block({ icon: Icon, title, children, className }) {
   return (
-    <>
-      {/* Project Details Modal */}
-      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="project-modal-content">
-          <button
-            type="button"
-            className="modal-close-btn"
-            aria-label={t("modalClose")}
-            onClick={() => setIsModalOpen(false)}
-          >
-            &times;
-          </button>
-          {selectedProject && (
-            <>
-              <div className="project-modal-header">
-                <h2 className="project-modal-title">{selectedProject.title}</h2>
-                {selectedProject.subtitle && (
-                  <div className="project-status-badge">
-                    {selectedProject.subtitle}
-                  </div>
-                )}
-              </div>
-
-              <DialogDescription>
-                <div className="project-modal-main-row">
-                  <img
-                    src={selectedProject.image || "/placeholder.svg"}
-                    alt={selectedProject.title}
-                    className="project-modal-image"
-                  />
-                  <div className="project-modal-summary">
-                    {selectedProject.history}
-                  </div>
-                </div>
-              </DialogDescription>
-
-              {/* Minhas Responsabilidades */}
-              {selectedProject.responsibilities && (
-                <div className="project-responsibilities">
-                  <h4 className="project-responsibilities-title">
-                    🎯 {t("modalResponsibilities")}
-                  </h4>
-                  <div className="project-responsibilities-container">
-                    <div className="project-responsibilities-bg-decoration"></div>
-                    <div className="project-responsibilities-content">
-                      {selectedProject.responsibilities.map((resp, idx) => (
-                        <div key={idx} className="project-responsibility-item">
-                          <span className="project-responsibility-emoji">
-                            ✨
-                          </span>
-                          {resp}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Equipe do Projeto */}
-              {selectedProject.team && (
-                <div className="project-team">
-                  <h4 className="project-team-title">
-                    <FaUsers
-                      style={{ marginRight: "0.5rem", color: "#1e88e5" }}
-                    />
-                    {t("modalTeam")}
-                  </h4>
-                  <div className="project-team-grid">
-                    {selectedProject.team.map((member, idx) => {
-                      // Definir redes sociais para cada membro
-                      const redesSociais = {
-                        "Eduardo Wagner": {
-                          github: "https://github.com/EduardoWagner03",
-                          linkedin:
-                            "https://www.linkedin.com/in/eduardowagner03/",
-                        },
-                        "Victor Bueno": {
-                          github: "https://github.com/victorbueno920",
-                          linkedin:
-                            "https://www.linkedin.com/in/victor-bueno-365461288/",
-                        },
-                        "Lucas Ulbrich": {
-                          github: "https://github.com/lucasulbrich",
-                          linkedin:
-                            "https://www.linkedin.com/in/lucas-ulbrich/",
-                        },
-                      };
-
-                      const redes = redesSociais[member.name] || {
-                        github: "#",
-                        linkedin: "#",
-                      };
-
-                      return (
-                        <div key={idx} className="project-team-member">
-                          {/* Avatar placeholder */}
-                          <div className="project-team-avatar">
-                            {member.name
-                              .split(" ")
-                              .map((n) => n[0])
-                              .join("")}
-                          </div>
-
-                          <h6 className="project-team-member-name">
-                            {member.name}
-                          </h6>
-
-                          <div className="project-team-member-role">
-                            {member.role}
-                          </div>
-
-                          <div className="project-team-member-responsibilities">
-                            {member.responsibilities}
-                          </div>
-
-                          {/* Redes Sociais */}
-                          <div className="project-team-social-links">
-                            <a
-                              href={redes.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="project-team-social-link project-team-github"
-                            >
-                              <FaGithub />
-                            </a>
-
-                            <a
-                              href={redes.linkedin}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="project-team-social-link project-team-linkedin"
-                            >
-                              <FaLinkedin />
-                            </a>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-
-              {/* Integração IoT (só para ThermalTech) */}
-              {selectedProject.iotIntegration && (
-                <div className="iot-integration">
-                  <h4 className="iot-integration-title">
-                    🌐 {t("modalIoTIntegration")}
-                  </h4>
-                  <div className="iot-integration-container">
-                    <div className="iot-integration-bg-decoration"></div>
-                    <div className="iot-integration-content">
-                      {selectedProject.iotIntegration.map((feature, idx) => (
-                        <div key={idx} className="iot-integration-item">
-                          <span className="iot-integration-emoji">🔧</span>
-                          {feature}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Funcionalidades do Projeto */}
-              <div className="project-features">
-                {selectedProject.features &&
-                  selectedProject.features.map((func, idx) => (
-                    <div key={idx} className="feature-row">
-                      <img
-                        src={func.image}
-                        alt={func.title}
-                        className="feature-img"
-                        onClick={() => handleImageClick(func.image, func.title)}
-                      />
-                      <div className="feature-content">
-                        <h6 className="feature-title">{func.title}</h6>
-                        <p className="feature-desc">{func.description}</p>
-                      </div>
-                    </div>
-                  ))}
-              </div>
-
-              {/* Cards de tecnologias */}
-              <div className="tech-details-grid">
-                {(() => {
-                  const categories = [
-                    {
-                      key: "frontend",
-                      label: t("modalFrontend"),
-                      tag: "frontend-tag",
-                    },
-                    {
-                      key: "backend",
-                      label: t("modalBackend"),
-                      tag: "backend-tag",
-                    },
-                    {
-                      key: "database",
-                      label: t("modalDatabase"),
-                      tag: "database-tag",
-                    },
-                    {
-                      key: "libraries",
-                      label: t("modalLibraries"),
-                      tag: "library-tag",
-                    },
-                    {
-                      key: "integrations",
-                      label: t("modalIntegrations"),
-                      tag: "general-tag",
-                    },
-                  ];
-                  return categories.map(({ key, label, tag }) =>
-                    selectedProject[key] && selectedProject[key].length > 0 ? (
-                      <div className="tech-details-card" key={key}>
-                        <h6 className="tech-category-title">{label}</h6>
-                        <div className="tech-tags">
-                          {selectedProject[key].map((tech, idx) => (
-                            <span key={idx} className={`tech-tag ${tag}`}>
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="tech-details-card empty-card" key={key} />
-                    )
-                  );
-                })()}
-              </div>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
-    </>
+    <section className={cn("mt-10 first:mt-0", className)}>
+      <h3 className="flex items-center gap-2.5 font-display text-base font-semibold text-slate-900 dark:text-white sm:text-lg">
+        <Icon
+          className="h-[1.15rem] w-[1.15rem] text-flux-500 dark:text-flux-400"
+          aria-hidden="true"
+        />
+        {title}
+      </h3>
+      <div className="mt-4">{children}</div>
+    </section>
   );
 }
 
-export default ProjectModal;
+export default function ProjectModal({ project, onClose }) {
+  const { t } = useI18n();
+  const reduce = useReducedMotion();
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+  const scrollRef = useRef(null);
+
+  const open = Boolean(project);
+  useLockBodyScroll(open);
+  useEscapeKey(open && lightboxIndex === null, onClose);
+
+  const copy = project ? t.projects.items[project.id] : null;
+
+  const galleryImages = useMemo(() => {
+    if (!project || !copy) return [];
+    return project.gallery.map((src, index) => ({
+      src,
+      title: copy.features[index]?.title ?? copy.title,
+    }));
+  }, [project, copy]);
+
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+
+  return (
+    <>
+      {createPortal(
+        <AnimatePresence>
+          {open && copy && (
+            <motion.div
+              className="fixed inset-0 z-[70] overflow-y-auto overscroll-contain"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              {/* Fundo clicável */}
+              <button
+                type="button"
+                aria-label={t.projects.modal.close}
+                onClick={onClose}
+                className="fixed inset-0 h-full w-full cursor-default bg-ink-950/80 backdrop-blur-md"
+              />
+
+              <div className="relative flex min-h-full items-start justify-center p-3 sm:p-6 lg:p-10">
+                <motion.div
+                  ref={scrollRef}
+                  role="dialog"
+                  aria-modal="true"
+                  aria-labelledby="project-modal-title"
+                  initial={reduce ? false : { opacity: 0, y: 30, scale: 0.98 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={reduce ? undefined : { opacity: 0, y: 20, scale: 0.98 }}
+                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                  className={cn(
+                    "relative w-full max-w-5xl overflow-hidden rounded-3xl",
+                    T.glass,
+                    "bg-white/85 shadow-glass dark:bg-ink-900/85"
+                  )}
+                >
+                  {/* ---------------------------------------- Capa do modal */}
+                  <div className="relative aspect-[21/9] max-h-[19rem] w-full overflow-hidden">
+                    {project.cover ? (
+                      <img
+                        src={project.cover}
+                        alt={copy.title}
+                        className="h-full w-full object-cover object-top"
+                      />
+                    ) : (
+                      <div className="relative h-full w-full bg-gradient-to-br from-pulse-600/40 via-ink-900 to-flux-600/30">
+                        <span
+                          aria-hidden="true"
+                          className="block h-full w-full bg-grid-dark bg-grid-sm opacity-60"
+                        />
+                        {project.logo && (
+                          <span className="absolute left-1/2 top-1/2 inline-flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl bg-white/95 p-3 shadow-glass ring-1 ring-white/40">
+                            <img
+                              src={project.logo}
+                              alt=""
+                              className="h-full w-full object-contain"
+                            />
+                          </span>
+                        )}
+                      </div>
+                    )}
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-0 bg-white/40 dark:bg-ink-950/45"
+                    />
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-0 bg-gradient-to-t from-white via-white/85 to-white/20 dark:from-ink-900 dark:via-ink-900/85 dark:to-ink-900/20"
+                    />
+
+                    <button
+                      type="button"
+                      onClick={onClose}
+                      aria-label={t.projects.modal.close}
+                      className={cn(
+                        "absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-xl",
+                        "border border-white/20 bg-ink-950/50 text-white backdrop-blur-md",
+                        "transition duration-300 hover:border-rose-400/60 hover:text-rose-300",
+                        T.ring
+                      )}
+                    >
+                      <X className="h-5 w-5" />
+                    </button>
+
+                    <div className="absolute inset-x-5 bottom-4 flex items-end gap-4 sm:inset-x-8">
+                      {project.cover && project.logo && (
+                        <span className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white/95 p-2 shadow-glass ring-1 ring-white/40">
+                          <img
+                            src={project.logo}
+                            alt=""
+                            className="h-full w-full object-contain"
+                          />
+                        </span>
+                      )}
+                      <div className="min-w-0">
+                        <p className="font-mono text-xs text-flux-600 dark:text-flux-300">
+                          {copy.period} · {copy.role}
+                        </p>
+                        <h2
+                          id="project-modal-title"
+                          className={cn(
+                            T.heading,
+                            "mt-1 text-3xl sm:text-4xl lg:text-5xl"
+                          )}
+                        >
+                          {copy.title}
+                        </h2>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* -------------------------------------------- Conteúdo */}
+                  <div className="px-5 pb-10 pt-6 sm:px-8 lg:px-10">
+                    {/* Links externos do projeto, quando existirem. */}
+                    {(project.link || project.repo) && (
+                      <div className="mb-7 flex flex-wrap gap-3">
+                        {project.link && (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={cn(
+                              "inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold",
+                              "bg-gradient-to-r from-flux-400 to-pulse-500 text-ink-950",
+                              "transition duration-300 ease-smooth hover:-translate-y-0.5 hover:shadow-glow",
+                              T.ring
+                            )}
+                          >
+                            <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                            {t.projects.modal.visit}
+                          </a>
+                        )}
+                        {project.repo && (
+                          <a
+                            href={project.repo}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={cn(
+                              "inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold",
+                              T.glass,
+                              "text-slate-700 dark:text-slate-200",
+                              "transition duration-300 ease-smooth hover:-translate-y-0.5 hover:border-flux-400/50 hover:shadow-glow",
+                              T.ring
+                            )}
+                          >
+                            <FaGithub className="h-4 w-4" aria-hidden="true" />
+                            {t.projects.modal.repo}
+                          </a>
+                        )}
+                      </div>
+                    )}
+
+                    <Block icon={Layers} title={t.projects.modal.overview}>
+                      <p className={cn(T.body, "text-pretty text-justify hyphens-auto leading-relaxed")}>
+                        {copy.story}
+                      </p>
+                    </Block>
+
+                    {/* Responsabilidades */}
+                    <Block
+                      icon={Target}
+                      title={t.projects.modal.responsibilities}
+                    >
+                      <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+                        {copy.responsibilities.map((item) => (
+                          <li
+                            key={item}
+                            className={cn(
+                              "flex gap-3 rounded-xl border border-slate-900/[0.07] bg-slate-900/[0.02] p-3.5",
+                              "dark:border-white/[0.07] dark:bg-white/[0.02]",
+                              T.body,
+                              T.prose,
+                              "text-sm leading-relaxed"
+                            )}
+                          >
+                            <span
+                              aria-hidden="true"
+                              className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-flux-400 to-pulse-400"
+                            />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </Block>
+
+                    {/* Equipe */}
+                    <Block icon={Users} title={t.projects.modal.team}>
+                      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                        {project.team.map((member, index) => {
+                          const memberCopy = copy.team[index];
+                          const links = teamSocials[member.name] ?? {};
+                          const initials = member.name
+                            .split(" ")
+                            .map((part) => part[0])
+                            .join("");
+                          return (
+                            <GlassCard
+                              key={member.name}
+                              className={cn(
+                                "flex h-full flex-col p-5",
+                                // Todos os integrantes recebem o mesmo peso
+                                // visual; só o tom do acento muda, para o
+                                // cartão do próprio Eduardo se distinguir sem
+                                // rebaixar os demais.
+                                member.self
+                                  ? "ring-1 ring-flux-400/25 dark:ring-flux-400/20"
+                                  : "ring-1 ring-pulse-400/25 dark:ring-pulse-400/20"
+                              )}
+                            >
+                              <div className="flex items-start gap-3.5">
+                                <span
+                                  className={cn(
+                                    "inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl font-display text-sm font-bold text-ink-950 shadow-glow",
+                                    member.self
+                                      ? "bg-gradient-to-br from-flux-400 to-pulse-500"
+                                      : "bg-gradient-to-br from-pulse-400 to-flux-400"
+                                  )}
+                                >
+                                  {initials}
+                                </span>
+                                <div className="min-w-0 flex-1">
+                                  <p className="font-display text-sm font-semibold leading-tight text-slate-900 dark:text-white">
+                                    {member.name}
+                                  </p>
+                                  {/* Sem truncate: os papéis passaram a ter
+                                      nomes longos e ficavam cortados. */}
+                                  <p
+                                    className={cn(
+                                      "mt-1 text-xs leading-snug",
+                                      member.self
+                                        ? "text-flux-600 dark:text-flux-300"
+                                        : "text-pulse-600 dark:text-pulse-300"
+                                    )}
+                                  >
+                                    {memberCopy?.role}
+                                  </p>
+                                </div>
+                              </div>
+
+                              <p
+                                className={cn(
+                                  T.body,
+                                  T.prose,
+                                  "mt-4 flex-1 text-xs leading-relaxed"
+                                )}
+                              >
+                                {memberCopy?.resp}
+                              </p>
+
+                              <div className="mt-4 flex gap-2 border-t border-slate-900/[0.07] pt-4 dark:border-white/[0.07]">
+                                {[
+                                  { Icon: FaGithub, href: links.github },
+                                  { Icon: FaLinkedinIn, href: links.linkedin },
+                                ]
+                                  .filter((link) => link.href)
+                                  .map(({ Icon, href }) => (
+                                    <a
+                                      key={href}
+                                      href={href}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      aria-label={`${member.name} no ${Icon === FaGithub ? "GitHub" : "LinkedIn"}`}
+                                      className={cn(
+                                        "inline-flex h-9 w-9 items-center justify-center rounded-lg",
+                                        "border border-slate-900/10 text-slate-600 dark:border-white/10 dark:text-slate-300",
+                                        "transition duration-300 ease-smooth hover:border-flux-400/50 hover:text-flux-600 dark:hover:text-flux-300",
+                                        "hover:-translate-y-0.5 hover:bg-flux-400/[0.07] hover:shadow-glow",
+                                        T.ring
+                                      )}
+                                    >
+                                      <Icon className="h-4 w-4" />
+                                    </a>
+                                  ))}
+                              </div>
+                            </GlassCard>
+                          );
+                        })}
+                      </div>
+                    </Block>
+
+                    {/* Integração IoT (apenas ThermalTech) */}
+                    {copy.iot && (
+                      <Block icon={Radio} title={t.projects.modal.iot}>
+                        <ul className="flex flex-col gap-2.5">
+                          {copy.iot.map((item) => (
+                            <li
+                              key={item}
+                              className={cn(
+                                "flex gap-3 rounded-xl border border-pulse-400/20 bg-pulse-400/[0.06] p-3.5",
+                                T.body,
+                                T.prose,
+                                "text-sm leading-relaxed"
+                              )}
+                            >
+                              <span
+                                aria-hidden="true"
+                                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-pulse-400"
+                              />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </Block>
+                    )}
+
+                    {/* Funcionalidades — com galeria quando houver imagens */}
+                    <Block icon={Expand} title={t.projects.modal.features}>
+                      <div className="flex flex-col gap-4">
+                        {copy.features.map((feature, index) => {
+                          const image = project.gallery[index];
+                          if (!image) {
+                            return (
+                              <GlassCard key={feature.title} className="p-4 sm:p-5">
+                                <h4 className="font-display text-base font-semibold text-slate-900 dark:text-white">
+                                  {feature.title}
+                                </h4>
+                                <p
+                                  className={cn(
+                                    T.body,
+                                    "mt-2 text-pretty text-justify hyphens-auto text-sm leading-relaxed"
+                                  )}
+                                >
+                                  {feature.desc}
+                                </p>
+                              </GlassCard>
+                            );
+                          }
+                          return (
+                          <GlassCard
+                            key={feature.title}
+                            className="grid grid-cols-1 gap-5 p-4 sm:grid-cols-5 sm:p-5"
+                          >
+                            <button
+                              type="button"
+                              onClick={() => setLightboxIndex(index)}
+                              aria-label={`${t.projects.modal.expandImage}: ${feature.title}`}
+                              className={cn(
+                                "group/img relative overflow-hidden rounded-xl sm:col-span-2",
+                                T.ring
+                              )}
+                            >
+                              <img
+                                src={project.gallery[index]}
+                                alt={feature.title}
+                                loading="lazy"
+                                decoding="async"
+                                className="aspect-[16/10] w-full object-cover object-top transition duration-500 ease-smooth group-hover/img:scale-105"
+                              />
+                              <span className="absolute inset-0 flex items-center justify-center bg-ink-950/60 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover/img:opacity-100">
+                                <Expand className="h-5 w-5 text-white" />
+                              </span>
+                            </button>
+
+                            <div className="sm:col-span-3">
+                              <h4 className="font-display text-base font-semibold text-slate-900 dark:text-white">
+                                {feature.title}
+                              </h4>
+                              <p
+                                className={cn(
+                                  T.body,
+                                  "mt-2 text-pretty text-justify hyphens-auto text-sm leading-relaxed"
+                                )}
+                              >
+                                {feature.desc}
+                              </p>
+                            </div>
+                          </GlassCard>
+                          );
+                        })}
+                      </div>
+                    </Block>
+
+                    {/* Stack */}
+                    <Block icon={Cpu} title={t.projects.modal.stack}>
+                      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                        {STACK_KEYS.filter(
+                          (key) => project.stack[key]?.length
+                        ).map((key) => (
+                          <GlassCard key={key} className="p-4">
+                            <h4
+                              className={cn(
+                                T.faint,
+                                "text-[0.68rem] font-semibold uppercase tracking-[0.16em]"
+                              )}
+                            >
+                              {t.projects.modal.stackLabels[key]}
+                            </h4>
+                            <ul className="mt-3 flex flex-wrap gap-1.5">
+                              {project.stack[key].map((tech) => (
+                                <li key={tech}>
+                                  <Tag
+                                    accent={
+                                      key === "backend" || key === "libraries"
+                                        ? "pulse"
+                                        : key === "integrations"
+                                          ? "neutral"
+                                          : "flux"
+                                    }
+                                  >
+                                    {tech}
+                                  </Tag>
+                                </li>
+                              ))}
+                            </ul>
+                          </GlassCard>
+                        ))}
+                      </div>
+                    </Block>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
+
+      <Lightbox
+        images={galleryImages}
+        index={lightboxIndex}
+        onClose={closeLightbox}
+        onNavigate={setLightboxIndex}
+      />
+    </>
+  );
+}

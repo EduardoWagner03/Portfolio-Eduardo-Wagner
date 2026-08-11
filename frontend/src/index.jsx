@@ -1,18 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/index.css';
-import App from './App';
-import reportWebVitals from './utils/reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+// Fontes auto-hospedadas (sem requisição a terceiros, melhor LCP e privacidade).
+import "@fontsource-variable/inter";
+import "@fontsource-variable/space-grotesk";
+import "@fontsource-variable/jetbrains-mono";
+
+// Único arquivo de estilo do projeto: apenas as diretivas do Tailwind.
+import "./tailwind.css";
+
+import App from "./App";
+import { I18nProvider } from "./i18n";
+import { ThemeProvider } from "./theme/ThemeProvider";
+import reportWebVitals from "./utils/reportWebVitals";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider>
+      <I18nProvider>
+        <App />
+      </I18nProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
