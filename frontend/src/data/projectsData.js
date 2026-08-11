@@ -124,15 +124,15 @@ export const projects = [
   {
     id: "flowtime",
     status: "done",
-    cover: "/images/FlowTime.png",
-    logo: "/images/logo-flowtime.png",
+    cover: "/images/FlowTime.webp",
+    logo: "/images/logo-flowtime.webp",
     accent: "flux",
     link: null,
     repo: null,
     gallery: [
-      "/images/HomeFlowtime.png",
-      "/images/AppointmentsFlowTime.png",
-      "/images/FichaAnamnese.png",
+      "/images/HomeFlowtime.webp",
+      "/images/AppointmentsFlowTime.webp",
+      "/images/FichaAnamnese.webp",
     ],
     team: [
       { name: "Eduardo Wagner", handle: "EduardoWagner03", self: true },
@@ -191,14 +191,14 @@ export const projects = [
   {
     id: "tonnertrack",
     status: "done",
-    cover: "/images/TonnerTrack.png",
+    cover: "/images/TonnerTrack.webp",
     accent: "pulse",
     link: null,
     repo: null,
     gallery: [
-      "/images/GerenciamentoTonnerTrack.png",
-      "/images/Relatórios.png",
-      "/images/NotificacaoTonnerTrac.png",
+      "/images/GerenciamentoTonnerTrack.webp",
+      "/images/Relatórios.webp",
+      "/images/NotificacaoTonnerTrac.webp",
     ],
     team: [{ name: "Eduardo Wagner", handle: "EduardoWagner03", self: true }],
     stack: {
@@ -235,14 +235,14 @@ export const projects = [
   {
     id: "thermaltech",
     status: "done",
-    cover: "/images/ThermalTech.png",
+    cover: "/images/ThermalTech.webp",
     accent: "flux",
     link: null,
     repo: null,
     gallery: [
-      "/images/Monitoriamento.png",
-      "/images/ConsultarChamados.png",
-      "/images/ChatTT.png",
+      "/images/Monitoriamento.webp",
+      "/images/ConsultarChamados.webp",
+      "/images/ChatTT.webp",
     ],
     team: [
       { name: "Eduardo Wagner", handle: "EduardoWagner03", self: true },
@@ -303,7 +303,7 @@ export const projects = [
     status: "done",
     // Sem screenshots ainda: a capa usa a logo do cliente.
     cover: null,
-    logo: "/images/logo-autopintura.png",
+    logo: "/images/logo-autopintura.webp",
     accent: "pulse",
     link: null,
     repo: null,
