@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 
 /**
  * Scrollspy via IntersectionObserver — retorna o id da seção mais visível.
- * Muito mais barato que recalcular offsets a cada evento de scroll.
+ *
+ * Observa uma faixa fina logo abaixo do header fixo em vez de comparar
+ * intersectionRatio entre seções: ratio é proporcional à altura total do
+ * elemento, então uma seção muito alta (ex.: a timeline de Experiência)
+ * nunca "vence" seções curtas mesmo estando claramente em foco na tela.
  */
 export function useActiveSection(ids) {
   const [active, setActive] = useState(ids[0]);
@@ -13,23 +17,22 @@ export function useActiveSection(ids) {
       .filter(Boolean);
     if (!elements.length) return undefined;
 
-    const ratios = new Map();
+    const visible = new Set();
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) =>
-          ratios.set(entry.target.id, entry.intersectionRatio)
-        );
-        let best = null;
-        let bestRatio = 0;
-        ratios.forEach((ratio, id) => {
-          if (ratio > bestRatio) {
-            bestRatio = ratio;
-            best = id;
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            visible.add(entry.target.id);
+          } else {
+            visible.delete(entry.target.id);
           }
         });
-        if (best) setActive(best);
+        // ids está em ordem de documento; a seção ativa é a última visível
+        // dentro da faixa, ou seja, a mais recente a cruzar o topo.
+        const current = ids.filter((id) => visible.has(id)).pop();
+        if (current) setActive(current);
       },
-      { threshold: [0.15, 0.35, 0.6, 0.85], rootMargin: "-88px 0px -35% 0px" }
+      { threshold: 0, rootMargin: "-88px 0px -70% 0px" }
     );
 
     elements.forEach((element) => observer.observe(element));
