@@ -33,7 +33,8 @@ const iconButton = cn(
 );
 
 export default function Header() {
-  const { t, toggleLang } = useI18n();
+  const { t, lang, toggleLang } = useI18n();
+  const cvHref = profile.cv[lang] ?? profile.cv.pt;
   const { isDark, toggleTheme } = useTheme();
   const scrolled = useScrolled(20);
   const active = useActiveSection(SECTION_IDS);
@@ -162,7 +163,7 @@ export default function Header() {
               </button>
 
               <a
-                href={profile.cv}
+                href={cvHref}
                 target="_blank"
                 rel="noreferrer"
                 className={cn(
@@ -253,7 +254,7 @@ export default function Header() {
                 ))}
               </ul>
               <a
-                href={profile.cv}
+                href={cvHref}
                 target="_blank"
                 rel="noreferrer"
                 onClick={closeMenu}
