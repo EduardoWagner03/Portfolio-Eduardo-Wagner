@@ -33,7 +33,8 @@ const iconButton = cn(
 );
 
 export default function Header() {
-  const { t, toggleLang } = useI18n();
+  const { t, lang, otherLangHref } = useI18n();
+  const cvHref = profile.cv[lang] ?? profile.cv.pt;
   const { isDark, toggleTheme } = useTheme();
   const scrolled = useScrolled(20);
   const active = useActiveSection(SECTION_IDS);
@@ -148,9 +149,24 @@ export default function Header() {
                 </AnimatePresence>
               </button>
 
-              <button
-                type="button"
-                onClick={toggleLang}
+              {/*
+                Link de verdade, não botão: o seletor de idioma agora troca de
+                URL, e o Google só descobre a outra versão se houver um link
+                rastreável entre elas. `hreflang` aqui reforça o par declarado
+                no <head>.
+
+                É um <a> comum, e não o <Link> do Next, de propósito. Com
+                `output: "export"` e root layouts por route group, o Next grava
+                o payload de navegação como diretório
+                (`__next.!KGVuKQ/en/__PAGE__.txt`) mas o requisita achatado
+                (`__next.!KGVuKQ.en.__PAGE__.txt`), toma 404 e a navegação
+                client-side simplesmente não acontece. Com <a> ele não
+                intercepta o clique, e o recarregamento completo é irrelevante
+                num site de duas páginas.
+              */}
+              <a
+                href={otherLangHref}
+                hrefLang={lang === "pt" ? "en" : "pt-BR"}
                 className={cn(iconButton, "w-auto gap-1.5 px-3")}
                 aria-label={t.meta.switchLabel}
                 title={t.meta.switchLabel}
@@ -159,10 +175,10 @@ export default function Header() {
                 <span className="font-mono text-xs font-semibold">
                   {t.meta.switchTo}
                 </span>
-              </button>
+              </a>
 
               <a
-                href={profile.cv}
+                href={cvHref}
                 target="_blank"
                 rel="noreferrer"
                 className={cn(
@@ -253,7 +269,7 @@ export default function Header() {
                 ))}
               </ul>
               <a
-                href={profile.cv}
+                href={cvHref}
                 target="_blank"
                 rel="noreferrer"
                 onClick={closeMenu}

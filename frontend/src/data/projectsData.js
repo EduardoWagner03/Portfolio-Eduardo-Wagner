@@ -8,16 +8,21 @@ export const projects = [
   {
     id: "bloco3d",
     status: "live",
-    // Sem screenshots ainda: o cartão e o modal caem em uma capa tipográfica
-    // gerada em CSS. Basta apontar `cover` para um arquivo em /public/images
-    // e preencher `gallery` para que as imagens passem a ser usadas.
-    cover: null,
+    cover: "/images/Bloco3D.webp",
     logo: "/images/logo-bloco3d.jpg",
     accent: "pulse",
     featured: true,
     link: "https://bloco3d.com.br/",
     repo: null,
-    gallery: [],
+    // Alinhado com `features`: "Infraestrutura Serverless" e "Webhooks
+    // Assíncronos" são internas e não têm tela pública para ilustrar, então
+    // ficam `null` e o modal renderiza só o texto delas.
+    gallery: [
+      "/images/CategoriasBloco3D.webp",
+      null,
+      null,
+      "/images/ProdutoBloco3D.webp",
+    ],
     team: [
       { name: "Eduardo Wagner", handle: "EduardoWagner03", self: true },
       { name: "Victor Bueno", handle: "VictorBueno011" },
@@ -68,7 +73,9 @@ export const projects = [
   {
     id: "menudigital",
     status: "wip",
-    // Sem screenshots ainda: cai na capa tipográfica gerada em CSS.
+    // Sem imagens por decisão, não por pendência: o produto está em
+    // construção e qualquer captura envelheceria a cada mudança de tela.
+    // Cai na capa tipográfica gerada em CSS, que combina com o selo "wip".
     cover: null,
     accent: "flux",
     featured: true,
@@ -124,15 +131,15 @@ export const projects = [
   {
     id: "flowtime",
     status: "done",
-    cover: "/images/FlowTime.png",
-    logo: "/images/logo-flowtime.png",
+    cover: "/images/FlowTime.webp",
+    logo: "/images/logo-flowtime.webp",
     accent: "flux",
     link: null,
     repo: null,
     gallery: [
-      "/images/HomeFlowtime.png",
-      "/images/AppointmentsFlowTime.png",
-      "/images/FichaAnamnese.png",
+      "/images/HomeFlowtime.webp",
+      "/images/AppointmentsFlowTime.webp",
+      "/images/FichaAnamnese.webp",
     ],
     team: [
       { name: "Eduardo Wagner", handle: "EduardoWagner03", self: true },
@@ -191,14 +198,14 @@ export const projects = [
   {
     id: "tonnertrack",
     status: "done",
-    cover: "/images/TonnerTrack.png",
+    cover: "/images/TonnerTrack.webp",
     accent: "pulse",
     link: null,
     repo: null,
     gallery: [
-      "/images/GerenciamentoTonnerTrack.png",
-      "/images/Relatórios.png",
-      "/images/NotificacaoTonnerTrac.png",
+      "/images/GerenciamentoTonnerTrack.webp",
+      "/images/Relatórios.webp",
+      "/images/NotificacaoTonnerTrac.webp",
     ],
     team: [{ name: "Eduardo Wagner", handle: "EduardoWagner03", self: true }],
     stack: {
@@ -235,14 +242,14 @@ export const projects = [
   {
     id: "thermaltech",
     status: "done",
-    cover: "/images/ThermalTech.png",
+    cover: "/images/ThermalTech.webp",
     accent: "flux",
     link: null,
     repo: null,
     gallery: [
-      "/images/Monitoriamento.png",
-      "/images/ConsultarChamados.png",
-      "/images/ChatTT.png",
+      "/images/Monitoriamento.webp",
+      "/images/ConsultarChamados.webp",
+      "/images/ChatTT.webp",
     ],
     team: [
       { name: "Eduardo Wagner", handle: "EduardoWagner03", self: true },
@@ -301,13 +308,20 @@ export const projects = [
   {
     id: "autopintura",
     status: "done",
-    // Sem screenshots ainda: a capa usa a logo do cliente.
-    cover: null,
-    logo: "/images/logo-autopintura.png",
+    cover: "/images/AutoPintura.webp",
+    logo: "/images/logo-autopintura.webp",
     accent: "pulse",
     link: null,
     repo: null,
-    gallery: [],
+    // Alinhado com `features`. "Animações em JavaScript Puro" e "SEO e
+    // Carregamento Rápido" não rendem captura estática, então ficam `null`.
+    // O hero e a galeria do site ainda usam placeholders no lugar das fotos
+    // da oficina, por isso não entraram aqui.
+    gallery: [
+      "/images/OrcamentoAutoPintura.webp",
+      null,
+      "/images/DepoimentosAutoPintura.webp",
+    ],
     team: [{ name: "Eduardo Wagner", handle: "EduardoWagner03", self: true }],
     stack: {
       frontend: [

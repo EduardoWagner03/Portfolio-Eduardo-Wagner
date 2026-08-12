@@ -5,7 +5,7 @@
 // como utilitário nos componentes.
 module.exports = {
   darkMode: "class",
-  content: ["./src/**/*.{js,jsx}", "./public/index.html"],
+  content: ["./src/**/*.{js,jsx}"],
   theme: {
     extend: {
       fontFamily: {

@@ -99,3 +99,17 @@ export function useMediaQuery(query) {
 
   return matches;
 }
+
+/**
+ * `false` no servidor e na primeira renderização do cliente, `true` depois.
+ *
+ * Existe por causa do pré-render estático: componentes que criam portal para
+ * `document.body` quebram o build, porque no servidor não há `document`. Como
+ * modal e lightbox só aparecem por interação, adiar a montagem deles não custa
+ * nada de conteúdo indexável.
+ */
+export function useMounted() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  return mounted;
+}

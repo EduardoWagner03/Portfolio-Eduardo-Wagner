@@ -17,7 +17,7 @@ import { GlassCard, Tag, T } from "./ui/primitives";
 import Lightbox from "./ui/Lightbox";
 import { teamSocials } from "../data/projectsData";
 import { useI18n } from "../i18n";
-import { useEscapeKey, useLockBodyScroll } from "../lib/hooks";
+import { useEscapeKey, useLockBodyScroll, useMounted } from "../lib/hooks";
 
 const STACK_KEYS = [
   "frontend",
@@ -46,6 +46,7 @@ function Block({ icon: Icon, title, children, className }) {
 export default function ProjectModal({ project, onClose }) {
   const { t } = useI18n();
   const reduce = useReducedMotion();
+  const mounted = useMounted();
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const scrollRef = useRef(null);
 
@@ -55,15 +56,35 @@ export default function ProjectModal({ project, onClose }) {
 
   const copy = project ? t.projects.items[project.id] : null;
 
+  // `gallery` é alinhado posicionalmente com `features`, mas pode ter buracos
+  // quando uma funcionalidade não tem tela para ilustrar. O lightbox navega em
+  // ciclo, então ele recebe só as posições preenchidas: sem isso a seta
+  // "próxima" cairia num item vazio e o contador mentiria o total.
   const galleryImages = useMemo(() => {
     if (!project || !copy) return [];
-    return project.gallery.map((src, index) => ({
-      src,
-      title: copy.features[index]?.title ?? copy.title,
-    }));
+    return project.gallery
+      .map((src, index) => ({
+        src,
+        featureIndex: index,
+        title: copy.features[index]?.title ?? copy.title,
+      }))
+      .filter((item) => Boolean(item.src));
   }, [project, copy]);
 
+  // De índice da funcionalidade para posição dentro de `galleryImages`.
+  const lightboxPositionOf = useMemo(() => {
+    const positions = new Map();
+    galleryImages.forEach((item, position) =>
+      positions.set(item.featureIndex, position)
+    );
+    return positions;
+  }, [galleryImages]);
+
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+
+  // Portal só existe depois de montar no cliente: no pré-render estático não
+  // há `document.body` para servir de destino.
+  if (!mounted) return null;
 
   return (
     <>
@@ -399,7 +420,9 @@ export default function ProjectModal({ project, onClose }) {
                           >
                             <button
                               type="button"
-                              onClick={() => setLightboxIndex(index)}
+                              onClick={() =>
+                                setLightboxIndex(lightboxPositionOf.get(index))
+                              }
                               aria-label={`${t.projects.modal.expandImage}: ${feature.title}`}
                               className={cn(
                                 "group/img relative overflow-hidden rounded-xl sm:col-span-2",

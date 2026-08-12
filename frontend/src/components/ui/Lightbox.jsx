@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { cn } from "../../lib/cn";
 import { T } from "./primitives";
 import { useI18n } from "../../i18n";
-import { useEscapeKey, useLockBodyScroll } from "../../lib/hooks";
+import { useEscapeKey, useLockBodyScroll, useMounted } from "../../lib/hooks";
 
 /**
  * Visualizador de imagens em página. Substitui o antigo `window.open` +
@@ -14,6 +14,7 @@ import { useEscapeKey, useLockBodyScroll } from "../../lib/hooks";
  */
 export default function Lightbox({ images, index, onClose, onNavigate }) {
   const { t } = useI18n();
+  const mounted = useMounted();
   const open = index !== null && index >= 0;
 
   useLockBodyScroll(open);
@@ -38,6 +39,8 @@ export default function Lightbox({ images, index, onClose, onNavigate }) {
   }, [open, go]);
 
   const current = open ? images[index] : null;
+
+  if (!mounted) return null;
 
   return createPortal(
     <AnimatePresence>

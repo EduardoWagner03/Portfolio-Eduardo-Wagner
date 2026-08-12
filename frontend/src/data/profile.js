@@ -30,6 +30,8 @@ export const profile = {
     url: "https://streamdev.dev.br/",
     handle: "streamdev.dev.br",
   },
-  // Coloque o arquivo em frontend/public/cv.pdf para habilitar o botão.
-  cv: "/cv.pdf",
+  cv: {
+    pt: "/cv.pdf",
+    en: "/cv-en.pdf",
+  },
 };
