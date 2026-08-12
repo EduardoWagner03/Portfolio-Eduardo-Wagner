@@ -112,7 +112,7 @@ const pt = {
       },
       {
         title: "StreamDev - Software House",
-        text: "Como sócio-fundador da StreamDev, respondo pela liderança técnica e pela gestão de projetos, com foco em soluções escaláveis e arquitetura de sistemas modernos. É onde reúno o stack que domino (React, Next.js, TypeScript, Node.js e Supabase) para tirar produtos do papel e levá-los até a operação real do cliente, como o Bloco3D, e-commerce do mercado de tecnologia 3D, e o MenuDigital, SaaS multi-tenant de cardápio digital com lojas em operação comercial.",
+        text: "Como sócio-fundador da StreamDev, respondo pela liderança técnica e pela gestão de projetos, com foco em soluções escaláveis e arquitetura de sistemas modernos. É onde reúno o stack que domino (React, Next.js, TypeScript, Node.js e Supabase) para tirar produtos do papel e levá-los até a operação real do cliente, como o Bloco3D, e-commerce do mercado de tecnologia 3D, e um SaaS multi-tenant de cardápio digital com lojas em operação comercial.",
       },
       {
         title: "Liderança e Trabalho em Equipe",
@@ -241,12 +241,12 @@ const pt = {
         ],
       },
       menudigital: {
-        title: "MenuDigital",
+        title: "SaaS de Cardápio Digital",
         subtitle: "SaaS em Desenvolvimento",
         description:
           "SaaS multi-tenant de cardápio digital e gestão para restaurantes e delivery, em desenvolvimento ativo e já com lojas em operação comercial. Cobre o fluxo completo do pedido, da navegação do cliente por link ou QR Code até pagamento, emissão fiscal e acompanhamento em tempo real, além do painel do lojista e do Super Admin da plataforma.",
         story:
-          "O MenuDigital é a plataforma SaaS que desenvolvo na StreamDev, ainda em desenvolvimento ativo e já com lojas rodando em operação comercial. A arquitetura é multi-tenant, com isolamento de dados entre lojas e controle de acesso aplicado em cada camada. O cliente final navega pelo cardápio via link ou QR Code, paga e acompanha o pedido em tempo real com Socket.IO. Do lado financeiro e fiscal, integrei o Mercado Pago com split de pagamentos entre loja e plataforma, comissões e assinaturas recorrentes, o Focus NFe para emissão automatizada de NFC-e com envio por e-mail e o Asaas para as NFS-e da própria StreamDev. A comunicação com o cliente acontece por WhatsApp via Evolution API e notificações Web Push. Também desenvolvi o painel Super Admin, que cuida de lojas, planos, assinaturas, billing, onboarding, suporte e monitoramento da saúde da plataforma. Tudo em um monorepo com npm workspaces e CI/CD via GitHub Actions, com staging e produção separados.",
+          "É a plataforma SaaS de cardápio digital que desenvolvo na StreamDev, ainda em desenvolvimento ativo e já com lojas rodando em operação comercial. A arquitetura é multi-tenant, com isolamento de dados entre lojas e controle de acesso aplicado em cada camada. O cliente final navega pelo cardápio via link ou QR Code, paga e acompanha o pedido em tempo real com Socket.IO. Do lado financeiro e fiscal, integrei o Mercado Pago com split de pagamentos entre loja e plataforma, comissões e assinaturas recorrentes, o Focus NFe para emissão automatizada de NFC-e com envio por e-mail e o Asaas para as NFS-e da própria StreamDev. A comunicação com o cliente acontece por WhatsApp via Evolution API e notificações Web Push. Também desenvolvi o painel Super Admin, que cuida de lojas, planos, assinaturas, billing, onboarding, suporte e monitoramento da saúde da plataforma. Tudo em um monorepo com npm workspaces e CI/CD via GitHub Actions, com staging e produção separados.",
         period: "Jan/2026 - Presente",
         role: "Arquitetura & Full Stack",
         teamSize: "Dupla · Liderança técnica",
@@ -614,7 +614,7 @@ const pt = {
       menudigital: {
         period: "2026 - Presente",
         title: "Arquitetura e Full Stack",
-        org: "MenuDigital - SaaS da StreamDev",
+        org: "SaaS de Cardápio Digital, da StreamDev",
         bullets: [
           "SaaS multi-tenant de cardápio digital com lojas em operação comercial",
           "React 19, React Router 7, Tailwind CSS, Node.js e PostgreSQL",

@@ -110,7 +110,7 @@ const en = {
       },
       {
         title: "StreamDev - Software House",
-        text: "As co-founder of StreamDev, I'm responsible for technical leadership and project management, focused on scalable solutions and modern system architecture. It's where I bring together the stack I know best (React, Next.js, TypeScript, Node.js and Supabase) to take products from concept all the way into the client's real operation, such as Bloco3D, an e-commerce for the 3D technology market, and MenuDigital, a multi-tenant digital-menu SaaS with stores running commercially.",
+        text: "As co-founder of StreamDev, I'm responsible for technical leadership and project management, focused on scalable solutions and modern system architecture. It's where I bring together the stack I know best (React, Next.js, TypeScript, Node.js and Supabase) to take products from concept all the way into the client's real operation, such as Bloco3D, an e-commerce for the 3D technology market, and a multi-tenant digital-menu SaaS with stores running commercially.",
       },
       {
         title: "Leadership and Teamwork",
@@ -239,12 +239,12 @@ const en = {
         ],
       },
       menudigital: {
-        title: "MenuDigital",
+        title: "Digital Menu SaaS",
         subtitle: "SaaS in Development",
         description:
           "A multi-tenant SaaS for digital menus and restaurant management, under active development and already running commercially in several stores. It covers the full order flow, from the customer browsing via link or QR Code through payment, tax invoicing and real-time tracking, plus the store owner panel and the platform's Super Admin.",
         story:
-          "MenuDigital is the SaaS platform I build at StreamDev, still under active development and already serving stores in commercial operation. The architecture is multi-tenant, with data isolation between stores and access control applied at every layer. End customers browse the menu via link or QR Code, pay and follow the order in real time with Socket.IO. On the financial and tax side, I integrated Mercado Pago with payment splitting between store and platform, commissions and recurring subscriptions, Focus NFe for automated NFC-e issuing with email delivery, and Asaas for StreamDev's own service invoices. Customer communication runs through WhatsApp via the Evolution API plus Web Push notifications. I also built the Super Admin panel, covering stores, plans, subscriptions, billing, onboarding, support and platform health monitoring. Everything lives in a monorepo with npm workspaces and CI/CD through GitHub Actions, with separate staging and production environments.",
+          "It is the digital-menu SaaS platform I build at StreamDev, still under active development and already serving stores in commercial operation. The architecture is multi-tenant, with data isolation between stores and access control applied at every layer. End customers browse the menu via link or QR Code, pay and follow the order in real time with Socket.IO. On the financial and tax side, I integrated Mercado Pago with payment splitting between store and platform, commissions and recurring subscriptions, Focus NFe for automated NFC-e issuing with email delivery, and Asaas for StreamDev's own service invoices. Customer communication runs through WhatsApp via the Evolution API plus Web Push notifications. I also built the Super Admin panel, covering stores, plans, subscriptions, billing, onboarding, support and platform health monitoring. Everything lives in a monorepo with npm workspaces and CI/CD through GitHub Actions, with separate staging and production environments.",
         period: "Jan/2026 - Present",
         role: "Architecture & Full Stack",
         teamSize: "Pair · Technical lead",
@@ -612,7 +612,7 @@ const en = {
       menudigital: {
         period: "2026 - Present",
         title: "Architecture and Full Stack",
-        org: "MenuDigital - StreamDev SaaS",
+        org: "Digital Menu SaaS, by StreamDev",
         bullets: [
           "Multi-tenant digital-menu SaaS with stores running commercially",
           "React 19, React Router 7, Tailwind CSS, Node.js and PostgreSQL",
