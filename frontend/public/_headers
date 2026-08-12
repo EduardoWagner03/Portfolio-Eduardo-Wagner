@@ -20,4 +20,4 @@
   # O Cloudflare Web Analytics injeta o beacon de static.cloudflareinsights.com
   # e envia as medições para cloudflareinsights.com. Sem essas duas entradas, a
   # CSP derrubaria a análise de visitas do site.
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://backend-portfolio-647040491292.southamerica-east1.run.app https://cloudflareinsights.com; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.eduardowagner.com.br https://cloudflareinsights.com; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
