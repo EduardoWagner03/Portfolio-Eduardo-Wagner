@@ -17,7 +17,7 @@ import { GlassCard, Tag, T } from "./ui/primitives";
 import Lightbox from "./ui/Lightbox";
 import { teamSocials } from "../data/projectsData";
 import { useI18n } from "../i18n";
-import { useEscapeKey, useLockBodyScroll } from "../lib/hooks";
+import { useEscapeKey, useLockBodyScroll, useMounted } from "../lib/hooks";
 
 const STACK_KEYS = [
   "frontend",
@@ -46,6 +46,7 @@ function Block({ icon: Icon, title, children, className }) {
 export default function ProjectModal({ project, onClose }) {
   const { t } = useI18n();
   const reduce = useReducedMotion();
+  const mounted = useMounted();
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const scrollRef = useRef(null);
 
@@ -80,6 +81,10 @@ export default function ProjectModal({ project, onClose }) {
   }, [galleryImages]);
 
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+
+  // Portal só existe depois de montar no cliente: no pré-render estático não
+  // há `document.body` para servir de destino.
+  if (!mounted) return null;
 
   return (
     <>
