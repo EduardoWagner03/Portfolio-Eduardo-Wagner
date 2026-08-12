@@ -1,48 +1,32 @@
-import React, {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+"use client";
+
+import React, { createContext, useContext, useMemo } from "react";
 import pt from "./pt";
 import en from "./en";
 
 const DICTIONARIES = { pt, en };
-const STORAGE_KEY = "ew-portfolio-lang";
 
 const I18nContext = createContext(null);
 
-function readStoredLang() {
-  if (typeof window === "undefined") return "pt";
-  const stored = window.localStorage.getItem(STORAGE_KEY);
-  if (stored === "pt" || stored === "en") return stored;
-  // Sem preferência salva: segue o idioma do navegador, com PT como padrão.
-  return navigator.language?.toLowerCase().startsWith("en") ? "en" : "pt";
-}
-
-export function I18nProvider({ children }) {
-  const [lang, setLang] = useState(readStoredLang);
-
-  useEffect(() => {
-    const dict = DICTIONARIES[lang];
-    window.localStorage.setItem(STORAGE_KEY, lang);
-    document.documentElement.lang = dict.meta.locale;
-    document.title = dict.meta.title;
-    document
-      .querySelector('meta[name="description"]')
-      ?.setAttribute("content", dict.meta.description);
-  }, [lang]);
-
-  const toggleLang = useCallback(
-    () => setLang((current) => (current === "pt" ? "en" : "pt")),
-    []
-  );
-
+/**
+ * O idioma agora é a rota, não estado: `/` é português e `/en/` é inglês.
+ *
+ * Isso é o que torna a versão em inglês indexável, que era o objetivo. Como
+ * consequência, o `localStorage` que guardava a preferência saiu: reescrever o
+ * idioma no cliente faria a página exibir um conteúdo diferente do que o
+ * buscador leu na URL, que é exatamente o que quebra o hreflang.
+ */
+export function I18nProvider({ lang, children }) {
   const value = useMemo(
-    () => ({ lang, setLang, toggleLang, t: DICTIONARIES[lang] }),
-    [lang, toggleLang]
+    () => ({
+      lang,
+      t: DICTIONARIES[lang],
+      // Destino do seletor de idioma. É um href, e não uma função de troca,
+      // porque o seletor precisa ser um link rastreável: é assim que o Google
+      // descobre a outra versão do site.
+      otherLangHref: lang === "pt" ? "/en/" : "/",
+    }),
+    [lang]
   );
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
