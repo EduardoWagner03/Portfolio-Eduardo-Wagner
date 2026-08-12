@@ -10,9 +10,6 @@ const en = {
     switchLabel: "Switch language to Portuguese",
   },
 
-  loader: {
-    text: "Loading portfolio",
-  },
 
   nav: {
     items: [

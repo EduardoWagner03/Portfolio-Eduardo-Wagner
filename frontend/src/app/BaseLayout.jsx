@@ -23,7 +23,17 @@ const themeScript = `(function(){try{var s=localStorage.getItem("ew-portfolio-th
  */
 export default function BaseLayout({ locale, children }) {
   return (
-    <html lang={locale} className="dark scroll-smooth">
+    // `suppressHydrationWarning` é necessário no <html>: o script abaixo troca
+    // a classe do tema antes da hidratação, então o elemento que o React
+    // encontra difere do que ele renderizou no servidor. Sem isso o React
+    // acusa mismatch (erro #418) e descarta o HTML pré-renderizado para
+    // refazer tudo no cliente, jogando fora parte do ganho da migração.
+    // Vale só para os atributos deste elemento, não para a árvore inteira.
+    <html
+      lang={locale}
+      className="dark scroll-smooth"
+      suppressHydrationWarning
+    >
       <head>
         <script
           type="application/ld+json"

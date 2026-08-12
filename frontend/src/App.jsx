@@ -2,7 +2,6 @@ import React, { useCallback, useState } from "react";
 import AuroraBackground from "./components/background/AuroraBackground";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import Loader from "./components/layout/Loader";
 import ScrollProgress from "./components/layout/ScrollProgress";
 import BackToTop from "./components/layout/BackToTop";
 import Hero from "./components/sections/Hero";
@@ -20,7 +19,6 @@ export default function App() {
   return (
     <div className="min-h-screen scroll-smooth font-sans antialiased selection:bg-flux-400/30 selection:text-slate-900 dark:selection:text-white">
       <AuroraBackground />
-      <Loader />
       <ScrollProgress />
       <Header />
 

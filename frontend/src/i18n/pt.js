@@ -10,9 +10,6 @@ const pt = {
     switchLabel: "Mudar idioma para inglês",
   },
 
-  loader: {
-    text: "Carregando portfólio",
-  },
 
   nav: {
     items: [
