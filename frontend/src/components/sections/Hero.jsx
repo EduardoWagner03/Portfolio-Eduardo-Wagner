@@ -47,16 +47,23 @@ const ORBIT = [
   SiFirebase,
 ];
 
-// Raio em % do lado do quadrado. 47% deixa o chip centrado sobre a borda do
-// anel, meio dentro e meio fora.
-const ORBIT_RADIUS = 47;
-
+/**
+ * Posição do chip na órbita.
+ *
+ * O raio não é fixo: vem da custom property `--orbit-r`, definida por
+ * breakpoint no container. No celular o quadrado encolhe mas o chip mantém um
+ * tamanho mínimo legível, então a proporção muda e um raio fixo empurrava os
+ * ícones para cima da foto. Só o seno e o cosseno ficam no JS, como números
+ * constantes, e a conta final acontece no CSS.
+ */
 function orbitPosition(index, total) {
   // Começa no topo (-90°) e segue no sentido horário.
   const angle = (-90 + (360 / total) * index) * (Math.PI / 180);
+  const cos = Math.cos(angle).toFixed(4);
+  const sin = Math.sin(angle).toFixed(4);
   return {
-    left: `${50 + ORBIT_RADIUS * Math.cos(angle)}%`,
-    top: `${50 + ORBIT_RADIUS * Math.sin(angle)}%`,
+    left: `calc(50% + (${cos} * var(--orbit-r)))`,
+    top: `calc(50% + (${sin} * var(--orbit-r)))`,
   };
 }
 
@@ -168,7 +175,9 @@ export default function Hero() {
           delay={0.2}
           className="order-first flex justify-center lg:order-none lg:col-span-5"
         >
-          <div className="relative aspect-square w-[16rem] xs:w-[19rem] sm:w-[23rem] lg:w-full lg:max-w-[26rem]">
+          {/* `--orbit-r` afasta os chips no celular, onde o quadrado é pequeno
+              em relação a eles, e volta ao raio original nas telas maiores. */}
+          <div className="relative aspect-square w-[16rem] [--orbit-r:51%] xs:w-[19rem] xs:[--orbit-r:50%] sm:w-[23rem] sm:[--orbit-r:49%] lg:w-full lg:max-w-[26rem] lg:[--orbit-r:47%]">
             {/* Anel externo girando */}
             <div
               aria-hidden="true"
@@ -222,7 +231,9 @@ export default function Hero() {
                     liga-desliga que fazia o efeito parecer seco. */}
                 <motion.div
                   className={cn(
-                    "group/chip flex cursor-default items-center gap-2 rounded-xl px-3 py-2.5",
+                    // Chip mais compacto no celular: com o quadrado pequeno,
+                    // cada pixel a menos afasta a borda do chip da foto.
+                    "group/chip flex cursor-default items-center gap-2 rounded-xl px-2 py-2 sm:px-3 sm:py-2.5",
                     T.glass,
                     "shadow-glass transition-colors duration-500 ease-smooth",
                     "hover:border-flux-400/50 hover:bg-flux-400/[0.07] hover:shadow-glow"
@@ -232,7 +243,7 @@ export default function Hero() {
                   transition={{ type: "spring", stiffness: 210, damping: 17 }}
                 >
                   <Icon
-                    className="h-6 w-6 shrink-0 text-flux-500 dark:text-flux-300 sm:h-7 sm:w-7"
+                    className="h-5 w-5 shrink-0 text-flux-500 dark:text-flux-300 sm:h-7 sm:w-7"
                     aria-hidden="true"
                   />
                   <span className="max-w-0 overflow-hidden whitespace-nowrap text-xs font-medium text-slate-700 opacity-0 transition-all duration-500 ease-smooth group-hover/chip:max-w-[10rem] group-hover/chip:opacity-100 dark:text-slate-200">
