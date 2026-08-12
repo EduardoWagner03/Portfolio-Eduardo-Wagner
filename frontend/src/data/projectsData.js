@@ -8,16 +8,21 @@ export const projects = [
   {
     id: "bloco3d",
     status: "live",
-    // Sem screenshots ainda: o cartão e o modal caem em uma capa tipográfica
-    // gerada em CSS. Basta apontar `cover` para um arquivo em /public/images
-    // e preencher `gallery` para que as imagens passem a ser usadas.
-    cover: null,
+    cover: "/images/Bloco3D.webp",
     logo: "/images/logo-bloco3d.jpg",
     accent: "pulse",
     featured: true,
     link: "https://bloco3d.com.br/",
     repo: null,
-    gallery: [],
+    // Alinhado com `features`: "Infraestrutura Serverless" e "Webhooks
+    // Assíncronos" são internas e não têm tela pública para ilustrar, então
+    // ficam `null` e o modal renderiza só o texto delas.
+    gallery: [
+      "/images/CategoriasBloco3D.webp",
+      null,
+      null,
+      "/images/ProdutoBloco3D.webp",
+    ],
     team: [
       { name: "Eduardo Wagner", handle: "EduardoWagner03", self: true },
       { name: "Victor Bueno", handle: "VictorBueno011" },
