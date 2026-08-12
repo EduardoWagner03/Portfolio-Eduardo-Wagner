@@ -18,7 +18,10 @@ import { profile } from "../../data/profile";
 const JOURNEY_ICONS = [GraduationCap, Rocket, Users, Lightbulb];
 
 export default function About() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  // `profile.cv` é um objeto por idioma. Usar ele direto no href gerava
+  // "[object Object]" e levava o visitante a uma página 404.
+  const cvHref = profile.cv[lang] ?? profile.cv.pt;
 
   return (
     <Section id="about">
@@ -226,7 +229,7 @@ export default function About() {
                 {t.about.ctaPrimary}
               </Button>
               <Button
-                href={profile.cv}
+                href={cvHref}
                 target="_blank"
                 rel="noreferrer"
                 variant="outline"
