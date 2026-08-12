@@ -73,7 +73,9 @@ export const projects = [
   {
     id: "menudigital",
     status: "wip",
-    // Sem screenshots ainda: cai na capa tipográfica gerada em CSS.
+    // Sem imagens por decisão, não por pendência: o produto está em
+    // construção e qualquer captura envelheceria a cada mudança de tela.
+    // Cai na capa tipográfica gerada em CSS, que combina com o selo "wip".
     cover: null,
     accent: "flux",
     featured: true,
