@@ -3,9 +3,18 @@ if (process.env.NODE_ENV !== "production") require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+const rateLimit = require("express-rate-limit");
 
 const app = express();
-app.use(express.json());
+
+// O Cloud Run fica atrás de um proxy: sem isso o express enxerga o IP do
+// balanceador em vez do IP real, e o rate limit valeria para o mundo inteiro
+// como se fosse um único visitante.
+app.set("trust proxy", 1);
+
+// Corpo pequeno de propósito: o formulário manda cerca de 1 KB, então não há
+// motivo para aceitar o padrão de 100 KB.
+app.use(express.json({ limit: "16kb" }));
 
 const allowedOrigins = (process.env.ALLOWED_ORIGINS || "http://localhost:3000")
   .split(",")
@@ -16,6 +25,22 @@ app.use(
     origin: allowedOrigins,
   })
 );
+
+/**
+ * Limite de envio por IP.
+ *
+ * O CORS não protege este endpoint: ele é uma regra que o navegador respeita,
+ * e qualquer script ou curl a ignora. Como a URL da API está no JavaScript do
+ * site, ela é pública por definição. Sem limite, um bot esgota a cota de envio
+ * da conta Gmail e pode fazer o Google suspendê-la por abuso.
+ */
+const contactLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: "Muitas mensagens seguidas. Tente novamente mais tarde." },
+});
 
 const LIMITS = {
   name: { min: 2, max: 60 },
@@ -55,7 +80,15 @@ function getTransporter() {
   return transporter;
 }
 
-app.post("/api/contato", async (req, res) => {
+app.post("/api/contato", contactLimiter, async (req, res) => {
+  // Campo armadilha: fica escondido no formulário, então pessoa nenhuma o
+  // preenche. Bot que despeja texto em todos os campos se entrega aqui.
+  // Responde 200 de propósito: avisar que foi barrado ensina o bot a contornar.
+  if (typeof req.body?.website === "string" && req.body.website.trim() !== "") {
+    console.warn("Envio descartado pelo honeypot.");
+    return res.status(200).json({ ok: true });
+  }
+
   const validationError = validatePayload(req.body);
   if (validationError) {
     return res.status(400).json({ error: validationError });
