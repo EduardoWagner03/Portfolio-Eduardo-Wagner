@@ -668,6 +668,8 @@ const pt = {
       submit: "Enviar Mensagem",
       sending: "Enviando...",
       sent: "Mensagem enviada!",
+      sentNote:
+        "Recebi sua mensagem e respondo no email informado, normalmente em até um dia útil.",
       required: "Campo obrigatório",
       minName: "Informe seu nome com pelo menos 2 letras",
       invalidEmail: "Informe um email válido, como nome@dominio.com",

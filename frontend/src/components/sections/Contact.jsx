@@ -162,6 +162,9 @@ export default function Contact() {
   const update = (key) => (event) => {
     const value = sanitize(key, event.target.value);
     setValues((current) => ({ ...current, [key]: value }));
+    // A confirmação de envio não expira sozinha; ela sai de cena quando a
+    // pessoa começa a escrever a próxima mensagem.
+    setStatus((current) => (current === "sent" ? "idle" : current));
     // Só revalida em tempo real depois que o campo já foi visitado, para o
     // erro não aparecer enquanto a pessoa ainda está digitando pela primeira
     // vez. Depois disso, some assim que o valor fica válido.
@@ -210,6 +213,13 @@ export default function Contact() {
       });
       if (!response.ok) throw new Error("Falha no envio");
       setStatus("sent");
+      // Limpa o formulário: sem isso a mensagem continua na tela depois do
+      // envio, o que faz parecer que nada aconteceu e convida a pessoa a
+      // enviar de novo.
+      setValues({ name: "", email: "", subject: "", message: "" });
+      setErrors({});
+      setTouched({});
+      return;
     } catch {
       // Backend indisponível: cai para o cliente de email do visitante.
       openMailtoFallback();
@@ -365,6 +375,25 @@ export default function Contact() {
               </Button>
 
               <AnimatePresence>
+                {status === "sent" && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    role="status"
+                    aria-live="polite"
+                    className="mt-3 flex items-start gap-2.5 rounded-xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-3"
+                  >
+                    <Check
+                      aria-hidden="true"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400"
+                    />
+                    <p className="text-sm text-emerald-700 dark:text-emerald-300">
+                      {t.contact.form.sentNote}
+                    </p>
+                  </motion.div>
+                )}
+
                 {status === "fallback" && (
                   <motion.p
                     initial={{ opacity: 0, height: 0 }}

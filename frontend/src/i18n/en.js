@@ -665,6 +665,8 @@ const en = {
       submit: "Send Message",
       sending: "Sending...",
       sent: "Message sent!",
+      sentNote:
+        "I got your message and will reply to the email you provided, usually within one business day.",
       required: "This field is required",
       minName: "Enter your name with at least 2 letters",
       invalidEmail: "Enter a valid email address, like name@domain.com",
