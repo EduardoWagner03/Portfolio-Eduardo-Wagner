@@ -1,0 +1,16 @@
+# O Dockerfile roda `npm ci` e só depois `COPY . .`. Sem este arquivo, o
+# node_modules da máquina de desenvolvimento (Windows) seria copiado por cima
+# das dependências que o npm acabou de instalar para o Linux da imagem.
+node_modules
+npm-debug.log*
+
+# Credenciais nunca entram na imagem: em produção elas vêm das variáveis do
+# Cloud Run e do Secret Manager.
+.env
+.env.*
+!.env.example
+
+.git
+.gitignore
+Dockerfile
+.dockerignore
