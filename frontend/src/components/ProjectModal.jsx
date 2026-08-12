@@ -256,6 +256,11 @@ export default function ProjectModal({ project, onClose }) {
                             className={cn(
                               "flex gap-3 rounded-xl border border-slate-900/[0.07] bg-slate-900/[0.02] p-3.5",
                               "dark:border-white/[0.07] dark:bg-white/[0.02]",
+                              // Mesmo realce dos cartões de vidro do resto do
+                              // modal: sem isso estes itens eram os únicos
+                              // inertes ao passar o mouse.
+                              "transition duration-500 ease-smooth",
+                              T.glassHover,
                               T.body,
                               T.prose,
                               "text-sm leading-relaxed"
