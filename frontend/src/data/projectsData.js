@@ -306,13 +306,20 @@ export const projects = [
   {
     id: "autopintura",
     status: "done",
-    // Sem screenshots ainda: a capa usa a logo do cliente.
-    cover: null,
+    cover: "/images/AutoPintura.webp",
     logo: "/images/logo-autopintura.webp",
     accent: "pulse",
     link: null,
     repo: null,
-    gallery: [],
+    // Alinhado com `features`. "Animações em JavaScript Puro" e "SEO e
+    // Carregamento Rápido" não rendem captura estática, então ficam `null`.
+    // O hero e a galeria do site ainda usam placeholders no lugar das fotos
+    // da oficina, por isso não entraram aqui.
+    gallery: [
+      "/images/OrcamentoAutoPintura.webp",
+      null,
+      "/images/DepoimentosAutoPintura.webp",
+    ],
     team: [{ name: "Eduardo Wagner", handle: "EduardoWagner03", self: true }],
     stack: {
       frontend: [
