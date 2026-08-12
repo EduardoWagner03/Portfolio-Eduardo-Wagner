@@ -150,6 +150,8 @@ export default function Contact() {
     email: "",
     subject: "",
     message: "",
+    // Campo armadilha: só bot preenche. Ver o input escondido no formulário.
+    website: "",
   });
   // Guarda a chave da mensagem (ex.: "minName"), não o texto: assim os erros
   // já visíveis acompanham a troca de idioma.
@@ -216,7 +218,7 @@ export default function Contact() {
       // Limpa o formulário: sem isso a mensagem continua na tela depois do
       // envio, o que faz parecer que nada aconteceu e convida a pessoa a
       // enviar de novo.
-      setValues({ name: "", email: "", subject: "", message: "" });
+      setValues({ name: "", email: "", subject: "", message: "", website: "" });
       setErrors({});
       setTouched({});
       return;
@@ -304,6 +306,27 @@ export default function Contact() {
             </h3>
 
             <form onSubmit={handleSubmit} noValidate className="mt-6">
+              {/*
+                Campo armadilha para bots. Fica fora da tela em vez de
+                display:none, porque muito bot ignora campo oculto por CSS.
+                `aria-hidden` e `tabIndex={-1}` mantêm leitores de tela e
+                navegação por teclado longe dele. O backend descarta o envio
+                se vier preenchido.
+              */}
+              <div className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden">
+                <label htmlFor="contact-website">Não preencha este campo</label>
+                <input
+                  id="contact-website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  value={values.website}
+                  onChange={update("website")}
+                />
+              </div>
+
               <div className="grid grid-cols-1 gap-x-4 sm:grid-cols-2">
                 <Field
                   id="contact-name"
