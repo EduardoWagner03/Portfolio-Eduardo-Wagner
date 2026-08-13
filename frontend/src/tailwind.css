@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /*
+   * As animações de entrada (Reveal, Framer Motion) começam deslocadas na
+   * horizontal. No HTML vindo do servidor esse deslocamento já está
+   * aplicado, e até o JavaScript assumir e animar de volta os elementos
+   * ficam para fora da tela, o que abria barra de rolagem lateral no
+   * celular por alguns segundos após o carregamento.
+   *
+   * `clip` em vez de `hidden` porque `hidden` transforma o elemento em
+   * contêiner de rolagem e quebraria qualquer `position: sticky` interno.
+   * `hidden` fica antes como reserva para navegadores sem suporte a `clip`.
+   */
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+}
