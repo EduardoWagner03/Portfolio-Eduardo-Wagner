@@ -1,11 +1,16 @@
-import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import React, { useRef, useState } from "react";
+import {
+  AnimatePresence,
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import {
   ArrowRight,
   Check,
   Copy,
   Mail,
-  MessageSquare,
   Rocket,
   Send,
   ShieldCheck,
@@ -231,11 +236,33 @@ export default function Contact() {
     window.setTimeout(() => setStatus("idle"), 4000);
   };
 
+  // O fundo da seção nasce como um cartão recuado de cantos redondos e abre
+  // até ocupar a largura toda conforme a seção sobe na tela.
+  const reduce = useReducedMotion();
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "start 15%"],
+  });
+  const panelClip = useTransform(scrollYProgress, (p) => {
+    const rest = 1 - p;
+    return `inset(${rest * 12}% ${rest * 7}% ${rest * 12}% ${rest * 7}% round ${rest * 48}px)`;
+  });
+
   return (
-    <Section id="contact">
+    <Section id="contact" ref={sectionRef}>
+      <motion.div
+        aria-hidden="true"
+        style={reduce ? undefined : { clipPath: panelClip }}
+        className="pointer-events-none absolute inset-0 overflow-hidden bg-slate-900/[0.04] dark:bg-white/[0.025]"
+      >
+        <span className="absolute inset-0 bg-grid-light bg-grid dark:bg-grid-dark" />
+        <span className="absolute -left-40 top-0 h-[28rem] w-[28rem] rounded-full bg-flux-400/15 blur-3xl" />
+        <span className="absolute -right-40 bottom-0 h-[28rem] w-[28rem] rounded-full bg-pulse-500/15 blur-3xl" />
+      </motion.div>
+
       <SectionHeading
-        badge={t.contact.badge}
-        badgeIcon={MessageSquare}
+        index="05"
         title={t.contact.title}
         subtitle={t.contact.subtitle}
       />

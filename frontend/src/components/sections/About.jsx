@@ -7,7 +7,6 @@ import {
   Lightbulb,
   Rocket,
   Users,
-  UserRoundSearch,
 } from "lucide-react";
 import { cn } from "../../lib/cn";
 import { Button, GlassCard, Section, SectionHeading, T } from "../ui/primitives";
@@ -26,15 +25,14 @@ export default function About() {
   return (
     <Section id="about">
       <SectionHeading
-        badge={t.about.badge}
-        badgeIcon={UserRoundSearch}
+        index="01"
         title={t.about.title}
         subtitle={t.about.subtitle}
       />
 
       <div className="mt-14 grid grid-cols-1 gap-6 lg:mt-16 lg:grid-cols-12">
         {/* ------------------------------------------- Cartão de identidade */}
-        <Reveal variant="slideLeft" className="lg:col-span-5">
+        <Reveal variant="clipDown" className="lg:col-span-5">
           <GlassCard className="h-full p-6 sm:p-8 lg:sticky lg:top-28">
             <div className="flex items-center gap-4">
               <img
@@ -125,7 +123,7 @@ export default function About() {
               // idioma trocava a chave, o React remontava o cartão e ele
               // nascia no estado "hidden" de um RevealGroup que já havia
               // animado com `once: true`. O cartão ficava invisível.
-              <RevealItem key={index} variant="slideRight">
+              <RevealItem key={index} variant="turnIn">
                 <GlassCard className="p-6 sm:p-7">
                   <div className="flex flex-col gap-4 sm:flex-row sm:gap-5">
                     {/* O primeiro cartão é o da formação: ali a logo do curso

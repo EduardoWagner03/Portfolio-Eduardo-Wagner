@@ -31,7 +31,6 @@ const en = {
   },
 
   hero: {
-    badge: "Hi, I'm",
     firstName: "Eduardo Gregório",
     lastName: "Wagner",
     roles: [
@@ -75,7 +74,6 @@ const en = {
   },
 
   about: {
-    badge: "Get to know me",
     title: "About Me",
     subtitle: "A developer passionate about building solutions that matter",
     introTitle: "Hi! I'm Eduardo",
@@ -126,9 +124,10 @@ const en = {
   },
 
   skills: {
-    badge: "Tech Stack",
     title: "Skills",
     subtitle: "Technologies and tools I work with",
+    count: "technologies",
+    goTo: "Go to",
     categories: {
       frontend: "Frontend",
       backend: "Backend",
@@ -144,7 +143,6 @@ const en = {
   },
 
   projects: {
-    badge: "Portfolio",
     title: "Featured Projects",
     subtitle: "A selection of the main projects I've built",
     viewDetails: "View Details",
@@ -476,7 +474,7 @@ const en = {
   },
 
   experience: {
-    badge: "Professional Journey",
+    ghost: "Journey",
     title: "Professional Experience",
     subtitle: "How my software development practice has evolved",
     currentLabel: "Current",
@@ -634,7 +632,6 @@ const en = {
   },
 
   contact: {
-    badge: "Let's talk",
     title: "Get in Touch",
     subtitle: "I'm always open to new opportunities and interesting projects",
     introTitle: "Let's work together!",

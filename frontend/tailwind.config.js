@@ -35,14 +35,16 @@ module.exports = {
           600: "#0891B2",
           700: "#0E7490",
         },
-        // Acento secundário: violeta.
+        // Acento secundário: azul royal. Era violeta; saiu para o site ficar
+        // só em tons de azul. O nome do token ficou para não mexer em todos os
+        // componentes.
         pulse: {
-          200: "#DDD6FE",
-          300: "#C4B5FD",
-          400: "#A78BFA",
-          500: "#8B5CF6",
-          600: "#7C3AED",
-          700: "#6D28D9",
+          200: "#BFDBFE",
+          300: "#93C5FD",
+          400: "#60A5FA",
+          500: "#3B82F6",
+          600: "#2563EB",
+          700: "#1D4ED8",
         },
       },
       boxShadow: {
@@ -50,7 +52,7 @@ module.exports = {
         "glow-lg":
           "0 0 0 1px rgba(34,211,238,0.25), 0 24px 80px -16px rgba(34,211,238,0.45)",
         "glow-violet":
-          "0 0 0 1px rgba(139,92,246,0.22), 0 16px 60px -12px rgba(139,92,246,0.4)",
+          "0 0 0 1px rgba(59,130,246,0.22), 0 16px 60px -12px rgba(59,130,246,0.4)",
         glass: "0 8px 32px -8px rgba(2,6,23,0.6)",
         "inner-hair": "inset 0 1px 0 0 rgba(255,255,255,0.07)",
       },

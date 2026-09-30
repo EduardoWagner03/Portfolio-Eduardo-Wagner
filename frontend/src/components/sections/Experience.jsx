@@ -1,5 +1,11 @@
 import React from "react";
-import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import {
   Award,
   BookOpen,
@@ -11,7 +17,6 @@ import {
   LaptopMinimal,
   Palette,
   Rocket,
-  Route,
   Thermometer,
   UtensilsCrossed,
 } from "lucide-react";
@@ -53,11 +58,32 @@ export default function Experience() {
     restDelta: 0.001,
   });
 
+  // Texto fantasma ao fundo: atravessa a seção de lado, bem mais devagar que
+  // o scroll, e reforça a ideia de percurso sem competir com os cartões.
+  const sectionRef = React.useRef(null);
+  const { scrollYProgress: sectionProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const ghostX = useTransform(sectionProgress, [0, 1], ["12%", "-38%"]);
+
   return (
-    <Section id="experience">
+    <Section id="experience" ref={sectionRef}>
+      {/* `overflow-clip`, e não `hidden`, para o `sticky` do texto continuar
+          valendo em relação à janela durante a seção inteira. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 overflow-clip"
+      >
+        <motion.span
+          style={reduce ? undefined : { x: ghostX }}
+          className="sticky top-[26vh] block w-max select-none whitespace-nowrap font-display text-[26vw] font-bold uppercase leading-none tracking-tighter text-transparent [-webkit-text-stroke:1px_rgb(15_23_42/0.07)] dark:[-webkit-text-stroke:1px_rgb(255_255_255/0.06)]"
+        >
+          {t.experience.ghost}
+        </motion.span>
+      </div>
       <SectionHeading
-        badge={t.experience.badge}
-        badgeIcon={Route}
+        index="04"
         title={t.experience.title}
         subtitle={t.experience.subtitle}
       />
@@ -112,7 +138,7 @@ export default function Experience() {
                 </span>
 
                 <Reveal
-                  variant={left ? "slideLeft" : "slideRight"}
+                  variant="flipUp"
                   className={cn(
                     "lg:py-6",
                     left

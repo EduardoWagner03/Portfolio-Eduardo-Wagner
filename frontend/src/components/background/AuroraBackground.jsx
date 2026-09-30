@@ -22,7 +22,7 @@ export default function AuroraBackground() {
       {/* Aurora ciano */}
       <div className="absolute -left-[15%] -top-[20%] h-[46rem] w-[46rem] rounded-full bg-flux-400/20 blur-[110px] dark:bg-flux-500/25" />
 
-      {/* Aurora violeta */}
+      {/* Aurora azul */}
       <div className="absolute -right-[12%] top-[35%] h-[40rem] w-[40rem] rounded-full bg-pulse-400/20 blur-[110px] dark:bg-pulse-600/25" />
 
       {/* Ruído de filme para tirar o aspecto "plástico" dos gradientes */}

@@ -31,7 +31,6 @@ const pt = {
   },
 
   hero: {
-    badge: "Olá, eu sou",
     firstName: "Eduardo Gregório",
     lastName: "Wagner",
     roles: [
@@ -76,7 +75,6 @@ const pt = {
   },
 
   about: {
-    badge: "Conheça mais",
     title: "Sobre Mim",
     subtitle:
       "Desenvolvedor apaixonado por criar soluções que fazem a diferença",
@@ -128,9 +126,10 @@ const pt = {
   },
 
   skills: {
-    badge: "Stack Técnica",
     title: "Habilidades",
     subtitle: "Tecnologias e ferramentas que domino",
+    count: "tecnologias",
+    goTo: "Ir para",
     categories: {
       frontend: "Frontend",
       backend: "Backend",
@@ -146,7 +145,6 @@ const pt = {
   },
 
   projects: {
-    badge: "Portfólio",
     title: "Principais Projetos",
     subtitle: "Alguns dos principais projetos que desenvolvi",
     viewDetails: "Ver Detalhes",
@@ -478,7 +476,7 @@ const pt = {
   },
 
   experience: {
-    badge: "Trajetória Profissional",
+    ghost: "Trajetória",
     title: "Experiência Profissional",
     subtitle: "Minha evolução prática no desenvolvimento de software",
     currentLabel: "Atual",
@@ -636,7 +634,6 @@ const pt = {
   },
 
   contact: {
-    badge: "Vamos conversar",
     title: "Entre em Contato",
     subtitle:
       "Estou sempre aberto a novas oportunidades e projetos interessantes",

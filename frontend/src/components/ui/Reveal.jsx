@@ -27,6 +27,26 @@ export default function Reveal({
     );
   }
 
+  // O IntersectionObserver respeita o clip-path: um elemento que nasce todo
+  // recortado nunca "entra na tela" e a animação não dispara. Por isso quem
+  // observa é o invólucro, e o recorte fica num filho que herda o estado.
+  if (variant === "clipDown") {
+    return (
+      <Component
+        className={className}
+        initial="hidden"
+        whileInView="visible"
+        viewport={VIEWPORT}
+        variants={stagger(0, delay)}
+        {...rest}
+      >
+        <motion.div className="h-full" variants={VARIANTS.clipDown}>
+          {children}
+        </motion.div>
+      </Component>
+    );
+  }
+
   return (
     <Component
       className={className}

@@ -1,7 +1,12 @@
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "../../lib/cn";
-import Reveal from "./Reveal";
+import MaskReveal from "./MaskReveal";
+import { VIEWPORT, fadeIn, fadeUp, growX, stagger } from "../../lib/motion";
+
+// Total de seções numeradas (Sobre, Habilidades, Projetos, Experiência e
+// Contato), exibido ao lado do índice de cada título.
+const SECTION_COUNT = "05";
 
 /* ------------------------------------------------------------------ *
  * Tokens compartilhados — combinações de classes usadas em toda a UI.
@@ -28,10 +33,11 @@ export const T = {
 /* ------------------------------------------------------------------ *
  * Section — espaçamento vertical e container consistentes.
  * ------------------------------------------------------------------ */
-export function Section({ id, className, containerClassName, children }) {
+export function Section({ id, ref, className, containerClassName, children }) {
   return (
     <section
       id={id}
+      ref={ref}
       className={cn("relative scroll-mt-24 py-16 sm:py-20 lg:py-24", className)}
     >
       <div className={cn(T.container, containerClassName)}>{children}</div>
@@ -40,72 +46,79 @@ export function Section({ id, className, containerClassName, children }) {
 }
 
 /* ------------------------------------------------------------------ *
- * Badge — pílula de rótulo com ícone.
- * ------------------------------------------------------------------ */
-export function Badge({ icon: Icon, children, className }) {
-  return (
-    <span
-      className={cn(
-        "inline-flex items-center gap-2 rounded-full px-3.5 py-1.5",
-        "text-[0.7rem] font-semibold uppercase tracking-[0.16em]",
-        "border border-flux-500/25 bg-flux-500/[0.07] text-flux-700",
-        "dark:border-flux-400/25 dark:bg-flux-400/[0.08] dark:text-flux-300",
-        className
-      )}
-    >
-      {Icon && <Icon className="h-3.5 w-3.5" aria-hidden="true" />}
-      {children}
-    </span>
-  );
-}
-
-/* ------------------------------------------------------------------ *
- * SectionHeading — badge + título + subtítulo.
+ * SectionHeading — índice + título + subtítulo.
  * ------------------------------------------------------------------ */
 export function SectionHeading({
-  badge,
-  badgeIcon,
+  index,
   title,
   subtitle,
   align = "center",
   className,
 }) {
   const centered = align === "center";
+  const reduce = useReducedMotion();
+  // Sem `initial`/`whileInView` na raiz, os filhos com variants simplesmente
+  // não animam: é o caminho de quem pediu menos movimento.
+  const timing = reduce
+    ? {}
+    : {
+        initial: "hidden",
+        whileInView: "visible",
+        viewport: VIEWPORT,
+        variants: stagger(0.14),
+      };
+
   return (
-    <Reveal
+    <motion.div
       className={cn(
         "flex flex-col gap-4",
         centered ? "items-center text-center" : "items-start text-left",
         className
       )}
+      {...timing}
     >
-      {badge && <Badge icon={badgeIcon}>{badge}</Badge>}
+      {/* Índice da seção no lugar do selo em pílula, que deixava a página
+          com cara de modelo pronto. Segue a mesma linguagem do contador da
+          trilha de projetos. */}
+      {index && (
+        <motion.p
+          variants={fadeIn}
+          className="font-mono text-sm tabular-nums tracking-widest"
+        >
+          <span className="text-flux-600 dark:text-flux-400">{index}</span>
+          <span className="text-slate-400 dark:text-slate-600"> / {SECTION_COUNT}</span>
+        </motion.p>
+      )}
       <h2
         className={cn(
           T.heading,
           "text-balance text-3xl leading-[1.1] sm:text-4xl lg:text-5xl"
         )}
       >
-        {title}
+        <MaskReveal text={title} trigger="inherit" />
       </h2>
       {subtitle && (
-        <p
+        <motion.p
+          variants={fadeUp}
           className={cn(
             T.body,
             "max-w-2xl text-pretty text-base leading-relaxed sm:text-lg"
           )}
         >
           {subtitle}
-        </p>
+        </motion.p>
       )}
-      <span
+      <motion.span
         aria-hidden="true"
+        variants={growX}
         className={cn(
-          "h-px w-24 bg-gradient-to-r from-transparent via-flux-400/60 to-transparent",
-          centered ? "" : "bg-gradient-to-r from-flux-400/70 to-transparent"
+          "h-px w-24",
+          centered
+            ? "origin-center bg-gradient-to-r from-transparent via-flux-400/60 to-transparent"
+            : "origin-left bg-gradient-to-r from-flux-400/70 to-transparent"
         )}
       />
-    </Reveal>
+    </motion.div>
   );
 }
 
@@ -116,33 +129,46 @@ export function GlassCard({
   as: Tag = "div",
   className,
   interactive = true,
+  tilt = interactive,
   children,
   ...rest
 }) {
   const reduce = useReducedMotion();
 
   // O brilho segue o ponteiro via custom properties inline — sem CSS externo.
+  // As mesmas coordenadas inclinam o cartão em 3D na direção do cursor.
   const handlePointerMove = (event) => {
     if (reduce || !interactive) return;
-    const rect = event.currentTarget.getBoundingClientRect();
-    event.currentTarget.style.setProperty(
-      "--mx",
-      `${event.clientX - rect.left}px`
-    );
-    event.currentTarget.style.setProperty(
-      "--my",
-      `${event.clientY - rect.top}px`
-    );
+    const el = event.currentTarget;
+    const rect = el.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    el.style.setProperty("--mx", `${x}px`);
+    el.style.setProperty("--my", `${y}px`);
+    if (!tilt || event.pointerType !== "mouse") return;
+    // Até 5 graus: mais que isso distorce o texto e cansa a leitura.
+    el.style.setProperty("--ry", `${(x / rect.width - 0.5) * 10}deg`);
+    el.style.setProperty("--rx", `${(0.5 - y / rect.height) * 10}deg`);
+  };
+
+  const handlePointerLeave = (event) => {
+    event.currentTarget.style.setProperty("--rx", "0deg");
+    event.currentTarget.style.setProperty("--ry", "0deg");
   };
 
   return (
     <Tag
       onPointerMove={handlePointerMove}
+      onPointerLeave={tilt ? handlePointerLeave : undefined}
       className={cn(
         "group/card relative overflow-hidden rounded-2xl",
         T.glass,
         "shadow-glass transition duration-500 ease-smooth",
         interactive && T.glassHover,
+        // Sem checar `reduce` aqui: a classe é inerte com as variáveis em
+        // zero, e mudar o className no cliente quebraria a hidratação.
+        tilt &&
+          "[transform:perspective(1000px)_rotateX(var(--rx,0deg))_rotateY(var(--ry,0deg))]",
         className
       )}
       {...rest}

@@ -1,12 +1,18 @@
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import {
   ArrowRight,
   Cloud,
   Cog,
   Mail,
   MousePointerClick,
-  Rocket,
   Sparkles,
   Wrench,
 } from "lucide-react";
@@ -22,9 +28,11 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { cn } from "../../lib/cn";
-import { Badge, Button, GlassCard, T } from "../ui/primitives";
+import { useClientMediaQuery } from "../../lib/hooks";
+import { Button, GlassCard, T } from "../ui/primitives";
 import Reveal, { RevealGroup, RevealItem } from "../ui/Reveal";
 import Typewriter from "../ui/Typewriter";
+import MaskReveal from "../ui/MaskReveal";
 import ParticleField from "../background/ParticleField";
 import { useI18n } from "../../i18n";
 import { profile } from "../../data/profile";
@@ -70,34 +78,88 @@ function orbitPosition(index, total) {
 export default function Hero() {
   const { t } = useI18n();
   const reduce = useReducedMotion();
+  // Só no desktop, onde o hero cabe numa tela. No celular a coluna de texto
+  // é mais alta que a tela, e o esmaecimento apagava os botões e os cartões
+  // enquanto ainda estavam sendo lidos.
+  const exit = useClientMediaQuery("(min-width: 1024px)") && !reduce;
+
+  // Saída em 3D: ao rolar para fora do hero, o texto tomba para trás e o
+  // retrato gira, como se a cena se afastasse da câmera.
+  const heroRef = React.useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const textRotateX = useTransform(scrollYProgress, [0, 1], [0, 28]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const textOpacity = useTransform(scrollYProgress, [0.2, 0.85], [1, 0]);
+  const portraitRotateY = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  const portraitRotateX = useTransform(scrollYProgress, [0, 1], [0, 18]);
+  const portraitScale = useTransform(scrollYProgress, [0, 1], [1, 0.78]);
+
+  // Inclinação pelo mouse: a órbita acompanha o cursor, e os chips, que
+  // ficam mais à frente no eixo Z, se deslocam mais que a foto.
+  const pointerX = useMotionValue(0);
+  const pointerY = useMotionValue(0);
+  const spring = { stiffness: 110, damping: 18, mass: 0.6 };
+  const tiltY = useSpring(useTransform(pointerX, [-1, 1], [-16, 16]), spring);
+  const tiltX = useSpring(useTransform(pointerY, [-1, 1], [14, -14]), spring);
+
+  const handlePointerMove = (event) => {
+    if (reduce || event.pointerType !== "mouse") return;
+    pointerX.set((event.clientX / window.innerWidth) * 2 - 1);
+    pointerY.set((event.clientY / window.innerHeight) * 2 - 1);
+  };
+  const handlePointerLeave = () => {
+    pointerX.set(0);
+    pointerY.set(0);
+  };
 
   return (
     <section
       id="home"
+      ref={heroRef}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
       className="relative flex min-h-[100svh] items-center overflow-hidden pb-20 pt-28 sm:pt-32"
     >
       <ParticleField className="absolute inset-0 h-full w-full" />
 
       <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14 px-5 sm:px-8 lg:grid-cols-12 lg:gap-8">
         {/* ---------------------------------------------- Coluna de texto */}
-        <div className="lg:col-span-7">
+        <motion.div
+          className="origin-top lg:col-span-7"
+          style={
+            !exit
+              ? undefined
+              : {
+                  rotateX: textRotateX,
+                  y: textY,
+                  opacity: textOpacity,
+                  transformPerspective: 1200,
+                }
+          }
+        >
           <RevealGroup className="flex flex-col items-start gap-6" gap={0.1}>
-            <RevealItem>
-              <Badge icon={Rocket}>{t.hero.badge}</Badge>
-            </RevealItem>
-
-            <RevealItem>
-              <h1
-                className={cn(
-                  T.heading,
-                  "text-balance text-[2.6rem] leading-[0.95] xs:text-5xl sm:text-6xl lg:text-[4.5rem]"
-                )}
-              >
-                {t.hero.firstName}
-                <br />
-                <span className={T.gradientText}>{t.hero.lastName}</span>
-              </h1>
-            </RevealItem>
+            {/* Sem RevealItem em volta: a máscara é o próprio efeito de
+                entrada, e herda o tempo da cascata do grupo. */}
+            <h1
+              className={cn(
+                T.heading,
+                "text-balance text-[2.6rem] leading-[0.95] xs:text-5xl sm:text-6xl lg:text-[4.5rem]"
+              )}
+            >
+              <MaskReveal
+                trigger="inherit"
+                gap={0.12}
+                lines={[
+                  t.hero.firstName,
+                  <span key="last" className={T.gradientText}>
+                    {t.hero.lastName}
+                  </span>,
+                ]}
+              />
+            </h1>
 
             <RevealItem>
               <p className="flex min-h-[2.2em] items-center font-mono text-base text-slate-700 dark:text-slate-300 sm:text-xl">
@@ -167,92 +229,112 @@ export default function Hero() {
               );
             })}
           </RevealGroup>
-        </div>
+        </motion.div>
 
         {/* ---------------------------------------------- Coluna do retrato */}
         <Reveal
           variant="scaleIn"
           delay={0.2}
-          className="order-first flex justify-center lg:order-none lg:col-span-5"
+          className="order-first flex justify-center [perspective:1100px] lg:order-none lg:col-span-5"
         >
-          {/* `--orbit-r` afasta os chips no celular, onde o quadrado é pequeno
-              em relação a eles, e volta ao raio original nas telas maiores. */}
-          <div className="relative aspect-square w-[16rem] [--orbit-r:51%] xs:w-[19rem] xs:[--orbit-r:50%] sm:w-[23rem] sm:[--orbit-r:49%] lg:w-full lg:max-w-[26rem] lg:[--orbit-r:47%]">
-            {/* Anel externo girando */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 rounded-full border border-dashed border-flux-400/25 motion-safe:animate-spin-slow dark:border-flux-400/20"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-[8%] rounded-full border border-pulse-400/20"
-            />
-            {/* Halo */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-[12%] rounded-full bg-gradient-to-br from-flux-400/30 to-pulse-500/30 blur-2xl"
-            />
-
-            {/* Foto */}
-            <div className="absolute inset-[14%] overflow-hidden rounded-full ring-1 ring-white/30 dark:ring-white/15">
-              <img
-                src={profile.photo}
-                alt={t.hero.photoAlt}
-                width={420}
-                height={420}
-                fetchPriority="high"
-                decoding="async"
-                className="h-full w-full object-cover object-top transition duration-700 ease-smooth hover:scale-105"
-              />
-              <span
+          <motion.div
+            className="flex w-full justify-center [transform-style:preserve-3d]"
+            style={
+              reduce
+                ? undefined
+                : {
+                    rotateX: portraitRotateX,
+                    rotateY: portraitRotateY,
+                    scale: portraitScale,
+                  }
+            }
+          >
+            {/* `--orbit-r` afasta os chips no celular, onde o quadrado é
+                pequeno em relação a eles, e volta ao raio original nas telas
+                maiores. */}
+            <motion.div
+              style={reduce ? undefined : { rotateX: tiltX, rotateY: tiltY }}
+              className="relative aspect-square w-[16rem] [transform-style:preserve-3d] [--orbit-r:51%] xs:w-[19rem] xs:[--orbit-r:50%] sm:w-[23rem] sm:[--orbit-r:49%] lg:w-full lg:max-w-[26rem] lg:[--orbit-r:47%]"
+            >
+              {/* Anel externo girando */}
+              <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/45 via-transparent to-transparent"
+                className="absolute inset-0 rounded-full border border-dashed border-flux-400/25 motion-safe:animate-spin-slow dark:border-flux-400/20"
               />
-            </div>
+              <div
+                aria-hidden="true"
+                className="absolute inset-[8%] rounded-full border border-pulse-400/20"
+              />
+              {/* Halo */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-[12%] rounded-full [transform:translateZ(-80px)] bg-gradient-to-br from-flux-400/30 to-pulse-500/30 blur-2xl"
+              />
 
-            {/* Chips de tecnologia orbitando */}
-            {ORBIT.map((Icon, index) => (
-              <motion.div
-                key={index}
-                className="absolute z-10 -translate-x-1/2 -translate-y-1/2"
-                style={orbitPosition(index, ORBIT.length)}
-                animate={reduce ? undefined : { y: [0, -10, 0] }}
-                transition={{
-                  duration: 5 + index * 0.55,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: index * 0.3,
-                }}
-              >
-                {/* O hover vive numa camada própria, por dentro da flutuação:
-                    assim a mola do hover e o vaivém contínuo não disputam a
-                    mesma propriedade de transform. A mola também segura o
-                    chip parado embaixo do cursor, o que antes causava o
-                    liga-desliga que fazia o efeito parecer seco. */}
+              {/* Foto */}
+              <div className="absolute inset-[14%] overflow-hidden rounded-full ring-1 ring-white/30 dark:ring-white/15">
+                <img
+                  src={profile.photo}
+                  alt={t.hero.photoAlt}
+                  width={420}
+                  height={420}
+                  fetchPriority="high"
+                  decoding="async"
+                  className="h-full w-full object-cover object-top transition duration-700 ease-smooth hover:scale-105"
+                />
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/45 via-transparent to-transparent"
+                />
+              </div>
+
+              {/* Chips de tecnologia orbitando */}
+              {ORBIT.map((Icon, index) => (
                 <motion.div
-                  className={cn(
-                    // Chip mais compacto no celular: com o quadrado pequeno,
-                    // cada pixel a menos afasta a borda do chip da foto.
-                    "group/chip flex cursor-default items-center gap-2 rounded-xl px-2 py-2 sm:px-3 sm:py-2.5",
-                    T.glass,
-                    "shadow-glass transition-colors duration-500 ease-smooth",
-                    "hover:border-flux-400/50 hover:bg-flux-400/[0.07] hover:shadow-glow"
-                  )}
-                  title={t.hero.orbit[index]}
-                  whileHover={reduce ? undefined : { scale: 1.14, y: -8 }}
-                  transition={{ type: "spring", stiffness: 210, damping: 17 }}
+                  key={index}
+                  className="absolute z-10 -translate-x-1/2 -translate-y-1/2"
+                  // z: os chips flutuam à frente da foto; com a inclinação do
+                  // mouse eles se deslocam mais que ela, o que revela a
+                  // profundidade da cena.
+                  style={{ ...orbitPosition(index, ORBIT.length), z: reduce ? 0 : 90 }}
+                  animate={reduce ? undefined : { y: [0, -10, 0] }}
+                  transition={{
+                    duration: 5 + index * 0.55,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.3,
+                  }}
                 >
-                  <Icon
-                    className="h-5 w-5 shrink-0 text-flux-500 dark:text-flux-300 sm:h-7 sm:w-7"
-                    aria-hidden="true"
-                  />
-                  <span className="max-w-0 overflow-hidden whitespace-nowrap text-xs font-medium text-slate-700 opacity-0 transition-all duration-500 ease-smooth group-hover/chip:max-w-[10rem] group-hover/chip:opacity-100 dark:text-slate-200">
-                    {t.hero.orbit[index]}
-                  </span>
+                  {/* O hover vive numa camada própria, por dentro da flutuação:
+                      assim a mola do hover e o vaivém contínuo não disputam a
+                      mesma propriedade de transform. A mola também segura o
+                      chip parado embaixo do cursor, o que antes causava o
+                      liga-desliga que fazia o efeito parecer seco. */}
+                  <motion.div
+                    className={cn(
+                      // Chip mais compacto no celular: com o quadrado pequeno,
+                      // cada pixel a menos afasta a borda do chip da foto.
+                      "group/chip flex cursor-default items-center gap-2 rounded-xl px-2 py-2 sm:px-3 sm:py-2.5",
+                      T.glass,
+                      "shadow-glass transition-colors duration-500 ease-smooth",
+                      "hover:border-flux-400/50 hover:bg-flux-400/[0.07] hover:shadow-glow"
+                    )}
+                    title={t.hero.orbit[index]}
+                    whileHover={reduce ? undefined : { scale: 1.14, y: -8 }}
+                    transition={{ type: "spring", stiffness: 210, damping: 17 }}
+                  >
+                    <Icon
+                      className="h-5 w-5 shrink-0 text-flux-500 dark:text-flux-300 sm:h-7 sm:w-7"
+                      aria-hidden="true"
+                    />
+                    <span className="max-w-0 overflow-hidden whitespace-nowrap text-xs font-medium text-slate-700 opacity-0 transition-all duration-500 ease-smooth group-hover/chip:max-w-[10rem] group-hover/chip:opacity-100 dark:text-slate-200">
+                      {t.hero.orbit[index]}
+                    </span>
+                  </motion.div>
                 </motion.div>
-              </motion.div>
-            ))}
-          </div>
+              ))}
+            </motion.div>
+          </motion.div>
         </Reveal>
       </div>
 

@@ -33,11 +33,12 @@ export default function Footer() {
       />
 
       <div className={cn(T.container, "relative py-8")}>
-        <div className="flex flex-col gap-7 lg:flex-row lg:items-center lg:gap-10">
+        {/* No celular tudo empilhado e centralizado; do lg para cima, em faixa. */}
+        <div className="flex flex-col items-center gap-7 text-center lg:flex-row lg:gap-10 lg:text-left">
           {/* Identidade à esquerda, frase ao centro e redes à direita. Os dois
               blocos das pontas têm a mesma base de largura, para a frase ficar
               centrada na faixa e não apenas no espaço que sobra. */}
-          <div className="flex items-center gap-4 lg:flex-1">
+          <div className="flex items-center gap-4 text-left lg:flex-1">
             <img
               src={profile.avatar}
               alt=""
@@ -58,7 +59,7 @@ export default function Footer() {
           <p
             className={cn(
               T.body,
-              "max-w-md text-pretty text-xs italic leading-relaxed lg:shrink-0 lg:text-center"
+              "max-w-md text-pretty text-xs italic leading-relaxed lg:shrink-0"
             )}
           >
             “{t.footer.quote}”
@@ -97,7 +98,7 @@ export default function Footer() {
           className="mt-6 h-px bg-gradient-to-r from-transparent via-flux-400/45 to-transparent"
         />
 
-        <div className="flex flex-col gap-1.5 pt-4 text-xs sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+        <div className="flex flex-col items-center gap-1.5 pt-4 text-center text-xs sm:flex-row sm:justify-between sm:gap-6 sm:text-left">
           <p className={T.faint}>
             © {year} {profile.shortName}. {t.footer.rights}
           </p>

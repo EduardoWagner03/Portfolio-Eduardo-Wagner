@@ -101,6 +101,21 @@ export function useMediaQuery(query) {
 }
 
 /**
+ * Como `useMediaQuery`, mas só responde `true` depois da hidratação.
+ *
+ * Os efeitos presos ao scroll trocam o layout (a trilha horizontal dos
+ * projetos muda a altura da seção). Se o cliente já nascesse com `true`, o
+ * primeiro render divergiria do HTML estático e o React acusaria erro de
+ * hidratação. Assim o HTML e o primeiro render batem, e o efeito liga logo
+ * em seguida.
+ */
+export function useClientMediaQuery(query) {
+  const matches = useMediaQuery(query);
+  const mounted = useMounted();
+  return mounted && matches;
+}
+
+/**
  * `false` no servidor e na primeira renderização do cliente, `true` depois.
  *
  * Existe por causa do pré-render estático: componentes que criam portal para
